@@ -1,0 +1,236 @@
+<title>Modèles de section</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&display=swap">
+<style>
+  :root {
+    --paper: #fff;
+    --ink: #000;
+    --gap: 48px;
+    --section-gap: 96px;
+    --rhythm: 16px;
+    --inset-margin: 15px;
+    --inset-padding: 20px;
+    --display: "EB Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --gap: 64px;
+      --section-gap: 128px;
+      --inset-margin: 0px;
+      --inset-padding: 6%;
+    }
+  }
+
+  @media (min-width: 1472px) {
+    :root { --inset-padding: 86px; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.35;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-block: var(--gap);
+    background: var(--paper);
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  @media (min-width: 1024px) {
+    .page { width: min(1440px, 100% - 32px); }
+  }
+
+  .inset {
+    margin-inline: var(--inset-margin);
+    padding-inline: var(--inset-padding);
+  }
+
+  .starts-section { margin-block-start: calc(var(--section-gap) - var(--gap)); }
+
+  .visual {
+    margin: 0;
+    margin-inline: 16px;
+  }
+
+  @media (min-width: 1024px) {
+    .visual { margin-inline: 0; }
+  }
+
+  .logotype {
+    display: block;
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .frame {
+    background: var(--ink);
+    color: var(--paper);
+    max-width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .frame--landscape { aspect-ratio: 3 / 2; }
+  .frame--portrait { aspect-ratio: 4 / 5; }
+
+  .frame p {
+    margin: 0;
+    color: var(--paper);
+    font-family: var(--body);
+    font-size: 14px;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .block { color: var(--ink); }
+
+  .block > * { margin: 0 0 var(--rhythm); }
+  .block > :last-child { margin-bottom: 0; }
+
+  .block h2 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .block h2 { font-size: 40px; }
+  }
+
+  .block--centered { text-align: center; }
+
+  .duo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  .duo__text {
+    margin-inline: var(--inset-margin);
+    padding-inline: var(--inset-padding);
+  }
+
+  @media (min-width: 1024px) {
+    .duo {
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      padding-right: var(--inset-padding);
+    }
+
+    .duo > * {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    .duo__text {
+      margin-inline: 0;
+      padding-inline: 0;
+    }
+  }
+
+  .notes {
+    border-top: 1px solid var(--ink);
+    padding-top: var(--gap);
+    color: var(--ink);
+  }
+
+  .notes > * { margin: 0 0 var(--rhythm); }
+  .notes > :last-child { margin-bottom: 0; }
+
+  .notes h2 {
+    font-family: var(--body);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .notes p {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 62ch;
+  }
+
+  .notes strong { font-weight: 600; }
+</style>
+
+<div class="page">
+  <div class="masthead inset">
+    <img class="logotype" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJDYWxxdWVfMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTIzLjk1IDI1LjYyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzFiMWIxYjt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkNhbHF1ZV8yLTIiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEwLjM1LDExLjc1aC0zLjY5di0uNDJjLjEzLDAsLjMxLS4wMi41Mi0uMDRzLjM1LS4wNi40My0uMWMuMTItLjA3LjIxLS4xNi4yNy0uMjZzLjA5LS4yMi4wOS0uMzZ2LTYuMDhoLS4wOWwtMi44NSw3LjEyaC0uMjlsLTIuNzEtNy4yNmgtLjA4djQuOTljMCwuNDguMDMuODUuMDksMS4xcy4xNS40My4yOC41NGMuMDkuMDguMjYuMTYuNTQuMjRzLjQ1LjExLjUzLjEydi40Mkgwdi0uNDJjLjE4LS4wMi4zNi0uMDUuNTYtLjA5cy4zNC0uMTEuNDUtLjE5Yy4xNC0uMTEuMjMtLjI4LjI4LS41MXMuMDgtLjYxLjA4LTEuMTR2LTQuMjdjMC0uMjUtLjAzLS40NS0uMDktLjYxcy0uMTQtLjI4LS4yNS0uMzhjLS4xMi0uMTEtLjI3LS4xOC0uNDUtLjI0cy0uMzUtLjA4LS41Mi0uMDl2LS40MmgyLjg1bDIuMzksNi4yNywyLjA0LTUuMjVjLjA3LS4xOS4xNC0uMzkuMTktLjYuMDUtLjIxLjA4LS4zNS4wOS0uNDJoMi43MnYuNDJjLS4xMSwwLS4yNS4wMi0uNDIuMDVzLS4zLjA2LS4zNy4wOWMtLjEzLjA1LS4yMi4xMy0uMjcuMjRzLS4wNy4yMy0uMDcuMzZ2Ni4wMmMwLC4xNC4wMi4yNS4wNy4zNXMuMTQuMTguMjcuMjVjLjA3LjA0LjIuMDguMzguMTFzLjMyLjA1LjQzLjA2di40MloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOS4yNiwxMS43NWgtMy40N3YtLjQyYy4zMS0uMDIuNTYtLjA2Ljc2LS4xMnMuMy0uMTMuMy0uMjJjMC0uMDQsMC0uMDgtLjAxLS4xM3MtLjAyLS4xLS4wNC0uMTRsLS42OS0xLjg3aC0yLjkzYy0uMTEuMjctLjIuNTEtLjI3LjcyLS4wNy4yLS4xMy4zOS0uMTkuNTctLjA1LjE3LS4wOS4zMS0uMTEuNDFzLS4wMy4xOS0uMDMuMjZjMCwuMTYuMTIuMjguMzcuMzZzLjUzLjE0Ljg0LjE1di40MmgtMy4xNXYtLjQyYy4xLDAsLjIzLS4wMy4zOC0uMDdzLjI4LS4wOS4zOC0uMTVjLjE2LS4xMS4yOC0uMjIuMzYtLjMzcy4xNy0uMjguMjUtLjQ4Yy40Mi0xLjA1Ljg4LTIuMjMsMS4zOS0zLjUzcy45Ni0yLjQ3LDEuMzUtMy40OWguNDdsMi43OCw3LjIxYy4wNi4xNS4xMy4yOC4yLjM3cy4xOC4xOS4zMS4yOGMuMDkuMDUuMjEuMS4zNS4xNHMuMjcuMDYuMzYuMDZ2LjQyWk0xNS45LDguMzNsLTEuMjctMy4yNC0xLjI1LDMuMjRoMi41MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMy4yMSwxMS43NWgtMy43NnYtLjQyYy4xMSwwLC4yNi0uMDIuNDYtLjA0cy4zNC0uMDQuNDItLjA3Yy4xMy0uMDUuMjItLjEyLjI4LS4yMXMuMDktLjIxLjA5LS4zN3YtNi4wNWMwLS4xNC0uMDItLjI1LS4wNi0uMzRzLS4xNS0uMTctLjMxLS4yM2MtLjEyLS4wNS0uMjctLjA5LS40NC0uMTNzLS4zMi0uMDctLjQ0LS4wN3YtLjQyaDMuNzZ2LjQyYy0uMTIsMC0uMjcuMDItLjQ0LjA0cy0uMzIuMDYtLjQ0LjFjLS4xNS4wNS0uMjUuMTItLjMuMjNzLS4wOC4yMi0uMDguMzV2Ni4wNWMwLC4xMy4wMy4yNC4wOS4zNHMuMTUuMTguMjkuMjRjLjA4LjAzLjIyLjA3LjQuMXMuMzQuMDYuNDcuMDZ2LjQyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI5LjQ2LDcuOTJjLjE4LjIuMzEuNDEuMzkuNjRzLjEzLjUxLjEzLjgyYzAsLjc0LS4yNywxLjM1LS44MiwxLjgycy0xLjIyLjcyLTIuMDMuNzJjLS4zNywwLS43NS0uMDYtMS4xMi0uMTdzLS42OS0uMjYtLjk3LS40MmwtLjI1LjQzaC0uNDdsLS4wOC0yLjg2aC40OGMuMS4zNS4yMS42Ny4zNC45NnMuMzEuNTUuNTIuOGMuMi4yMy40NC40Mi43Mi41NXMuNTkuMjEuOTUuMjFjLjI3LDAsLjUxLS4wNC43MS0uMTFzLjM3LS4xNy40OS0uM2MuMTMtLjEzLjIyLS4yOC4yOC0uNDYuMDYtLjE4LjA5LS4zOC4wOS0uNiwwLS4zMy0uMDktLjY1LS4yOC0uOTMtLjE5LS4yOS0uNDctLjUxLS44NC0uNjYtLjI2LS4xLS41NS0uMjEtLjg4LS4zNC0uMzMtLjEyLS42MS0uMjQtLjg1LS4zNS0uNDctLjIxLS44NC0uNDktMS4xLS44M3MtLjM5LS43OS0uMzktMS4zNGMwLS4zMi4wNi0uNjEuMTktLjg5cy4zMS0uNTIuNTUtLjc0Yy4yMy0uMi41LS4zNi44MS0uNDhzLjYzLS4xNy45Ny0uMTdjLjM4LDAsLjczLjA2LDEuMDMuMThzLjU4LjI2LjgzLjQxbC4yNC0uNGguNDdsLjA1LDIuNzdoLS40OGMtLjA5LS4zMi0uMTgtLjYyLS4yOS0uOTFzLS4yNS0uNTUtLjQyLS43OWMtLjE3LS4yMy0uMzctLjQxLS42Mi0uNTRzLS41NC0uMi0uODktLjJjLS4zNywwLS42OS4xMi0uOTUuMzZzLS4zOS41My0uMzkuODguMDguNjYuMjUuOS40MS40My43NC41OWMuMjkuMTQuNTcuMjYuODQuMzZzLjU0LjIxLjguMzJjLjI0LjEuNDYuMjIuNjguMzVzLjQxLjI4LjU3LjQ1WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM3Ljc3LDQuMzhjLjM3LjM4LjY2Ljg1Ljg3LDEuMzlzLjMxLDEuMTUuMzEsMS44LS4xMSwxLjI3LS4zMiwxLjgxLS41MSwxLS44OCwxLjM4Yy0uMzYuMzgtLjc5LjY3LTEuMjcuODdzLTEsLjMxLTEuNTQuMzFjLS41OCwwLTEuMTItLjExLTEuNjEtLjMzcy0uOTEtLjUyLTEuMjctLjkxYy0uMzUtLjM4LS42My0uODQtLjgzLTEuMzlzLS4zLTEuMTMtLjMtMS43NWMwLS42OC4xMS0xLjI4LjMyLTEuODJzLjUtLjk5Ljg4LTEuMzhjLjM3LS4zOC44LS42OCwxLjI5LS44OHMxLS4zMSwxLjUzLS4zMSwxLjA4LjEsMS41Ny4zMS45MS41LDEuMjcuODhaTTM2Ljg5LDEwLjMxYy4yMi0uMzYuMzgtLjc2LjQ4LTEuMjFzLjE1LS45Ni4xNS0xLjUxLS4wNi0xLjEtLjE3LTEuNTgtLjI3LS44OS0uNDktMS4yMmMtLjIyLS4zMy0uNDktLjU5LS44MS0uNzhzLS43LS4yOC0xLjEyLS4yOGMtLjQ3LDAtLjg3LjExLTEuMi4zMnMtLjYuNS0uODEuODdjLS4yLjM1LS4zNC43NS0uNDQsMS4yMXMtLjE0Ljk1LS4xNCwxLjQ2YzAsLjU3LjA1LDEuMDguMTUsMS41M3MuMjYuODYuNDgsMS4yMWMuMjEuMzUuNDguNjIuOC44MXMuNzEuMjksMS4xNS4yOWMuNDIsMCwuOC0uMSwxLjE0LS4yOXMuNjEtLjQ3LjgyLS44MloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00OC41NywzLjgxYy0uMTEsMC0uMjguMDQtLjUxLjA5cy0uMzkuMTItLjQ5LjE4Yy0uMTQuMS0uMjQuMjktLjI5LjU3cy0uMDcuNjMtLjA3LDEuMDZ2Ni4xMmgtLjUxbC01LjA2LTYuODN2NC4zMWMwLC40OC4wMy44NS4wOSwxLjExcy4xNS40NC4yOC41NWMuMDkuMDkuMjguMTcuNTYuMjRzLjQ3LjExLjU2LjEydi40MmgtMy40M3YtLjQyYy4xMSwwLC4yOC0uMDUuNTQtLjExcy40MS0uMTMuNDctLjE5Yy4xNC0uMTEuMjMtLjI4LjI4LS41cy4wOC0uNjEuMDgtMS4xNnYtNC4xMmMwLS4xOC0uMDMtLjM2LS4wOS0uNTRzLS4xNS0uMzItLjI1LS40MmMtLjE0LS4xMy0uMzMtLjI0LS41Ny0uMzNzLS40NC0uMTQtLjU5LS4xNXYtLjQyaDIuMzlsNC43LDYuMzd2LTMuOTdjMC0uNDktLjAzLS44Ni0uMDktMS4xMnMtLjE1LS40My0uMjctLjUyYy0uMTEtLjA3LS4yOS0uMTUtLjU0LS4yMnMtLjQ0LS4xMS0uNTctLjEydi0uNDJoMy40di40MloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04MS4yNywxMS41NGgtMy42OXYtLjQyYy4xMywwLC4zMS0uMDIuNTItLjA0cy4zNS0uMDYuNDMtLjFjLjEyLS4wNy4yMS0uMTYuMjctLjI2cy4wOS0uMjIuMDktLjM2di02LjA4aC0uMDlsLTIuODUsNy4xMmgtLjI5bC0yLjcxLTcuMjZoLS4wOHY0Ljk5YzAsLjQ4LjAzLjg1LjA5LDEuMXMuMTUuNDMuMjguNTRjLjA5LjA4LjI2LjE2LjU0LjI0cy40NS4xMS41My4xMnYuNDJoLTMuMzd2LS40MmMuMTgtLjAyLjM2LS4wNS41Ni0uMDlzLjM0LS4xMS40NS0uMTljLjE0LS4xMS4yMy0uMjguMjgtLjUxcy4wOC0uNjEuMDgtMS4xNHYtNC4yN2MwLS4yNS0uMDMtLjQ1LS4wOS0uNjFzLS4xNC0uMjgtLjI1LS4zOGMtLjEyLS4xMS0uMjctLjE4LS40NS0uMjRzLS4zNS0uMDgtLjUyLS4wOXYtLjQyaDIuODVsMi4zOSw2LjI3LDIuMDQtNS4yNWMuMDctLjE5LjE0LS4zOS4xOS0uNi4wNS0uMjEuMDgtLjM1LjA5LS40MmgyLjcydi40MmMtLjExLDAtLjI1LjAyLS40Mi4wNXMtLjMuMDYtLjM3LjA5Yy0uMTMuMDUtLjIyLjEzLS4yNy4yNHMtLjA3LjIzLS4wNy4zNnY2LjAyYzAsLjE0LjAyLjI1LjA3LjM1cy4xNC4xOC4yNy4yNWMuMDcuMDQuMi4wOC4zOC4xMXMuMzIuMDUuNDMuMDZ2LjQyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkwLjE5LDExLjU0aC0zLjQ3di0uNDJjLjMxLS4wMi41Ni0uMDYuNzYtLjEycy4zLS4xMy4zLS4yMmMwLS4wNCwwLS4wOC0uMDEtLjEzcy0uMDItLjEtLjA0LS4xNGwtLjY5LTEuODdoLTIuOTNjLS4xMS4yNy0uMi41MS0uMjcuNzItLjA3LjItLjEzLjM5LS4xOS41Ny0uMDUuMTctLjA5LjMxLS4xMS40MXMtLjAzLjE5LS4wMy4yNmMwLC4xNi4xMi4yOC4zNy4zNnMuNTMuMTQuODQuMTV2LjQyaC0zLjE1di0uNDJjLjEsMCwuMjMtLjAzLjM4LS4wN3MuMjgtLjA5LjM4LS4xNWMuMTYtLjExLjI4LS4yMi4zNi0uMzNzLjE3LS4yOC4yNS0uNDhjLjQyLTEuMDUuODgtMi4yMywxLjM5LTMuNTNzLjk2LTIuNDcsMS4zNS0zLjQ5aC40N2wyLjc4LDcuMjFjLjA2LjE1LjEzLjI4LjIuMzdzLjE4LjE5LjMxLjI4Yy4wOS4wNS4yMS4xLjM1LjE0cy4yNy4wNi4zNi4wNnYuNDJaTTg2LjgzLDguMTNsLTEuMjctMy4yNC0xLjI1LDMuMjRoMi41MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik05Ny4yOCw1LjQ1aC0uNDFjLS4wNC0uMTQtLjEtLjMxLS4xOS0uNS0uMDktLjE5LS4yLS4zOC0uMzEtLjU1LS4xMi0uMTgtLjI1LS4zNC0uMzktLjQ3LS4xNC0uMTQtLjI3LS4yMS0uNC0uMjMtLjEyLS4wMi0uMjgtLjAzLS40Ni0uMDRzLS4zNi0uMDEtLjUxLS4wMWgtLjM0djYuNjhjMCwuMTMuMDMuMjUuMDguMzZzLjE1LjE5LjI5LjI1Yy4wNy4wMy4yMi4wNi40NC4xMXMuNC4wNy41My4wOHYuNDJoLTMuOTR2LS40MmMuMTEsMCwuMjgtLjAyLjUtLjA1cy4zOC0uMDUuNDctLjA5Yy4xMy0uMDUuMjItLjEyLjI5LS4yMnMuMDktLjIyLjA5LS4zOVYzLjY1aC0uMzRjLS4xMiwwLS4yNywwLS40NSwwcy0uMzUuMDItLjUyLjA0Yy0uMTMuMDItLjI2LjA5LS40LjIzcy0uMjcuMy0uMzkuNDctLjIyLjM2LS4zMS41Ni0uMTUuMzYtLjE5LjQ5aC0uNDF2LTIuMjdoNy4yOHYyLjI3WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEwNi4wOCwxMS41NGgtMi4yNWMtLjUtLjc4LS45NS0xLjQ2LTEuMzUtMi4wMy0uNC0uNTctLjg0LTEuMTYtMS4zMS0xLjc2aC0uODZ2Mi42NWMwLC4xNC4wMi4yNi4wNi4zNnMuMTQuMTguMjguMjRjLjA3LjAzLjE5LjA1LjM3LjA4cy4zMy4wNC40NS4wNHYuNDJoLTMuNTN2LS40MmMuMDksMCwuMjMtLjAyLjQxLS4wNHMuMy0uMDUuMzctLjA4Yy4xMi0uMDUuMi0uMTMuMjYtLjIycy4wOC0uMjIuMDgtLjM4di02LjA0YzAtLjE0LS4wMi0uMjYtLjA2LS4zNnMtLjEzLS4xOS0uMjgtLjI0Yy0uMS0uMDQtLjIzLS4wNy0uMzgtLjFzLS4yOS0uMDUtLjQtLjA2di0uNDJoMy44NmMuMzUsMCwuNjguMDQuOTkuMTFzLjU5LjE5Ljg0LjM1Yy4yNC4xNi40NC4zNi41OC42MnMuMjIuNTYuMjIuOTJjMCwuMzItLjA1LjYxLS4xNS44NXMtLjI0LjQ2LS40NC42NGMtLjE4LjE3LS4zOS4zMS0uNjQuNDRzLS41Mi4yMy0uODIuMzFjLjQxLjU1Ljc1LDEsMS4wMywxLjM4cy42MS44MywxLDEuMzZjLjE3LjI0LjMzLjQxLjQ3LjUycy4yOC4yLjQyLjI3Yy4xLjA1LjIzLjA5LjM4LjEycy4yOC4wNC4zOC4wNXYuNDJaTTEwMi45OSw1LjMyYzAtLjUxLS4xNS0uOTEtLjQ0LTEuMi0uMjktLjMtLjctLjQ0LTEuMjMtLjQ0aC0xdjMuNThoLjc3Yy41NCwwLC45OS0uMTcsMS4zNS0uNTJzLjU0LS44Mi41NC0xLjQxWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTExMy4xNSw0LjE4Yy4zNy4zOC42Ni44NS44NywxLjM5cy4zMSwxLjE1LjMxLDEuOC0uMTEsMS4yNy0uMzIsMS44MS0uNTEsMS0uODgsMS4zOGMtLjM2LjM4LS43OS42Ny0xLjI3Ljg3cy0xLC4zMS0xLjU0LjMxYy0uNTgsMC0xLjEyLS4xMS0xLjYxLS4zM3MtLjkyLS41Mi0xLjI3LS45MWMtLjM1LS4zOC0uNjMtLjg0LS44My0xLjM5cy0uMy0xLjEzLS4zLTEuNzVjMC0uNjguMTEtMS4yOC4zMi0xLjgycy41LS45OS44OC0xLjM4Yy4zNy0uMzguOC0uNjgsMS4yOS0uODhzMS0uMzEsMS41My0uMzEsMS4wOC4xLDEuNTcuMzEuOTEuNSwxLjI3Ljg4Wk0xMTIuMjcsMTAuMWMuMjItLjM2LjM4LS43Ni40OC0xLjIxcy4xNS0uOTYuMTUtMS41MS0uMDYtMS4xLS4xNy0xLjU4LS4yOC0uODktLjQ5LTEuMjJjLS4yMi0uMzMtLjQ5LS41OS0uODEtLjc4cy0uNy0uMjgtMS4xMi0uMjhjLS40NywwLS44Ny4xMS0xLjIuMzJzLS42LjUtLjgxLjg3Yy0uMi4zNS0uMzQuNzUtLjQ0LDEuMjFzLS4xNC45NS0uMTQsMS40NmMwLC41Ny4wNSwxLjA4LjE1LDEuNTNzLjI2Ljg2LjQ4LDEuMjFjLjIxLjM1LjQ4LjYyLjguODFzLjcxLjI5LDEuMTUuMjljLjQyLDAsLjgtLjEsMS4xNC0uMjlzLjYxLS40Ny44Mi0uODJaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTIzLjk1LDMuNmMtLjExLDAtLjI4LjA0LS41MS4wOXMtLjM5LjEyLS40OS4xOGMtLjE0LjEtLjI0LjI5LS4yOS41N3MtLjA3LjYzLS4wNywxLjA2djYuMTJoLS41MWwtNS4wNi02LjgzdjQuMzFjMCwuNDguMDMuODUuMDksMS4xMXMuMTUuNDQuMjguNTVjLjA5LjA5LjI4LjE3LjU2LjI0cy40Ny4xMS41Ni4xMnYuNDJoLTMuNDN2LS40MmMuMTEsMCwuMjgtLjA1LjU0LS4xMXMuNDEtLjEzLjQ3LS4xOWMuMTQtLjExLjIzLS4yOC4yOC0uNXMuMDgtLjYxLjA4LTEuMTZ2LTQuMTJjMC0uMTgtLjAzLS4zNi0uMDktLjU0cy0uMTUtLjMyLS4yNS0uNDJjLS4xNC0uMTMtLjMzLS4yNC0uNTctLjMzcy0uNDQtLjE0LS41OS0uMTV2LS40MmgyLjM5bDQuNyw2LjM3di0zLjk3YzAtLjQ5LS4wMy0uODYtLjA5LTEuMTJzLS4xNS0uNDMtLjI3LS41MmMtLjExLS4wNy0uMjktLjE1LS41NC0uMjJzLS40NC0uMTEtLjU3LS4xMnYtLjQyaDMuNHYuNDJaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTYuNSw0LjU5Yy0uMTEtLjExLTEuMTctLjU4LTEuMTctMS40NywwLS40Ni4wOS0uNjUuNTMtLjkxLjU0LS4zMiwxLjIyLS4wNSwxLjMzLDAsLjc2LjM0LDEuMTQsMS4xLDEuMywxLjY0LjEzLjQ2LjE4LDEuNTcuMTgsMS41NywwLDAtLjE0LS41Ni0uNTktMS4xMy0uMTktLjI1LS4zOS0uNDQtLjY1LS41OS0uMTYtLjEtLjM2LS4yMS0uNjMtLjIxLS4xMiwwLS40LDAtLjU0LjIxLS4xMi4xNy0uMDcuMzctLjA1LjQ2LjA2LjI1LjIzLjQuMjkuNDUiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik02MS4yNSwxLjU5Yy0uMzYuMjUtLjkyLjcxLTEuMzUsMS40Ny0uNTQuOTMtLjYyLDEuODMtLjYyLDIuMzUsMC0uNTItLjA5LTEuNDItLjYyLTIuMzUtLjQ0LS43Ni0xLjAxLTEuMjMtMS4zNS0xLjQ3Ljk3LDAsMS43OC0uNjgsMS45OC0xLjU5LjIuOTEsMS4wMSwxLjU5LDEuOTgsMS41OVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik02MC4yNiw3LjI2Yy0uNDgsMC0uODkuMzUtLjk5LjgtLjEtLjQ1LS41LS44LS45OS0uOC4xNy0uMTIuNDUtLjM2LjY3LS43My4yNy0uNDYuMzItLjkxLjMyLTEuMTcsMCwuMjcuMDQuNy4zMSwxLjE3LjIyLjM4LjUuNjEuNjguNzNaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNjIuMSw0LjU5Yy4xMS0uMTEsMS4xNy0uNTgsMS4xNy0xLjQ3LDAtLjQ2LS4wOS0uNjUtLjUzLS45MS0uNTQtLjMyLTEuMjItLjA1LTEuMzMsMC0uNzYuMzQtMS4xNCwxLjEtMS4zLDEuNjQtLjEzLjQ2LS4xOCwxLjU3LS4xOCwxLjU3LDAsMCwuMTQtLjU2LjU5LTEuMTMuMTktLjI1LjM5LS40NC42NS0uNTkuMTYtLjEuMzYtLjIxLjYzLS4yMS4xMiwwLC40LDAsLjU0LjIxLjEyLjE3LjA3LjM3LjA1LjQ2LS4wNi4yNS0uMjMuNC0uMjkuNDUiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01Ni41LDEyLjA4Yy0uMTEuMTEtMS4xNy41OC0xLjE3LDEuNDcsMCwuNDYuMDkuNjUuNTMuOTEuNTQuMzIsMS4yMi4wNSwxLjMzLDAsLjc2LS4zNCwxLjE0LTEuMSwxLjMtMS42NC4xMy0uNDYuMTgtMS41Ny4xOC0xLjU3LDAsMC0uMTQuNTYtLjU5LDEuMTMtLjE5LjI1LS4zOS40NC0uNjUuNTktLjE2LjEtLjM2LjIxLS42My4yMS0uMTIsMC0uNCwwLS41NC0uMjEtLjEyLS4xNy0uMDctLjM3LS4wNS0uNDYuMDYtLjI1LjIzLS40LjI5LS40NSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYxLjI1LDE1LjA4Yy0uMzYtLjI1LS45Mi0uNzEtMS4zNS0xLjQ3LS41NC0uOTMtLjYyLTEuODMtLjYyLTIuMzUsMCwuNTItLjA5LDEuNDItLjYyLDIuMzUtLjQ0Ljc2LTEuMDEsMS4yMy0xLjM1LDEuNDcuOTcsMCwxLjc4LjY4LDEuOTgsMS41OS4yLS45MSwxLjAxLTEuNTksMS45OC0xLjU5WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYwLjI2LDkuNGMtLjQ4LDAtLjg5LS4zNS0uOTktLjgtLjEuNDUtLjUuOC0uOTkuOC4xNy4xMi40NS4zNi42Ny43My4yNy40Ni4zMi45MS4zMiwxLjE3LDAtLjI3LjA0LS43LjMxLTEuMTcuMjItLjM4LjUtLjYxLjY4LS43M1oiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik02Mi4xLDEyLjA4Yy4xMS4xMSwxLjE3LjU4LDEuMTcsMS40NywwLC40Ni0uMDkuNjUtLjUzLjkxLS41NC4zMi0xLjIyLjA1LTEuMzMsMC0uNzYtLjM0LTEuMTQtMS4xLTEuMy0xLjY0LS4xMy0uNDYtLjE4LTEuNTctLjE4LTEuNTcsMCwwLC4xNC41Ni41OSwxLjEzLjE5LjI1LjM5LjQ0LjY1LjU5LjE2LjEuMzYuMjEuNjMuMjEuMTIsMCwuNCwwLC41NC0uMjEuMTItLjE3LjA3LS4zNy4wNS0uNDYtLjA2LS4yNS0uMjMtLjQtLjI5LS40NSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU1LjU0LDExLjEzYy0uMTEuMTEtLjU4LDEuMTctMS40NywxLjE3LS40NiwwLS42NS0uMDktLjkxLS41My0uMzItLjU0LS4wNS0xLjIyLDAtMS4zMy4zNC0uNzYsMS4xLTEuMTQsMS42NC0xLjMuNDYtLjEzLDEuNTctLjE4LDEuNTctLjE4LDAsMC0uNTYuMTQtMS4xMy41OS0uMjUuMTktLjQ0LjM5LS41OS42NS0uMS4xNi0uMjEuMzYtLjIxLjYzLDAsLjEyLDAsLjQuMjEuNTQuMTcuMTIuMzcuMDcuNDYuMDUuMjUtLjA2LjQtLjIzLjQ1LS4yOSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTUyLjUzLDYuMzdjLjI1LjM2LjcxLjkyLDEuNDcsMS4zNS45My41NCwxLjgzLjYyLDIuMzUuNjItLjUyLDAtMS40Mi4wOS0yLjM1LjYyLS43Ni40NC0xLjIzLDEuMDEtMS40NywxLjM1LDAtLjk3LS42OC0xLjc4LTEuNTktMS45OC45MS0uMiwxLjU5LTEuMDEsMS41OS0xLjk4WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU4LjIxLDcuMzZjMCwuNDguMzUuODkuOC45OS0uNDUuMS0uOC41LS44Ljk5LS4xMi0uMTctLjM2LS40NS0uNzMtLjY3LS40Ni0uMjctLjkxLS4zMi0xLjE3LS4zMi4yNywwLC43LS4wNCwxLjE3LS4zMS4zOC0uMjIuNjEtLjUuNzMtLjY4WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU1LjU0LDUuNTJjLS4xMS0uMTEtLjU4LTEuMTctMS40Ny0xLjE3LS40NiwwLS42NS4wOS0uOTEuNTMtLjMyLjU0LS4wNSwxLjIyLDAsMS4zMy4zNC43NiwxLjEsMS4xNCwxLjY0LDEuMy40Ni4xMywxLjU3LjE4LDEuNTcuMTgsMCwwLS41Ni0uMTQtMS4xMy0uNTktLjI1LS4xOS0uNDQtLjM5LS41OS0uNjUtLjEtLjE2LS4yMS0uMzYtLjIxLS42MywwLS4xMiwwLS40LjIxLS41NC4xNy0uMTIuMzctLjA3LjQ2LS4wNS4yNS4wNi40LjIzLjQ1LjI5Ii8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNjMuMDIsMTEuMTNjLjExLjExLjU4LDEuMTcsMS40NywxLjE3LjQ2LDAsLjY1LS4wOS45MS0uNTMuMzItLjU0LjA1LTEuMjIsMC0xLjMzLS4zNC0uNzYtMS4xLTEuMTQtMS42NC0xLjMtLjQ2LS4xMy0xLjU3LS4xOC0xLjU3LS4xOCwwLDAsLjU2LjE0LDEuMTMuNTkuMjUuMTkuNDQuMzkuNTkuNjUuMS4xNi4yMS4zNi4yMS42MywwLC4xMiwwLC40LS4yMS41NC0uMTcuMTItLjM3LjA3LS40Ni4wNS0uMjUtLjA2LS40LS4yMy0uNDUtLjI5Ii8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNjYuMDIsNi4zN2MtLjI1LjM2LS43MS45Mi0xLjQ3LDEuMzUtLjkzLjU0LTEuODMuNjItMi4zNS42Mi41MiwwLDEuNDIuMDksMi4zNS42Mi43Ni40NCwxLjIzLDEuMDEsMS40NywxLjM1LDAtLjk3LjY4LTEuNzgsMS41OS0xLjk4LS45MS0uMi0xLjU5LTEuMDEtMS41OS0xLjk4WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYwLjM1LDcuMzZjMCwuNDgtLjM1Ljg5LS44Ljk5LjQ1LjEuOC41LjguOTkuMTItLjE3LjM2LS40NS43My0uNjcuNDYtLjI3LjkxLS4zMiwxLjE3LS4zMi0uMjcsMC0uNy0uMDQtMS4xNy0uMzEtLjM4LS4yMi0uNjEtLjUtLjczLS42OFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik02My4wMiw1LjUyYy4xMS0uMTEuNTgtMS4xNywxLjQ3LTEuMTcuNDYsMCwuNjUuMDkuOTEuNTMuMzIuNTQuMDUsMS4yMiwwLDEuMzMtLjM0Ljc2LTEuMSwxLjE0LTEuNjQsMS4zLS40Ni4xMy0xLjU3LjE4LTEuNTcuMTgsMCwwLC41Ni0uMTQsMS4xMy0uNTkuMjUtLjE5LjQ0LS4zOS41OS0uNjUuMS0uMTYuMjEtLjM2LjIxLS42MywwLS4xMiwwLS40LS4yMS0uNTQtLjE3LS4xMi0uMzctLjA3LS40Ni0uMDUtLjI1LjA2LS40LjIzLS40NS4yOSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTUzLjk5LDIwLjg4aC0uODdsLjMtLjU0aDEuMTR2NS4xNmgtLjU3di00LjYyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU2LjgyLDI1LjNsMS4xOC0xLjY1Yy0uMTUuMDUtLjI5LjA3LS40Ni4wNy0uOTksMC0xLjY3LS43NC0xLjY3LTEuNywwLTEuMDMuNzQtMS43NywxLjc3LTEuNzcsMS4yMSwwLDEuNzkuOTQsMS43OSwxLjc2LDAsLjE5LS4wNC42NS0uNDMsMS4xOGwtMS43NiwyLjQzLS40My0uMzJaTTU2LjQ1LDIyLjAxYzAsLjY5LjUxLDEuMTksMS4yMSwxLjE5czEuMi0uNTIsMS4yLTEuMTktLjQ5LTEuMjMtMS4yMS0xLjIzLTEuMjEuNTMtMS4yMSwxLjIzWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU5Ljk1LDI1LjVsMS44OC0yLjE3Yy4xMy0uMTUuNDgtLjU2LjYtLjc1LjIzLS4zMy4yOS0uNTguMjktLjc5LDAtLjU4LS40Mi0xLjAxLTEuMDMtMS4wMS0uMzYsMC0uNjYuMTYtLjg2LjQ2LS4xLjE1LS4xNi4zNS0uMTcuNjFoLS41N2MuMDItLjUyLjE5LS44My4zOS0xLjA3LjIyLS4yNS41OC0uNTMsMS4yMi0uNTMuOTEsMCwxLjU5LjY1LDEuNTksMS41NCwwLC4zNS0uMS42Ni0uNDEsMS4xMS0uMjIuMy0uNDkuNjItLjcuODZsLTEuMDcsMS4yMWgyLjE4di41M2gtMy4zM1oiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik02NC44NiwyMC44OGgtLjg3bC4zLS41NGgxLjE0djUuMTZoLS41N3YtNC42MloiLz48L2c+PC9zdmc+" alt="Maison Matron" width="127" height="17">
+  </div>
+
+  <section class="block block--centered inset">
+    <h2>Le vrai sur-mesure</h2>
+    <p>Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs et motifs préférés.</p>
+    <p>Choisissez les finitions bois que vous trouvez les plus belles.</p>
+    <p>Vous aimeriez plus encore ? Vous pouvez passer commande en atelier.</p>
+    <p>Nous nous assurerons que vos pièces résonnent avec qui vous êtes.</p>
+  </section>
+
+  <figure class="visual">
+    <div class="frame frame--landscape">
+      <p>3:2</p>
+    </div>
+  </figure>
+
+  <section class="duo starts-section">
+    <div class="block duo__text">
+      <h2>Maison Matron, artisan depuis 4 générations</h2>
+      <p>20'000 pièces, pour 5'000 clients.</p>
+      <p>Depuis un siècle, notre savoir-faire façonne des objets, travaillés à la main et habillés des plus beaux tissus.</p>
+      <p>Nos tapissiers, ébénistes et courtepointières sont unis par une unique valeur :</p>
+      <p>Ennoblir chaque pièce qui nous est confiée.</p>
+    </div>
+
+    <figure class="visual duo__visual">
+      <div class="frame frame--portrait">
+        <p>4:5</p>
+      </div>
+    </figure>
+  </section>
+
+  <aside class="notes inset starts-section">
+    <h2>Ce que chaque règle a décidé</h2>
+    <p><strong>Correction 1. Le texte aligné en haut du visuel.</strong> Dans le modèle en deux colonnes, le bloc de texte s'aligne sur le haut du visuel et non sur son milieu. Avant : <strong>align-items: center</strong>. Après : <strong>align-items: flex-start</strong>. Le principe 10 disait l'inverse, il est réécrit plus bas.</p>
+    <p><strong>Correction 2. La page prend plus de largeur.</strong> Quatre valeurs bougent ensemble. Le plafond du conteneur : <strong>1258 px avant, 1440 px après</strong>. Le retrait du bloc de texte au-dessus de 1024 px : <strong>12 % avant, 6 % après</strong>. Le point de rupture où ce retrait se fige : <strong>1290 px avant, 1472 px après</strong>, parce que c'est la largeur à laquelle le conteneur cesse de grandir, le plafond plus les 32 px de gouttière : 1258 + 32 hier, 1440 + 32 aujourd'hui. La valeur fixe : <strong>150 px avant, 86 px après</strong>. 86 px sur 1440, c'est 5,97 %, comme 150 px sur 1258 faisait 11,9 % : le passage du pourcentage au fixe ne se voit toujours pas.</p>
+    <p><strong>Ce que la correction 2 entraîne.</strong> Deux valeurs suivent sans être appelées. La colonne du modèle en deux colonnes passe de <strong>522 px à 645 px</strong>, et le cadre 4:5 qu'elle porte de <strong>522 × 652 px à 645 × 806 px</strong>. La mesure du texte passe donc d'environ <strong>65 signes à environ 80 signes</strong> : c'est long pour une ligne, et c'est le seul prix de la largeur. Pour la raccourcir sans rien casser, appeler un plafond plus bas ou un retrait plus grand : les deux nombres sont ceux de la correction 2, et le point de rupture se recalcule à plafond + 32 px, la valeur fixe au retrait en pourcentage appliqué au plafond.</p>
+    <p><strong>Correction 3. Le logotype plus grand et centré.</strong> Largeur : <strong>190 px avant, 260 px après</strong>, <strong>max-width: 100 %</strong> conservé. Position : aligné à gauche dans le retrait avant, <strong>centré dans la page à toutes les largeurs</strong> après. Sous 330 px de fenêtre environ, le retrait mobile de 35 px par côté le ramène à la largeur disponible, et il reste centré.</p>
+    <p><strong>Correction 4. Le texte avant le visuel quand ça s'empile.</strong> Les deux corrections de cette passe sont les numéros 4 et 5 : la numérotation suit la page, pas la passe. Sous 1024 px, l'ordre des deux blocs du second modèle : <strong>le visuel puis le texte avant, le texte puis le visuel après</strong>. Sur un téléphone, les mots ouvrent la section et l'image vient après eux. Au-dessus de 1024 px, rien ne bouge : <strong>le visuel à gauche, le texte à droite</strong>, alignés par le haut. L'ordre du balisage : <strong>visuel puis texte avant, texte puis visuel après</strong>. La mise en page au-dessus de 1024 px : <strong>flex-direction: row avant, flex-direction: row-reverse après</strong>. Le principe 12 disait l'inverse, il est réécrit plus bas.</p>
+    <p><strong>Ce que la correction 4 coûte.</strong> Le balisage n'a qu'un seul ordre et les deux largeurs en demandent deux : il est impossible que l'ordre du balisage et l'ordre visuel coïncident à la fois sous et au-dessus de 1024 px, tant que le visuel reste à gauche sur grand écran. Le balisage suit donc le téléphone et la lecture linéaire, texte puis visuel, qui est le seul ordre qu'un lecteur d'écran connaît ; au-dessus de 1024 px, où les deux colonnes se voient d'un coup, c'est la mise en page qui replace le visuel à gauche. Pour trancher dans l'autre sens, deux lignes suffisent : remettre le visuel en premier dans le balisage, rendre <strong>flex-direction: row</strong> au-dessus de 1024 px et poser <strong>order: -1</strong> sur le bloc de texte en dessous.</p>
+    <p><strong>Correction 5. L'écart de section vaut le double de l'écart de bloc.</strong> L'écart de bloc ne bouge pas : <strong>48 px sous 1024 px, 64 px au-dessus</strong>, avant comme après. L'écart de section : <strong>48 px et 64 px avant, 96 px et 128 px après</strong>. Il s'applique à deux endroits, entre le premier modèle et le second, et entre le second et cette note. Le logotype garde l'écart de bloc avec ce qui le suit. Les deux valeurs sont posées en jetons, <strong>--gap</strong> et <strong>--section-gap</strong> : l'élément qui ouvre une section porte leur différence en marge haute, <strong>calc(var(--section-gap) - var(--gap))</strong>, qui s'ajoute à l'écart de la pile. Appeler un autre nombre ne demande qu'un jeton.</p>
+    <p><strong>Ce que la correction 5 entraîne.</strong> Le principe 1 demandait un écart unique partout ; il est réécrit plus bas. Le système tient maintenant deux valeurs, un écart et son double, et rien d'autre : aucune section ne choisit la sienne. Ce que le doublement achète : une section se lit comme un groupe, au lieu que la page se lise comme une pile uniforme.</p>
+    <p>La page porte deux modèles de section, séparés par l'écart de section, qui vaut le double de l'écart de bloc. Le premier oppose un texte centré à un visuel pleine largeur, le second met un visuel portrait et un bloc de texte en deux colonnes. Les deux sont rendus tels quels. La copie est la source unique de vérité : dans l'un comme dans l'autre, le titre et les quatre lignes sont cités mot pour mot.</p>
+    <p><strong>1. L'écart, et son double entre deux sections.</strong> Le système tient deux valeurs, et rien d'autre. L'écart de bloc sépare chaque bloc du suivant à l'intérieur d'une section, 48 px sous 1024 px et 64 px au-dessus : le logotype et ce qui le suit, le bloc de texte et le visuel du premier modèle, les deux colonnes du second. L'écart de section vaut exactement le double, 96 px sous 1024 px et 128 px au-dessus, et il ne sert qu'entre deux sections : entre le premier modèle et le second, entre le second et cette note. Aucune section ne choisit sa valeur, il n'y en a que deux et l'une est le double de l'autre. Ce que le doublement achète : une section se lit comme un groupe, au lieu que la page se lise comme une pile uniforme. L'écart entre les deux colonnes du second modèle est l'écart de bloc : deux colonnes côte à côte sont deux blocs, elles ne méritent pas une valeur à part.</p>
+    <p><strong>2. Le retrait du bloc de texte.</strong> Sur mobile, 15 px de marge et 20 px de padding, posés sur l'axe horizontal seulement : la verticale appartient aux écarts de la pile. Au-dessus de 1024 px le retrait passe à 6 %, au-dessus de 1472 px il se fige à 86 px, dans un conteneur plafonné à 1440 px. 86 px sur 1440, c'est 5,97 % : le passage du pourcentage au fixe ne se voit pas.</p>
+    <p><strong>3. Un titre et un paragraphe.</strong> Chaque bloc ne porte rien d'autre : pas de lien, pas de surtitre, pas de seconde idée. Le principe 4 est pris sans son lien. Les quatre lignes de la copie sont les quatre lignes d'un même paragraphe, ce que le principe 6 appelle « un bloc de plusieurs lignes ».</p>
+    <p><strong>4. Le titre en casse de phrase, et en italique.</strong> Les deux titres gardent leur casse de phrase et ne reçoivent aucun interlettrage. L'italique est une décision globale : tout titre de la page est en italique, ceux des sections comme celui de cette note. Casse de phrase et italique sont les deux seuls écarts typographiques qui signalent un titre.</p>
+    <p><strong>5. Le rythme interne de 16 px.</strong> Dans un bloc, chaque élément porte 16 px sous lui et le dernier n'en porte pas. Le principe est écrit « tout élément sauf le premier » : appliqué à la lettre, le titre collerait à la première ligne. Il est retenu ici dans le sens que sa propre justification donne, un seul rythme interne et aucune exception.</p>
+    <p><strong>6. Le bloc centré, et seulement là.</strong> Le premier modèle prend le traitement d'Hermès : le bloc est centré dans la page par son retrait, et le texte lui-même est centré ligne à ligne. Le retrait du principe 2 est la mesure, et les lignes de la copie sont assez courtes pour tenir sans se replier. Le centrage appartient à la section qui porte un visuel pleine largeur : le second modèle, qui est une composition en deux colonnes, garde son texte aligné à gauche, parce que deux colonnes ont déjà un axe et qu'un texte centré dans une colonne le brouillerait.</p>
+    <p><strong>7. Le visuel pleine largeur.</strong> Les visuels portent l'immersivité. Ils n'existent pas encore, donc la page les place sans les tenir. Dans le premier modèle, le visuel prend toute la largeur du conteneur pendant que le texte est repoussé vers l'intérieur, c'est ainsi qu'il borde l'espace, et le retrait du texte est ce qui le rend lisible comme tel. Il suit le bloc de texte : les mots posent la promesse, le visuel la montre.</p>
+    <p><strong>8. Le cadre plein noir.</strong> Un visuel en attente est un aplat #000, et rien d'autre. Il porte son rapport écrit dessus, centré, en blanc. La valeur reste écrite sur le cadre pendant toute la conception du modèle, comme repère : tant qu'aucune image n'est posée, c'est le rapport qui tient la mise en page, et il doit se lire sans mesurer.</p>
+    <p><strong>9. Les deux rapports.</strong> Un cadre paysage est en 3:2, un cadre portrait en 4:5. Les deux sont dans la page parce que les deux modèles les portent : le 3:2 est le visuel du premier, le 4:5 est la colonne de gauche du second. Aucun échantillon isolé n'est nécessaire, un rapport se juge dans une mise en page, pas à côté.</p>
+    <p><strong>10. La grille du modèle en deux colonnes.</strong> Deux colonnes égales, séparées par l'écart de bloc. À 1440 px de conteneur, une fois le retrait de droite retiré, il reste 1354 px, moins 64 px d'écart, soit 645 px par colonne. 645 px donnent une mesure d'environ 80 signes et un cadre 4:5 de 645 par 806 px. Les deux colonnes s'alignent par le haut : le texte est bien plus court que le visuel, et c'est le haut du visuel, pas son milieu, qui donne à la lecture sa ligne de départ.</p>
+    <p><strong>11. Le retrait du modèle en deux colonnes.</strong> Il n'est pas le même des deux côtés, et c'est voulu. À gauche, aucun retrait : le visuel touche le bord du conteneur, exactement comme le visuel pleine largeur du premier modèle, parce que c'est ainsi qu'un visuel borde l'espace. À droite, le retrait du principe 2, 6 % puis 86 px, porté par la rangée elle-même et non par la colonne, pour que le pourcentage se calcule sur le conteneur et donne la même valeur absolue que dans le premier modèle. Entre les deux colonnes, l'écart de bloc. Le retrait mesure une distance au bord de la page, l'écart mesure une distance entre deux blocs : ce sont deux choses, elles ne se confondent pas.</p>
+    <p><strong>12. Le texte en tête quand ça s'empile.</strong> Sous 1024 px les deux colonnes deviennent deux blocs l'un sous l'autre, et le texte passe devant : sur un téléphone, on lit les mots avant de voir l'image. C'est aussi l'ordre du balisage, donc celui que suivent le clavier et la voix de synthèse. Au-dessus de 1024 px le visuel reste la colonne de gauche, et la mise en page le replace : c'est le seul endroit de la page où l'ordre vu et l'ordre écrit diffèrent, et la correction 4 dit pourquoi aucun des deux ne pouvait céder.</p>
+    <p><strong>13. Le fond blanc.</strong> La page est sur fond blanc et s'y tient. Pas de thème sombre, pas de bloc prefers-color-scheme, pas de bloc data-theme. Les couleurs restent déclarées en jetons sur :root nu, le fond blanc du body vient d'un jeton, et chaque couleur est peinte explicitement : la page garde son blanc et son noir quel que soit le fond de l'hôte qui l'accueille.</p>
+    <p><strong>14. Les fontes.</strong> EB Garamond ne sert qu'aux titres, en italique, avec une pile serif de repli réelle derrière elle. Le texte courant tourne sur la pile système. L'interligne reste serré et ne grandit pas avec le corps : 1,1 sur les titres, 1,35 sur le texte.</p>
+    <p><strong>15. Ce qui n'existe pas.</strong> Aucune animation, aucun effet au scroll ou à la souris, aucun état de survol, aucune navigation, aucun script. Ce qui n'existe pas sur mobile n'existe pas sur desktop. Le style de base est celui du téléphone, les points de rupture sont 1024 px et 1472 px, la gouttière ne descend jamais sous 16 px, et à 400 px la page ne défile pas latéralement.</p>
+  </aside>
+</div>
