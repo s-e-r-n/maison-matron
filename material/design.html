@@ -723,6 +723,27 @@
       aspect-ratio: auto;
     }
   }
+
+  .part-watermark {
+    --papier: #ffffff;
+    --hauteur: 100vh;
+    --retrait: 1%;
+    background-color: var(--papier);
+  }
+
+  .part-watermark .page {
+    position: relative;
+    height: var(--hauteur);
+  }
+
+  .part-watermark .filigrane {
+    position: absolute;
+    inset-block-end: 100%;
+    inset-inline-end: var(--retrait);
+    width: var(--hauteur);
+    transform: rotate(-90deg);
+    transform-origin: 100% 100%;
+  }
 </style>
 
 <main>
@@ -871,6 +892,13 @@
           </article>
         </div>
       </section>
+    </div>
+  </section>
+
+  <section class="part part-watermark">
+    <h2 class="part__title">Le filigrane</h2>
+    <div class="page">
+      <img class="filigrane" src="../public/brand/maison-matron-watermark.svg" alt="Maison Matron">
     </div>
   </section>
 
