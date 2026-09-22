@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Matron - design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&display=swap">
+
+<style>
+  body {
+    margin: 0;
+    background-color: #ffffff;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .part + .part { margin-block-start: 96px; }
+
+  .part-hero,
+  .part-hero *,
+  .part-hero *::before,
+  .part-hero *::after { box-sizing: border-box; }
+
+  .part-type,
+  .part-type *,
+  .part-type *::before,
+  .part-type *::after { box-sizing: border-box; }
+
+  .part-button,
+  .part-button *,
+  .part-button *::before,
+  .part-button *::after { box-sizing: border-box; }
+
+  .part-form,
+  .part-form *,
+  .part-form *::before,
+  .part-form *::after { box-sizing: border-box; }
+
+  .part__title {
+    margin: 0 0 24px;
+    padding: 16px 20px 0;
+    border-block-start: 1px solid #d8d2cb;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #6b625b;
+  }
+
+  .part-hero {
+    --papier: #ffffff;
+    --encre: #000000;
+    --corps: #ff3608;
+    --garamond: "EB Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    --systeme: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --ecart: 48px;
+    --ecart-section: 96px;
+    --rythme: 16px;
+    --retrait-marge: 15px;
+    --retrait-padding: 20px;
+    --gouttiere: 16px;
+    --titre: 26px;
+    --citation: 17px;
+    --mesure-titre: none;
+    --mesure-citation: none;
+    background-color: var(--papier);
+    color: var(--encre);
+    font-family: var(--systeme);
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  @media (min-width: 1024px) {
+    .part-hero {
+      --ecart: 64px;
+      --ecart-section: 128px;
+      --retrait-marge: 0px;
+      --retrait-padding: 6%;
+      --gouttiere: 0px;
+      --titre: 36px;
+      --citation: 17px;
+      --mesure-titre: none;
+      --mesure-citation: 400px;
+    }
+  }
+
+  @media (min-width: 1472px) {
+    .part-hero { --retrait-padding: 86px; }
+  }
+
+  .part-hero .page {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-block: var(--ecart);
+    display: flex;
+    flex-direction: column;
+    gap: var(--ecart-section);
+  }
+
+  @media (min-width: 1024px) {
+    .part-hero .page { width: min(1440px, 100% - 32px); }
+  }
+
+  .part-hero .scene {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ecart);
+  }
+
+  .part-hero .cadre {
+    aspect-ratio: 16 / 9;
+    background-color: var(--encre);
+    margin-inline: var(--gouttiere);
+    padding-top: var(--retrait-padding);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .part-hero .logotype {
+    display: block;
+    width: 286px;
+    max-width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .part-hero .propos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--encre);
+    margin-inline: var(--retrait-marge);
+    padding-inline: var(--retrait-padding);
+  }
+
+  .part-hero .titre {
+    margin: 0 0 var(--rythme);
+    max-width: var(--mesure-titre);
+    font-family: var(--garamond);
+    font-style: italic;
+    font-weight: 400;
+    font-size: var(--titre);
+    line-height: 1.06;
+    letter-spacing: 0;
+  }
+
+  .part-hero .tete { display: inline; }
+
+  .part-hero .dire { margin: 0 0 var(--ecart); }
+  .part-hero .dire > * { margin: 0; }
+  .part-hero .dire > * + * { margin-top: var(--rythme); }
+
+  .part-hero .citation {
+    max-width: var(--mesure-citation);
+    font-size: var(--citation);
+    line-height: 1.45;
+  }
+
+  .part-hero .signature { font-size: 16px; line-height: 1.5; }
+
+  .part-hero .pied {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .part-hero .bouton {
+    display: block;
+    padding: 2px;
+    border: 1px solid var(--corps);
+    background-color: transparent;
+    font: inherit;
+    color: inherit;
+  }
+
+  .part-hero .bouton:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  .part-hero .corps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 216px;
+    height: 58px;
+    padding: 18px 48px;
+    background-color: var(--corps);
+    color: #ffffff;
+    font-family: var(--garamond);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 1024px) {
+    .part-hero .scene { display: grid; grid-template-columns: 1fr; }
+
+    .part-hero .cadre {
+      grid-area: 1 / 1;
+      align-self: start;
+    }
+
+    .part-hero .propos {
+      grid-area: 1 / 1;
+      align-self: stretch;
+      justify-content: flex-end;
+      z-index: 1;
+      color: var(--papier);
+      margin-inline: 0;
+      padding: var(--retrait-padding);
+    }
+
+    .part-hero .tete { display: block; }
+  }
+
+  .part-models {
+    --paper: #fff;
+    --ink: #000;
+    --gap: 48px;
+    --section-gap: 96px;
+    --rhythm: 16px;
+    --inset-margin: 15px;
+    --inset-padding: 20px;
+    --display: "EB Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.35;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (min-width: 1024px) {
+    .part-models {
+      --gap: 64px;
+      --section-gap: 128px;
+      --inset-margin: 0px;
+      --inset-padding: 6%;
+    }
+  }
+
+  @media (min-width: 1472px) {
+    .part-models { --inset-padding: 86px; }
+  }
+
+  .part-models .page {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-block: var(--gap);
+    background: var(--paper);
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  @media (min-width: 1024px) {
+    .part-models .page { width: min(1440px, 100% - 32px); }
+  }
+
+  .part-models .inset {
+    margin-inline: var(--inset-margin);
+    padding-inline: var(--inset-padding);
+  }
+
+  .part-models .starts-section { margin-block-start: calc(var(--section-gap) - var(--gap)); }
+
+  .part-models .visual {
+    margin: 0;
+    margin-inline: 16px;
+  }
+
+  @media (min-width: 1024px) {
+    .part-models .visual { margin-inline: 0; }
+  }
+
+  .part-models .logotype {
+    display: block;
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .part-models .frame {
+    background: var(--ink);
+    color: var(--paper);
+    max-width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .part-models .frame--landscape { aspect-ratio: 3 / 2; }
+  .part-models .frame--portrait { aspect-ratio: 4 / 5; }
+
+  .part-models .frame p {
+    margin: 0;
+    color: var(--paper);
+    font-family: var(--body);
+    font-size: 14px;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .part-models .block { color: var(--ink); }
+
+  .part-models .block > * { margin: 0 0 var(--rhythm); }
+  .part-models .block > :last-child { margin-bottom: 0; }
+
+  .part-models .block h2 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .part-models .block h2 { font-size: 40px; }
+  }
+
+  .part-models .block--centered { text-align: center; }
+
+  .part-models .duo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  .part-models .duo__text {
+    margin-inline: var(--inset-margin);
+    padding-inline: var(--inset-padding);
+  }
+
+  @media (min-width: 1024px) {
+    .part-models .duo {
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      padding-right: var(--inset-padding);
+    }
+
+    .part-models .duo > * {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    .part-models .duo__text {
+      margin-inline: 0;
+      padding-inline: 0;
+    }
+  }
+
+  .part-type {
+    --fond: #ffffff;
+    --encre: #000000;
+    --filet: rgba(0, 0, 0, 0.5);
+    --serif: 'EB Garamond', 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, 'Times New Roman', Times, serif;
+    --systeme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --air: 16px;
+    background-color: var(--fond);
+    color: var(--encre);
+    font-family: var(--systeme);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .part-type .contenu {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 20px;
+    padding-block: 48px;
+  }
+
+  .part-type .bloc > * { margin-top: 0; margin-bottom: var(--air); }
+  .part-type .bloc > *:last-child { margin-bottom: 0; }
+
+  .part-type h1 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.12;
+    color: var(--encre);
+  }
+
+  .part-type .bloc p { color: var(--encre); }
+
+  .part-type .niveau {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--encre);
+  }
+
+  .part-type .etiquette {
+    font-family: var(--systeme);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--encre);
+  }
+
+  .part-type .couture {
+    height: 1px;
+    background-color: transparent;
+    background-repeat: repeat-x;
+    background-image: repeating-linear-gradient(to right, var(--filet) 0 6px, transparent 6px 10px);
+    background-size: 10px 1px;
+  }
+
+  @media (min-width: 1024px) {
+    .part-type .contenu {
+      padding-inline: 6%;
+      padding-block: 64px;
+    }
+    .part-type h1 { font-size: 40px; }
+    .part-type .niveau { font-size: 28px; }
+  }
+
+  @media (min-width: 1472px) {
+    .part-type .contenu { padding-inline: 86px; }
+  }
+
+  .part-button {
+    --papier: #ffffff;
+    --encre: #14100d;
+    --encre-pale: #6b625b;
+    --corps: #ff3608;
+    --corps-secondaire: #1b1b1b;
+    --garamond: "EB Garamond", "Adobe Garamond Pro", Garamond, "Hoefler Text", "Times New Roman", Times, serif;
+    --systeme: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--papier);
+    color: var(--encre);
+    font-family: var(--systeme);
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .part-button .feuille {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 15px 72px;
+  }
+
+  .part-button .duo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .part-button .exemplaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .part-button .nom {
+    margin: 0;
+    color: var(--encre-pale);
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .part-button .bouton {
+    display: block;
+    padding: 2px;
+    border: 1px solid var(--corps);
+    background-color: transparent;
+    font: inherit;
+    color: inherit;
+  }
+
+  .part-button .bouton:focus-visible {
+    outline: 2px solid var(--encre);
+    outline-offset: 4px;
+  }
+
+  .part-button .corps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 216px;
+    height: 58px;
+    padding: 18px 48px;
+    background-color: var(--corps);
+    color: var(--papier);
+    font-family: var(--garamond);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    white-space: nowrap;
+  }
+
+  .part-button .bouton--secondaire {
+    border-color: var(--corps-secondaire);
+  }
+
+  .part-button .corps--secondaire {
+    background-color: var(--corps-secondaire);
+  }
+
+  @media (min-width: 1024px) {
+    .part-button .feuille { padding: 64px 40px 96px; }
+  }
+
+  .part-form {
+    --sol: #ffffff;
+    --panneau: #faf7f2;
+    --feuille: #fffdf8;
+    --voile: rgba(255, 253, 248, 0.5);
+    --encre-page: #1b1b1b;
+    --encre: rgba(0, 0, 0, 0.7);
+    --filet: rgba(0, 0, 0, 0.35);
+    --filet-focus: #000000;
+    --corps: #1b1b1b;
+    --encre-bouton: #ffffff;
+    --garamond: 'EB Garamond', 'Adobe Garamond Pro', Garamond, 'Iowan Old Style', 'Hoefler Text', 'Times New Roman', Times, serif;
+    --systeme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --gouttiere: 16px;
+    background-color: var(--sol);
+    color: var(--encre-page);
+    font-family: var(--systeme);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .part-form .planche {
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+  .part-form .piece + .piece { margin-block-start: 48px; }
+
+  .part-form .intitule {
+    margin: 0 0 12px;
+    padding-inline: var(--gouttiere);
+    font-family: var(--garamond);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--encre-page);
+    text-align: center;
+  }
+
+  .part-form .panneau {
+    margin-inline: auto;
+  }
+
+  .part-form .feuille {
+    aspect-ratio: 210 / 297;
+    width: 100%;
+    min-height: 100vh;
+    margin-inline: auto;
+    display: flex;
+    container-type: inline-size;
+    background-color: var(--feuille);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: var(--encre);
+  }
+
+  @supports (min-height: 100svh) {
+    .part-form .feuille { min-height: 100svh; }
+  }
+
+  .part-form .feuille--fibre {
+    background-image: linear-gradient(var(--voile), var(--voile)), url("../public/textures/paper-faint-fibre.jpg");
+  }
+
+  .part-form .feuille--ivoire {
+    background-image: linear-gradient(var(--voile), var(--voile)), url("../public/textures/paper-soft-ivory-tooth.jpg");
+  }
+
+  .part-form .marge {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    padding: 6cqi 9.5cqi;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .part-form .logotype {
+    display: block;
+    width: 184px;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+    opacity: 0.7;
+  }
+
+  .part-form .grille {
+    margin-block-start: 106px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 40px;
+  }
+
+  .part-form .champ { display: block; }
+
+  .part-form .champ--large {
+    grid-column: 1 / -1;
+    margin-block-start: 12px;
+  }
+
+  .part-form .etiquette {
+    display: block;
+    margin-block-end: 2px;
+    font-family: var(--garamond);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--encre);
+  }
+
+  .part-form .saisie {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 4px;
+    border: 0;
+    border-bottom: 1px solid var(--filet);
+    border-radius: 0;
+    background-color: transparent;
+    font-family: var(--systeme);
+    font-size: 16px;
+    line-height: 1;
+    color: var(--encre);
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .part-form .saisie:focus { outline: none; }
+
+  .part-form .saisie:focus-visible {
+    outline: none;
+    border-bottom-color: var(--filet-focus);
+  }
+
+  .part-form .envoi { padding-block-start: 106px; }
+
+  .part-form .bouton {
+    display: block;
+    margin-inline: auto;
+    padding: 2px;
+    border: 1px solid var(--corps);
+    background-color: transparent;
+    font: inherit;
+    color: inherit;
+  }
+
+  .part-form .bouton:focus-visible {
+    outline: 2px solid var(--filet-focus);
+    outline-offset: 4px;
+  }
+
+  .part-form .corps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 176px;
+    height: 46px;
+    padding: 13px 32px;
+    background-color: var(--corps);
+    color: var(--encre-bouton);
+    font-family: var(--garamond);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 19px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 599px) {
+    .part-form .grille {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 28px;
+      margin-block-start: 40px;
+    }
+
+    .part-form .envoi { padding-block-start: 40px; }
+  }
+
+  @media (min-width: 1024px) {
+    .part-form {
+      --gouttiere: 40px;
+      --largeur-a4: min(1000px, max(480px, calc((100svh - 108px) * 210 / 297)));
+      --hauteur-feuille: calc(var(--largeur-a4) * 297 / 210);
+      --largeur-feuille: calc(var(--largeur-a4) * 1.2);
+    }
+
+    .part-form .planche { padding-block-start: 16px; }
+
+    .part-form .piece + .piece { margin-block-start: 64px; }
+
+    .part-form .panneau {
+      width: calc(var(--largeur-feuille) + 144px);
+      max-width: 100%;
+      padding: 28px 72px;
+      background-color: var(--panneau);
+    }
+
+    .part-form .feuille {
+      width: var(--largeur-feuille);
+      max-width: 100%;
+      height: var(--hauteur-feuille);
+      min-height: 0;
+      aspect-ratio: auto;
+    }
+  }
+</style>
+
+<main>
+
+  <section class="part part-hero">
+    <h2 class="part__title">Le hero</h2>
+    <div class="page">
+      <div class="hero">
+        <div class="scene">
+          <div class="cadre">
+            <img class="logotype" src="../public/brand/maison-matron-logo-complete.svg" alt="Maison Matron, 1921" width="286" height="59">
+          </div>
+          <div class="propos">
+            <h1 class="titre"><span class="tete">Maison Matron,</span> artisans tapissiers et ébénistes depuis 4 générations</h1>
+            <div class="pied">
+              <div class="dire">
+                <p class="citation">« Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. »</p>
+                <p class="signature">Anne-Claude</p>
+              </div>
+              <button type="button" class="bouton"><span class="corps">L'atelier vient à vous</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="part part-models">
+    <h2 class="part__title">Modèles de section</h2>
+    <div class="page">
+      <div class="masthead inset">
+        <img class="logotype" src="../public/brand/maison-matron-logo-complete.svg" alt="Maison Matron" width="127" height="17">
+      </div>
+
+      <section class="block block--centered inset">
+        <h2>Le vrai sur-mesure</h2>
+        <p>Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs et motifs préférés.</p>
+        <p>Choisissez les finitions bois que vous trouvez les plus belles.</p>
+        <p>Vous aimeriez plus encore ? Vous pouvez passer commande en atelier.</p>
+        <p>Nous nous assurerons que vos pièces résonnent avec qui vous êtes.</p>
+      </section>
+
+      <figure class="visual">
+        <div class="frame frame--landscape">
+          <p>3:2</p>
+        </div>
+      </figure>
+
+      <section class="duo starts-section">
+        <div class="block duo__text">
+          <h2>Maison Matron, artisan depuis 4 générations</h2>
+          <p>20'000 pièces, pour 5'000 clients.</p>
+          <p>Depuis un siècle, notre savoir-faire façonne des objets, travaillés à la main et habillés des plus beaux tissus.</p>
+          <p>Nos tapissiers, ébénistes et courtepointières sont unis par une unique valeur :</p>
+          <p>Ennoblir chaque pièce qui nous est confiée.</p>
+        </div>
+
+        <figure class="visual duo__visual">
+          <div class="frame frame--portrait">
+            <p>4:5</p>
+          </div>
+        </figure>
+      </section>
+    </div>
+  </section>
+
+  <section class="part part-type">
+    <h2 class="part__title">Les trois niveaux de typographie</h2>
+    <div class="contenu">
+      <section class="bloc">
+        <p class="etiquette">Titre</p>
+        <h1>Maison Matron, artisan depuis 4 générations</h1>
+        <div class="couture"></div>
+        <p class="etiquette">Sous-titre</p>
+        <p class="niveau">20'000 pièces, pour 5'000 clients.</p>
+        <div class="couture"></div>
+        <p class="etiquette">Corps</p>
+        <p>Depuis un siècle, notre savoir-faire façonne des objets, travaillés à la main et habillés des plus beaux tissus.</p>
+        <p>Nos tapissiers, ébénistes et courtepointières sont unis par une unique valeur :</p>
+        <p>Ennoblir chaque pièce qui nous est confiée.</p>
+      </section>
+    </div>
+  </section>
+
+  <section class="part part-button">
+    <h2 class="part__title">Le bouton</h2>
+    <div class="feuille">
+      <div class="duo">
+        <div class="exemplaire">
+          <button type="button" class="bouton">
+            <span class="corps">En savoir plus</span>
+          </button>
+          <p class="nom">Principal</p>
+        </div>
+        <div class="exemplaire">
+          <button type="button" class="bouton bouton--secondaire">
+            <span class="corps corps--secondaire">En savoir plus</span>
+          </button>
+          <p class="nom">Secondaire</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="part part-form">
+    <h2 class="part__title">La forme du formulaire</h2>
+    <div class="planche">
+      <section class="piece">
+        <h2 class="intitule">Feuille 1 &middot; paper-faint-fibre</h2>
+        <div class="panneau">
+          <article class="feuille feuille--fibre">
+            <div class="marge">
+              <img class="logotype" src="../public/brand/maison-matron-logo-complete.svg" alt="Maison Matron" width="127" height="17">
+              <div class="grille">
+                <div class="champ">
+                  <label class="etiquette" for="prenom-1">Votre prénom</label>
+                  <input class="saisie" id="prenom-1" type="text">
+                </div>
+                <div class="champ">
+                  <label class="etiquette" for="nom-1">Votre nom de famille</label>
+                  <input class="saisie" id="nom-1" type="text">
+                </div>
+                <div class="champ">
+                  <label class="etiquette" for="email-1">Votre email</label>
+                  <input class="saisie" id="email-1" type="email">
+                </div>
+                <div class="champ">
+                  <label class="etiquette" for="telephone-1">Votre numéro de téléphone</label>
+                  <input class="saisie" id="telephone-1" type="tel">
+                </div>
+                <div class="champ">
+                  <label class="etiquette" for="code-postal-1">Votre code postal</label>
+                  <input class="saisie" id="code-postal-1" type="text">
+                </div>
+                <div class="champ champ--large">
+                  <label class="etiquette" for="projet-1">Votre projet, en quelques mots</label>
+                  <input class="saisie" id="projet-1" type="text">
+                </div>
+              </div>
+              <div class="envoi">
+                <button type="button" class="bouton">
+                  <span class="corps">Je réserve ma visite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="piece">
+        <h2 class="intitule">Feuille 2 &middot; paper-soft-ivory-tooth</h2>
+        <div class="panneau">
+          <article class="feuille feuille--ivoire">
+            <div class="marge">
+              <img class="logotype" src="../public/brand/maison-matron-logo-complete.svg" alt="Maison Matron" width="127" height="17">
+              <div class="grille">
+                <div class="champ">
+                  <label class="etiquette" for="prenom-2">Votre prénom</label>
+                  <input class="saisie" id="prenom-2" type="text">
+                </div>
+                <div class="champ">
+                  <label class="etiquette" for="nom-2">Votre nom de famille</label>
+                  <input class="saisie" id="nom-2" type="text">
+                </div>
+                <div class="champ">
+                  <label class="etiquette" for="email-2">Votre email</label>
+                  <input class="saisie" id="email-2" type="email">
+                </div>
+                <div class="champ">
+                  <label class="etiquette" for="telephone-2">Votre numéro de téléphone</label>
+                  <input class="saisie" id="telephone-2" type="tel">
+                </div>
+                <div class="champ">
+                  <label class="etiquette" for="code-postal-2">Votre code postal</label>
+                  <input class="saisie" id="code-postal-2" type="text">
+                </div>
+                <div class="champ champ--large">
+                  <label class="etiquette" for="projet-2">Votre projet, en quelques mots</label>
+                  <input class="saisie" id="projet-2" type="text">
+                </div>
+              </div>
+              <div class="envoi">
+                <button type="button" class="bouton">
+                  <span class="corps">Je réserve ma visite</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </section>
+
+</main>
+</html>
