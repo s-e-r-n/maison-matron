@@ -14,7 +14,8 @@
     -webkit-text-size-adjust: 100%;
   }
 
-  .part + .part { margin-block-start: 96px; }
+  .part + .part,
+  .suite { margin-block-start: 96px; }
 
   .part-hero,
   .part-hero *,
@@ -39,10 +40,9 @@
   .part__title {
     margin: 0 0 24px;
     padding: 16px 20px 0;
-    border-block-start: 1px solid #d8d2cb;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 600;
+    font-family: "EB Garamond", "Adobe Garamond Pro", Garamond, "Iowan Old Style", "Hoefler Text", "Times New Roman", Times, serif;
+    font-size: 18px;
+    font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #6b625b;
@@ -724,25 +724,51 @@
     }
   }
 
-  .part-watermark {
-    --papier: #ffffff;
-    --hauteur: 100vh;
-    --retrait: 1%;
-    background-color: var(--papier);
+  .suite { position: relative; }
+
+  .suite .gouttiere { display: none; }
+
+  @media (min-width: 1024px) {
+    .suite {
+      --retrait: 1%;
+      --largeur-gouttiere: calc(100vh * 8.71 / 104.39);
+      --respiration: 48px;
+    }
+
+    .suite > .part { margin-inline-end: calc(var(--retrait) + var(--largeur-gouttiere) + var(--respiration)); }
+
+    .suite .gouttiere {
+      display: block;
+      position: absolute;
+      inset-block: 0;
+      inset-inline-end: var(--retrait);
+      width: var(--largeur-gouttiere);
+    }
+
+    .suite .colonne {
+      position: sticky;
+      inset-block-start: 0;
+      height: 100vh;
+    }
+
+    .suite .filigrane {
+      position: absolute;
+      inset-block-end: 100%;
+      inset-inline-end: 0;
+      width: 100vh;
+      transform: rotate(-90deg);
+      transform-origin: 100% 100%;
+    }
   }
 
-  .part-watermark .page {
-    position: relative;
-    height: var(--hauteur);
-  }
-
-  .part-watermark .filigrane {
-    position: absolute;
-    inset-block-end: 100%;
-    inset-inline-end: var(--retrait);
-    width: var(--hauteur);
-    transform: rotate(-90deg);
-    transform-origin: 100% 100%;
+  .part-watermark .note {
+    margin: 0;
+    padding: 0 20px 24px;
+    max-width: 640px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #1b1b1b;
   }
 </style>
 
@@ -771,136 +797,142 @@
     </div>
   </section>
 
-  <section class="part part-models">
-    <h2 class="part__title">Modèles de section</h2>
-    <div class="page">
-      <div class="masthead inset">
-        <img class="logotype" src="../public/brand/maison-matron-logo-complete.svg" alt="Maison Matron" width="127" height="17">
+  <div class="suite">
+    <div class="gouttiere">
+      <div class="colonne">
+        <img class="filigrane" src="../public/brand/maison-matron-watermark.svg" alt="Maison Matron">
       </div>
+    </div>
 
-      <section class="block block--centered inset">
-        <h2>Le vrai sur-mesure</h2>
-        <p>Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs et motifs préférés.</p>
-        <p>Choisissez les finitions bois que vous trouvez les plus belles.</p>
-        <p>Vous aimeriez plus encore ? Vous pouvez passer commande en atelier.</p>
-        <p>Nous nous assurerons que vos pièces résonnent avec qui vous êtes.</p>
-      </section>
-
-      <figure class="visual">
-        <div class="frame frame--landscape">
-          <p>3:2</p>
+    <section class="part part-models">
+      <h2 class="part__title">Modèles de section</h2>
+      <div class="page">
+        <div class="masthead inset">
+          <img class="logotype" src="../public/brand/maison-matron-logo-complete.svg" alt="Maison Matron" width="127" height="17">
         </div>
-      </figure>
 
-      <section class="duo starts-section">
-        <div class="block duo__text">
-          <h2>Maison Matron, artisan depuis 4 générations</h2>
-          <p>20'000 pièces, pour 5'000 clients.</p>
+        <section class="block block--centered inset">
+          <h2>Le vrai sur-mesure</h2>
+          <p>Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs et motifs préférés.</p>
+          <p>Choisissez les finitions bois que vous trouvez les plus belles.</p>
+          <p>Vous aimeriez plus encore ? Vous pouvez passer commande en atelier.</p>
+          <p>Nous nous assurerons que vos pièces résonnent avec qui vous êtes.</p>
+        </section>
+
+        <figure class="visual">
+          <div class="frame frame--landscape">
+            <p>3:2</p>
+          </div>
+        </figure>
+
+        <section class="duo starts-section">
+          <div class="block duo__text">
+            <h2>Maison Matron, artisan depuis 4 générations</h2>
+            <p>20'000 pièces, pour 5'000 clients.</p>
+            <p>Depuis un siècle, notre savoir-faire façonne des objets, travaillés à la main et habillés des plus beaux tissus.</p>
+            <p>Nos tapissiers, ébénistes et courtepointières sont unis par une unique valeur :</p>
+            <p>Ennoblir chaque pièce qui nous est confiée.</p>
+          </div>
+
+          <figure class="visual duo__visual">
+            <div class="frame frame--portrait">
+              <p>4:5</p>
+            </div>
+          </figure>
+        </section>
+      </div>
+    </section>
+
+    <section class="part part-type">
+      <h2 class="part__title">Les trois niveaux de typographie</h2>
+      <div class="contenu">
+        <section class="bloc">
+          <p class="etiquette">Titre</p>
+          <h1>Maison Matron, artisan depuis 4 générations</h1>
+          <div class="couture"></div>
+          <p class="etiquette">Sous-titre</p>
+          <p class="niveau">20'000 pièces, pour 5'000 clients.</p>
+          <div class="couture"></div>
+          <p class="etiquette">Corps</p>
           <p>Depuis un siècle, notre savoir-faire façonne des objets, travaillés à la main et habillés des plus beaux tissus.</p>
           <p>Nos tapissiers, ébénistes et courtepointières sont unis par une unique valeur :</p>
           <p>Ennoblir chaque pièce qui nous est confiée.</p>
-        </div>
+        </section>
+      </div>
+    </section>
 
-        <figure class="visual duo__visual">
-          <div class="frame frame--portrait">
-            <p>4:5</p>
+    <section class="part part-button">
+      <h2 class="part__title">Le bouton</h2>
+      <div class="feuille">
+        <div class="duo">
+          <div class="exemplaire">
+            <button type="button" class="bouton">
+              <span class="corps">En savoir plus</span>
+            </button>
+            <p class="nom">Principal</p>
           </div>
-        </figure>
-      </section>
-    </div>
-  </section>
-
-  <section class="part part-type">
-    <h2 class="part__title">Les trois niveaux de typographie</h2>
-    <div class="contenu">
-      <section class="bloc">
-        <p class="etiquette">Titre</p>
-        <h1>Maison Matron, artisan depuis 4 générations</h1>
-        <div class="couture"></div>
-        <p class="etiquette">Sous-titre</p>
-        <p class="niveau">20'000 pièces, pour 5'000 clients.</p>
-        <div class="couture"></div>
-        <p class="etiquette">Corps</p>
-        <p>Depuis un siècle, notre savoir-faire façonne des objets, travaillés à la main et habillés des plus beaux tissus.</p>
-        <p>Nos tapissiers, ébénistes et courtepointières sont unis par une unique valeur :</p>
-        <p>Ennoblir chaque pièce qui nous est confiée.</p>
-      </section>
-    </div>
-  </section>
-
-  <section class="part part-button">
-    <h2 class="part__title">Le bouton</h2>
-    <div class="feuille">
-      <div class="duo">
-        <div class="exemplaire">
-          <button type="button" class="bouton">
-            <span class="corps">En savoir plus</span>
-          </button>
-          <p class="nom">Principal</p>
-        </div>
-        <div class="exemplaire">
-          <button type="button" class="bouton bouton--secondaire">
-            <span class="corps corps--secondaire">En savoir plus</span>
-          </button>
-          <p class="nom">Secondaire</p>
+          <div class="exemplaire">
+            <button type="button" class="bouton bouton--secondaire">
+              <span class="corps corps--secondaire">En savoir plus</span>
+            </button>
+            <p class="nom">Secondaire</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="part part-form">
-    <h2 class="part__title">La forme du formulaire</h2>
-    <div class="planche">
-      <section class="piece">
-        <h2 class="intitule">paper-faint-fibre</h2>
-        <div class="panneau">
-          <article class="feuille feuille--fibre">
-            <div class="marge">
-              <img class="logotype" src="../public/brand/maison-matron-logo-complete.svg" alt="Maison Matron" width="127" height="17">
-              <div class="grille">
-                <div class="champ">
-                  <label class="etiquette" for="prenom-1">Votre prénom</label>
-                  <input class="saisie" id="prenom-1" type="text">
+    <section class="part part-form">
+      <h2 class="part__title">La forme du formulaire</h2>
+      <div class="planche">
+        <section class="piece">
+          <h2 class="intitule">paper-faint-fibre</h2>
+          <div class="panneau">
+            <article class="feuille feuille--fibre">
+              <div class="marge">
+                <img class="logotype" src="../public/brand/maison-matron-logo-complete.svg" alt="Maison Matron" width="127" height="17">
+                <div class="grille">
+                  <div class="champ">
+                    <label class="etiquette" for="prenom-1">Votre prénom</label>
+                    <input class="saisie" id="prenom-1" type="text">
+                  </div>
+                  <div class="champ">
+                    <label class="etiquette" for="nom-1">Votre nom de famille</label>
+                    <input class="saisie" id="nom-1" type="text">
+                  </div>
+                  <div class="champ">
+                    <label class="etiquette" for="email-1">Votre email</label>
+                    <input class="saisie" id="email-1" type="email">
+                  </div>
+                  <div class="champ">
+                    <label class="etiquette" for="telephone-1">Votre numéro de téléphone</label>
+                    <input class="saisie" id="telephone-1" type="tel">
+                  </div>
+                  <div class="champ">
+                    <label class="etiquette" for="code-postal-1">Votre code postal</label>
+                    <input class="saisie" id="code-postal-1" type="text">
+                  </div>
+                  <div class="champ champ--large">
+                    <label class="etiquette" for="projet-1">Votre projet, en quelques mots</label>
+                    <input class="saisie" id="projet-1" type="text">
+                  </div>
                 </div>
-                <div class="champ">
-                  <label class="etiquette" for="nom-1">Votre nom de famille</label>
-                  <input class="saisie" id="nom-1" type="text">
-                </div>
-                <div class="champ">
-                  <label class="etiquette" for="email-1">Votre email</label>
-                  <input class="saisie" id="email-1" type="email">
-                </div>
-                <div class="champ">
-                  <label class="etiquette" for="telephone-1">Votre numéro de téléphone</label>
-                  <input class="saisie" id="telephone-1" type="tel">
-                </div>
-                <div class="champ">
-                  <label class="etiquette" for="code-postal-1">Votre code postal</label>
-                  <input class="saisie" id="code-postal-1" type="text">
-                </div>
-                <div class="champ champ--large">
-                  <label class="etiquette" for="projet-1">Votre projet, en quelques mots</label>
-                  <input class="saisie" id="projet-1" type="text">
+                <div class="envoi">
+                  <button type="button" class="bouton">
+                    <span class="corps">Je réserve ma visite</span>
+                  </button>
                 </div>
               </div>
-              <div class="envoi">
-                <button type="button" class="bouton">
-                  <span class="corps">Je réserve ma visite</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-    </div>
-  </section>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
 
-  <section class="part part-watermark">
-    <h2 class="part__title">Le filigrane</h2>
-    <div class="page">
-      <img class="filigrane" src="../public/brand/maison-matron-watermark.svg" alt="Maison Matron">
-    </div>
-  </section>
+    <section class="part part-watermark">
+      <h2 class="part__title">Le filigrane</h2>
+      <p class="note">Filigrane, desktop uniquement (1024 px et plus) pour l'instant. Il occupe seul une gouttière réservée le long du bord droit de la page, et aucun contenu n'entre jamais dans cette gouttière : seule la marge droite des sections s'élargit pour la dégager. Il n'apparaît pas dans le hero. Il entre juste après lui, puis reste collé en haut de la fenêtre (position: sticky; top: 0) pendant que le reste de la page défile. Sous 1024 px, il n'est pas affiché.</p>
+    </section>
+  </div>
 
 </main>
 </html>
