@@ -8,3 +8,4 @@ Problem and decision are one line each. An error code, a trace id or a ticket nu
 | Date | Problem | Decision | Ref |
 | ---- | ------- | -------- | --- |
 | 2026-09-22 | Four paper textures were candidates for the form, and only one can be the sheet the visitor writes on | `paper-soft-ivory-tooth.jpg` is the paper of the form, `paper-faint-fibre.jpg` is kept in reserve; the two others are deleted | - |
+| 2026-09-22 | Between the two reserved papers, only one can stay as the form's production paper | `paper-faint-fibre.jpg` is the production paper of the form, replacing the earlier choice of `paper-soft-ivory-tooth.jpg` | - |
