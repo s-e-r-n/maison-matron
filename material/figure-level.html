@@ -1,0 +1,106 @@
+<title>Le niveau des chiffres</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&display=swap">
+<style>
+:root {
+  --fond: #ffffff;
+  --encre: #000000;
+  --filet: rgba(0, 0, 0, 0.5);
+  --serif: 'EB Garamond', 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, 'Times New Roman', Times, serif;
+  --systeme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --air: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--fond);
+  color: var(--encre);
+  font-family: var(--systeme);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+
+.contenu {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  padding-block: 48px;
+}
+
+.bloc > * { margin-top: 0; margin-bottom: var(--air); }
+.bloc > *:last-child { margin-bottom: 0; }
+.bloc + .bloc { margin-top: 48px; }
+
+h1 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.12;
+  color: var(--encre);
+}
+
+p { color: var(--encre); }
+
+.niveau {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--encre);
+}
+
+.mesures {
+  font-family: var(--systeme);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--encre);
+}
+
+.couture {
+  height: 1px;
+  background-color: transparent;
+  background-repeat: repeat-x;
+  background-image: repeating-linear-gradient(to right, var(--filet) 0 6px, transparent 6px 10px);
+  background-size: 10px 1px;
+}
+
+@media (min-width: 1024px) {
+  .contenu {
+    padding-inline: 6%;
+    padding-block: 64px;
+  }
+  .bloc + .bloc { margin-top: 64px; }
+  h1 { font-size: 40px; }
+  .niveau { font-size: 28px; }
+}
+
+@media (min-width: 1472px) {
+  .contenu { padding-inline: 86px; }
+}
+</style>
+
+<main class="contenu">
+
+  <section class="bloc">
+    <h1>Maison Matron, artisan depuis 4 générations</h1>
+    <div class="couture"></div>
+    <p class="niveau">20'000 pièces, pour 5'000 clients.</p>
+    <div class="couture"></div>
+    <p>Depuis un siècle, notre savoir-faire façonne des objets, travaillés à la main et habillés des plus beaux tissus.</p>
+    <p>Nos tapissiers, ébénistes et courtepointières sont unis par une unique valeur :</p>
+    <p>Ennoblir chaque pièce qui nous est confiée.</p>
+  </section>
+
+  <section class="bloc">
+    <p class="mesures">Le niveau des chiffres, inchangé : EB Garamond, italique, graisse 400, 22px sous 1024px, 28px au-dessus, interligne 1.2.</p>
+    <p class="mesures">Le filet : un seul filet, 1px d'épaisseur, traitillé, tiret 6px, blanc 4px, pas de 10px.</p>
+    <p class="mesures">Sa couleur : noir à 50 % d'opacité, rgba(0, 0, 0, 0.5).</p>
+    <p class="mesures">L'air entre le filet et la ligne reste de 16px, le pas du rythme de la page.</p>
+  </section>
+
+</main>
