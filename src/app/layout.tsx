@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import { EB_Garamond } from "next/font/google";
 import { Suspense } from "react";
 import { PageView } from "@/components/page_view";
 import "./globals.css";
+
+const ebGaramond = EB_Garamond({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-eb-garamond",
+});
 
 export const metadata: Metadata = {
   title: "scaffold-nextjs-meta",
@@ -10,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: LayoutProps<"/">) => (
-  <html lang="en">
+  <html lang="en" className={ebGaramond.variable}>
     <body>
       {children}
       <Suspense fallback={null}>
