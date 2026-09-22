@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build", "!assets"]
+    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
   },
   "formatter": {
     "enabled": true,
@@ -35,6 +35,9 @@
       },
       "style": {
         "noNonNullAssertion": "error"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
       },
       "correctness": {
         "noUnusedVariables": "error",
