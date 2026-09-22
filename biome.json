@@ -36,6 +36,9 @@
       "style": {
         "noNonNullAssertion": "error"
       },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
       "correctness": {
         "noUnusedVariables": "error",
         "noUnusedImports": "error",
@@ -69,17 +72,5 @@
         "organizeImports": "on"
       }
     }
-  },
-  "overrides": [
-    {
-      "includes": ["public/brand/*.svg"],
-      "linter": {
-        "rules": {
-          "a11y": {
-            "noSvgWithoutTitle": "off"
-          }
-        }
-      }
-    }
-  ]
+  }
 }
