@@ -57,3 +57,34 @@ for (const visual of visuals) {
     expect((box?.width ?? 0) / (box?.height ?? 1)).toBeCloseTo(visual.ratio, 2);
   });
 }
+
+test("a dashed rule stands above the form section's title", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const rule = page.locator("#booking > hr:first-child");
+  await expect(rule).toBeVisible();
+  await expect(rule).toHaveCSS("height", "1px");
+  await expect(rule).toHaveCSS(
+    "background-image",
+    "repeating-linear-gradient(to right, rgba(0, 0, 0, 0.5) 0px, rgba(0, 0, 0, 0.5) 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 10px)",
+  );
+});
+
+test("section 8 takes half the viewport, its content centred", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 375, height: 800 });
+  await page.goto("/");
+  const section = page
+    .locator("section")
+    .filter({ has: page.getByRole("heading", { name: titles[7] }) });
+  const box = await section.boundingBox();
+  expect(box?.height).toBeGreaterThanOrEqual(400);
+  const first = await section.locator("> *").first().boundingBox();
+  const last = await section.locator("> *").last().boundingBox();
+  const above = (first?.y ?? 0) - (box?.y ?? 0);
+  const below =
+    (box?.y ?? 0) + (box?.height ?? 0) - ((last?.y ?? 0) + (last?.height ?? 0));
+  expect(Math.abs(above - below)).toBeLessThanOrEqual(1);
+});
