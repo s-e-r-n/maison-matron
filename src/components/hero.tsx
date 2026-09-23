@@ -2,24 +2,21 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import logo from "../../public/brand/maison-matron-logo-complete.svg";
 
-type hero_props = {
-  lead: string;
-  title: string;
-  quote: string;
-  signature: string;
-  children: ReactNode;
-};
+type hero_props = { children: ReactNode };
 
-export const Hero = ({
-  lead,
-  title,
-  quote,
-  signature,
-  children,
-}: hero_props) => (
-  <section className="page-width py-12 lg:py-16">
-    <div className="flex flex-col gap-12 lg:grid lg:grid-cols-1 lg:gap-0">
-      <div className="mx-4 flex aspect-video items-start justify-center bg-ink pt-5 lg:col-start-1 lg:row-start-1 lg:mx-0 lg:pt-[min(6%,86px)]">
+export const Hero = ({ children }: hero_props) => (
+  <section className="relative overflow-hidden bg-ink text-paper">
+    <video
+      src="/video/maison-matron-hero.mp4"
+      autoPlay
+      muted
+      loop
+      playsInline
+      aria-hidden
+      className="absolute inset-0 size-full object-cover"
+    />
+    <div className="page-width relative flex min-h-svh flex-col justify-between gap-12 pt-5 pb-12 lg:gap-16 lg:py-[min(6%,86px)]">
+      <div className="flex justify-center">
         <Image
           src={logo}
           alt="Maison Matron, 1921"
@@ -27,13 +24,17 @@ export const Hero = ({
           className="block h-auto w-[286px] max-w-full brightness-0 invert"
         />
       </div>
-      <div className="copy-inset flex flex-col items-start lg:z-10 lg:col-start-1 lg:row-start-1 lg:justify-end lg:self-stretch lg:p-[min(6%,86px)] lg:text-paper">
+      <div className="copy-inset flex flex-col items-start">
         <h1 className="mb-4 font-display text-[26px] leading-[1.06] italic lg:text-[36px]">
-          <span className="lg:block">{lead}</span> {title}
+          <span className="lg:block">Maison Matron,</span> artisans tapissiers
+          et ébénistes depuis 4 générations
         </h1>
         <div className="mb-12 space-y-4 lg:mb-16">
-          <p className="text-[17px] leading-[1.45] lg:max-w-[400px]">{quote}</p>
-          <p className="leading-[1.5]">{signature}</p>
+          <p className="text-[17px] leading-[1.45] lg:max-w-[400px]">
+            « Des conseils avisés, une superbe sélection de tissus et un
+            savoir-faire minutieux. »
+          </p>
+          <p className="leading-[1.5]">Anne-Claude</p>
         </div>
         {children}
       </div>

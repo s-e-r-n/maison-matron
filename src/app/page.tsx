@@ -11,12 +11,7 @@ import { WideVisualSection } from "@/components/wide_visual_section";
 
 const Home = () => (
   <main>
-    <Hero
-      lead="Maison Matron,"
-      title="artisans tapissiers et ébénistes depuis 4 générations"
-      quote="« Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. »"
-      signature="Anne-Claude"
-    >
+    <Hero>
       <CallToAction href="#booking">L'atelier vient à vous</CallToAction>
     </Hero>
 
