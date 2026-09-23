@@ -63,3 +63,8 @@ Sort:
 | The values typed in a form | Each uncontrolled input, in the DOM | Nobody, phase one | The visitor |
 
 ## Amendments
+- `CenteredSection` takes no `action`: sections 2 and 8, its only callers, have none.
+- The inset of a text block and the width of a page are two Tailwind utilities, `copy-inset` and `page-width`, in `src/app/globals.css`, shared by every model.
+- A field spanning both columns of the sheet carries `col-span-full`, not `md:col-span-2`.
+- The face of `CallToAction` wraps its label when the label cannot fit, instead of `whitespace-nowrap`.
+- `tests/lead_submission.spec.ts` is removed with the scaffold form it tested; `tests/conversion_page.spec.ts` checks the order of the sections and the target of the calls to action, and no submission.

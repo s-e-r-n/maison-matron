@@ -1,0 +1,14 @@
+.panel {
+  --a4-width: min(1000px, max(480px, calc((100svh - 108px) * 210 / 297)));
+  --sheet-width: calc(var(--a4-width) * 1.2);
+  --sheet-height: calc(var(--a4-width) * 297 / 210);
+}
+
+.paper {
+  background-image:
+    linear-gradient(rgb(255 253 248 / 0.5), rgb(255 253 248 / 0.5)),
+    url("../../public/textures/paper-faint-fibre.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
