@@ -31,18 +31,29 @@ test("every call to action leads to the booking form", async ({ page }) => {
   await expect(page.locator("#booking form")).toBeVisible();
 });
 
-test("section 3 shows its archival photo, covering its 4:5 frame", async ({
-  page,
-}) => {
-  await page.goto("/");
-  const photo = page.getByRole("img", { name: /Photographie d'archive/ });
-  await expect(photo).toBeVisible();
-  await expect(photo).toHaveCSS("object-fit", "cover");
-  await expect
-    .poll(() =>
-      photo.evaluate((element: HTMLImageElement) => element.naturalWidth),
-    )
-    .toBeGreaterThan(0);
-  const box = await photo.boundingBox();
-  expect((box?.width ?? 0) / (box?.height ?? 1)).toBeCloseTo(4 / 5, 2);
-});
+const visuals = [
+  { section: 3, name: /Photographie d'archive/, ratio: 4 / 5 },
+  { section: 4, name: /Deux fauteuils médaillon/, ratio: 3 / 2 },
+  { section: 5, name: /Fauteuil Voltaire/, ratio: 4 / 5 },
+].map((visual) => ({ ...visual, title: titles[visual.section - 1] ?? "" }));
+
+for (const visual of visuals) {
+  test(`section ${visual.section} shows its photo, covering its frame`, async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const photo = page
+      .locator("section")
+      .filter({ has: page.getByRole("heading", { name: visual.title }) })
+      .getByRole("img", { name: visual.name });
+    await expect(photo).toBeVisible();
+    await expect(photo).toHaveCSS("object-fit", "cover");
+    await expect
+      .poll(() =>
+        photo.evaluate((element: HTMLImageElement) => element.naturalWidth),
+      )
+      .toBeGreaterThan(0);
+    const box = await photo.boundingBox();
+    expect((box?.width ?? 0) / (box?.height ?? 1)).toBeCloseTo(visual.ratio, 2);
+  });
+}
