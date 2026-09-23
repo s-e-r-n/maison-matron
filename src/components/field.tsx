@@ -1,16 +1,14 @@
 import { useId } from "react";
 import type { dictionary_key } from "@/lib/form_contract/dictionary";
 
-type input_key = Exclude<dictionary_key, "freetext">;
-
 type input_attributes = {
   type: "email" | "tel" | "text";
   autoComplete: string;
   inputMode?: "email" | "tel";
-  autoCapitalize?: "words" | "characters";
+  autoCapitalize?: "words" | "characters" | "sentences";
 };
 
-const attributes: Record<input_key, input_attributes> = {
+const attributes: Record<dictionary_key, input_attributes> = {
   "given-name": {
     type: "text",
     autoComplete: "given-name",
@@ -38,47 +36,32 @@ const attributes: Record<input_key, input_attributes> = {
     autoComplete: "address-level2",
     autoCapitalize: "words",
   },
+  freetext: { type: "text", autoComplete: "off", autoCapitalize: "sentences" },
 };
-
-const freetext_rows = 4;
 
 type field_props = {
   name: dictionary_key;
   label: string;
-  placeholder?: string;
-  required?: boolean;
   className?: string;
 };
 
-export const Field = ({
-  name,
-  label,
-  placeholder,
-  required,
-  className,
-}: field_props) => {
+export const Field = ({ name, label, className }: field_props) => {
   const id = useId();
   return (
-    <label htmlFor={id} className={className}>
-      <span>{label}</span>
-      {name === "freetext" ? (
-        <textarea
-          id={id}
-          name={name}
-          placeholder={placeholder}
-          required={required}
-          rows={freetext_rows}
-        />
-      ) : (
-        <input
-          id={id}
-          name={name}
-          placeholder={placeholder}
-          required={required}
-          spellCheck={false}
-          {...attributes[name]}
-        />
-      )}
-    </label>
+    <div className={className}>
+      <label
+        htmlFor={id}
+        className="mb-[2px] block font-display text-base leading-none text-sheet-ink italic"
+      >
+        {label}
+      </label>
+      <input
+        id={id}
+        name={name}
+        spellCheck={false}
+        className="block w-full appearance-none rounded-none border-0 border-b border-sheet-rule bg-transparent p-0 pb-1 font-sans text-base leading-none text-sheet-ink focus:outline-none focus-visible:border-ink"
+        {...attributes[name]}
+      />
+    </div>
   );
 };
