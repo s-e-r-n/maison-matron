@@ -9,7 +9,7 @@ const titles = [
   "Le processus & la restitution",
   "4 saisons, 4 privilèges",
   "Vous travaillez avec un décorateur d'intérieur ?",
-  "Formulaire",
+  "L'atelier vient à vous, c'est offert.",
 ];
 
 test("renders sections 1 to 9 in the order of the redaction", async ({

@@ -165,7 +165,13 @@ const Home = () => (
           </p>
         </CenteredSection>
 
-        <LeadSheet id="booking" title="Formulaire" send="Je réserve ma visite">
+        <LeadSheet
+          id="booking"
+          title={
+            <SectionTitle>L'atelier vient à vous, c'est offert.</SectionTitle>
+          }
+          send="Je réserve ma visite"
+        >
           <Field name="given-name" label="Votre prénom" />
           <Field name="family-name" label="Votre nom de famille" />
           <Field name="email" label="Votre email" />

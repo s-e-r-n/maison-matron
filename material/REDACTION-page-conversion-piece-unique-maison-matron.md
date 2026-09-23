@@ -84,4 +84,6 @@ Nous échangeons directement avec lui, vous n'avez rien à organiser.
 
 ## Formulaire
 
+### L'atelier vient à vous, c'est offert.
+
 ## Pied de page
