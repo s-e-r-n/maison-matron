@@ -39,3 +39,8 @@ Sort:
 | The size a photo renders at | The browser, from the `img` intrinsic ratio and the width of its column | Nobody | The layout |
 
 ## Amendments
+- The frames of `SideVisualSection` and `WideVisualSection` carry no aspect ratio and no black while they hold a visual; the 4:5 and 3:2 black placeholder survives only on an empty frame, through `empty:`.
+- Below `md` every visual is full bleed, its side margin of 16px starts at `md`.
+- Below `md` every text is flush left, titles included; `CenteredSection`, `WideVisualSection` and the title of `LeadSheet` centre from `md` only.
+- `tests/conversion_page.spec.ts` no longer asserts `object-fit: cover` nor the 3:2 and 4:5 frames, `tests/responsive.spec.ts` owns the ratio of every photo.
+- `tests/responsive.spec.ts` also runs on WebKit, as a second Playwright project, and `bootstrap` installs WebKit.

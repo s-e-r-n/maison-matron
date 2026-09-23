@@ -14,7 +14,7 @@
     "e2e": "playwright test --pass-with-no-tests --reporter=line",
     "verify": "npm run -s typecheck && npm run -s lint && npm run -s check:comments && npm run -s test && npm run -s e2e && npm run -s build",
     "check:comments": "! grep -rnE --include='*.ts' --include='*.tsx' '^[[:space:]]*(//|/\\*|\\*)' src | grep -vE 'kill_switch\\.ts|event_dictionary\\.ts'",
-    "bootstrap": "npm ci && npx playwright install chromium && ([ -f .env ] || cp .env.example .env) && npm run verify"
+    "bootstrap": "npm ci && npx playwright install chromium webkit && ([ -f .env ] || cp .env.example .env) && npm run verify"
   },
   "dependencies": {
     "next": "16.3.5",
