@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 import logo from "../../public/brand/maison-matron-logo-complete.svg";
+import styles from "./hero.module.css";
 
 type hero_props = { children: ReactNode };
 
@@ -15,6 +17,21 @@ export const Hero = ({ children }: hero_props) => (
       aria-hidden
       className="absolute inset-0 size-full object-cover"
     />
+    <div aria-hidden className="absolute inset-0 bg-ink/40" />
+    <div
+      aria-hidden
+      className={cn(
+        "pointer-events-none absolute inset-x-0 bottom-0 h-[8%] *:absolute *:inset-0",
+        styles.blur,
+      )}
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
     <div className="page-width relative flex min-h-svh flex-col justify-between gap-12 pt-5 pb-12 lg:gap-16 lg:py-[min(6%,86px)]">
       <div className="flex justify-center">
         <Image

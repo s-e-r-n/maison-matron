@@ -41,3 +41,35 @@ test("the hero video plays muted, looped and inline, without controls", async ({
   const source = await video.getAttribute("src");
   expect((await request.head(source ?? "")).status()).toBe(200);
 });
+
+test("a black mask and a progressive blur lie over the hero video", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const hero = page.locator("section").filter({ has: page.locator("h1") });
+  await expect(hero.locator("video + div")).toHaveCSS(
+    "background-color",
+    /0\.4\)$/,
+  );
+  const band = hero.locator("video + div + div");
+  const share = await band.evaluate(
+    (element) =>
+      element.getBoundingClientRect().height /
+      (element.parentElement?.getBoundingClientRect().height ?? 1),
+  );
+  expect(share).toBeGreaterThanOrEqual(0.05);
+  expect(share).toBeLessThanOrEqual(0.1);
+  const radii = await band
+    .locator("> div")
+    .evaluateAll((layers) =>
+      layers.map((layer) => getComputedStyle(layer).backdropFilter),
+    );
+  expect(radii).toEqual([
+    "blur(0.5px)",
+    "blur(1px)",
+    "blur(2px)",
+    "blur(4px)",
+    "blur(8px)",
+    "blur(16px)",
+  ]);
+});

@@ -39,3 +39,5 @@ Sort:
 | Whether the video plays | The `<video>` element, in the DOM | Nobody | The browser, from the attributes `autoplay muted loop playsinline` |
 
 ## Amendments
+- A black mask at 40 % covers the whole video, under the copy and the logotype, Gray's option A for legibility.
+- A progressive blur covers the bottom 8 % of the hero: six stacked layers, `backdrop-filter` from 0.5 to 16px, each masked in over its sixth of the band, in `hero.module.css` since Tailwind cannot express the stack.
