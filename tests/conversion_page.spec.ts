@@ -30,3 +30,19 @@ test("every call to action leads to the booking form", async ({ page }) => {
   }
   await expect(page.locator("#booking form")).toBeVisible();
 });
+
+test("section 3 shows its archival photo, covering its 4:5 frame", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const photo = page.getByRole("img", { name: /Photographie d'archive/ });
+  await expect(photo).toBeVisible();
+  await expect(photo).toHaveCSS("object-fit", "cover");
+  await expect
+    .poll(() =>
+      photo.evaluate((element: HTMLImageElement) => element.naturalWidth),
+    )
+    .toBeGreaterThan(0);
+  const box = await photo.boundingBox();
+  expect((box?.width ?? 0) / (box?.height ?? 1)).toBeCloseTo(4 / 5, 2);
+});

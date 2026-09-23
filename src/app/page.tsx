@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CallToAction } from "@/components/call_to_action";
 import { CenteredSection } from "@/components/centered_section";
 import { Field } from "@/components/field";
@@ -8,6 +9,7 @@ import { SideVisualSection } from "@/components/side_visual_section";
 import { SectionSubtitle, SectionTitle } from "@/components/typography";
 import { Watermarked } from "@/components/watermarked";
 import { WideVisualSection } from "@/components/wide_visual_section";
+import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
 
 const Home = () => (
   <main>
@@ -24,7 +26,15 @@ const Home = () => (
           <p>L'unique est éclipsé par les collections à la mode.</p>
         </CenteredSection>
 
-        <SideVisualSection>
+        <SideVisualSection
+          visual={
+            <Image
+              src={archival_photo}
+              alt="Photographie d'archive en noir et blanc : un homme en gilet et chemise aux manches retroussées tient un cheval par la longe, devant une bâtisse."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          }
+        >
           <SectionTitle>
             Maison Matron, artisan depuis 4 générations
           </SectionTitle>

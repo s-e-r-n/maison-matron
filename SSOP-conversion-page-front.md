@@ -69,3 +69,4 @@ Sort:
 - The face of `CallToAction` wraps its label when the label cannot fit, instead of `whitespace-nowrap`.
 - `tests/lead_submission.spec.ts` is removed with the scaffold form it tested; `tests/conversion_page.spec.ts` checks the order of the sections and the target of the calls to action, and no submission.
 - `Hero` takes only `children`, its action: its copy moved into its own markup, and its 16:9 frame became the full frame video of `SSOP-hero-video.md`.
+- `SideVisualSection` takes an optional `visual`, rendered with `object-fit: cover` in its 4:5 frame; section 3 carries the archival photo `public/visuals/archival-photo-man-leading-horse.jpg` through `next/image`, the other two keep their placeholder.
