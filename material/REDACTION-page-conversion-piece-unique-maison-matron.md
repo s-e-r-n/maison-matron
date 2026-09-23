@@ -48,7 +48,7 @@ Si vous le souhaitez, nous examinons le reste de votre mobilier :
 
 la santé des bois et des matières et ce qui vaut la peine d'être restauré.
 
-[Je résèrve ma viste]
+[Je réserve ma visite]
 
 ## Le processus & la restitution
 
@@ -62,7 +62,7 @@ Lorsque les artisans ont terminé, nous fixons avec vous le jour et l'heure de r
 
 Enfin, nous vous dévoilons chaque ouvrage : unique et à votre image.
 
-[Je résèrve ma viste]
+[Je réserve ma visite]
 
 ## 4 saisons, 4 privilèges
 
