@@ -17,7 +17,7 @@ export const Hero = ({ children }: hero_props) => (
       aria-hidden
       className="absolute inset-0 size-full object-cover"
     />
-    <div aria-hidden className="absolute inset-0 bg-ink/40" />
+    <div aria-hidden className="absolute inset-0 bg-ink/50" />
     <div
       aria-hidden
       className={cn(

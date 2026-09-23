@@ -49,7 +49,7 @@ test("a black mask and a progressive blur lie over the hero video", async ({
   const hero = page.locator("section").filter({ has: page.locator("h1") });
   await expect(hero.locator("video + div")).toHaveCSS(
     "background-color",
-    /0\.4\)$/,
+    /0\.5\)$/,
   );
   const band = hero.locator("video + div + div");
   const share = await band.evaluate(

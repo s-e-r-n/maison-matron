@@ -16,4 +16,4 @@ Problem and decision are one line each. An error code, a trace id or a ticket nu
 | 2026-09-23 | The form of `material/design.html` switches to two columns at 600px, while the page targets only `md` and `lg` | The sheet form switches to two columns at `md`, 768px | - |
 | 2026-09-23 | At 320px « S'abonner aux 4 privilèges » overflowed the page by 10px on one line | The button label wraps on a second line only when it cannot fit, the button keeps 216px minimum and 58px minimum height | - |
 | 2026-09-23 | The hero showed a 16:9 black placeholder frame where the design waited for footage | The hero is full frame, `maison-matron-hero.mp4` plays muted in a loop as its background, copied as delivered, its optimization deferred | - |
-| 2026-09-23 | The white copy and logotype of the hero vanished over the bright shots of the video | A uniform black mask at 40 % lies over the whole video, and a progressive blur covers the bottom 8 % of the hero | - |
+| 2026-09-23 | The white copy and logotype of the hero vanished over the bright shots of the video | A uniform black mask at 50 % lies over the whole video, and a progressive blur covers the bottom 20 % of the hero | - |
