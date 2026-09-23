@@ -68,3 +68,4 @@ Sort:
 - A field spanning both columns of the sheet carries `col-span-full`, not `md:col-span-2`.
 - The face of `CallToAction` wraps its label when the label cannot fit, instead of `whitespace-nowrap`.
 - `tests/lead_submission.spec.ts` is removed with the scaffold form it tested; `tests/conversion_page.spec.ts` checks the order of the sections and the target of the calls to action, and no submission.
+- `Hero` takes only `children`, its action: its copy moved into its own markup, and its 16:9 frame became the full frame video of `SSOP-hero-video.md`.
