@@ -21,10 +21,12 @@ export const Hero = ({ children }: hero_props) => (
     <div
       aria-hidden
       className={cn(
-        "pointer-events-none absolute inset-x-0 bottom-0 h-[8%] *:absolute *:inset-0",
+        "pointer-events-none absolute inset-x-0 bottom-0 h-[20%] *:absolute *:inset-0",
         styles.blur,
       )}
     >
+      <div />
+      <div />
       <div />
       <div />
       <div />
