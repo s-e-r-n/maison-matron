@@ -68,3 +68,11 @@ Sort:
 - A field spanning both columns of the sheet carries `col-span-full`, not `md:col-span-2`.
 - The face of `CallToAction` wraps its label when the label cannot fit, instead of `whitespace-nowrap`.
 - `tests/lead_submission.spec.ts` is removed with the scaffold form it tested; `tests/conversion_page.spec.ts` checks the order of the sections and the target of the calls to action, and no submission.
+- `Hero` takes only `children`, its action: its copy moved into its own markup, and its 16:9 frame became the full frame video of `SSOP-hero-video.md`.
+- `SideVisualSection` takes an optional `visual`, rendered with `object-fit: cover` in its 4:5 frame; section 3 carries the archival photo `public/visuals/archival-photo-man-leading-horse.jpg` through `next/image`, the other two keep their placeholder.
+- `WideVisualSection` takes an optional `visual` too, rendered with `object-fit: cover` in its 3:2 frame; section 4 carries `chaises-pin-japonais.png`, section 5 `yellow-chair-white-bg.png`, both through `next/image`, centred.
+- `LeadSheet` takes its `title` as markup, rendered visible and centred above the sheet at the section title level; section 9 reads « L'atelier vient à vous, c'est offert. » in place of the hidden « Formulaire ».
+- The form section opens on the dashed rule `.couture` of `material/design.html`, an `hr` 1px high, 6px dashes every 10px in `rgb(0 0 0 / 0.5)`, in Tailwind, before its title.
+- `CenteredSection` takes an optional `className`; section 8 is at least half the viewport high, its content centred in it.
+- Sections 6 and 7 reuse the photos of sections 4 and 5, until their own visuals exist; no section keeps a placeholder.
+- `CenteredSection` itself is at least half the viewport high, its content centred in it, for sections 2 and 8 alike; the `className` it briefly took is gone.

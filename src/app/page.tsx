@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CallToAction } from "@/components/call_to_action";
 import { CenteredSection } from "@/components/centered_section";
 import { Field } from "@/components/field";
@@ -8,15 +9,13 @@ import { SideVisualSection } from "@/components/side_visual_section";
 import { SectionSubtitle, SectionTitle } from "@/components/typography";
 import { Watermarked } from "@/components/watermarked";
 import { WideVisualSection } from "@/components/wide_visual_section";
+import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
+import pine_chairs from "../../public/visuals/chaises-pin-japonais.png";
+import yellow_chair from "../../public/visuals/yellow-chair-white-bg.png";
 
 const Home = () => (
   <main>
-    <Hero
-      lead="Maison Matron,"
-      title="artisans tapissiers et ébénistes depuis 4 générations"
-      quote="« Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. »"
-      signature="Anne-Claude"
-    >
+    <Hero>
       <CallToAction href="#booking">L'atelier vient à vous</CallToAction>
     </Hero>
 
@@ -29,7 +28,15 @@ const Home = () => (
           <p>L'unique est éclipsé par les collections à la mode.</p>
         </CenteredSection>
 
-        <SideVisualSection>
+        <SideVisualSection
+          visual={
+            <Image
+              src={archival_photo}
+              alt="Photographie d'archive en noir et blanc : un homme en gilet et chemise aux manches retroussées tient un cheval par la longe, devant une bâtisse."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          }
+        >
           <SectionTitle>
             Maison Matron, artisan depuis 4 générations
           </SectionTitle>
@@ -45,7 +52,15 @@ const Home = () => (
           <p>Ennoblir chaque pièce qui nous est confiée.</p>
         </SideVisualSection>
 
-        <WideVisualSection>
+        <WideVisualSection
+          visual={
+            <Image
+              src={pine_chairs}
+              alt="Deux fauteuils médaillon en bois naturel, garnis d'un tissu écru brodé de branches de pin rouges, sur fond clair."
+              sizes="100vw"
+            />
+          }
+        >
           <SectionTitle>Le vrai sur-mesure</SectionTitle>
           <p>
             Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs
@@ -61,6 +76,13 @@ const Home = () => (
         </WideVisualSection>
 
         <SideVisualSection
+          visual={
+            <Image
+              src={yellow_chair}
+              alt="Fauteuil Voltaire en bois blond, garni d'un velours à feuillage jaune sur fond gris, sur fond blanc."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          }
           action={
             <CallToAction href="#booking">Je réserve ma visite</CallToAction>
           }
@@ -88,6 +110,13 @@ const Home = () => (
         </SideVisualSection>
 
         <WideVisualSection
+          visual={
+            <Image
+              src={pine_chairs}
+              alt="Deux fauteuils médaillon en bois naturel, garnis d'un tissu écru brodé de branches de pin rouges, sur fond clair."
+              sizes="100vw"
+            />
+          }
           action={
             <CallToAction href="#booking">Je réserve ma visite</CallToAction>
           }
@@ -106,6 +135,13 @@ const Home = () => (
         </WideVisualSection>
 
         <SideVisualSection
+          visual={
+            <Image
+              src={yellow_chair}
+              alt="Fauteuil Voltaire en bois blond, garni d'un velours à feuillage jaune sur fond gris, sur fond blanc."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          }
           action={
             <LeadForm className="flex flex-col items-start gap-10">
               <Field
@@ -143,7 +179,13 @@ const Home = () => (
           </p>
         </CenteredSection>
 
-        <LeadSheet id="booking" title="Formulaire" send="Je réserve ma visite">
+        <LeadSheet
+          id="booking"
+          title={
+            <SectionTitle>L'atelier vient à vous, c'est offert.</SectionTitle>
+          }
+          send="Je réserve ma visite"
+        >
           <Field name="given-name" label="Votre prénom" />
           <Field name="family-name" label="Votre nom de famille" />
           <Field name="email" label="Votre email" />
