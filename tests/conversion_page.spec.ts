@@ -35,6 +35,8 @@ const visuals = [
   { section: 3, name: /Photographie d'archive/, ratio: 4 / 5 },
   { section: 4, name: /Deux fauteuils médaillon/, ratio: 3 / 2 },
   { section: 5, name: /Fauteuil Voltaire/, ratio: 4 / 5 },
+  { section: 6, name: /Deux fauteuils médaillon/, ratio: 3 / 2 },
+  { section: 7, name: /Fauteuil Voltaire/, ratio: 4 / 5 },
 ].map((visual) => ({ ...visual, title: titles[visual.section - 1] ?? "" }));
 
 for (const visual of visuals) {

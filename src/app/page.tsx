@@ -110,6 +110,13 @@ const Home = () => (
         </SideVisualSection>
 
         <WideVisualSection
+          visual={
+            <Image
+              src={pine_chairs}
+              alt="Deux fauteuils médaillon en bois naturel, garnis d'un tissu écru brodé de branches de pin rouges, sur fond clair."
+              sizes="100vw"
+            />
+          }
           action={
             <CallToAction href="#booking">Je réserve ma visite</CallToAction>
           }
@@ -128,6 +135,13 @@ const Home = () => (
         </WideVisualSection>
 
         <SideVisualSection
+          visual={
+            <Image
+              src={yellow_chair}
+              alt="Fauteuil Voltaire en bois blond, garni d'un velours à feuillage jaune sur fond gris, sur fond blanc."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          }
           action={
             <LeadForm className="flex flex-col items-start gap-10">
               <Field
