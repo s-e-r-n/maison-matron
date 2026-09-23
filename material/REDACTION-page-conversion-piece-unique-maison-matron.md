@@ -1,8 +1,6 @@
 ## Maison Matron, artisans tapissiers et ébénistes depuis 4 générations
 
-« Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. »
-
-Anne-Claude
+« Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. » - Anne-Claude
 
 [L'atelier vient à vous]
 

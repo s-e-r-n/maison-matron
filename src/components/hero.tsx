@@ -46,13 +46,10 @@ export const Hero = ({ children }: hero_props) => (
           <span className="lg:block">Maison Matron,</span> artisans tapissiers
           et ébénistes depuis 4 générations
         </h1>
-        <div className="mb-12 space-y-4 lg:mb-16">
-          <p className="text-[17px] leading-[1.45] lg:max-w-[400px]">
-            « Des conseils avisés, une superbe sélection de tissus et un
-            savoir-faire minutieux. »
-          </p>
-          <p className="leading-[1.5]">Anne-Claude</p>
-        </div>
+        <p className="mb-12 text-[17px] leading-[1.45] lg:mb-16 lg:max-w-[400px]">
+          « Des conseils avisés, une superbe sélection de tissus et un
+          savoir-faire minutieux. » - Anne-Claude
+        </p>
         {children}
       </div>
     </div>
