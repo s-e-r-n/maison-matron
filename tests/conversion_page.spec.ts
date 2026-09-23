@@ -73,20 +73,24 @@ test("a dashed rule stands above the form section's title", async ({
   );
 });
 
-test("section 8 takes half the viewport, its content centred", async ({
-  page,
-}) => {
-  await page.setViewportSize({ width: 375, height: 800 });
-  await page.goto("/");
-  const section = page
-    .locator("section")
-    .filter({ has: page.getByRole("heading", { name: titles[7] }) });
-  const box = await section.boundingBox();
-  expect(box?.height).toBeGreaterThanOrEqual(400);
-  const first = await section.locator("> *").first().boundingBox();
-  const last = await section.locator("> *").last().boundingBox();
-  const above = (first?.y ?? 0) - (box?.y ?? 0);
-  const below =
-    (box?.y ?? 0) + (box?.height ?? 0) - ((last?.y ?? 0) + (last?.height ?? 0));
-  expect(Math.abs(above - below)).toBeLessThanOrEqual(1);
-});
+for (const section of [2, 8]) {
+  test(`section ${section} takes half the viewport, its content centred`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 375, height: 800 });
+    await page.goto("/");
+    const centred = page.locator("section").filter({
+      has: page.getByRole("heading", { name: titles[section - 1] }),
+    });
+    const box = await centred.boundingBox();
+    expect(box?.height).toBeGreaterThanOrEqual(400);
+    const first = await centred.locator("> *").first().boundingBox();
+    const last = await centred.locator("> *").last().boundingBox();
+    const above = (first?.y ?? 0) - (box?.y ?? 0);
+    const below =
+      (box?.y ?? 0) +
+      (box?.height ?? 0) -
+      ((last?.y ?? 0) + (last?.height ?? 0));
+    expect(Math.abs(above - below)).toBeLessThanOrEqual(1);
+  });
+}

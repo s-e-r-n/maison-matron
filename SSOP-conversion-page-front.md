@@ -75,3 +75,4 @@ Sort:
 - The form section opens on the dashed rule `.couture` of `material/design.html`, an `hr` 1px high, 6px dashes every 10px in `rgb(0 0 0 / 0.5)`, in Tailwind, before its title.
 - `CenteredSection` takes an optional `className`; section 8 is at least half the viewport high, its content centred in it.
 - Sections 6 and 7 reuse the photos of sections 4 and 5, until their own visuals exist; no section keeps a placeholder.
+- `CenteredSection` itself is at least half the viewport high, its content centred in it, for sections 2 and 8 alike; the `className` it briefly took is gone.

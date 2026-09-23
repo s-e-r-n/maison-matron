@@ -1,13 +1,9 @@
 import type { ReactNode } from "react";
-import { cn } from "@/lib/utils";
 
-type centered_section_props = { children: ReactNode; className?: string };
+type centered_section_props = { children: ReactNode };
 
-export const CenteredSection = ({
-  children,
-  className,
-}: centered_section_props) => (
-  <section className={cn("copy-inset space-y-4 text-center", className)}>
+export const CenteredSection = ({ children }: centered_section_props) => (
+  <section className="copy-inset flex min-h-[50svh] flex-col items-center justify-center space-y-4 text-center">
     {children}
   </section>
 );

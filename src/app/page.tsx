@@ -166,7 +166,7 @@ const Home = () => (
           <p>30 jours avant chacune, nous vous dévoilons une exclusivité.</p>
         </SideVisualSection>
 
-        <CenteredSection className="flex min-h-[50svh] flex-col items-center justify-center">
+        <CenteredSection>
           <SectionTitle>
             Vous travaillez avec un décorateur d'intérieur ?
           </SectionTitle>
