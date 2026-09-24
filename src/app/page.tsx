@@ -6,7 +6,7 @@ import { Hero } from "@/components/hero";
 import { LeadForm } from "@/components/lead_form";
 import { LeadSheet } from "@/components/lead_sheet";
 import { SideVisualSection } from "@/components/side_visual_section";
-import { SectionSubtitle, SectionTitle } from "@/components/typography";
+import { SectionTitle } from "@/components/typography";
 import { Watermarked } from "@/components/watermarked";
 import { WideVisualSection } from "@/components/wide_visual_section";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
@@ -40,7 +40,6 @@ const Home = () => (
           <SectionTitle>
             Maison Matron, artisan depuis 4 générations
           </SectionTitle>
-          <SectionSubtitle>20'000 pièces, pour 5'000 clients.</SectionSubtitle>
           <p>
             Depuis un siècle, notre savoir-faire façonne des objets, travaillés
             à la main et habillés des plus beaux tissus.
