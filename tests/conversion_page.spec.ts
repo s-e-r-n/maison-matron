@@ -64,7 +64,7 @@ test("a dashed rule stands above the form section's title", async ({
   await expect(rule).toHaveCSS("height", "1px");
   await expect(rule).toHaveCSS(
     "background-image",
-    "repeating-linear-gradient(to right, rgba(0, 0, 0, 0.5) 0px, rgba(0, 0, 0, 0.5) 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 10px)",
+    "repeating-linear-gradient(to right, rgba(255, 255, 255, 0.5) 0px, rgba(255, 255, 255, 0.5) 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 10px)",
   );
 });
 

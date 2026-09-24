@@ -13,8 +13,11 @@ type lead_sheet_props = {
 };
 
 export const LeadSheet = ({ id, title, send, children }: lead_sheet_props) => (
-  <section id={id} className="flex flex-col gap-12 lg:gap-16 lg:pt-4">
-    <hr className="copy-inset h-px border-0 bg-[image:repeating-linear-gradient(to_right,rgb(0_0_0/0.5)_0_6px,transparent_6px_10px)] bg-clip-content" />
+  <section
+    id={id}
+    className="flex flex-col gap-12 bg-ink pt-12 text-paper shadow-[0_0_0_100vmax_var(--color-ink)] [clip-path:inset(0_-100vmax_-100vmax)] lg:gap-16 lg:pt-24"
+  >
+    <hr className="copy-inset h-px border-0 bg-[image:repeating-linear-gradient(to_right,rgb(255_255_255/0.5)_0_6px,transparent_6px_10px)] bg-clip-content" />
     <div className="copy-inset md:text-center">{title}</div>
     <div
       className={cn(
