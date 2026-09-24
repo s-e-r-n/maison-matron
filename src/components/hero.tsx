@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { SectionSubtitle } from "@/components/typography";
 import { cn } from "@/lib/utils";
 import logo from "../../public/brand/maison-matron-logo-complete.svg";
 import styles from "./hero.module.css";
@@ -48,6 +49,9 @@ export const Hero = ({ children }: hero_props) => (
           <span className="lg:block">Maison Matron,</span> artisans tapissiers
           et ébénistes depuis 4 générations
         </h1>
+        <div className="mb-4">
+          <SectionSubtitle>20'000 pièces, pour 5'000 clients.</SectionSubtitle>
+        </div>
         <p className="mb-12 text-[17px] leading-[1.45] lg:mb-16 lg:max-w-[400px]">
           « Des conseils avisés, une superbe sélection de tissus et un
           savoir-faire minutieux. » - Anne-Claude
