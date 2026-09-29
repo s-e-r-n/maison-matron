@@ -388,19 +388,32 @@ test("the reviews section holds its ten reviews, set like the hero's quote, the 
 }) => {
   await page.goto("/");
   const block = sectionOf(page, "Ils nous ont confié leurs pièces");
-  const reviews = block.locator("p");
+  const reviews = block.locator("blockquote p");
   await expect(reviews).toHaveText([
-    "« Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. Nous sommes ravis de nos nouvelles chaises et nous ferons sans aucun doute à nouveau appel à M. Matron. » - Anne-Claude",
-    "« Nous avons remis 6 chaises de salon pour mettre une nouvelle tapisserie et sommes très satisfaits du résultat. Prix raisonnable, tissu de qualité, finitions impeccables, livraison dans les (courts) délais et un contact très agréable et professionnel. Nous pouvons recommander Tapissier Matron. » - Stephan",
-    "« Grand professionnalisme sans oublier une bienveillance et sympathie exceptionnelles. » - MP",
-    "« Je recommande Monsieur Matron qui a effectué une très jolie restauration sur mon fauteuil. Travail au top. » - Tony",
-    "« Je recommande M. Matron, il a restauré mon fauteuil, le travail est parfait. » - Trévis",
-    "« Très bon service, bonne écoute du client, patience le temps que le choix soit établi, livraison conforme aux attentes et travail très propre. » - Santiago",
-    "« Je ne puis que recommander la Maison Matron qui est une belle entreprise familiale. De bon conseil avec un travail soigné et de qualité. Absolument ravie du rendu concernant un vieux fauteuil de famille, alors n'hésitez pas et prenez rapidement contact avec eux. » - Annick",
-    "« De sincères remerciements à la famille Matron pour leur intervention. Ils ont littéralement sauvé notre enfilade en teck qui avait subi des dommages liés à une infiltration. » - Sebastien",
-    "« Bon contact et bonne expertise. Mon fauteuil a maintenant un tissu magnifique ! Il commence sa seconde vie !! Merci. Je recommande cet artisan. » - Aline",
-    "« Superbe travail !!! Merci. » - Anne",
+    "« Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. Nous sommes ravis de nos nouvelles chaises et nous ferons sans aucun doute à nouveau appel à M. Matron. »",
+    "« Nous avons remis 6 chaises de salon pour mettre une nouvelle tapisserie et sommes très satisfaits du résultat. Tissu de qualité, finitions impeccables, livraison dans les (courts) délais et un contact très agréable et professionnel. Nous pouvons recommander Tapissier Matron. »",
+    "« Grand professionnalisme sans oublier une bienveillance et sympathie exceptionnelles. »",
+    "« Je recommande Monsieur Matron qui a effectué une très jolie restauration sur mon fauteuil. Travail au top. »",
+    "« Je recommande M. Matron, il a restauré mon fauteuil, le travail est parfait. »",
+    "« Très bon service, bonne écoute du client, patience le temps que le choix soit établi, livraison conforme aux attentes et travail très propre. »",
+    "« Je ne puis que recommander la Maison Matron qui est une belle entreprise familiale. De bon conseil avec un travail soigné et de qualité. Absolument ravie du rendu concernant un vieux fauteuil de famille, alors n'hésitez pas et prenez rapidement contact avec eux. »",
+    "« De sincères remerciements à la famille Matron pour leur intervention. Ils ont littéralement sauvé notre enfilade en teck qui avait subi des dommages liés à une infiltration. »",
+    "« Bon contact et bonne expertise. Mon fauteuil a maintenant un tissu magnifique ! Il commence sa seconde vie ! Merci. Je recommande cet artisan. »",
+    "« Superbe travail ! Merci. »",
   ]);
+  await expect(block.locator("figure figcaption")).toHaveText([
+    "- Anne-Claude",
+    "- Stephan",
+    "- MP",
+    "- Tony",
+    "- Trévis",
+    "- Santiago",
+    "- Annick",
+    "- Sebastien",
+    "- Aline",
+    "- Anne",
+  ]);
+  await expect(block).not.toContainText(/prix|([!?.,])\1/i);
   const heroQuote = page.getByText(
     "« Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. » - Anne-Claude",
   );
@@ -414,8 +427,8 @@ test("the reviews section holds its ten reviews, set like the hero's quote, the 
       (element, name) => getComputedStyle(element).getPropertyValue(name),
       property,
     );
-    for (const review of await reviews.all()) {
-      await expect(review).toHaveCSS(property, expected);
+    for (const text of await block.locator("figure :is(p, figcaption)").all()) {
+      await expect(text).toHaveCSS(property, expected);
     }
   }
   await expect(block.getByRole("link")).toHaveCount(0);
@@ -423,3 +436,35 @@ test("the reviews section holds its ten reviews, set like the hero's quote, the 
     "booking",
   );
 });
+
+for (const width of [375, 768, 1024, 1440]) {
+  test(`at ${width}px each review is its own block, left aligned at a reading measure, its name on the line under it`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/");
+    const block = sectionOf(page, "Ils nous ont confié leurs pièces");
+    const gap = width < 1024 ? 48 : 64;
+    const edge = (await block.getByRole("heading").boundingBox())?.x ?? 0;
+    const figures = await block.locator("figure").all();
+    expect(figures).toHaveLength(10);
+    let previousBottom = -Infinity;
+    for (const figure of figures) {
+      const quote = await figure.locator("p").boundingBox();
+      const name = await figure.locator("figcaption").boundingBox();
+      if (!quote || !name) throw new Error("review without quote or name");
+      expect(quote.x).toBeCloseTo(edge, 0);
+      expect(name.x).toBeCloseTo(edge, 0);
+      expect(quote.width).toBeLessThanOrEqual(600);
+      expect(name.y - (quote.y + quote.height)).toBeCloseTo(16, 0);
+      expect(quote.y - previousBottom).toBeGreaterThanOrEqual(gap - 0.5);
+      previousBottom = name.y + name.height;
+    }
+    const aligns = await block
+      .locator(":is(h2, p, figcaption)")
+      .evaluateAll((texts) =>
+        texts.map((text) => getComputedStyle(text).textAlign),
+      );
+    for (const align of aligns) expect(["left", "start"]).toContain(align);
+  });
+}

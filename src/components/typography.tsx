@@ -23,3 +23,9 @@ export const Caption = ({ children }: typography_props) => (
 export const Quote = ({ children }: typography_props) => (
   <p className="text-[17px] leading-[1.45]">{children}</p>
 );
+
+export const Reviewer = ({ children }: typography_props) => (
+  <figcaption className="mt-4 text-[17px] leading-[1.45]">
+    {children}
+  </figcaption>
+);
