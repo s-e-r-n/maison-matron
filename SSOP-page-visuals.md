@@ -46,3 +46,10 @@ Sort:
 - « 4 saisons, 4 privilèges » and « Vous travaillez avec un décorateur d'intérieur ? » become `WideVisualSection`s whose visual is a pair; the first loses its email form and takes the booking call to action.
 - A pair of different ratios stands at one height through columns proportional to each photo's width over height, `md:grid-cols-[0.8fr_0.7483fr]` for `chaise-bleue.jpg` 2400x3000 and `chaise-miel.png` 1760x2352; a pair of equal ratios uses `md:grid-cols-2`.
 - The page e2e reaches the footer by the `footer` element, which is no longer the `contentinfo` landmark inside `main`.
+- Round 3 reverses the order of round 2: `WideVisualSection` is back to the structure of main, its action inside the text block under the text, one gap of 48px then 64px from `lg` before the visual; only its frame changes, a one column grid, so it holds one image or a pair's own grid.
+- `WideVisualSection` and `SideVisualSection` are at least one viewport high, their content centred in it as one unit: the slack goes around the text and its visual, never between them. `SideVisualSection` centres its row from `lg` through `flex-wrap` and `content-center`, its text still aligned on the top of its visual.
+- `CenteredSection` keeps its half viewport, section 2 having no visual.
+- « Vous travaillez avec un décorateur d'intérieur ? » becomes a `SideVisualSection` holding `chaise-bleue.jpg` alone; `chaise-miel.png` leaves the page and the repository, and the pair of different ratios with it.
+- « L'atelier vient à vous, et c'est offert » holds `outil.jpg`, a 3:2 landscape visual, so it moves to `WideVisualSection`: a landscape visual takes the stacked model, a portrait one the side model.
+- From `lg`, no line of `WideVisualSection`'s text block wraps (`lg:whitespace-nowrap`), since it no longer shares the width with a visual; below `lg` lines wrap as usual.
+- Every call to action sits one step closer to its text block, 32px then 48px from `lg` (`mt-8 lg:mt-12`, and `mb-8 lg:mb-12` above the hero's), the human overriding rule 1 of the design directives on this gap; the gap between a text block and its visual stays 48px then 64px.
