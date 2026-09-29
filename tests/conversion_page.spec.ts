@@ -120,7 +120,6 @@ test("section 4 holds « Le dernier chaisier de Suisse » in its text block, in 
     "Le dernier chaisier de Suisse",
     "Depuis 1908, chaque chaise est assemblée à l'ancienne, dans un bois de la région qui a rarement voyagé plus de 100 km.",
     "Profitez de deux savoir-faire centenaires pour vos pièces.",
-    "Nous nous assurerons que vos pièces résonnent avec qui vous êtes.",
   ]);
   await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
 });
@@ -214,7 +213,7 @@ test("from xl no line of a stacked text block wraps", async ({ page }) => {
           const tops = new Set(
             [...range.getClientRects()].map((rect) => Math.round(rect.top)),
           );
-          return tops.size > 1;
+          return tops.size > line.querySelectorAll("br").length + 1;
         })
         .map((line) => line.textContent),
     );
@@ -247,3 +246,33 @@ for (const { width, gap } of [
     for (const measured of gaps) expect(measured).toBe(gap);
   });
 }
+test("the décorateur section reads its subtitle then its three lines, and its call to action", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const block = sectionOf(page, titles[7] ?? "");
+  await expect(block.locator("h2, p")).toHaveText([
+    "Vous travaillez avec un décorateur d'intérieur ?",
+    "C'est parfait.",
+    "Nos métiers d'art fonctionnent en symbiose.",
+    "Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.",
+    "Nous échangeons directement avec lui, vous restez serein.",
+  ]);
+  await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
+});
+
+test("the atelier section reads its subtitles without colon, each line after them capitalised", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const block = sectionOf(page, titles[4] ?? "");
+  await expect(block.locator("h2, p")).toHaveText([
+    "L'atelier vient à vous, et c'est offert",
+    "Quel que soit votre projet, nous venons d'abord en discuter avec vous.",
+    "Un tissu doit être vu, touché, et jugé à la lumière de chez vous.",
+    "Nous vous conseillons dans le détail",
+    "Les matériaux se choisissent selon la vie passée et future de votre objet.",
+    "Si vous le souhaitez, nous examinons le reste de votre mobilier",
+    "La santé des bois et des matières et ce qui vaut la peine d'être restauré.",
+  ]);
+});

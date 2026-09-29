@@ -84,9 +84,6 @@ const Home = () => (
             de la région qui a rarement voyagé plus de 100 km.
           </p>
           <p>Profitez de deux savoir-faire centenaires pour vos pièces.</p>
-          <p>
-            Nous nous assurerons que vos pièces résonnent avec qui vous êtes.
-          </p>
         </WideVisualSection>
 
         <WideVisualSection
@@ -110,17 +107,17 @@ const Home = () => (
             Un tissu doit être vu, touché, et jugé à la lumière de chez vous.
           </p>
           <SectionSubtitle>
-            Nous vous conseillons dans le détail :
+            Nous vous conseillons dans le détail
           </SectionSubtitle>
           <p>
-            les matériaux se choisissent selon la vie passée et future de votre
+            Les matériaux se choisissent selon la vie passée et future de votre
             objet.
           </p>
           <SectionSubtitle>
-            Si vous le souhaitez, nous examinons le reste de votre mobilier :
+            Si vous le souhaitez, nous examinons le reste de votre mobilier
           </SectionSubtitle>
           <p>
-            la santé des bois et des matières et ce qui vaut la peine d'être
+            La santé des bois et des matières et ce qui vaut la peine d'être
             restauré.
           </p>
         </WideVisualSection>
@@ -201,13 +198,12 @@ const Home = () => (
           <SectionTitle>
             Vous travaillez avec un décorateur d'intérieur ?
           </SectionTitle>
-          <p>C'est parfait, car nos métiers d'art fonctionnent en symbiose.</p>
+          <SectionSubtitle>C'est parfait.</SectionSubtitle>
+          <p>Nos métiers d'art fonctionnent en symbiose.</p>
           <p>
             Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.
           </p>
-          <p>
-            Nous échangeons directement avec lui, vous n'avez rien à organiser.
-          </p>
+          <p>Nous échangeons directement avec lui, vous restez serein.</p>
         </SideVisualSection>
 
         <LeadSheet
