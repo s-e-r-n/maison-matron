@@ -261,6 +261,23 @@ test("the décorateur section reads its subtitle then its three lines, and its c
   await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
 });
 
+test("the process section reads its lines, its subtitle last, then its call to action", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const block = sectionOf(page, titles[5] ?? "");
+  await expect(block.locator("h2, p")).toHaveText([
+    "Le processus & la restitution",
+    "Le jour même, nous emportons vos pièces.",
+    "Soyez serein, tout transport est à notre charge.",
+    "Nous vous informons durant tout le processus de réfection.",
+    "Lorsque les artisans ont terminé, nous fixons avec vous le jour et l'heure de restitution.",
+    "Enfin, nous vous dévoilons chaque ouvrage :",
+    "unique et à votre image.",
+  ]);
+  await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
+});
+
 test("the atelier section reads its subtitles without colon, each line after them capitalised", async ({
   page,
 }) => {

@@ -136,19 +136,14 @@ const Home = () => (
         >
           <SectionTitle>Le processus &amp; la restitution</SectionTitle>
           <p>Le jour même, nous emportons vos pièces.</p>
-          <p>
-            Soyez serein, tout transport est à la charge de <em>La Maison</em>.
-          </p>
-          <p>Nous vous tenons informé durant tout le processus de réfection.</p>
+          <p>Soyez serein, tout transport est à notre charge.</p>
+          <p>Nous vous informons durant tout le processus de réfection.</p>
           <p>
             Lorsque les artisans ont terminé, nous fixons avec vous le jour et
             l'heure de restitution.
           </p>
-          <p>
-            Enfin, nous vous dévoilons chaque ouvrage :
-            <br />
-            unique et à votre image.
-          </p>
+          <p>Enfin, nous vous dévoilons chaque ouvrage :</p>
+          <SectionSubtitle>unique et à votre image.</SectionSubtitle>
         </WideVisualSection>
 
         <WideVisualSection
