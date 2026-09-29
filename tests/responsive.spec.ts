@@ -20,7 +20,6 @@ const photos = [
   { name: /Deux fauteuils médaillon/, width: 3000, height: 2000 },
   { name: /Buffet bas/, width: 3000, height: 2000 },
   { name: /Fauteuil à haut dossier/, width: 2400, height: 3000 },
-  { name: /Fauteuil Voltaire/, width: 1760, height: 2352 },
 ];
 
 const transparent = "rgba(0, 0, 0, 0)";
@@ -82,6 +81,24 @@ for (const viewport of viewports) {
         }
       });
     }
+
+    test("every section holding a visual is at least one viewport high", async ({
+      page,
+    }) => {
+      const short = await page
+        .locator("main section")
+        .filter({ has: page.locator("h2") })
+        .filter({ has: page.getByRole("img") })
+        .evaluateAll((sections) =>
+          sections
+            .filter(
+              (section) =>
+                section.getBoundingClientRect().height < innerHeight - 0.5,
+            )
+            .map((section) => section.querySelector("h2")?.textContent),
+        );
+      expect(short).toEqual([]);
+    });
 
     if (viewport.width < 768) {
       test("every photo touches both edges of the screen", async ({ page }) => {

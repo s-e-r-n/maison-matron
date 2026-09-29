@@ -14,7 +14,6 @@ import archival_photo from "../../public/visuals/archival-photo-man-leading-hors
 import sideboard from "../../public/visuals/buffet.jpg";
 import lion_sofa from "../../public/visuals/canape-lions.jpg";
 import blue_chair from "../../public/visuals/chaise-bleue.jpg";
-import honey_chair from "../../public/visuals/chaise-miel.png";
 import pine_chairs from "../../public/visuals/chaises-pin-japonais.jpg";
 import upholstery_tool from "../../public/visuals/outil.jpg";
 
@@ -170,20 +169,13 @@ const Home = () => (
           <p>Avant chacune, profitez d'une exclusivité.</p>
         </WideVisualSection>
 
-        <WideVisualSection
+        <SideVisualSection
           visual={
-            <div className="grid gap-4 *:h-auto *:w-full md:grid-cols-[0.8fr_0.7483fr]">
-              <Image
-                src={blue_chair}
-                alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
-                sizes="(min-width: 768px) 50vw, 100vw"
-              />
-              <Image
-                src={honey_chair}
-                alt="Fauteuil Voltaire en bois blond, garni d'un velours à feuillage jaune sur fond gris, sur fond blanc."
-                sizes="(min-width: 768px) 50vw, 100vw"
-              />
-            </div>
+            <Image
+              src={blue_chair}
+              alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
           }
         >
           <SectionTitle>
@@ -196,7 +188,7 @@ const Home = () => (
           <p>
             Nous échangeons directement avec lui, vous n'avez rien à organiser.
           </p>
-        </WideVisualSection>
+        </SideVisualSection>
 
         <LeadSheet
           id="booking"
