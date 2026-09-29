@@ -42,3 +42,4 @@ Sort:
 | Module | Change it confines | What a caller must know |
 | ------ | ------------------ | ----------------------- |
 | `typography.tsx` | The size, face, colour and leading of each text level: title, subtitle, note, caption | Which level the text is; a caption goes inside a `figure` |
+- Text round 5 (017): the archival photo takes the caption « Photo d'archive » in a `figure`; the privileges become a real `ul` in body text under the subtitle, its bullet `❊` through `list-style-type`, and `SectionNote` leaves `typography.tsx`, no caller left.
