@@ -5,7 +5,6 @@ const titles = [
   "Vous cherchez la pièce à votre image, or…",
   "Maison Matron, artisan depuis 4 générations",
   "Le vrai sur-mesure",
-  "Le dernier chaisier de Suisse",
   "L'atelier vient à vous, et c'est offert",
   "Le processus & la restitution",
   "4 saisons, 4 privilèges",
@@ -25,7 +24,7 @@ test("every call to action leads to the booking form", async ({ page }) => {
   const calls = page.getByRole("link", {
     name: /L'atelier vient à vous|Je réserve ma visite/,
   });
-  await expect(calls).toHaveCount(8);
+  await expect(calls).toHaveCount(7);
   for (const call of await calls.all()) {
     await expect(call).toHaveAttribute("href", "#booking");
   }
@@ -36,11 +35,11 @@ test("every call to action leads to the booking form", async ({ page }) => {
 const visuals = [
   { section: 3, name: /Photographie d'archive/ },
   { section: 4, name: /quatre chaises traîneau/ },
-  { section: 6, name: /tire-sangle/ },
-  { section: 7, name: /Canapé en bois/ },
-  { section: 8, name: /Deux fauteuils médaillon/ },
-  { section: 8, name: /Buffet bas/ },
-  { section: 9, name: /Fauteuil à haut dossier/ },
+  { section: 5, name: /tire-sangle/ },
+  { section: 6, name: /Canapé en bois/ },
+  { section: 7, name: /Deux fauteuils médaillon/ },
+  { section: 7, name: /Buffet bas/ },
+  { section: 8, name: /Fauteuil à haut dossier/ },
 ].map((visual) => ({ ...visual, title: titles[visual.section - 1] ?? "" }));
 
 const sectionOf = (page: Page, title: string) =>
@@ -77,7 +76,7 @@ for (const { width, gap } of [
   { width: 375, gap: 48 },
   { width: 1280, gap: 64 },
 ]) {
-  for (const section of [3, 4, 6, 7, 8, 9]) {
+  for (const section of [3, 4, 5, 6, 7, 8]) {
     test(`at ${width}px section ${section} keeps its call to action in its text block, one gap from its visual`, async ({
       page,
     }) => {
@@ -109,31 +108,29 @@ for (const { width, gap } of [
   }
 }
 
-for (const { width, gap } of [
-  { width: 375, gap: 48 },
-  { width: 1280, gap: 64 },
-]) {
-  test(`at ${width}px section 5 holds its call to action one gap under its text`, async ({
-    page,
-  }) => {
-    await page.setViewportSize({ width, height: 800 });
-    await page.goto("/");
-    const block = sectionOf(page, titles[4] ?? "");
-    const text = await block.locator("p").last().boundingBox();
-    const call = await block.getByRole("link").boundingBox();
-    expect((call?.y ?? 0) - (text?.y ?? 0) - (text?.height ?? 0)).toBeCloseTo(
-      gap,
-      0,
-    );
-  });
-}
+test("section 4 holds « Le dernier chaisier de Suisse » in its text block, in order", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const block = sectionOf(page, titles[3] ?? "");
+  await expect(block.locator("h2, p")).toHaveText([
+    "Le vrai sur-mesure",
+    "Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs et motifs préférés.",
+    "Choisissez les finitions bois que vous trouvez les plus belles.",
+    "Le dernier chaisier de Suisse",
+    "Depuis 1908, chaque chaise est assemblée à l'ancienne, dans un bois de la région qui a rarement voyagé plus de 100 km.",
+    "Profitez de deux savoir-faire centenaires pour vos pièces.",
+    "Nous nous assurerons que vos pièces résonnent avec qui vous êtes.",
+  ]);
+  await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
+});
 
-test("the pair of section 8 stands side by side at one height from md", async ({
+test("the pair of section 7 stands side by side at one height from md", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto("/");
-  const block = sectionOf(page, titles[7] ?? "");
+  const block = sectionOf(page, titles[6] ?? "");
   const [left, right] = await Promise.all(
     [/Deux fauteuils médaillon/, /Buffet bas/].map((name) =>
       block.getByRole("img", { name }).boundingBox(),
@@ -144,10 +141,10 @@ test("the pair of section 8 stands side by side at one height from md", async ({
   expect(right?.x).toBeGreaterThan((left?.x ?? 0) + (left?.width ?? 0));
 });
 
-test("the pair of section 8 stacks full width below md", async ({ page }) => {
+test("the pair of section 7 stacks full width below md", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 800 });
   await page.goto("/");
-  const block = sectionOf(page, titles[7] ?? "");
+  const block = sectionOf(page, titles[6] ?? "");
   const [top, bottom] = await Promise.all(
     [/Deux fauteuils médaillon/, /Buffet bas/].map((name) =>
       block.getByRole("img", { name }).boundingBox(),
@@ -182,7 +179,7 @@ test("a dashed rule stands above the form section's title", async ({
   );
 });
 
-for (const section of [2, 5]) {
+for (const section of [2]) {
   test(`section ${section} takes the whole viewport, its content centred`, async ({
     page,
   }) => {

@@ -78,23 +78,16 @@ const Home = () => (
             et motifs préférés.
           </p>
           <p>Choisissez les finitions bois que vous trouvez les plus belles.</p>
+          <SectionSubtitle>Le dernier chaisier de Suisse</SectionSubtitle>
+          <p>
+            Depuis 1908, chaque chaise est assemblée à l'ancienne, dans un bois
+            de la région qui a rarement voyagé plus de 100 km.
+          </p>
+          <p>Profitez de deux savoir-faire centenaires pour vos pièces.</p>
           <p>
             Nous nous assurerons que vos pièces résonnent avec qui vous êtes.
           </p>
         </WideVisualSection>
-
-        <CenteredSection
-          action={
-            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
-          }
-        >
-          <SectionTitle>Le dernier chaisier de Suisse</SectionTitle>
-          <SectionSubtitle>
-            Depuis 1908, son atelier assemble à l'ancienne un bois de la région,
-            qui a rarement voyagé plus de 100 km.
-          </SectionSubtitle>
-          <p>Profitez de deux savoir-faire centenaires pour votre chaise.</p>
-        </CenteredSection>
 
         <WideVisualSection
           visual={
