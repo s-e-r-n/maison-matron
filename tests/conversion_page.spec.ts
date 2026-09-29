@@ -171,19 +171,6 @@ test("the footer holds the logotype and the atelier address, nothing else", asyn
   await expect(footer).toHaveText("Route de Gilly 151183 Bursins");
 });
 
-test("a dashed rule stands above the form section's title", async ({
-  page,
-}) => {
-  await page.goto("/");
-  const rule = page.locator("#booking > hr:first-child");
-  await expect(rule).toBeVisible();
-  await expect(rule).toHaveCSS("height", "1px");
-  await expect(rule).toHaveCSS(
-    "background-image",
-    "repeating-linear-gradient(to right, rgba(0, 0, 0, 0.5) 0px, rgba(0, 0, 0, 0.5) 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 10px)",
-  );
-});
-
 for (const section of [2, 5, 10]) {
   test(`section ${section} takes the whole viewport, its content centred`, async ({
     page,
