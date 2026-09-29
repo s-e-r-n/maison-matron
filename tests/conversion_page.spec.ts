@@ -208,9 +208,7 @@ test("from xl no line of a stacked text block wraps", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto("/");
   const wrapped = await page
-    .locator(
-      "main section:has(img) .copy-inset .space-y-4 > :not(ul), main section:has(img) .copy-inset .space-y-4 > ul > li",
-    )
+    .locator("main section:has(img) .copy-inset > .space-y-4 :is(h2, p, li)")
     .evaluateAll((lines) =>
       lines
         .filter((line) => {
@@ -353,7 +351,7 @@ for (const width of [375, 1280]) {
 }
 
 for (const width of [375, 1280]) {
-  test(`at ${width}px the privileges list starts every item on one left edge, the list centred under its subtitle from md`, async ({
+  test(`at ${width}px the privileges list starts under the first letter of its subtitle, the pair centred from md`, async ({
     page,
   }) => {
     await page.setViewportSize({ width, height: 800 });
@@ -365,17 +363,21 @@ for (const width of [375, 1280]) {
         items.map((item) => Math.round(item.getBoundingClientRect().left)),
       );
     expect(new Set(lefts).size).toBe(1);
-    const list = await block.locator("ul").boundingBox();
-    const subtitle = await block
+    const subtitleStart = await block
       .getByText("Avant chacune, profitez d'une offre exclusive.")
-      .boundingBox();
+      .evaluate((element) => {
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        return Math.round(range.getClientRects()[0]?.left ?? 0);
+      });
+    expect(Math.abs((lefts[0] ?? 0) - subtitleStart)).toBeLessThanOrEqual(1);
     if (width >= 768) {
-      expect((list?.x ?? 0) + (list?.width ?? 0) / 2).toBeCloseTo(
-        (subtitle?.x ?? 0) + (subtitle?.width ?? 0) / 2,
+      const pair = await block.locator("ul").locator("..").boundingBox();
+      const title = await block.getByRole("heading").boundingBox();
+      expect((pair?.x ?? 0) + (pair?.width ?? 0) / 2).toBeCloseTo(
+        (title?.x ?? 0) + (title?.width ?? 0) / 2,
         0,
       );
-    } else {
-      expect(list?.x).toBeCloseTo(subtitle?.x ?? 0, 0);
     }
   });
 }

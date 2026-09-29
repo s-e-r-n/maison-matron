@@ -200,16 +200,18 @@ const Home = () => (
           }
         >
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
-          <SectionSubtitle>
-            Avant chacune, profitez d'une offre exclusive.
-          </SectionSubtitle>
-          <ul className="w-fit list-inside list-['❊_'] space-y-4 text-left md:mx-auto">
-            <li>Révisions offertes</li>
-            <li>Entretien des bois</li>
-            <li>Réductions entre voisins</li>
-            <li>Réductions sur les tissus de saison</li>
-            <li>Offres spéciales sur des tissus uniques</li>
-          </ul>
+          <div className="space-y-4 md:mx-auto md:w-fit">
+            <SectionSubtitle>
+              Avant chacune, profitez d'une offre exclusive.
+            </SectionSubtitle>
+            <ul className="list-inside list-['❊_'] space-y-4 text-left">
+              <li>Révisions offertes</li>
+              <li>Entretien des bois</li>
+              <li>Réductions entre voisins</li>
+              <li>Réductions sur les tissus de saison</li>
+              <li>Offres spéciales sur des tissus uniques</li>
+            </ul>
+          </div>
         </WideVisualSection>
 
         <SideVisualSection
