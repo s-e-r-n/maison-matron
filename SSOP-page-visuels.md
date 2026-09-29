@@ -4,3 +4,4 @@
 - « Vous travaillez avec un décorateur d'intérieur ? » becomes a `SideVisualSection` holding `chaise-bleue.jpg` alone; `chaise-miel.png` leaves the page and the repository, and the pair of different ratios with it.
 - « L'atelier vient à vous, et c'est offert » holds `outil.jpg`, a 3:2 landscape visual, so it moves to `WideVisualSection`: a landscape visual takes the stacked model, a portrait one the side model.
 - From `lg`, no line of `WideVisualSection`'s text block wraps (`lg:whitespace-nowrap`), since it no longer shares the width with a visual; below `lg` lines wrap as usual.
+- Every call to action sits one step closer to its text block, 32px then 48px from `lg` (`mt-8 lg:mt-12`, and `mb-8 lg:mb-12` above the hero's), the human overriding rule 1 of the design directives on this gap; the gap between a text block and its visual stays 48px then 64px.
