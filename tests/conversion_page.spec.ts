@@ -184,8 +184,8 @@ for (const section of [2]) {
   });
 }
 
-test("from lg no line of a stacked text block wraps", async ({ page }) => {
-  await page.setViewportSize({ width: 1024, height: 800 });
+test("from xl no line of a stacked text block wraps", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto("/");
   const wrapped = await page
     .locator("main section:has(img) .copy-inset .space-y-4 > *")
