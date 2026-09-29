@@ -35,3 +35,4 @@ Sort:
 | None | - | - | - |
 
 ## Amendments
+- Text round 2 (006): « Le dernier chaisier de Suisse » merges into « Le vrai sur-mesure » as a `SectionSubtitle` inside its text block, the separate centred section is removed, and the `action` of `CenteredSection` is left without a caller.
