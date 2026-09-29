@@ -204,7 +204,9 @@ test("from xl no line of a stacked text block wraps", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto("/");
   const wrapped = await page
-    .locator("main section:has(img) .copy-inset .space-y-4 > *")
+    .locator(
+      "main section:has(img) .copy-inset .space-y-4 > :not(:has-text('Ces privilèges'))",
+    )
     .evaluateAll((lines) =>
       lines
         .filter((line) => {
@@ -292,4 +294,22 @@ test("the atelier section reads its subtitles without colon, each line after the
     "Si vous le souhaitez, nous examinons le reste de votre mobilier",
     "La santé des bois et des matières et ce qui vaut la peine d'être restauré.",
   ]);
+});
+
+test("the privileges section reads its subtitle, two lines, its greyed note, then its call to action", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const block = sectionOf(page, titles[6] ?? "");
+  await expect(block.locator("h2, p")).toHaveText([
+    "4 saisons, 4 privilèges",
+    "Avant chacune, profitez d'une offre exclusive.",
+    "Chaque saison a son besoin.",
+    "Que ce soit l'entretien ou la gamme de tissus, nous pensons à ce qu'il vous faut.",
+    "Ces privilèges comprennent des révisions offertes, l'entretien des bois, des réductions entre voisins et sur les tissus de saison, ainsi que des offres spéciales sur des tissus uniques.",
+  ]);
+  const note = block.getByText("Ces privilèges comprennent");
+  await expect(note).toHaveCSS("font-size", "13px");
+  await expect(note).toHaveCSS("color", "rgba(0, 0, 0, 0.7)");
+  await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
 });

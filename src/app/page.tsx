@@ -6,7 +6,11 @@ import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { LeadSheet } from "@/components/lead_sheet";
 import { SideVisualSection } from "@/components/side_visual_section";
-import { SectionSubtitle, SectionTitle } from "@/components/typography";
+import {
+  SectionNote,
+  SectionSubtitle,
+  SectionTitle,
+} from "@/components/typography";
 import { Watermarked } from "@/components/watermarked";
 import { WideVisualSection } from "@/components/wide_visual_section";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
@@ -168,16 +172,19 @@ const Home = () => (
           }
         >
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
-          <p>Chaque saison a son toucher : le velours l'hiver, le lin l'été.</p>
+          <SectionSubtitle>
+            Avant chacune, profitez d'une offre exclusive.
+          </SectionSubtitle>
+          <p>Chaque saison a son besoin.</p>
           <p>
-            Chaque saison a sa lumière : dorée à l'automne, renaissante au
-            printemps.
+            Que ce soit l'entretien ou la gamme de tissus, nous pensons à ce
+            qu'il vous faut.
           </p>
-          <p>
-            Chaque saison a son lieu : un chalet sous la neige, une pergola face
-            à l'océan.
-          </p>
-          <p>Avant chacune, profitez d'une exclusivité.</p>
+          <SectionNote>
+            Ces privilèges comprennent des révisions offertes, l'entretien des
+            bois, des réductions entre voisins et sur les tissus de saison,
+            ainsi que des offres spéciales sur des tissus uniques.
+          </SectionNote>
         </WideVisualSection>
 
         <SideVisualSection

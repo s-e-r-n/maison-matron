@@ -13,3 +13,9 @@ export const SectionSubtitle = ({ children }: typography_props) => (
     {children}
   </p>
 );
+
+export const SectionNote = ({ children }: typography_props) => (
+  <p className="text-[13px] leading-[1.5] whitespace-normal text-sheet-ink">
+    {children}
+  </p>
+);
