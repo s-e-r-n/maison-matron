@@ -2,3 +2,5 @@
 - `WideVisualSection` and `SideVisualSection` are at least one viewport high, their content centred in it as one unit: the slack goes around the text and its visual, never between them. `SideVisualSection` centres its row from `lg` through `flex-wrap` and `content-center`, its text still aligned on the top of its visual.
 - `CenteredSection` keeps its half viewport, section 2 having no visual.
 - « Vous travaillez avec un décorateur d'intérieur ? » becomes a `SideVisualSection` holding `chaise-bleue.jpg` alone; `chaise-miel.png` leaves the page and the repository, and the pair of different ratios with it.
+- « L'atelier vient à vous, et c'est offert » holds `outil.jpg`, a 3:2 landscape visual, so it moves to `WideVisualSection`: a landscape visual takes the stacked model, a portrait one the side model.
+- From `lg`, no line of `WideVisualSection`'s text block wraps (`lg:whitespace-nowrap`), since it no longer shares the width with a visual; below `lg` lines wrap as usual.
