@@ -44,16 +44,12 @@ const Home = () => (
 
     <Watermarked>
       <div className="page-width flex flex-col gap-24 py-12 lg:gap-32 lg:py-16 [&_:is(p,li):not(.font-display)]:text-gray-600">
-        <SectionSeparator />
-
         <CenteredSection>
           <SectionTitle>Vous cherchez la pièce à votre image, or…</SectionTitle>
           <p>La marque décide jusqu'où va votre « sur-mesure ».</p>
           <p>L'unique est éclipsé par les collections à la mode.</p>
           <p>Le choix des tissus vous est limité.</p>
         </CenteredSection>
-
-        <SectionSeparator />
 
         <SideVisualSection
           visual={
