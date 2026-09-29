@@ -428,7 +428,10 @@ test("the reviews section holds its ten reviews, set like the hero's quote, the 
       (element, name) => getComputedStyle(element).getPropertyValue(name),
       property,
     );
-    for (const text of await block.locator("figure :is(p, figcaption)").all()) {
+    const texts = ["font-family", "font-style"].includes(property)
+      ? "figure p"
+      : "figure :is(p, figcaption)";
+    for (const text of await block.locator(texts).all()) {
       await expect(text).toHaveCSS(property, expected);
     }
   }

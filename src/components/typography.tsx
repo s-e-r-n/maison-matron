@@ -25,7 +25,7 @@ export const Quote = ({ children }: typography_props) => (
 );
 
 export const Reviewer = ({ children }: typography_props) => (
-  <figcaption className="mt-4 text-[17px] leading-[1.45]">
+  <figcaption className="mt-4 font-display text-[17px] leading-[1.45] italic">
     {children}
   </figcaption>
 );
