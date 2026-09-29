@@ -313,3 +313,38 @@ test("the privileges section reads its subtitle, two lines, its greyed note, the
   await expect(note).toHaveCSS("color", "rgba(0, 0, 0, 0.7)");
   await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
 });
+
+const captions = [
+  { name: /quatre chaises traîneau/, caption: "Réalisation Maison Matron" },
+  { name: /tire-sangle/, caption: "L'outil du tapissier" },
+  { name: /Canapé en bois/, caption: "Réalisation Maison Matron" },
+  { name: /Deux fauteuils médaillon/, caption: "Réalisation Maison Matron" },
+  { name: /Buffet bas/, caption: "Réalisation Maison Matron" },
+  { name: /Fauteuil à haut dossier/, caption: "Réalisation Maison Matron" },
+];
+
+for (const width of [375, 1280]) {
+  test(`at ${width}px every photo of a piece carries its caption close under it, the archival photo none`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto("/");
+    for (const { name, caption } of captions) {
+      const figure = page.locator("figure").filter({
+        has: page.getByRole("img", { name }),
+      });
+      const text = figure.locator("figcaption");
+      await expect(text).toHaveText(caption);
+      const photo = await figure.getByRole("img").boundingBox();
+      const under = await text.boundingBox();
+      const gap = (under?.y ?? 0) - (photo?.y ?? 0) - (photo?.height ?? 0);
+      expect(gap).toBeGreaterThanOrEqual(0);
+      expect(gap).toBeLessThanOrEqual(12);
+    }
+    await expect(
+      page.locator("figure").filter({
+        has: page.getByRole("img", { name: /Photographie d'archive/ }),
+      }),
+    ).toHaveCount(0);
+  });
+}

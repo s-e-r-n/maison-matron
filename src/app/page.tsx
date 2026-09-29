@@ -7,6 +7,7 @@ import { Hero } from "@/components/hero";
 import { LeadSheet } from "@/components/lead_sheet";
 import { SideVisualSection } from "@/components/side_visual_section";
 import {
+  Caption,
   SectionNote,
   SectionSubtitle,
   SectionTitle,
@@ -66,11 +67,14 @@ const Home = () => (
 
         <WideVisualSection
           visual={
-            <Image
-              src={five_chairs}
-              alt="Une petite chaise laquée blanc au dossier enroulé et quatre chaises traîneau en bois, garnies d'un même tissu bleu à motif de cercles, sur fond blanc."
-              sizes="100vw"
-            />
+            <figure>
+              <Image
+                src={five_chairs}
+                alt="Une petite chaise laquée blanc au dossier enroulé et quatre chaises traîneau en bois, garnies d'un même tissu bleu à motif de cercles, sur fond blanc."
+                sizes="100vw"
+              />
+              <Caption>Réalisation Maison Matron</Caption>
+            </figure>
           }
           action={
             <CallToAction href="#booking">Je réserve ma visite</CallToAction>
@@ -94,11 +98,14 @@ const Home = () => (
 
         <WideVisualSection
           visual={
-            <Image
-              src={upholstery_tool}
-              alt="Un tire-sangle en bois posé sur un rouleau de sangle de jute, sur fond de toile."
-              sizes="100vw"
-            />
+            <figure>
+              <Image
+                src={upholstery_tool}
+                alt="Un tire-sangle en bois posé sur un rouleau de sangle de jute, sur fond de toile."
+                sizes="100vw"
+              />
+              <Caption>L'outil du tapissier</Caption>
+            </figure>
           }
           action={
             <CallToAction href="#booking">Je réserve ma visite</CallToAction>
@@ -130,11 +137,14 @@ const Home = () => (
 
         <WideVisualSection
           visual={
-            <Image
-              src={lion_sofa}
-              alt="Canapé en bois aux accoudoirs sculptés de têtes de lion, garni d'un tissu orangé à rayures ivoire, sur fond blanc."
-              sizes="100vw"
-            />
+            <figure>
+              <Image
+                src={lion_sofa}
+                alt="Canapé en bois aux accoudoirs sculptés de têtes de lion, garni d'un tissu orangé à rayures ivoire, sur fond blanc."
+                sizes="100vw"
+              />
+              <Caption>Réalisation Maison Matron</Caption>
+            </figure>
           }
           action={
             <CallToAction href="#booking">Je réserve ma visite</CallToAction>
@@ -154,17 +164,23 @@ const Home = () => (
 
         <WideVisualSection
           visual={
-            <div className="grid gap-4 *:h-auto *:w-full md:grid-cols-2">
-              <Image
-                src={pine_chairs}
-                alt="Deux fauteuils médaillon en bois naturel, garnis d'un tissu écru brodé de branches de pin rouges, sur fond clair."
-                sizes="(min-width: 768px) 50vw, 100vw"
-              />
-              <Image
-                src={sideboard}
-                alt="Buffet bas en bois veiné, trois tiroirs et deux portes, sur fond blanc."
-                sizes="(min-width: 768px) 50vw, 100vw"
-              />
+            <div className="grid gap-4 md:grid-cols-2">
+              <figure>
+                <Image
+                  src={pine_chairs}
+                  alt="Deux fauteuils médaillon en bois naturel, garnis d'un tissu écru brodé de branches de pin rouges, sur fond clair."
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+                <Caption>Réalisation Maison Matron</Caption>
+              </figure>
+              <figure>
+                <Image
+                  src={sideboard}
+                  alt="Buffet bas en bois veiné, trois tiroirs et deux portes, sur fond blanc."
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+                <Caption>Réalisation Maison Matron</Caption>
+              </figure>
             </div>
           }
           action={
@@ -189,11 +205,14 @@ const Home = () => (
 
         <SideVisualSection
           visual={
-            <Image
-              src={blue_chair}
-              alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
-              sizes="(min-width: 1024px) 50vw, 100vw"
-            />
+            <figure>
+              <Image
+                src={blue_chair}
+                alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+              <Caption>Réalisation Maison Matron</Caption>
+            </figure>
           }
           action={
             <CallToAction href="#booking">Je réserve ma visite</CallToAction>
