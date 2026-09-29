@@ -288,7 +288,7 @@ const Home = () => (
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
           <div className="space-y-4 md:mx-auto md:w-fit">
             <SectionSubtitle>
-              Avant chacune, profitez d'une offre exclusive.
+              Chaque saison, profitez d'une offre exclusive.
             </SectionSubtitle>
             <ul className="list-inside list-['❊_'] space-y-4 text-left">
               <li>Révisions offertes</li>

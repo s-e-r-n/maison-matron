@@ -307,7 +307,7 @@ test("the privileges section reads its subtitle, its list of privileges bulleted
   const block = sectionOf(page, titles[7] ?? "");
   await expect(block.locator("h2, p, li")).toHaveText([
     "4 saisons, 4 privilèges",
-    "Avant chacune, profitez d'une offre exclusive.",
+    "Chaque saison, profitez d'une offre exclusive.",
     "Révisions offertes",
     "Entretien des bois",
     "Réductions voisinage",
@@ -366,7 +366,7 @@ for (const width of [375, 1280]) {
       );
     expect(new Set(lefts).size).toBe(1);
     const subtitleStart = await block
-      .getByText("Avant chacune, profitez d'une offre exclusive.")
+      .getByText("Chaque saison, profitez d'une offre exclusive.")
       .evaluate((element) => {
         const range = document.createRange();
         range.selectNodeContents(element);
