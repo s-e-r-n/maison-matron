@@ -11,6 +11,6 @@ export const CenteredSection = ({
 }: centered_section_props) => (
   <section className="copy-inset flex min-h-svh flex-col justify-center md:items-center md:text-center">
     <div className="space-y-4">{children}</div>
-    {action && <div className="mt-12 lg:mt-16">{action}</div>}
+    {action && <div className="mt-8 lg:mt-12">{action}</div>}
   </section>
 );
