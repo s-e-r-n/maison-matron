@@ -108,7 +108,7 @@ for (const { width, gap } of [
   }
 }
 
-test("section 4 holds « Le dernier chaisier de Suisse » in its text block, in order", async ({
+test("section 4 holds « Profitez du dernier chaisier de Suisse » in its text block, in order", async ({
   page,
 }) => {
   await page.goto("/");
@@ -117,7 +117,7 @@ test("section 4 holds « Le dernier chaisier de Suisse » in its text block, in 
     "Le vrai sur-mesure",
     "Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs et motifs préférés.",
     "Choisissez les finitions bois que vous trouvez les plus belles.",
-    "Le dernier chaisier de Suisse",
+    "Profitez du dernier chaisier de Suisse",
     "Depuis 1908, chaque chaise est assemblée à l'ancienne, dans un bois de la région qui a rarement voyagé plus de 100 km.",
     "Profitez de deux savoir-faire centenaires pour vos pièces.",
   ]);

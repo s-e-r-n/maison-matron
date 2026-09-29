@@ -78,7 +78,9 @@ const Home = () => (
             et motifs préférés.
           </p>
           <p>Choisissez les finitions bois que vous trouvez les plus belles.</p>
-          <SectionSubtitle>Le dernier chaisier de Suisse</SectionSubtitle>
+          <SectionSubtitle>
+            Profitez du dernier chaisier de Suisse
+          </SectionSubtitle>
           <p>
             Depuis 1908, chaque chaise est assemblée à l'ancienne, dans un bois
             de la région qui a rarement voyagé plus de 100 km.
