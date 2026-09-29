@@ -7,6 +7,7 @@ import { Hero } from "@/components/hero";
 import { LeadSheet } from "@/components/lead_sheet";
 import { LogoRow, LogoRows } from "@/components/logo_rows";
 import { ReviewsSection } from "@/components/reviews_section";
+import { SectionSeparator } from "@/components/section_separator";
 import { SideVisualSection } from "@/components/side_visual_section";
 import {
   Caption,
@@ -38,17 +39,21 @@ import red_silk_velvet from "../../public/visuals/red-silk-velvet.jpg";
 const Home = () => (
   <main>
     <Hero>
-      <CallToAction href="#booking">Je veux ma visite offerte</CallToAction>
+      <CallToAction href="#booking">Votre expertise offerte</CallToAction>
     </Hero>
 
     <Watermarked>
-      <div className="page-width flex flex-col gap-24 py-12 lg:gap-32 lg:py-16">
+      <div className="page-width flex flex-col gap-24 py-12 lg:gap-32 lg:py-16 [&_:is(p,li):not(.font-display)]:text-gray-600">
+        <SectionSeparator />
+
         <CenteredSection>
           <SectionTitle>Vous cherchez la pièce à votre image, or…</SectionTitle>
           <p>La marque décide jusqu'où va votre « sur-mesure ».</p>
           <p>L'unique est éclipsé par les collections à la mode.</p>
-          <p>Le choix des tissus vous est imposé.</p>
+          <p>Le choix des tissus vous est limité.</p>
         </CenteredSection>
+
+        <SectionSeparator />
 
         <SideVisualSection
           visual={
@@ -62,17 +67,15 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">
-              Je veux ma visite offerte
-            </CallToAction>
+            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
           }
         >
           <SectionTitle>
             Maison Matron, artisan depuis 4 générations
           </SectionTitle>
           <p>
-            Depuis un siècle, notre savoir-faire façonne des objets, travaillés
-            à la main et habillés des plus beaux tissus.
+            Depuis plus d'un siècle, notre savoir-faire façonne des objets,
+            travaillés à la main et habillés des plus beaux tissus.
           </p>
           <p>
             Nos tapissiers, ébénistes et courtepointières sont unis par une
@@ -82,6 +85,8 @@ const Home = () => (
             Ennoblir chaque pièce qui nous est confiée.
           </SectionSubtitle>
         </SideVisualSection>
+
+        <SectionSeparator />
 
         <WideVisualSection
           visual={
@@ -95,9 +100,7 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">
-              Je veux ma visite offerte
-            </CallToAction>
+            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
           }
         >
           <SectionTitle>Le vrai sur-mesure</SectionTitle>
@@ -105,16 +108,18 @@ const Home = () => (
             Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs
             et motifs préférés.
           </p>
-          <p>Choisissez les finitions bois que vous trouvez les plus belles.</p>
+          <p>Choisissez des finitions bois magnifiques.</p>
           <SectionSubtitle>
             Profitez du dernier chaisier de Suisse
           </SectionSubtitle>
           <p>
-            Depuis 1908, chaque chaise est assemblée à l'ancienne, dans un bois
-            de la région qui a rarement voyagé plus de 100 km.
+            Depuis 1908, chaque chaise est assemblée à l'ancienne, dans des bois
+            locaux, de Suisse.
           </p>
           <p>Profitez de deux savoir-faire centenaires pour vos pièces.</p>
         </WideVisualSection>
+
+        <SectionSeparator />
 
         <SideVisualSection
           visual={
@@ -128,14 +133,10 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">
-              Je veux ma visite offerte
-            </CallToAction>
+            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
           }
         >
-          <SectionTitle>
-            Profitez de centaines de tissus, tous au même prix
-          </SectionTitle>
+          <SectionTitle>Profitez de milliers de tissus</SectionTitle>
           <p>Nos collections voyagent avec nous jusqu'à chez vous.</p>
           <p>Ce que vous voulez, nous l'avons.</p>
           <LogoRows>
@@ -188,6 +189,8 @@ const Home = () => (
           <p className="italic">Et tant d'autres…</p>
         </SideVisualSection>
 
+        <SectionSeparator />
+
         <WideVisualSection
           visual={
             <figure>
@@ -200,9 +203,7 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">
-              Je veux ma visite offerte
-            </CallToAction>
+            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
           }
         >
           <SectionTitle>L'atelier vient à vous, et c'est offert</SectionTitle>
@@ -211,7 +212,8 @@ const Home = () => (
             vous.
           </p>
           <p>
-            Un tissu doit être vu, touché, et jugé à la lumière de chez vous.
+            Un tissu doit être vu, touché, jugé à la lumière de chez vous et
+            accordé à votre intérieur.
           </p>
           <SectionSubtitle>
             Nous vous conseillons dans le détail
@@ -220,14 +222,14 @@ const Home = () => (
             Les matériaux se choisissent selon la vie passée et future de votre
             objet.
           </p>
-          <SectionSubtitle>
-            Si vous le souhaitez, nous examinons le reste de votre mobilier
-          </SectionSubtitle>
+          <SectionSubtitle>Nous examinons votre mobilier</SectionSubtitle>
           <p>
             La santé des bois et des matières et ce qui vaut la peine d'être
             restauré.
           </p>
         </WideVisualSection>
+
+        <SectionSeparator />
 
         <WideVisualSection
           visual={
@@ -241,15 +243,15 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">
-              Je veux ma visite offerte
-            </CallToAction>
+            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
           }
         >
           <SectionTitle>Le processus &amp; la restitution</SectionTitle>
-          <p>Le jour même, nous emportons vos pièces.</p>
-          <p>Soyez serein, tout transport est à notre charge.</p>
-          <p>Nous vous informons durant tout le processus de réfection.</p>
+          <p>
+            Nous prenons en charge le transport de vos pièces dans le plus grand
+            soin.
+          </p>
+          <p>Nous vous tenons informé durant tout le processus de réfection.</p>
           <p>
             Lorsque les artisans ont terminé, nous fixons avec vous le jour et
             l'heure de restitution.
@@ -257,6 +259,8 @@ const Home = () => (
           <p>Enfin, nous vous dévoilons chaque ouvrage :</p>
           <SectionSubtitle>unique et à votre image.</SectionSubtitle>
         </WideVisualSection>
+
+        <SectionSeparator />
 
         <WideVisualSection
           visual={
@@ -280,9 +284,7 @@ const Home = () => (
             </div>
           }
           action={
-            <CallToAction href="#booking">
-              Je veux ma visite offerte
-            </CallToAction>
+            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
           }
         >
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
@@ -300,6 +302,8 @@ const Home = () => (
           </div>
         </WideVisualSection>
 
+        <SectionSeparator />
+
         <SideVisualSection
           visual={
             <figure>
@@ -312,9 +316,7 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">
-              Je veux ma visite offerte
-            </CallToAction>
+            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
           }
         >
           <SectionTitle>
@@ -325,8 +327,10 @@ const Home = () => (
           <p>
             Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.
           </p>
-          <p>Nous échangeons directement, vous restez serein.</p>
+          <p>Nous échangeons directement, vous gardez un seul interlocuteur.</p>
         </SideVisualSection>
+
+        <SectionSeparator />
 
         <ReviewsSection
           title={<SectionTitle>Ils nous ont confié leurs pièces</SectionTitle>}
@@ -430,6 +434,8 @@ const Home = () => (
             <Reviewer>- Anne</Reviewer>
           </figure>
         </ReviewsSection>
+
+        <SectionSeparator />
 
         <LeadSheet
           id="booking"

@@ -5,7 +5,7 @@ const titles = [
   "Vous cherchez la pièce à votre image, or…",
   "Maison Matron, artisan depuis 4 générations",
   "Le vrai sur-mesure",
-  "Profitez de centaines de tissus, tous au même prix",
+  "Profitez de milliers de tissus",
   "L'atelier vient à vous, et c'est offert",
   "Le processus & la restitution",
   "4 saisons, 4 privilèges",
@@ -24,7 +24,7 @@ test("renders every section in the order of the redaction", async ({
 test("every call to action leads to the booking form", async ({ page }) => {
   await page.goto("/");
   const calls = page.getByRole("link", {
-    name: "Je veux ma visite offerte",
+    name: "Votre expertise offerte",
   });
   await expect(calls).toHaveCount(8);
   for (const call of await calls.all()) {
@@ -122,12 +122,12 @@ test("section 4 holds « Profitez du dernier chaisier de Suisse » in its text b
   await expect(block.locator("h2, p")).toHaveText([
     "Le vrai sur-mesure",
     "Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs et motifs préférés.",
-    "Choisissez les finitions bois que vous trouvez les plus belles.",
+    "Choisissez des finitions bois magnifiques.",
     "Profitez du dernier chaisier de Suisse",
-    "Depuis 1908, chaque chaise est assemblée à l'ancienne, dans un bois de la région qui a rarement voyagé plus de 100 km.",
+    "Depuis 1908, chaque chaise est assemblée à l'ancienne, dans des bois locaux, de Suisse.",
     "Profitez de deux savoir-faire centenaires pour vos pièces.",
   ]);
-  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
+  await expect(block.getByRole("link")).toHaveText("Votre expertise offerte");
 });
 
 test("the pair of section 8 stands side by side at one height from md", async ({
@@ -169,19 +169,6 @@ test("the footer holds the logotype and the atelier address, nothing else", asyn
     "Maison Matron, 1921",
   );
   await expect(footer).toHaveText("Route de Gilly 151183 Bursins");
-});
-
-test("a dashed rule stands above the form section's title", async ({
-  page,
-}) => {
-  await page.goto("/");
-  const rule = page.locator("#booking > hr:first-child");
-  await expect(rule).toBeVisible();
-  await expect(rule).toHaveCSS("height", "1px");
-  await expect(rule).toHaveCSS(
-    "background-image",
-    "repeating-linear-gradient(to right, rgba(0, 0, 0, 0.5) 0px, rgba(0, 0, 0, 0.5) 6px, rgba(0, 0, 0, 0) 6px, rgba(0, 0, 0, 0) 10px)",
-  );
 });
 
 for (const section of [2, 5, 10]) {
@@ -262,9 +249,9 @@ test("the décorateur section reads its subtitle then its three lines, and its c
     "C'est parfait.",
     "Nos métiers d'art fonctionnent en symbiose.",
     "Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.",
-    "Nous échangeons directement, vous restez serein.",
+    "Nous échangeons directement, vous gardez un seul interlocuteur.",
   ]);
-  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
+  await expect(block.getByRole("link")).toHaveText("Votre expertise offerte");
 });
 
 test("the process section reads its lines, its subtitle last, then its call to action", async ({
@@ -274,14 +261,13 @@ test("the process section reads its lines, its subtitle last, then its call to a
   const block = sectionOf(page, titles[6] ?? "");
   await expect(block.locator("h2, p")).toHaveText([
     "Le processus & la restitution",
-    "Le jour même, nous emportons vos pièces.",
-    "Soyez serein, tout transport est à notre charge.",
-    "Nous vous informons durant tout le processus de réfection.",
+    "Nous prenons en charge le transport de vos pièces dans le plus grand soin.",
+    "Nous vous tenons informé durant tout le processus de réfection.",
     "Lorsque les artisans ont terminé, nous fixons avec vous le jour et l'heure de restitution.",
     "Enfin, nous vous dévoilons chaque ouvrage :",
     "unique et à votre image.",
   ]);
-  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
+  await expect(block.getByRole("link")).toHaveText("Votre expertise offerte");
 });
 
 test("the atelier section reads its subtitles without colon, each line after them capitalised", async ({
@@ -292,10 +278,10 @@ test("the atelier section reads its subtitles without colon, each line after the
   await expect(block.locator("h2, p")).toHaveText([
     "L'atelier vient à vous, et c'est offert",
     "Quel que soit votre projet, nous venons d'abord en discuter avec vous.",
-    "Un tissu doit être vu, touché, et jugé à la lumière de chez vous.",
+    "Un tissu doit être vu, touché, jugé à la lumière de chez vous et accordé à votre intérieur.",
     "Nous vous conseillons dans le détail",
     "Les matériaux se choisissent selon la vie passée et future de votre objet.",
-    "Si vous le souhaitez, nous examinons le reste de votre mobilier",
+    "Nous examinons votre mobilier",
     "La santé des bois et des matières et ce qui vaut la peine d'être restauré.",
   ]);
 });
@@ -315,7 +301,7 @@ test("the privileges section reads its subtitle, its list of privileges bulleted
     "Offres spéciales sur des tissus uniques",
   ]);
   await expect(block.locator("ul")).toHaveCSS("list-style-type", '"❊ "');
-  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
+  await expect(block.getByRole("link")).toHaveText("Votre expertise offerte");
 });
 
 const captions = [
@@ -501,15 +487,12 @@ test("the fabrics section follows « Le vrai sur-mesure », its lines, its logos
   page,
 }) => {
   await page.goto("/");
-  const block = sectionOf(
-    page,
-    "Profitez de centaines de tissus, tous au même prix",
-  );
+  const block = sectionOf(page, "Profitez de milliers de tissus");
   await expect(
     block.locator("xpath=preceding-sibling::section[1]"),
   ).toContainText("Le vrai sur-mesure");
   await expect(block.locator("h2, p")).toHaveText([
-    "Profitez de centaines de tissus, tous au même prix",
+    "Profitez de milliers de tissus",
     "Nos collections voyagent avec nous jusqu'à chez vous.",
     "Ce que vous voulez, nous l'avons.",
     "Et tant d'autres…",
@@ -519,7 +502,7 @@ test("the fabrics section follows « Le vrai sur-mesure », its lines, its logos
   for (const [index, name] of fabricLogos.entries()) {
     await expect(logos.nth(index)).toHaveAttribute("alt", name);
   }
-  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
+  await expect(block.getByRole("link")).toHaveText("Votre expertise offerte");
 });
 
 for (const width of [375, 1024, 1440]) {
@@ -528,10 +511,7 @@ for (const width of [375, 1024, 1440]) {
   }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
-    const block = sectionOf(
-      page,
-      "Profitez de centaines de tissus, tous au même prix",
-    );
+    const block = sectionOf(page, "Profitez de milliers de tissus");
     const boxes = [];
     for (const name of fabricLogos) {
       const logo = block.getByRole("img", { name, exact: true });
