@@ -28,6 +28,7 @@ import pierre_frey_logo from "../../public/fabric-logos/pierre-frey.svg";
 import ralph_lauren_logo from "../../public/fabric-logos/ralph-lauren.svg";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
+import blue_silk_damask from "../../public/visuals/blue-silk-damask.jpg";
 import sideboard from "../../public/visuals/buffet.jpg";
 import lion_sofa from "../../public/visuals/canape-lions.jpg";
 import blue_chair from "../../public/visuals/chaise-bleue.jpg";
@@ -115,7 +116,14 @@ const Home = () => (
           <p>Profitez de deux savoir-faire centenaires pour vos pièces.</p>
         </WideVisualSection>
 
-        <CenteredSection
+        <SideVisualSection
+          visual={
+            <Image
+              src={blue_silk_damask}
+              alt="Damas de soie bleu nuit, tissé de branches fleuries et d'oiseaux ton sur ton."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          }
           action={
             <CallToAction href="#booking">
               Je veux ma visite offerte
@@ -175,7 +183,7 @@ const Home = () => (
             </LogoRow>
           </LogoRows>
           <p className="italic">Et tant d'autres…</p>
-        </CenteredSection>
+        </SideVisualSection>
 
         <WideVisualSection
           visual={

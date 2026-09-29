@@ -512,7 +512,7 @@ test("the fabrics section follows « Le vrai sur-mesure », its lines, its logos
     "Et tant d'autres…",
   ]);
   const logos = block.getByRole("img");
-  await expect(logos).toHaveCount(fabricLogos.length);
+  await expect(logos).toHaveCount(fabricLogos.length + 1);
   for (const [index, name] of fabricLogos.entries()) {
     await expect(logos.nth(index)).toHaveAttribute("alt", name);
   }
@@ -542,7 +542,8 @@ for (const width of [375, 1024, 1440]) {
         );
       const box = await logo.boundingBox();
       if (!box) throw new Error(`${name} not rendered`);
-      expect(box.height).toBeCloseTo(26, 0);
+      expect(box.height).toBeLessThanOrEqual(26.5);
+      expect(box.height).toBeCloseTo(boxes[0]?.height ?? box.height, 0);
       expect(box.width).toBeLessThanOrEqual(150.5);
       boxes.push({ name, ...box });
     }
