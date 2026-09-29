@@ -203,7 +203,7 @@ const Home = () => (
           <SectionSubtitle>
             Avant chacune, profitez d'une offre exclusive.
           </SectionSubtitle>
-          <ul className="list-inside list-['❊_'] space-y-4">
+          <ul className="w-fit list-inside list-['❊_'] space-y-4 text-left md:mx-auto">
             <li>Révisions offertes</li>
             <li>Entretien des bois</li>
             <li>Réductions entre voisins</li>

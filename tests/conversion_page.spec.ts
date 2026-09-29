@@ -351,3 +351,31 @@ for (const width of [375, 1280]) {
     }
   });
 }
+
+for (const width of [375, 1280]) {
+  test(`at ${width}px the privileges list starts every item on one left edge, the list centred under its subtitle from md`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto("/");
+    const block = sectionOf(page, titles[6] ?? "");
+    const lefts = await block
+      .locator("li")
+      .evaluateAll((items) =>
+        items.map((item) => Math.round(item.getBoundingClientRect().left)),
+      );
+    expect(new Set(lefts).size).toBe(1);
+    const list = await block.locator("ul").boundingBox();
+    const subtitle = await block
+      .getByText("Avant chacune, profitez d'une offre exclusive.")
+      .boundingBox();
+    if (width >= 768) {
+      expect((list?.x ?? 0) + (list?.width ?? 0) / 2).toBeCloseTo(
+        (subtitle?.x ?? 0) + (subtitle?.width ?? 0) / 2,
+        0,
+      );
+    } else {
+      expect(list?.x).toBeCloseTo(subtitle?.x ?? 0, 0);
+    }
+  });
+}
