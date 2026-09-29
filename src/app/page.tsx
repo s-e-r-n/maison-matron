@@ -78,12 +78,12 @@ const Home = () => (
           </p>
         </WideVisualSection>
 
-        <SideVisualSection
+        <WideVisualSection
           visual={
             <Image
               src={upholstery_tool}
               alt="Un tire-sangle en bois posé sur un rouleau de sangle de jute, sur fond de toile."
-              sizes="(min-width: 1024px) 50vw, 100vw"
+              sizes="100vw"
             />
           }
           action={
@@ -110,7 +110,7 @@ const Home = () => (
             la santé des bois et des matières et ce qui vaut la peine d'être
             restauré.
           </p>
-        </SideVisualSection>
+        </WideVisualSection>
 
         <WideVisualSection
           visual={

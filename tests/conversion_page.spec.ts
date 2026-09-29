@@ -183,3 +183,23 @@ for (const section of [2]) {
     expect(Math.abs(above - below)).toBeLessThanOrEqual(1);
   });
 }
+
+test("from lg no line of a stacked text block wraps", async ({ page }) => {
+  await page.setViewportSize({ width: 1024, height: 800 });
+  await page.goto("/");
+  const wrapped = await page
+    .locator("main section:has(img) .copy-inset .space-y-4 > *")
+    .evaluateAll((lines) =>
+      lines
+        .filter((line) => {
+          const range = document.createRange();
+          range.selectNodeContents(line);
+          const tops = new Set(
+            [...range.getClientRects()].map((rect) => Math.round(rect.top)),
+          );
+          return tops.size > 1;
+        })
+        .map((line) => line.textContent),
+    );
+  expect(wrapped).toEqual([]);
+});
