@@ -5,6 +5,7 @@ const titles = [
   "Vous cherchez la pièce à votre image, or…",
   "Maison Matron, artisan depuis 4 générations",
   "Le vrai sur-mesure",
+  "Des centaines de tissus, tous au même prix",
   "L'atelier vient à vous, et c'est offert",
   "Le processus & la restitution",
   "4 saisons, 4 privilèges",
@@ -25,11 +26,11 @@ test("every call to action leads to the booking form", async ({ page }) => {
   const calls = page.getByRole("link", {
     name: "Je veux ma visite offerte",
   });
-  await expect(calls).toHaveCount(7);
+  await expect(calls).toHaveCount(9);
   for (const call of await calls.all()) {
     await expect(call).toHaveAttribute("href", "#booking");
   }
-  await expect(page.locator("main a[href='#booking']")).toHaveCount(7);
+  await expect(page.locator("main a[href='#booking']")).toHaveCount(9);
   await expect(page.locator("#booking form")).toBeVisible();
   await expect(page.locator("#booking form").getByRole("button")).toHaveText(
     "Je réserve ma visite",
@@ -40,11 +41,11 @@ test("every call to action leads to the booking form", async ({ page }) => {
 const visuals = [
   { section: 3, name: /Photographie d'archive/ },
   { section: 4, name: /quatre chaises traîneau/ },
-  { section: 5, name: /tire-sangle/ },
-  { section: 6, name: /Canapé en bois/ },
-  { section: 7, name: /Deux fauteuils médaillon en bois teinté/ },
-  { section: 7, name: /Buffet bas/ },
-  { section: 8, name: /Fauteuil à haut dossier/ },
+  { section: 6, name: /tire-sangle/ },
+  { section: 7, name: /Canapé en bois/ },
+  { section: 8, name: /Deux fauteuils médaillon en bois teinté/ },
+  { section: 8, name: /Buffet bas/ },
+  { section: 9, name: /Fauteuil à haut dossier/ },
 ].map((visual) => ({ ...visual, title: titles[visual.section - 1] ?? "" }));
 
 const sectionOf = (page: Page, title: string) =>
@@ -81,7 +82,7 @@ for (const { width, gap } of [
   { width: 375, gap: 48 },
   { width: 1280, gap: 64 },
 ]) {
-  for (const section of [3, 4, 5, 6, 7, 8]) {
+  for (const section of [3, 4, 6, 7, 8, 9]) {
     test(`at ${width}px section ${section} keeps its call to action in its text block, one gap from its visual`, async ({
       page,
     }) => {
@@ -129,12 +130,12 @@ test("section 4 holds « Profitez du dernier chaisier de Suisse » in its text b
   await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
 });
 
-test("the pair of section 7 stands side by side at one height from md", async ({
+test("the pair of section 8 stands side by side at one height from md", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto("/");
-  const block = sectionOf(page, titles[6] ?? "");
+  const block = sectionOf(page, titles[7] ?? "");
   const [left, right] = await Promise.all(
     [/Deux fauteuils médaillon en bois teinté/, /Buffet bas/].map((name) =>
       block.getByRole("img", { name }).boundingBox(),
@@ -145,10 +146,10 @@ test("the pair of section 7 stands side by side at one height from md", async ({
   expect(right?.x).toBeGreaterThan((left?.x ?? 0) + (left?.width ?? 0));
 });
 
-test("the pair of section 7 stacks full width below md", async ({ page }) => {
+test("the pair of section 8 stacks full width below md", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 800 });
   await page.goto("/");
-  const block = sectionOf(page, titles[6] ?? "");
+  const block = sectionOf(page, titles[7] ?? "");
   const [top, bottom] = await Promise.all(
     [/Deux fauteuils médaillon en bois teinté/, /Buffet bas/].map((name) =>
       block.getByRole("img", { name }).boundingBox(),
@@ -183,7 +184,7 @@ test("a dashed rule stands above the form section's title", async ({
   );
 });
 
-for (const section of [2, 9]) {
+for (const section of [2, 5, 10]) {
   test(`section ${section} takes the whole viewport, its content centred`, async ({
     page,
   }) => {
@@ -255,7 +256,7 @@ test("the décorateur section reads its subtitle then its three lines, and its c
   page,
 }) => {
   await page.goto("/");
-  const block = sectionOf(page, titles[7] ?? "");
+  const block = sectionOf(page, titles[8] ?? "");
   await expect(block.locator("h2, p")).toHaveText([
     "Vous travaillez avec un décorateur d'intérieur ?",
     "C'est parfait.",
@@ -270,7 +271,7 @@ test("the process section reads its lines, its subtitle last, then its call to a
   page,
 }) => {
   await page.goto("/");
-  const block = sectionOf(page, titles[5] ?? "");
+  const block = sectionOf(page, titles[6] ?? "");
   await expect(block.locator("h2, p")).toHaveText([
     "Le processus & la restitution",
     "Le jour même, nous emportons vos pièces.",
@@ -287,7 +288,7 @@ test("the atelier section reads its subtitles without colon, each line after the
   page,
 }) => {
   await page.goto("/");
-  const block = sectionOf(page, titles[4] ?? "");
+  const block = sectionOf(page, titles[5] ?? "");
   await expect(block.locator("h2, p")).toHaveText([
     "L'atelier vient à vous, et c'est offert",
     "Quel que soit votre projet, nous venons d'abord en discuter avec vous.",
@@ -303,7 +304,7 @@ test("the privileges section reads its subtitle, its list of privileges bulleted
   page,
 }) => {
   await page.goto("/");
-  const block = sectionOf(page, titles[6] ?? "");
+  const block = sectionOf(page, titles[7] ?? "");
   await expect(block.locator("h2, p, li")).toHaveText([
     "4 saisons, 4 privilèges",
     "Avant chacune, profitez d'une offre exclusive.",
@@ -357,7 +358,7 @@ for (const width of [375, 1280]) {
   }) => {
     await page.setViewportSize({ width, height: 800 });
     await page.goto("/");
-    const block = sectionOf(page, titles[6] ?? "");
+    const block = sectionOf(page, titles[7] ?? "");
     const lefts = await block
       .locator("li")
       .evaluateAll((items) =>
@@ -431,14 +432,19 @@ test("the reviews section holds its ten reviews, set like the hero's quote, the 
       await expect(text).toHaveCSS(property, expected);
     }
   }
-  await expect(block.getByRole("link")).toHaveCount(0);
+  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
   await expect(block.locator("xpath=following-sibling::section[1]")).toHaveId(
     "booking",
   );
 });
 
-for (const width of [375, 768, 1024, 1440]) {
-  test(`at ${width}px each review is its own block, left aligned at a reading measure, its name on the line under it`, async ({
+for (const { width, columns } of [
+  { width: 375, columns: 1 },
+  { width: 768, columns: 1 },
+  { width: 1024, columns: 2 },
+  { width: 1440, columns: 2 },
+]) {
+  test(`at ${width}px the reviews run in ${columns} left aligned column${columns > 1 ? "s" : ""}, each review whole in one, its name on the line under it`, async ({
     page,
   }) => {
     await page.setViewportSize({ width, height: 900 });
@@ -448,23 +454,107 @@ for (const width of [375, 768, 1024, 1440]) {
     const edge = (await block.getByRole("heading").boundingBox())?.x ?? 0;
     const figures = await block.locator("figure").all();
     expect(figures).toHaveLength(10);
-    let previousBottom = -Infinity;
+    const columnTops = new Map<number, number>();
+    const columnBottoms = new Map<number, number>();
     for (const figure of figures) {
       const quote = await figure.locator("p").boundingBox();
       const name = await figure.locator("figcaption").boundingBox();
       if (!quote || !name) throw new Error("review without quote or name");
-      expect(quote.x).toBeCloseTo(edge, 0);
-      expect(name.x).toBeCloseTo(edge, 0);
+      const column = Math.round(quote.x);
+      expect(name.x).toBeCloseTo(quote.x, 0);
       expect(quote.width).toBeLessThanOrEqual(600);
       expect(name.y - (quote.y + quote.height)).toBeCloseTo(16, 0);
-      expect(quote.y - previousBottom).toBeGreaterThanOrEqual(gap - 0.5);
-      previousBottom = name.y + name.height;
+      const previous = columnBottoms.get(column);
+      if (previous === undefined) columnTops.set(column, quote.y);
+      else expect(quote.y - previous).toBeCloseTo(gap, 0);
+      columnBottoms.set(column, name.y + name.height);
     }
+    const lefts = [...columnTops.keys()].sort((a, b) => a - b);
+    expect(lefts).toHaveLength(columns);
+    expect(lefts[0]).toBeCloseTo(edge, 0);
+    expect(new Set(columnTops.values()).size).toBe(1);
     const aligns = await block
       .locator(":is(h2, p, figcaption)")
       .evaluateAll((texts) =>
         texts.map((text) => getComputedStyle(text).textAlign),
       );
     for (const align of aligns) expect(["left", "start"]).toContain(align);
+    const call = await block.getByRole("link").boundingBox();
+    expect(call?.x).toBeCloseTo(edge, 0);
+    expect(call?.y ?? 0).toBeGreaterThan(Math.max(...columnBottoms.values()));
+  });
+}
+
+const fabricLogos = [
+  "Hermès",
+  "Christian Lacroix",
+  "Ralph Lauren",
+  "Dedar",
+  "Lelièvre",
+  "Nobilis",
+  "Edmond Petit",
+  "Pierre Frey",
+  "Casal",
+];
+
+test("the fabrics section follows « Le vrai sur-mesure », its lines, its logos and its call to action in order", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const block = sectionOf(page, "Des centaines de tissus, tous au même prix");
+  await expect(
+    block.locator("xpath=preceding-sibling::section[1]"),
+  ).toContainText("Le vrai sur-mesure");
+  await expect(block.locator("h2, p")).toHaveText([
+    "Des centaines de tissus, tous au même prix",
+    "Nos collections voyagent avec nous jusqu'à chez vous.",
+    "Ce que vous voulez, nous l'avons.",
+    "Et tant d'autres…",
+  ]);
+  const logos = block.getByRole("img");
+  await expect(logos).toHaveCount(fabricLogos.length);
+  for (const [index, name] of fabricLogos.entries()) {
+    await expect(logos.nth(index)).toHaveAttribute("alt", name);
+  }
+  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
+});
+
+for (const width of [375, 1024, 1440]) {
+  test(`at ${width}px the fabric logos stand at one height in centred rows, Pierre Frey and Casal alone on the last`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/");
+    const block = sectionOf(page, "Des centaines de tissus, tous au même prix");
+    const boxes = [];
+    for (const name of fabricLogos) {
+      const logo = block.getByRole("img", { name, exact: true });
+      await expect(logo).toHaveCSS("opacity", "0.5");
+      if (name === "Pierre Frey")
+        await expect(logo).toHaveCSS("filter", "none");
+      else
+        await expect(logo).toHaveCSS(
+          "filter",
+          /brightness\(0\).*invert\(0\.106\)/,
+        );
+      const box = await logo.boundingBox();
+      if (!box) throw new Error(`${name} not rendered`);
+      expect(box.height).toBeCloseTo(26, 0);
+      expect(box.width).toBeLessThanOrEqual(150.5);
+      boxes.push({ name, ...box });
+    }
+    const rows = Map.groupBy(boxes, (box) => Math.round(box.y));
+    const last = [...rows.values()].at(-1) ?? [];
+    expect(last.map((box) => box.name)).toEqual(["Pierre Frey", "Casal"]);
+    const holder = await block
+      .getByRole("img", { name: "Hermès" })
+      .locator("xpath=../..")
+      .boundingBox();
+    const centre = (holder?.x ?? 0) + (holder?.width ?? 0) / 2;
+    for (const row of rows.values()) {
+      const left = Math.min(...row.map((box) => box.x));
+      const right = Math.max(...row.map((box) => box.x + box.width));
+      expect((left + right) / 2).toBeCloseTo(centre, 0);
+    }
   });
 }

@@ -5,7 +5,8 @@ import { Field } from "@/components/field";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { LeadSheet } from "@/components/lead_sheet";
-import { ReadingSection } from "@/components/reading_section";
+import { LogoRow, LogoRows } from "@/components/logo_rows";
+import { ReviewsSection } from "@/components/reviews_section";
 import { SideVisualSection } from "@/components/side_visual_section";
 import {
   Caption,
@@ -16,6 +17,15 @@ import {
 } from "@/components/typography";
 import { Watermarked } from "@/components/watermarked";
 import { WideVisualSection } from "@/components/wide_visual_section";
+import casal_logo from "../../public/fabric-logos/casal.svg";
+import christian_lacroix_logo from "../../public/fabric-logos/christian-lacroix.png";
+import dedar_logo from "../../public/fabric-logos/dedar.svg";
+import edmond_petit_logo from "../../public/fabric-logos/edmond-petit.png";
+import hermes_logo from "../../public/fabric-logos/hermes.svg";
+import lelievre_logo from "../../public/fabric-logos/lelievre-paris.svg";
+import nobilis_logo from "../../public/fabric-logos/nobilis.svg";
+import pierre_frey_logo from "../../public/fabric-logos/pierre-frey.svg";
+import ralph_lauren_logo from "../../public/fabric-logos/ralph-lauren.svg";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
 import sideboard from "../../public/visuals/buffet.jpg";
@@ -104,6 +114,68 @@ const Home = () => (
           </p>
           <p>Profitez de deux savoir-faire centenaires pour vos pièces.</p>
         </WideVisualSection>
+
+        <CenteredSection
+          action={
+            <CallToAction href="#booking">
+              Je veux ma visite offerte
+            </CallToAction>
+          }
+        >
+          <SectionTitle>
+            Des centaines de tissus, tous au même prix
+          </SectionTitle>
+          <p>Nos collections voyagent avec nous jusqu'à chez vous.</p>
+          <p>Ce que vous voulez, nous l'avons.</p>
+          <LogoRows>
+            <LogoRow>
+              <Image
+                src={hermes_logo}
+                alt="Hermès"
+                className="brightness-0 invert-[10.6%]"
+              />
+              <Image
+                src={christian_lacroix_logo}
+                alt="Christian Lacroix"
+                className="brightness-0 invert-[10.6%]"
+              />
+              <Image
+                src={ralph_lauren_logo}
+                alt="Ralph Lauren"
+                className="brightness-0 invert-[10.6%]"
+              />
+              <Image
+                src={dedar_logo}
+                alt="Dedar"
+                className="brightness-0 invert-[10.6%]"
+              />
+              <Image
+                src={lelievre_logo}
+                alt="Lelièvre"
+                className="brightness-0 invert-[10.6%]"
+              />
+              <Image
+                src={nobilis_logo}
+                alt="Nobilis"
+                className="brightness-0 invert-[10.6%]"
+              />
+              <Image
+                src={edmond_petit_logo}
+                alt="Edmond Petit"
+                className="brightness-0 invert-[10.6%]"
+              />
+            </LogoRow>
+            <LogoRow>
+              <Image src={pierre_frey_logo} alt="Pierre Frey" />
+              <Image
+                src={casal_logo}
+                alt="Casal"
+                className="brightness-0 invert-[10.6%]"
+              />
+            </LogoRow>
+          </LogoRows>
+          <p>Et tant d'autres…</p>
+        </CenteredSection>
 
         <WideVisualSection
           visual={
@@ -245,8 +317,14 @@ const Home = () => (
           <p>Nous échangeons directement avec lui, vous restez serein.</p>
         </SideVisualSection>
 
-        <ReadingSection>
-          <SectionTitle>Ils nous ont confié leurs pièces</SectionTitle>
+        <ReviewsSection
+          title={<SectionTitle>Ils nous ont confié leurs pièces</SectionTitle>}
+          action={
+            <CallToAction href="#booking">
+              Je veux ma visite offerte
+            </CallToAction>
+          }
+        >
           <figure>
             <blockquote>
               <Quote>
@@ -345,7 +423,7 @@ const Home = () => (
             </blockquote>
             <Reviewer>- Anne</Reviewer>
           </figure>
-        </ReadingSection>
+        </ReviewsSection>
 
         <LeadSheet
           id="booking"
