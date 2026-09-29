@@ -262,7 +262,7 @@ test("the décorateur section reads its subtitle then its three lines, and its c
     "C'est parfait.",
     "Nos métiers d'art fonctionnent en symbiose.",
     "Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.",
-    "Nous échangeons directement, vous restez serein.",
+    "Nous échangeons directement, vous gardez un seul interlocuteur.",
   ]);
   await expect(block.getByRole("link")).toHaveText("Votre expertise offerte");
 });

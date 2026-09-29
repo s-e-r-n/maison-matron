@@ -310,7 +310,7 @@ const Home = () => (
           <p>
             Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.
           </p>
-          <p>Nous échangeons directement, vous restez serein.</p>
+          <p>Nous échangeons directement, vous gardez un seul interlocuteur.</p>
         </SideVisualSection>
 
         <ReviewsSection
