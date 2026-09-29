@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { LeadSheet } from "@/components/lead_sheet";
 import { SideVisualSection } from "@/components/side_visual_section";
-import { SectionTitle } from "@/components/typography";
+import { SectionSubtitle, SectionTitle } from "@/components/typography";
 import { Watermarked } from "@/components/watermarked";
 import { WideVisualSection } from "@/components/wide_visual_section";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
@@ -27,9 +27,9 @@ const Home = () => (
       <div className="page-width flex flex-col gap-24 py-12 lg:gap-32 lg:py-16">
         <CenteredSection>
           <SectionTitle>Vous cherchez la pièce à votre image, or…</SectionTitle>
-          <p>Le luxe perd du caractère et le bon goût devient consensus.</p>
           <p>La marque décide jusqu'où va votre « sur-mesure ».</p>
           <p>L'unique est éclipsé par les collections à la mode.</p>
+          <p>Nous ne sommes pas d'accord avec ça.</p>
         </CenteredSection>
 
         <SideVisualSection
@@ -39,6 +39,9 @@ const Home = () => (
               alt="Photographie d'archive en noir et blanc : un homme en gilet et chemise aux manches retroussées tient un cheval par la longe, devant une bâtisse."
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
+          }
+          action={
+            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
           }
         >
           <SectionTitle>
@@ -52,7 +55,9 @@ const Home = () => (
             Nos tapissiers, ébénistes et courtepointières sont unis par une
             unique valeur :
           </p>
-          <p>Ennoblir chaque pièce qui nous est confiée.</p>
+          <SectionSubtitle>
+            Ennoblir chaque pièce qui nous est confiée.
+          </SectionSubtitle>
         </SideVisualSection>
 
         <WideVisualSection
@@ -63,6 +68,9 @@ const Home = () => (
               sizes="100vw"
             />
           }
+          action={
+            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
+          }
         >
           <SectionTitle>Le vrai sur-mesure</SectionTitle>
           <p>
@@ -71,12 +79,22 @@ const Home = () => (
           </p>
           <p>Choisissez les finitions bois que vous trouvez les plus belles.</p>
           <p>
-            Vous aimeriez plus encore ? Vous pouvez passer commande en atelier.
-          </p>
-          <p>
             Nous nous assurerons que vos pièces résonnent avec qui vous êtes.
           </p>
         </WideVisualSection>
+
+        <CenteredSection
+          action={
+            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
+          }
+        >
+          <SectionTitle>Le dernier chaisier de Suisse</SectionTitle>
+          <SectionSubtitle>
+            Depuis 1908, son atelier assemble à l'ancienne un bois de la région,
+            qui a rarement voyagé plus de 100 km.
+          </SectionSubtitle>
+          <p>Profitez de deux savoir-faire centenaires pour votre chaise.</p>
+        </CenteredSection>
 
         <WideVisualSection
           visual={
@@ -98,14 +116,16 @@ const Home = () => (
           <p>
             Un tissu doit être vu, touché, et jugé à la lumière de chez vous.
           </p>
-          <p>Nous vous conseillons dans le détail :</p>
+          <SectionSubtitle>
+            Nous vous conseillons dans le détail :
+          </SectionSubtitle>
           <p>
             les matériaux se choisissent selon la vie passée et future de votre
             objet.
           </p>
-          <p>
+          <SectionSubtitle>
             Si vous le souhaitez, nous examinons le reste de votre mobilier :
-          </p>
+          </SectionSubtitle>
           <p>
             la santé des bois et des matières et ce qui vaut la peine d'être
             restauré.
@@ -126,14 +146,18 @@ const Home = () => (
         >
           <SectionTitle>Le processus &amp; la restitution</SectionTitle>
           <p>Le jour même, nous emportons vos pièces.</p>
-          <p>Soyez serein, tout transport est à la charge de La Maison.</p>
+          <p>
+            Soyez serein, tout transport est à la charge de <em>La Maison</em>.
+          </p>
           <p>Nous vous tenons informé durant tout le processus de réfection.</p>
           <p>
             Lorsque les artisans ont terminé, nous fixons avec vous le jour et
             l'heure de restitution.
           </p>
           <p>
-            Enfin, nous vous dévoilons chaque ouvrage : unique et à votre image.
+            Enfin, nous vous dévoilons chaque ouvrage :
+            <br />
+            unique et à votre image.
           </p>
         </WideVisualSection>
 
@@ -176,6 +200,9 @@ const Home = () => (
               alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
+          }
+          action={
+            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
           }
         >
           <SectionTitle>
