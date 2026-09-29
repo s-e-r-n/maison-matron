@@ -7,6 +7,7 @@ import { Hero } from "@/components/hero";
 import { LeadSheet } from "@/components/lead_sheet";
 import { LogoRow, LogoRows } from "@/components/logo_rows";
 import { ReviewsSection } from "@/components/reviews_section";
+import { SectionSeparator } from "@/components/section_separator";
 import { SideVisualSection } from "@/components/side_visual_section";
 import {
   Caption,
@@ -43,12 +44,16 @@ const Home = () => (
 
     <Watermarked>
       <div className="page-width flex flex-col gap-24 py-12 lg:gap-32 lg:py-16 [&_:is(p,li):not(.font-display)]:text-gray-600">
+        <SectionSeparator />
+
         <CenteredSection>
           <SectionTitle>Vous cherchez la pièce à votre image, or…</SectionTitle>
           <p>La marque décide jusqu'où va votre « sur-mesure ».</p>
           <p>L'unique est éclipsé par les collections à la mode.</p>
           <p>Le choix des tissus vous est limité.</p>
         </CenteredSection>
+
+        <SectionSeparator />
 
         <SideVisualSection
           visual={
@@ -81,6 +86,8 @@ const Home = () => (
           </SectionSubtitle>
         </SideVisualSection>
 
+        <SectionSeparator />
+
         <WideVisualSection
           visual={
             <figure>
@@ -111,6 +118,8 @@ const Home = () => (
           </p>
           <p>Profitez de deux savoir-faire centenaires pour vos pièces.</p>
         </WideVisualSection>
+
+        <SectionSeparator />
 
         <SideVisualSection
           visual={
@@ -180,6 +189,8 @@ const Home = () => (
           <p className="italic">Et tant d'autres…</p>
         </SideVisualSection>
 
+        <SectionSeparator />
+
         <WideVisualSection
           visual={
             <figure>
@@ -218,6 +229,8 @@ const Home = () => (
           </p>
         </WideVisualSection>
 
+        <SectionSeparator />
+
         <WideVisualSection
           visual={
             <figure>
@@ -246,6 +259,8 @@ const Home = () => (
           <p>Enfin, nous vous dévoilons chaque ouvrage :</p>
           <SectionSubtitle>unique et à votre image.</SectionSubtitle>
         </WideVisualSection>
+
+        <SectionSeparator />
 
         <WideVisualSection
           visual={
@@ -287,6 +302,8 @@ const Home = () => (
           </div>
         </WideVisualSection>
 
+        <SectionSeparator />
+
         <SideVisualSection
           visual={
             <figure>
@@ -312,6 +329,8 @@ const Home = () => (
           </p>
           <p>Nous échangeons directement, vous gardez un seul interlocuteur.</p>
         </SideVisualSection>
+
+        <SectionSeparator />
 
         <ReviewsSection
           title={<SectionTitle>Ils nous ont confié leurs pièces</SectionTitle>}
@@ -415,6 +434,8 @@ const Home = () => (
             <Reviewer>- Anne</Reviewer>
           </figure>
         </ReviewsSection>
+
+        <SectionSeparator />
 
         <LeadSheet
           id="booking"
