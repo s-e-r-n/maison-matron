@@ -7,7 +7,7 @@ export const Footer = () => (
       <Image
         src={logo}
         alt="Maison Matron, 1921"
-        className="block h-auto w-[200px] max-w-full"
+        className="block h-auto w-full max-w-full md:w-[200px]"
       />
       <address className="text-gray-600 not-italic">
         Route de Gilly 15
