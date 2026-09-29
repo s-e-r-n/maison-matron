@@ -8,7 +8,6 @@ import { LeadSheet } from "@/components/lead_sheet";
 import { SideVisualSection } from "@/components/side_visual_section";
 import {
   Caption,
-  SectionNote,
   SectionSubtitle,
   SectionTitle,
 } from "@/components/typography";
@@ -39,11 +38,14 @@ const Home = () => (
 
         <SideVisualSection
           visual={
-            <Image
-              src={archival_photo}
-              alt="Photographie d'archive en noir et blanc : un homme en gilet et chemise aux manches retroussées tient un cheval par la longe, devant une bâtisse."
-              sizes="(min-width: 1024px) 50vw, 100vw"
-            />
+            <figure>
+              <Image
+                src={archival_photo}
+                alt="Photographie d'archive en noir et blanc : un homme en gilet et chemise aux manches retroussées tient un cheval par la longe, devant une bâtisse."
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+              <Caption>Photo d'archive</Caption>
+            </figure>
           }
           action={
             <CallToAction href="#booking">Je réserve ma visite</CallToAction>
@@ -191,16 +193,13 @@ const Home = () => (
           <SectionSubtitle>
             Avant chacune, profitez d'une offre exclusive.
           </SectionSubtitle>
-          <p>Chaque saison a son besoin.</p>
-          <p>
-            Que ce soit l'entretien ou la gamme de tissus, nous pensons à ce
-            qu'il vous faut.
-          </p>
-          <SectionNote>
-            Ces privilèges comprennent des révisions offertes, l'entretien des
-            bois, des réductions entre voisins et sur les tissus de saison,
-            ainsi que des offres spéciales sur des tissus uniques.
-          </SectionNote>
+          <ul className="list-inside list-['❊_'] space-y-4">
+            <li>Révisions offertes</li>
+            <li>Entretien des bois</li>
+            <li>Réductions entre voisins</li>
+            <li>Réductions sur les tissus de saison</li>
+            <li>Offres spéciales sur des tissus uniques</li>
+          </ul>
         </WideVisualSection>
 
         <SideVisualSection

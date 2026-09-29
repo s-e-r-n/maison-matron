@@ -14,12 +14,6 @@ export const SectionSubtitle = ({ children }: typography_props) => (
   </p>
 );
 
-export const SectionNote = ({ children }: typography_props) => (
-  <p className="text-[13px] leading-[1.5] whitespace-normal text-sheet-ink">
-    {children}
-  </p>
-);
-
 export const Caption = ({ children }: typography_props) => (
   <figcaption className="mx-[15px] mt-2 px-5 font-display text-base leading-none text-sheet-ink italic md:mx-0 md:px-0">
     {children}

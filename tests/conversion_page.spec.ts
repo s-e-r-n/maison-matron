@@ -205,7 +205,7 @@ test("from xl no line of a stacked text block wraps", async ({ page }) => {
   await page.goto("/");
   const wrapped = await page
     .locator(
-      "main section:has(img) .copy-inset .space-y-4 > :not(:has-text('Ces privilèges'))",
+      "main section:has(img) .copy-inset .space-y-4 > :not(ul), main section:has(img) .copy-inset .space-y-4 > ul > li",
     )
     .evaluateAll((lines) =>
       lines
@@ -296,25 +296,26 @@ test("the atelier section reads its subtitles without colon, each line after the
   ]);
 });
 
-test("the privileges section reads its subtitle, two lines, its greyed note, then its call to action", async ({
+test("the privileges section reads its subtitle, its list of privileges bulleted ❊, then its call to action", async ({
   page,
 }) => {
   await page.goto("/");
   const block = sectionOf(page, titles[6] ?? "");
-  await expect(block.locator("h2, p")).toHaveText([
+  await expect(block.locator("h2, p, li")).toHaveText([
     "4 saisons, 4 privilèges",
     "Avant chacune, profitez d'une offre exclusive.",
-    "Chaque saison a son besoin.",
-    "Que ce soit l'entretien ou la gamme de tissus, nous pensons à ce qu'il vous faut.",
-    "Ces privilèges comprennent des révisions offertes, l'entretien des bois, des réductions entre voisins et sur les tissus de saison, ainsi que des offres spéciales sur des tissus uniques.",
+    "Révisions offertes",
+    "Entretien des bois",
+    "Réductions entre voisins",
+    "Réductions sur les tissus de saison",
+    "Offres spéciales sur des tissus uniques",
   ]);
-  const note = block.getByText("Ces privilèges comprennent");
-  await expect(note).toHaveCSS("font-size", "13px");
-  await expect(note).toHaveCSS("color", "rgba(0, 0, 0, 0.7)");
+  await expect(block.locator("ul")).toHaveCSS("list-style-type", '"❊ "');
   await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
 });
 
 const captions = [
+  { name: /Photographie d'archive/, caption: "Photo d'archive" },
   { name: /quatre chaises traîneau/, caption: "Réalisation Maison Matron" },
   { name: /tire-sangle/, caption: "L'outil du tapissier" },
   { name: /Canapé en bois/, caption: "Réalisation Maison Matron" },
@@ -324,7 +325,7 @@ const captions = [
 ];
 
 for (const width of [375, 1280]) {
-  test(`at ${width}px every photo of a piece carries its caption close under it, the archival photo none`, async ({
+  test(`at ${width}px every photo carries its caption close under it`, async ({
     page,
   }) => {
     await page.setViewportSize({ width, height: 800 });
@@ -341,10 +342,5 @@ for (const width of [375, 1280]) {
       expect(gap).toBeGreaterThanOrEqual(0);
       expect(gap).toBeLessThanOrEqual(12);
     }
-    await expect(
-      page.locator("figure").filter({
-        has: page.getByRole("img", { name: /Photographie d'archive/ }),
-      }),
-    ).toHaveCount(0);
   });
 }
