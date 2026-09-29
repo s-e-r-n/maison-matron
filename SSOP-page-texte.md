@@ -44,3 +44,17 @@ Sort:
 | `typography.tsx` | The size, face, colour and leading of each text level: title, subtitle, note, caption | Which level the text is; a caption goes inside a `figure` |
 - Text round 5 (017): the archival photo takes the caption « Photo d'archive » in a `figure`; the privileges become a real `ul` in body text under the subtitle, its bullet `❊` through `list-style-type`, and `SectionNote` leaves `typography.tsx`, no caller left.
 - Text round 6 (024): a reviews section « Ils nous ont confié leurs pièces » on `CenteredSection`, right above the form, holds ten reviews without call to action; each review is a `Quote`, the hero's quote level moved into `typography.tsx`, a `p` at 17px and 1.45, and the hero uses it too, its spacing kept on a wrapper.
+- Text round 7 (human's first directive to page-finale): the reviews section leaves `CenteredSection` for `ReadingSection`, a left aligned model at least one viewport high, its block centred in the column from `md` and held to a 600px reading measure, every child one block apart, 48px then 64px from `lg`; each review is a `figure`, its words a `Quote` in a `blockquote`, the reviewer's name a `Reviewer` `figcaption` on its own line 16px under the quote, in the quote's type.
+
+| Produces | Needs | Parameters | Returns | File |
+| -------- | ----- | ---------- | ------- | ---- |
+| ReadingSection | theme tokens | `children` | a left aligned section at a reading measure, its blocks one gap apart | `src/components/reading_section.tsx` |
+| Reviewer | theme tokens | `children` | the name under a review, in the quote's type | `src/components/typography.tsx` |
+| page | ReadingSection, Quote, Reviewer | - | the reviews rebuilt | `src/app/page.tsx` |
+| page e2e | page | - | each review a block, its name on its own line, the section left aligned at its measure | `tests/conversion_page.spec.ts` |
+
+Sort: 1. ReadingSection, Reviewer; 2. page; 3. page e2e.
+
+| Module | Change it confines | What a caller must know |
+| ------ | ------------------ | ----------------------- |
+| `reading_section.tsx` | The model of a section read line by line: its alignment, its measure, the gap between its blocks | Each block a direct child |
