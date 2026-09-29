@@ -34,3 +34,4 @@ Sort:
 
 ## Amendments
 - The terciary icons turned 45° reach about 10.8px beyond their 52px box, so the separator carries `py-3` and keeps at least one block gap clear of its icons above and below, the first one included under the hero.
+- The form's section drops its dashed rule, the `hr` drawn with a `repeating-linear-gradient` in `lead_sheet.tsx`: the separator above it already marks the change of subject; every other element of the form stays as it is.
