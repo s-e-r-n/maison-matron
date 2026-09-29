@@ -319,7 +319,7 @@ test("the privileges section reads its subtitle, its list of privileges bulleted
 const captions = [
   { name: /Photographie d'archive/, caption: "Photo d'archive" },
   { name: /quatre chaises traîneau/, caption: "Réalisation Maison Matron" },
-  { name: /tire-sangle/, caption: "L'outil du tapissier" },
+  { name: /tire-sangle/, caption: "Le tire-sangle du tapissier" },
   { name: /Canapé en bois/, caption: "Réalisation Maison Matron" },
   {
     name: /Deux fauteuils médaillon en bois teinté/,

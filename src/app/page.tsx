@@ -110,7 +110,7 @@ const Home = () => (
                 alt="Un tire-sangle en bois posé sur un rouleau de sangle de jute, sur fond de toile."
                 sizes="100vw"
               />
-              <Caption>L'outil du tapissier</Caption>
+              <Caption>Le tire-sangle du tapissier</Caption>
             </figure>
           }
           action={
