@@ -18,7 +18,7 @@ import archival_photo from "../../public/visuals/archival-photo-man-leading-hors
 import sideboard from "../../public/visuals/buffet.jpg";
 import lion_sofa from "../../public/visuals/canape-lions.jpg";
 import blue_chair from "../../public/visuals/chaise-bleue.jpg";
-import pine_chairs from "../../public/visuals/chaises-pin-japonais.jpg";
+import white_chairs from "../../public/visuals/chaises-blanches.jpg";
 import upholstery_tool from "../../public/visuals/outil.jpg";
 
 const Home = () => (
@@ -169,8 +169,8 @@ const Home = () => (
             <div className="grid gap-4 md:grid-cols-2">
               <figure>
                 <Image
-                  src={pine_chairs}
-                  alt="Deux fauteuils médaillon en bois naturel, garnis d'un tissu écru brodé de branches de pin rouges, sur fond clair."
+                  src={white_chairs}
+                  alt="Deux fauteuils médaillon en bois teinté, garnis d'un tissu gris clair à motif géométrique blanc, sur fond blanc."
                   sizes="(min-width: 768px) 50vw, 100vw"
                 />
                 <Caption>Réalisation Maison Matron</Caption>

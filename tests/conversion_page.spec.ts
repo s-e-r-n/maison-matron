@@ -37,7 +37,7 @@ const visuals = [
   { section: 4, name: /quatre chaises traîneau/ },
   { section: 5, name: /tire-sangle/ },
   { section: 6, name: /Canapé en bois/ },
-  { section: 7, name: /Deux fauteuils médaillon/ },
+  { section: 7, name: /Deux fauteuils médaillon en bois teinté/ },
   { section: 7, name: /Buffet bas/ },
   { section: 8, name: /Fauteuil à haut dossier/ },
 ].map((visual) => ({ ...visual, title: titles[visual.section - 1] ?? "" }));
@@ -131,7 +131,7 @@ test("the pair of section 7 stands side by side at one height from md", async ({
   await page.goto("/");
   const block = sectionOf(page, titles[6] ?? "");
   const [left, right] = await Promise.all(
-    [/Deux fauteuils médaillon/, /Buffet bas/].map((name) =>
+    [/Deux fauteuils médaillon en bois teinté/, /Buffet bas/].map((name) =>
       block.getByRole("img", { name }).boundingBox(),
     ),
   );
@@ -145,7 +145,7 @@ test("the pair of section 7 stacks full width below md", async ({ page }) => {
   await page.goto("/");
   const block = sectionOf(page, titles[6] ?? "");
   const [top, bottom] = await Promise.all(
-    [/Deux fauteuils médaillon/, /Buffet bas/].map((name) =>
+    [/Deux fauteuils médaillon en bois teinté/, /Buffet bas/].map((name) =>
       block.getByRole("img", { name }).boundingBox(),
     ),
   );
@@ -319,7 +319,10 @@ const captions = [
   { name: /quatre chaises traîneau/, caption: "Réalisation Maison Matron" },
   { name: /tire-sangle/, caption: "L'outil du tapissier" },
   { name: /Canapé en bois/, caption: "Réalisation Maison Matron" },
-  { name: /Deux fauteuils médaillon/, caption: "Réalisation Maison Matron" },
+  {
+    name: /Deux fauteuils médaillon en bois teinté/,
+    caption: "Réalisation Maison Matron",
+  },
   { name: /Buffet bas/, caption: "Réalisation Maison Matron" },
   { name: /Fauteuil à haut dossier/, caption: "Réalisation Maison Matron" },
 ];
