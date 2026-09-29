@@ -18,7 +18,7 @@ export const WideVisualSection = ({
     </div>
     <div
       aria-hidden={visual ? undefined : true}
-      className="grid *:h-auto *:w-full empty:aspect-[3/2] empty:bg-ink md:mx-4 lg:mx-0"
+      className="grid empty:aspect-[3/2] empty:bg-ink [&_img]:block [&_img]:h-auto [&_img]:w-full md:mx-4 lg:mx-0"
     >
       {visual}
     </div>

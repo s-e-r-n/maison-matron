@@ -17,7 +17,11 @@ const photos = [
   { name: /quatre chaises traîneau/, width: 2700, height: 1800 },
   { name: /tire-sangle/, width: 3000, height: 2000 },
   { name: /Canapé en bois/, width: 3000, height: 2000 },
-  { name: /Deux fauteuils médaillon/, width: 3000, height: 2000 },
+  {
+    name: /Deux fauteuils médaillon en bois teinté/,
+    width: 3000,
+    height: 2000,
+  },
   { name: /Buffet bas/, width: 3000, height: 2000 },
   { name: /Fauteuil à haut dossier/, width: 2400, height: 3000 },
 ];

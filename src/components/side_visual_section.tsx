@@ -18,7 +18,7 @@ export const SideVisualSection = ({
     </div>
     <div
       aria-hidden={visual ? undefined : true}
-      className="*:block *:h-auto *:w-full empty:aspect-[4/5] empty:bg-ink md:mx-4 lg:mx-0 lg:min-w-0 lg:flex-1"
+      className="empty:aspect-[4/5] empty:bg-ink [&_img]:block [&_img]:h-auto [&_img]:w-full md:mx-4 lg:mx-0 lg:min-w-0 lg:flex-1"
     >
       {visual}
     </div>
