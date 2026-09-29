@@ -26,11 +26,11 @@ test("every call to action leads to the booking form", async ({ page }) => {
   const calls = page.getByRole("link", {
     name: "Je veux ma visite offerte",
   });
-  await expect(calls).toHaveCount(9);
+  await expect(calls).toHaveCount(8);
   for (const call of await calls.all()) {
     await expect(call).toHaveAttribute("href", "#booking");
   }
-  await expect(page.locator("main a[href='#booking']")).toHaveCount(9);
+  await expect(page.locator("main a[href='#booking']")).toHaveCount(8);
   await expect(page.locator("#booking form")).toBeVisible();
   await expect(page.locator("#booking form").getByRole("button")).toHaveText(
     "Je réserve ma visite",
@@ -432,7 +432,7 @@ test("the reviews section holds its ten reviews, set like the hero's quote, the 
       await expect(text).toHaveCSS(property, expected);
     }
   }
-  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
+  await expect(block.getByRole("link")).toHaveCount(0);
   await expect(block.locator("xpath=following-sibling::section[1]")).toHaveId(
     "booking",
   );
@@ -479,9 +479,6 @@ for (const { width, columns } of [
         texts.map((text) => getComputedStyle(text).textAlign),
       );
     for (const align of aligns) expect(["left", "start"]).toContain(align);
-    const call = await block.getByRole("link").boundingBox();
-    expect(call?.x).toBeCloseTo(edge, 0);
-    expect(call?.y ?? 0).toBeGreaterThan(Math.max(...columnBottoms.values()));
   });
 }
 

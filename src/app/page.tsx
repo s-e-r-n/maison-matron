@@ -319,11 +319,6 @@ const Home = () => (
 
         <ReviewsSection
           title={<SectionTitle>Ils nous ont confié leurs pièces</SectionTitle>}
-          action={
-            <CallToAction href="#booking">
-              Je veux ma visite offerte
-            </CallToAction>
-          }
         >
           <figure>
             <blockquote>
