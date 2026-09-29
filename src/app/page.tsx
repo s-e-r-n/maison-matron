@@ -28,12 +28,12 @@ import pierre_frey_logo from "../../public/fabric-logos/pierre-frey.svg";
 import ralph_lauren_logo from "../../public/fabric-logos/ralph-lauren.svg";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
-import blue_silk_damask from "../../public/visuals/blue-silk-damask.jpg";
 import sideboard from "../../public/visuals/buffet.jpg";
 import lion_sofa from "../../public/visuals/canape-lions.jpg";
 import blue_chair from "../../public/visuals/chaise-bleue.jpg";
 import white_chairs from "../../public/visuals/chaises-blanches.jpg";
 import upholstery_tool from "../../public/visuals/outil.jpg";
+import red_silk_velvet from "../../public/visuals/red-silk-velvet.jpg";
 
 const Home = () => (
   <main>
@@ -119,8 +119,8 @@ const Home = () => (
         <SideVisualSection
           visual={
             <Image
-              src={blue_silk_damask}
-              alt="Damas de soie bleu nuit, tissé de branches fleuries et d'oiseaux ton sur ton."
+              src={red_silk_velvet}
+              alt="Velours de soie rouge, coupé et bouclé, tissé de plumes de paon et de fleurs."
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
           }
