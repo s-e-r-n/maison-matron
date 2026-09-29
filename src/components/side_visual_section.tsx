@@ -14,7 +14,7 @@ export const SideVisualSection = ({
   <section className="flex min-h-svh flex-col justify-center gap-12 lg:flex-row-reverse lg:flex-wrap lg:content-center lg:items-start lg:gap-16 lg:pr-[min(6%,86px)]">
     <div className="mx-[15px] px-5 lg:mx-0 lg:min-w-0 lg:flex-1 lg:px-0">
       <div className="space-y-4">{children}</div>
-      {action && <div className="mt-12 lg:mt-16">{action}</div>}
+      {action && <div className="mt-8 lg:mt-12">{action}</div>}
     </div>
     <div
       aria-hidden={visual ? undefined : true}

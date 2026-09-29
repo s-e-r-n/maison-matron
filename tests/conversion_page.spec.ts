@@ -203,3 +203,30 @@ test("from lg no line of a stacked text block wraps", async ({ page }) => {
     );
   expect(wrapped).toEqual([]);
 });
+
+for (const { width, gap } of [
+  { width: 375, gap: 32 },
+  { width: 1280, gap: 48 },
+]) {
+  test(`at ${width}px every call to action sits ${gap}px under its text`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto("/");
+    const gaps = await page
+      .locator("main a[href='#booking']")
+      .evaluateAll((links) =>
+        links.map((link) => {
+          const holder =
+            link.previousElementSibling ??
+            link.parentElement?.previousElementSibling;
+          const above = holder?.getBoundingClientRect();
+          return Math.round(
+            link.getBoundingClientRect().top - (above?.bottom ?? 0),
+          );
+        }),
+      );
+    expect(gaps.length).toBeGreaterThan(0);
+    for (const measured of gaps) expect(measured).toBe(gap);
+  });
+}

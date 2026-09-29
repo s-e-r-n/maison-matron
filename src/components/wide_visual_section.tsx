@@ -14,7 +14,7 @@ export const WideVisualSection = ({
   <section className="flex min-h-svh flex-col justify-center gap-12 lg:gap-16">
     <div className="copy-inset md:text-center">
       <div className="space-y-4 lg:whitespace-nowrap">{children}</div>
-      {action && <div className="mt-12 lg:mt-16">{action}</div>}
+      {action && <div className="mt-8 lg:mt-12">{action}</div>}
     </div>
     <div
       aria-hidden={visual ? undefined : true}
