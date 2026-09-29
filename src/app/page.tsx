@@ -42,7 +42,7 @@ const Home = () => (
     </Hero>
 
     <Watermarked>
-      <div className="page-width flex flex-col gap-24 py-12 lg:gap-32 lg:py-16">
+      <div className="page-width flex flex-col gap-24 py-12 lg:gap-32 lg:py-16 [&_:is(p,li):not(.font-display)]:text-gray-700">
         <CenteredSection>
           <SectionTitle>Vous cherchez la pièce à votre image, or…</SectionTitle>
           <p>La marque décide jusqu'où va votre « sur-mesure ».</p>

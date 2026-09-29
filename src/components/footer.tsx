@@ -9,7 +9,7 @@ export const Footer = () => (
         alt="Maison Matron, 1921"
         className="block h-auto w-[200px] max-w-full"
       />
-      <address className="not-italic">
+      <address className="text-gray-700 not-italic">
         Route de Gilly 15
         <br />
         1183 Bursins
