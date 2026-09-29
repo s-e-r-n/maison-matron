@@ -118,11 +118,14 @@ const Home = () => (
 
         <SideVisualSection
           visual={
-            <Image
-              src={red_silk_velvet}
-              alt="Velours de soie rouge, coupé et bouclé, tissé de plumes de paon et de fleurs."
-              sizes="(min-width: 1024px) 50vw, 100vw"
-            />
+            <figure>
+              <Image
+                src={red_silk_velvet}
+                alt="Velours de soie rouge, coupé et bouclé, tissé de plumes de paon et de fleurs."
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+              <Caption>Velours de soie ciselé</Caption>
+            </figure>
           }
           action={
             <CallToAction href="#booking">
