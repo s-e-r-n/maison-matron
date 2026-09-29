@@ -43,3 +43,4 @@ Sort:
 | ------ | ------------------ | ----------------------- |
 | `typography.tsx` | The size, face, colour and leading of each text level: title, subtitle, note, caption | Which level the text is; a caption goes inside a `figure` |
 - Text round 5 (017): the archival photo takes the caption « Photo d'archive » in a `figure`; the privileges become a real `ul` in body text under the subtitle, its bullet `❊` through `list-style-type`, and `SectionNote` leaves `typography.tsx`, no caller left.
+- Text round 6 (024): a reviews section « Ils nous ont confié leurs pièces » on `CenteredSection`, right above the form, holds ten reviews without call to action; each review is a `Quote`, the hero's quote level moved into `typography.tsx`, a `p` at 17px and 1.45, and the hero uses it too, its spacing kept on a wrapper.
