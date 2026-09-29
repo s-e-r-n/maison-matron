@@ -47,7 +47,7 @@ const Home = () => (
           <SectionTitle>Vous cherchez la pièce à votre image, or…</SectionTitle>
           <p>La marque décide jusqu'où va votre « sur-mesure ».</p>
           <p>L'unique est éclipsé par les collections à la mode.</p>
-          <p>Le choix des tissus est imposé.</p>
+          <p>Le choix des tissus vous est imposé.</p>
         </CenteredSection>
 
         <SideVisualSection
