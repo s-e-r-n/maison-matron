@@ -58,3 +58,18 @@ Sort: 1. ReadingSection, Reviewer; 2. page; 3. page e2e.
 | Module | Change it confines | What a caller must know |
 | ------ | ------------------ | ----------------------- |
 | `reading_section.tsx` | The model of a section read line by line: its alignment, its measure, the gap between its blocks | Each block a direct child |
+- Text round 8 (messages 003 and 004): every section but section 2 carries « Je veux ma visite offerte ». `ReadingSection` becomes `ReviewsSection`: the title slot on the left edge, the reviews flowing from `lg` in two equal columns, each review whole in one column, and one column below `lg`. Its block is 600px from `md` and 1100px from `lg`, and the required action sits under the reviews. The action slot of `CenteredSection` stays, because the new section « Des centaines de tissus, tous au même prix » after « Le vrai sur-mesure » is centred and calls it. Its logos are imported from `public/fabric-logos/`, laid out by `LogoRows` and `LogoRow`: rows centred with even gaps that wrap, each logo 26px high at most 150px wide at 50% opacity, the one colour marks turned `#1b1b1b` by `brightness-0 invert-[10.6%]`, and the Pierre Frey badge left in its own colours.
+
+| Produces | Needs | Parameters | Returns | File |
+| -------- | ----- | ---------- | ------- | ---- |
+| ReviewsSection | theme tokens | `title`, `children`, `action` | the reviews section, one column then two from `lg`, its action under them | `src/components/reviews_section.tsx` |
+| LogoRows, LogoRow | theme tokens | `children` | logos at one height, rows centred and wrapping | `src/components/logo_rows.tsx` |
+| page | ReviewsSection, LogoRows, LogoRow, CenteredSection, the logo files | - | the fabrics section and the reviews with their action | `src/app/page.tsx` |
+| page e2e | page | - | section order, nine calls to action, the logo rows, the review columns | `tests/conversion_page.spec.ts` |
+
+Sort: 1. ReviewsSection, LogoRows and LogoRow; 2. page; 3. page e2e.
+
+| Module | Change it confines | What a caller must know |
+| ------ | ------------------ | ----------------------- |
+| `reviews_section.tsx` | How the reviews are read: their measure, their columns, the gap between them, the place of the action | Each review a `figure` child; the title and the action in their slots |
+| `logo_rows.tsx` | The size, opacity, gaps and centring of a row of brand marks | One `LogoRow` per line, logos as `img` children; the silhouette is set on each mark that needs it |
