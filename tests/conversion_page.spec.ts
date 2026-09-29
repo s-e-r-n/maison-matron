@@ -5,7 +5,7 @@ const titles = [
   "Vous cherchez la pièce à votre image, or…",
   "Maison Matron, artisan depuis 4 générations",
   "Le vrai sur-mesure",
-  "Des centaines de tissus, tous au même prix",
+  "Profitez de centaines de tissus, tous au même prix",
   "L'atelier vient à vous, et c'est offert",
   "Le processus & la restitution",
   "4 saisons, 4 privilèges",
@@ -498,12 +498,15 @@ test("the fabrics section follows « Le vrai sur-mesure », its lines, its logos
   page,
 }) => {
   await page.goto("/");
-  const block = sectionOf(page, "Des centaines de tissus, tous au même prix");
+  const block = sectionOf(
+    page,
+    "Profitez de centaines de tissus, tous au même prix",
+  );
   await expect(
     block.locator("xpath=preceding-sibling::section[1]"),
   ).toContainText("Le vrai sur-mesure");
   await expect(block.locator("h2, p")).toHaveText([
-    "Des centaines de tissus, tous au même prix",
+    "Profitez de centaines de tissus, tous au même prix",
     "Nos collections voyagent avec nous jusqu'à chez vous.",
     "Ce que vous voulez, nous l'avons.",
     "Et tant d'autres…",
@@ -517,12 +520,15 @@ test("the fabrics section follows « Le vrai sur-mesure », its lines, its logos
 });
 
 for (const width of [375, 1024, 1440]) {
-  test(`at ${width}px the fabric logos stand at one height in centred rows, Pierre Frey and Casal alone on the last`, async ({
+  test(`at ${width}px the fabric logos stand at one height in centred rows, five then four from lg`, async ({
     page,
   }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
-    const block = sectionOf(page, "Des centaines de tissus, tous au même prix");
+    const block = sectionOf(
+      page,
+      "Profitez de centaines de tissus, tous au même prix",
+    );
     const boxes = [];
     for (const name of fabricLogos) {
       const logo = block.getByRole("img", { name, exact: true });
@@ -541,8 +547,10 @@ for (const width of [375, 1024, 1440]) {
       boxes.push({ name, ...box });
     }
     const rows = Map.groupBy(boxes, (box) => Math.round(box.y));
-    const last = [...rows.values()].at(-1) ?? [];
-    expect(last.map((box) => box.name)).toEqual(["Pierre Frey", "Casal"]);
+    if (width >= 1024)
+      expect(
+        [...rows.values()].map((row) => row.map((box) => box.name)),
+      ).toEqual([fabricLogos.slice(0, 5), fabricLogos.slice(5)]);
     const holder = await block
       .getByRole("img", { name: "Hermès" })
       .locator("xpath=../..")

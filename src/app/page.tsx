@@ -123,7 +123,7 @@ const Home = () => (
           }
         >
           <SectionTitle>
-            Des centaines de tissus, tous au même prix
+            Profitez de centaines de tissus, tous au même prix
           </SectionTitle>
           <p>Nos collections voyagent avec nous jusqu'à chez vous.</p>
           <p>Ce que vous voulez, nous l'avons.</p>
@@ -154,6 +154,8 @@ const Home = () => (
                 alt="Lelièvre"
                 className="brightness-0 invert-[10.6%]"
               />
+            </LogoRow>
+            <LogoRow>
               <Image
                 src={nobilis_logo}
                 alt="Nobilis"
@@ -164,8 +166,6 @@ const Home = () => (
                 alt="Edmond Petit"
                 className="brightness-0 invert-[10.6%]"
               />
-            </LogoRow>
-            <LogoRow>
               <Image src={pierre_frey_logo} alt="Pierre Frey" />
               <Image
                 src={casal_logo}
@@ -174,7 +174,7 @@ const Home = () => (
               />
             </LogoRow>
           </LogoRows>
-          <p>Et tant d'autres…</p>
+          <p className="italic">Et tant d'autres…</p>
         </CenteredSection>
 
         <WideVisualSection

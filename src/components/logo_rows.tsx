@@ -9,7 +9,7 @@ export const LogoRows = ({ children }: logo_rows_props) => (
 );
 
 export const LogoRow = ({ children }: logo_rows_props) => (
-  <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+  <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:justify-between">
     {children}
   </div>
 );
