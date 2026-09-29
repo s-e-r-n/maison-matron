@@ -17,7 +17,11 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: LayoutProps<"/">) => (
-  <html lang="fr" className={ebGaramond.variable}>
+  <html
+    lang="fr"
+    data-scroll-behavior="smooth"
+    className={`${ebGaramond.variable} scroll-smooth`}
+  >
     <body className="bg-paper font-sans text-base leading-[1.35] text-ink antialiased">
       {children}
     </body>
