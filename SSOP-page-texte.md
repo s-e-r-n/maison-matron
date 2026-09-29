@@ -79,3 +79,4 @@ Sort: 1. ReviewsSection, LogoRows and LogoRow; 2. page; 3. page e2e.
 - Text round 12 (message 008): the scaling of `LogoRows` holds from `lg` only; below `lg` the logos are back to 26px high, at most 150px wide, 40px apart, in rows wrapping centred.
 - Text round 13 (message 009): the fabrics visual becomes `red-silk-velvet.jpg`, graded by the human, and `blue-silk-damask.jpg` leaves the branch; still no caption.
 - Text round 14 (messages 010 and 011): on the human's approval, `CenteredSection` loses its `action` slot, which had no caller left, and takes `children` only; the fabrics visual `red-silk-velvet.jpg` sits in a `figure` with the `Caption` « Velours de soie ciselé ».
+- Text round 15 (message 012): the `html` element of `src/app/layout.tsx` scrolls smoothly, `scroll-smooth`, so every call to action glides to the form, and carries `data-scroll-behavior="smooth"`, which the upgrade guide of Next.js 16 asks for so route transitions stay instant.
