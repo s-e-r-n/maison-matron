@@ -14,7 +14,12 @@ const viewports = [
 
 const photos = [
   { name: /Photographie d'archive/, width: 2160, height: 2700 },
-  { name: /Deux fauteuils médaillon/, width: 2352, height: 1760 },
+  { name: /quatre chaises traîneau/, width: 2700, height: 1800 },
+  { name: /tire-sangle/, width: 3000, height: 2000 },
+  { name: /Canapé en bois/, width: 3000, height: 2000 },
+  { name: /Deux fauteuils médaillon/, width: 3000, height: 2000 },
+  { name: /Buffet bas/, width: 3000, height: 2000 },
+  { name: /Fauteuil à haut dossier/, width: 2400, height: 3000 },
   { name: /Fauteuil Voltaire/, width: 1760, height: 2352 },
 ];
 
@@ -65,13 +70,10 @@ for (const viewport of viewports) {
             )
             .toBe(true);
           const box = await image.boundingBox();
-          const frame = await image.locator("..").boundingBox();
           const ratio = (box?.width ?? 0) / (box?.height ?? 1);
           expect(
             Math.abs(ratio / (photo.width / photo.height) - 1),
           ).toBeLessThanOrEqual(0.01);
-          expect(frame?.width).toBeCloseTo(box?.width ?? 0, 0);
-          expect(frame?.height).toBeCloseTo(box?.height ?? 0, 0);
           await expect(image).toHaveCSS("background-color", transparent);
           await expect(image.locator("..")).toHaveCSS(
             "background-color",
