@@ -9,10 +9,11 @@ const titles = [
   "Le processus & la restitution",
   "4 saisons, 4 privilèges",
   "Vous travaillez avec un décorateur d'intérieur ?",
+  "Ils nous ont confié leurs pièces",
   "L'atelier vient à vous, c'est offert.",
 ];
 
-test("renders sections 1 to 9 in the order of the redaction", async ({
+test("renders every section in the order of the redaction", async ({
   page,
 }) => {
   await page.goto("/");
@@ -182,7 +183,7 @@ test("a dashed rule stands above the form section's title", async ({
   );
 });
 
-for (const section of [2]) {
+for (const section of [2, 9]) {
   test(`section ${section} takes the whole viewport, its content centred`, async ({
     page,
   }) => {
@@ -381,3 +382,44 @@ for (const width of [375, 1280]) {
     }
   });
 }
+
+test("the reviews section holds its ten reviews, set like the hero's quote, the form right after it", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const block = sectionOf(page, "Ils nous ont confié leurs pièces");
+  const reviews = block.locator("p");
+  await expect(reviews).toHaveText([
+    "« Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. Nous sommes ravis de nos nouvelles chaises et nous ferons sans aucun doute à nouveau appel à M. Matron. » - Anne-Claude",
+    "« Nous avons remis 6 chaises de salon pour mettre une nouvelle tapisserie et sommes très satisfaits du résultat. Prix raisonnable, tissu de qualité, finitions impeccables, livraison dans les (courts) délais et un contact très agréable et professionnel. Nous pouvons recommander Tapissier Matron. » - Stephan",
+    "« Grand professionnalisme sans oublier une bienveillance et sympathie exceptionnelles. » - MP",
+    "« Je recommande Monsieur Matron qui a effectué une très jolie restauration sur mon fauteuil. Travail au top. » - Tony",
+    "« Je recommande M. Matron, il a restauré mon fauteuil, le travail est parfait. » - Trévis",
+    "« Très bon service, bonne écoute du client, patience le temps que le choix soit établi, livraison conforme aux attentes et travail très propre. » - Santiago",
+    "« Je ne puis que recommander la Maison Matron qui est une belle entreprise familiale. De bon conseil avec un travail soigné et de qualité. Absolument ravie du rendu concernant un vieux fauteuil de famille, alors n'hésitez pas et prenez rapidement contact avec eux. » - Annick",
+    "« De sincères remerciements à la famille Matron pour leur intervention. Ils ont littéralement sauvé notre enfilade en teck qui avait subi des dommages liés à une infiltration. » - Sebastien",
+    "« Bon contact et bonne expertise. Mon fauteuil a maintenant un tissu magnifique ! Il commence sa seconde vie !! Merci. Je recommande cet artisan. » - Aline",
+    "« Superbe travail !!! Merci. » - Anne",
+  ]);
+  const heroQuote = page.getByText(
+    "« Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. » - Anne-Claude",
+  );
+  for (const property of [
+    "font-size",
+    "line-height",
+    "font-family",
+    "font-style",
+  ]) {
+    const expected = await heroQuote.evaluate(
+      (element, name) => getComputedStyle(element).getPropertyValue(name),
+      property,
+    );
+    for (const review of await reviews.all()) {
+      await expect(review).toHaveCSS(property, expected);
+    }
+  }
+  await expect(block.getByRole("link")).toHaveCount(0);
+  await expect(block.locator("xpath=following-sibling::section[1]")).toHaveId(
+    "booking",
+  );
+});

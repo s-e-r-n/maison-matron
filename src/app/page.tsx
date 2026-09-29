@@ -8,6 +8,7 @@ import { LeadSheet } from "@/components/lead_sheet";
 import { SideVisualSection } from "@/components/side_visual_section";
 import {
   Caption,
+  Quote,
   SectionSubtitle,
   SectionTitle,
 } from "@/components/typography";
@@ -241,6 +242,58 @@ const Home = () => (
           </p>
           <p>Nous échangeons directement avec lui, vous restez serein.</p>
         </SideVisualSection>
+
+        <CenteredSection>
+          <SectionTitle>Ils nous ont confié leurs pièces</SectionTitle>
+          <Quote>
+            « Des conseils avisés, une superbe sélection de tissus et un
+            savoir-faire minutieux. Nous sommes ravis de nos nouvelles chaises
+            et nous ferons sans aucun doute à nouveau appel à M. Matron. » -
+            Anne-Claude
+          </Quote>
+          <Quote>
+            « Nous avons remis 6 chaises de salon pour mettre une nouvelle
+            tapisserie et sommes très satisfaits du résultat. Prix raisonnable,
+            tissu de qualité, finitions impeccables, livraison dans les (courts)
+            délais et un contact très agréable et professionnel. Nous pouvons
+            recommander Tapissier Matron. » - Stephan
+          </Quote>
+          <Quote>
+            « Grand professionnalisme sans oublier une bienveillance et
+            sympathie exceptionnelles. » - MP
+          </Quote>
+          <Quote>
+            « Je recommande Monsieur Matron qui a effectué une très jolie
+            restauration sur mon fauteuil. Travail au top. » - Tony
+          </Quote>
+          <Quote>
+            « Je recommande M. Matron, il a restauré mon fauteuil, le travail
+            est parfait. » - Trévis
+          </Quote>
+          <Quote>
+            « Très bon service, bonne écoute du client, patience le temps que le
+            choix soit établi, livraison conforme aux attentes et travail très
+            propre. » - Santiago
+          </Quote>
+          <Quote>
+            « Je ne puis que recommander la Maison Matron qui est une belle
+            entreprise familiale. De bon conseil avec un travail soigné et de
+            qualité. Absolument ravie du rendu concernant un vieux fauteuil de
+            famille, alors n'hésitez pas et prenez rapidement contact avec eux.
+            » - Annick
+          </Quote>
+          <Quote>
+            « De sincères remerciements à la famille Matron pour leur
+            intervention. Ils ont littéralement sauvé notre enfilade en teck qui
+            avait subi des dommages liés à une infiltration. » - Sebastien
+          </Quote>
+          <Quote>
+            « Bon contact et bonne expertise. Mon fauteuil a maintenant un tissu
+            magnifique ! Il commence sa seconde vie !! Merci. Je recommande cet
+            artisan. » - Aline
+          </Quote>
+          <Quote>« Superbe travail !!! Merci. » - Anne</Quote>
+        </CenteredSection>
 
         <LeadSheet
           id="booking"

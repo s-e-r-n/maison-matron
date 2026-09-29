@@ -19,3 +19,7 @@ export const Caption = ({ children }: typography_props) => (
     {children}
   </figcaption>
 );
+
+export const Quote = ({ children }: typography_props) => (
+  <p className="text-[17px] leading-[1.45]">{children}</p>
+);
