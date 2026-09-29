@@ -36,3 +36,9 @@ Sort:
 
 ## Amendments
 - Text round 2 (006): « Le dernier chaisier de Suisse » merges into « Le vrai sur-mesure » as a `SectionSubtitle` inside its text block, the separate centred section is removed, and the `action` of `CenteredSection` is left without a caller.
+- Text round 4 (015): « 4 saisons, 4 privilèges » gains a greyed note, `SectionNote` in `typography.tsx`, a `p` at 13px in `text-sheet-ink`; being prose, it wraps even inside the stacked model's unwrapped text block.
+- Text round 4 (016): every photo of a piece sits in a `figure` with a `Caption`, a `figcaption` in Garamond italic `text-sheet-ink`, the idiom of the form's labels, inset like the side model's text below `md`; the two visual models size every image they hold, `[&_img]`, so a figure and a pair of figures keep each photo at its ratio.
+
+| Module | Change it confines | What a caller must know |
+| ------ | ------------------ | ----------------------- |
+| `typography.tsx` | The size, face, colour and leading of each text level: title, subtitle, note, caption | Which level the text is; a caption goes inside a `figure` |
