@@ -262,7 +262,7 @@ test("the décorateur section reads its subtitle then its three lines, and its c
     "C'est parfait.",
     "Nos métiers d'art fonctionnent en symbiose.",
     "Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.",
-    "Nous échangeons directement avec lui, vous restez serein.",
+    "Nous échangeons directement, vous restez serein.",
   ]);
   await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
 });
@@ -310,7 +310,7 @@ test("the privileges section reads its subtitle, its list of privileges bulleted
     "Avant chacune, profitez d'une offre exclusive.",
     "Révisions offertes",
     "Entretien des bois",
-    "Réductions entre voisins",
+    "Réductions voisinage",
     "Réductions sur les tissus de saison",
     "Offres spéciales sur des tissus uniques",
   ]);

@@ -47,7 +47,7 @@ const Home = () => (
           <SectionTitle>Vous cherchez la pièce à votre image, or…</SectionTitle>
           <p>La marque décide jusqu'où va votre « sur-mesure ».</p>
           <p>L'unique est éclipsé par les collections à la mode.</p>
-          <p>Nous ne sommes pas d'accord avec ça.</p>
+          <p>Le choix des tissus est imposé.</p>
         </CenteredSection>
 
         <SideVisualSection
@@ -293,7 +293,7 @@ const Home = () => (
             <ul className="list-inside list-['❊_'] space-y-4 text-left">
               <li>Révisions offertes</li>
               <li>Entretien des bois</li>
-              <li>Réductions entre voisins</li>
+              <li>Réductions voisinage</li>
               <li>Réductions sur les tissus de saison</li>
               <li>Offres spéciales sur des tissus uniques</li>
             </ul>
@@ -325,7 +325,7 @@ const Home = () => (
           <p>
             Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.
           </p>
-          <p>Nous échangeons directement avec lui, vous restez serein.</p>
+          <p>Nous échangeons directement, vous restez serein.</p>
         </SideVisualSection>
 
         <ReviewsSection
