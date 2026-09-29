@@ -1,0 +1,3 @@
+- Round 3 reverses the order of round 2: `WideVisualSection` is back to the structure of main, its action inside the text block under the text, one gap of 48px then 64px from `lg` before the visual; only its frame changes, a one column grid, so it holds one image or a pair's own grid.
+- `WideVisualSection` and `SideVisualSection` are at least one viewport high, their content centred in it as one unit: the slack goes around the text and its visual, never between them. `SideVisualSection` centres its row from `lg` through `flex-wrap` and `content-center`, its text still aligned on the top of its visual.
+- `CenteredSection` keeps its half viewport, section 2 having no visual.
