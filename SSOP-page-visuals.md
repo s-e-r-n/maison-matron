@@ -41,3 +41,8 @@ Sort:
 | The size a photo renders at | The browser, from the `img` intrinsic ratio and the width of its column | Nobody | The layout |
 
 ## Amendments
+- Round 2: the footer drops `atelier.jpg` and its mask, and becomes a small footer on the page's paper holding the logotype and the address; it lives inside `Watermarked`, after the sections, so it shares their column and its centre from `md`.
+- `WideVisualSection` orders text, visual, action: the visual sits close under its text, the action follows the visual; its frame is a one column grid, so it holds one image or a pair's own grid.
+- « 4 saisons, 4 privilèges » and « Vous travaillez avec un décorateur d'intérieur ? » become `WideVisualSection`s whose visual is a pair; the first loses its email form and takes the booking call to action.
+- A pair of different ratios stands at one height through columns proportional to each photo's width over height, `md:grid-cols-[0.8fr_0.7483fr]` for `chaise-bleue.jpg` 2400x3000 and `chaise-miel.png` 1760x2352; a pair of equal ratios uses `md:grid-cols-2`.
+- The page e2e reaches the footer by the `footer` element, which is no longer the `contentinfo` landmark inside `main`.
