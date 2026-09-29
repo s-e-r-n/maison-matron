@@ -24,7 +24,7 @@ import upholstery_tool from "../../public/visuals/outil.jpg";
 const Home = () => (
   <main>
     <Hero>
-      <CallToAction href="#booking">L'atelier vient à vous</CallToAction>
+      <CallToAction href="#booking">Je veux ma visite offerte</CallToAction>
     </Hero>
 
     <Watermarked>
@@ -48,7 +48,9 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
+            <CallToAction href="#booking">
+              Je veux ma visite offerte
+            </CallToAction>
           }
         >
           <SectionTitle>
@@ -79,7 +81,9 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
+            <CallToAction href="#booking">
+              Je veux ma visite offerte
+            </CallToAction>
           }
         >
           <SectionTitle>Le vrai sur-mesure</SectionTitle>
@@ -110,7 +114,9 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
+            <CallToAction href="#booking">
+              Je veux ma visite offerte
+            </CallToAction>
           }
         >
           <SectionTitle>L'atelier vient à vous, et c'est offert</SectionTitle>
@@ -149,7 +155,9 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
+            <CallToAction href="#booking">
+              Je veux ma visite offerte
+            </CallToAction>
           }
         >
           <SectionTitle>Le processus &amp; la restitution</SectionTitle>
@@ -186,7 +194,9 @@ const Home = () => (
             </div>
           }
           action={
-            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
+            <CallToAction href="#booking">
+              Je veux ma visite offerte
+            </CallToAction>
           }
         >
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
@@ -214,7 +224,9 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
+            <CallToAction href="#booking">
+              Je veux ma visite offerte
+            </CallToAction>
           }
         >
           <SectionTitle>

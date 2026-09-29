@@ -22,13 +22,17 @@ test("renders sections 1 to 9 in the order of the redaction", async ({
 test("every call to action leads to the booking form", async ({ page }) => {
   await page.goto("/");
   const calls = page.getByRole("link", {
-    name: /L'atelier vient à vous|Je réserve ma visite/,
+    name: "Je veux ma visite offerte",
   });
   await expect(calls).toHaveCount(7);
   for (const call of await calls.all()) {
     await expect(call).toHaveAttribute("href", "#booking");
   }
+  await expect(page.locator("main a[href='#booking']")).toHaveCount(7);
   await expect(page.locator("#booking form")).toBeVisible();
+  await expect(page.locator("#booking form").getByRole("button")).toHaveText(
+    "Je réserve ma visite",
+  );
   await expect(page.locator("form")).toHaveCount(1);
 });
 
@@ -121,7 +125,7 @@ test("section 4 holds « Profitez du dernier chaisier de Suisse » in its text b
     "Depuis 1908, chaque chaise est assemblée à l'ancienne, dans un bois de la région qui a rarement voyagé plus de 100 km.",
     "Profitez de deux savoir-faire centenaires pour vos pièces.",
   ]);
-  await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
+  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
 });
 
 test("the pair of section 7 stands side by side at one height from md", async ({
@@ -260,7 +264,7 @@ test("the décorateur section reads its subtitle then its three lines, and its c
     "Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.",
     "Nous échangeons directement avec lui, vous restez serein.",
   ]);
-  await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
+  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
 });
 
 test("the process section reads its lines, its subtitle last, then its call to action", async ({
@@ -277,7 +281,7 @@ test("the process section reads its lines, its subtitle last, then its call to a
     "Enfin, nous vous dévoilons chaque ouvrage :",
     "unique et à votre image.",
   ]);
-  await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
+  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
 });
 
 test("the atelier section reads its subtitles without colon, each line after them capitalised", async ({
@@ -311,7 +315,7 @@ test("the privileges section reads its subtitle, its list of privileges bulleted
     "Offres spéciales sur des tissus uniques",
   ]);
   await expect(block.locator("ul")).toHaveCSS("list-style-type", '"❊ "');
-  await expect(block.getByRole("link")).toHaveText("Je réserve ma visite");
+  await expect(block.getByRole("link")).toHaveText("Je veux ma visite offerte");
 });
 
 const captions = [
