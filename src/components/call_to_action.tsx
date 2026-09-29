@@ -17,7 +17,7 @@ export const CallToAction = ({ children, href }: call_to_action_props) =>
   href ? (
     <a
       href={href}
-      className="inline-block max-w-full border border-principal p-[2px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
+      className="inline-block max-w-full border border-principal p-[2px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current max-md:mx-auto max-md:block max-md:w-fit"
     >
       <Face>{children}</Face>
     </a>

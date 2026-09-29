@@ -2,16 +2,20 @@ import Image from "next/image";
 import { CallToAction } from "@/components/call_to_action";
 import { CenteredSection } from "@/components/centered_section";
 import { Field } from "@/components/field";
+import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
-import { LeadForm } from "@/components/lead_form";
 import { LeadSheet } from "@/components/lead_sheet";
 import { SideVisualSection } from "@/components/side_visual_section";
 import { SectionTitle } from "@/components/typography";
 import { Watermarked } from "@/components/watermarked";
 import { WideVisualSection } from "@/components/wide_visual_section";
+import five_chairs from "../../public/visuals/5-chaises.jpg";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
-import pine_chairs from "../../public/visuals/chaises-pin-japonais.png";
-import yellow_chair from "../../public/visuals/yellow-chair-white-bg.png";
+import sideboard from "../../public/visuals/buffet.jpg";
+import lion_sofa from "../../public/visuals/canape-lions.jpg";
+import blue_chair from "../../public/visuals/chaise-bleue.jpg";
+import pine_chairs from "../../public/visuals/chaises-pin-japonais.jpg";
+import upholstery_tool from "../../public/visuals/outil.jpg";
 
 const Home = () => (
   <main>
@@ -54,8 +58,8 @@ const Home = () => (
         <WideVisualSection
           visual={
             <Image
-              src={pine_chairs}
-              alt="Deux fauteuils médaillon en bois naturel, garnis d'un tissu écru brodé de branches de pin rouges, sur fond clair."
+              src={five_chairs}
+              alt="Une petite chaise laquée blanc au dossier enroulé et quatre chaises traîneau en bois, garnies d'un même tissu bleu à motif de cercles, sur fond blanc."
               sizes="100vw"
             />
           }
@@ -74,12 +78,12 @@ const Home = () => (
           </p>
         </WideVisualSection>
 
-        <SideVisualSection
+        <WideVisualSection
           visual={
             <Image
-              src={yellow_chair}
-              alt="Fauteuil Voltaire en bois blond, garni d'un velours à feuillage jaune sur fond gris, sur fond blanc."
-              sizes="(min-width: 1024px) 50vw, 100vw"
+              src={upholstery_tool}
+              alt="Un tire-sangle en bois posé sur un rouleau de sangle de jute, sur fond de toile."
+              sizes="100vw"
             />
           }
           action={
@@ -106,13 +110,13 @@ const Home = () => (
             la santé des bois et des matières et ce qui vaut la peine d'être
             restauré.
           </p>
-        </SideVisualSection>
+        </WideVisualSection>
 
         <WideVisualSection
           visual={
             <Image
-              src={pine_chairs}
-              alt="Deux fauteuils médaillon en bois naturel, garnis d'un tissu écru brodé de branches de pin rouges, sur fond clair."
+              src={lion_sofa}
+              alt="Canapé en bois aux accoudoirs sculptés de têtes de lion, garni d'un tissu orangé à rayures ivoire, sur fond blanc."
               sizes="100vw"
             />
           }
@@ -133,23 +137,23 @@ const Home = () => (
           </p>
         </WideVisualSection>
 
-        <SideVisualSection
+        <WideVisualSection
           visual={
-            <Image
-              src={yellow_chair}
-              alt="Fauteuil Voltaire en bois blond, garni d'un velours à feuillage jaune sur fond gris, sur fond blanc."
-              sizes="(min-width: 1024px) 50vw, 100vw"
-            />
+            <div className="grid gap-4 *:h-auto *:w-full md:grid-cols-2">
+              <Image
+                src={pine_chairs}
+                alt="Deux fauteuils médaillon en bois naturel, garnis d'un tissu écru brodé de branches de pin rouges, sur fond clair."
+                sizes="(min-width: 768px) 50vw, 100vw"
+              />
+              <Image
+                src={sideboard}
+                alt="Buffet bas en bois veiné, trois tiroirs et deux portes, sur fond blanc."
+                sizes="(min-width: 768px) 50vw, 100vw"
+              />
+            </div>
           }
           action={
-            <LeadForm className="flex flex-col items-start gap-10">
-              <Field
-                name="email"
-                label="Votre adresse courriel"
-                className="w-full"
-              />
-              <CallToAction>S'abonner aux 4 privilèges</CallToAction>
-            </LeadForm>
+            <CallToAction href="#booking">Je réserve ma visite</CallToAction>
           }
         >
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
@@ -162,10 +166,18 @@ const Home = () => (
             Chaque saison a son lieu : un chalet sous la neige, une pergola face
             à l'océan.
           </p>
-          <p>30 jours avant chacune, nous vous dévoilons une exclusivité.</p>
-        </SideVisualSection>
+          <p>Avant chacune, profitez d'une exclusivité.</p>
+        </WideVisualSection>
 
-        <CenteredSection>
+        <SideVisualSection
+          visual={
+            <Image
+              src={blue_chair}
+              alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          }
+        >
           <SectionTitle>
             Vous travaillez avec un décorateur d'intérieur ?
           </SectionTitle>
@@ -176,7 +188,7 @@ const Home = () => (
           <p>
             Nous échangeons directement avec lui, vous n'avez rien à organiser.
           </p>
-        </CenteredSection>
+        </SideVisualSection>
 
         <LeadSheet
           id="booking"
@@ -197,6 +209,7 @@ const Home = () => (
           />
         </LeadSheet>
       </div>
+      <Footer />
     </Watermarked>
   </main>
 );
