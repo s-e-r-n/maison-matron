@@ -53,7 +53,7 @@ export const Hero = ({ children }: hero_props) => (
           <SectionSubtitle>+5'000 clients</SectionSubtitle>
         </div>
         <div className="w-full md:w-fit md:*:@container-normal">
-          <div className="mb-8 border border-paper/50 p-[2px] md:contain-inline-size lg:mb-12">
+          <div className="mb-4 border border-paper/50 p-[2px] md:contain-inline-size">
             <div className="border border-paper/50 p-4 backdrop-blur-xs">
               <Quote>
                 « Des conseils avisés, une superbe sélection de tissus et un
