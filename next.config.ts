@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   typedRoutes: true,
-  experimental: { typedEnv: true, globalNotFound: true },
+  experimental: { typedEnv: true },
 };
 
 export default nextConfig;

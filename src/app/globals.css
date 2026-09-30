@@ -1,6 +1,4 @@
-@import "tailwindcss" source(none);
-@source ".";
-@source "../../components";
+@import "tailwindcss";
 
 @theme inline {
   --font-display:
