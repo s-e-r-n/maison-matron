@@ -1,5 +1,5 @@
-import type { FormEvent } from "react";
+import type { SubmitEvent } from "react";
 
-export const hold_submission = (event: FormEvent<HTMLFormElement>) => {
+export const hold_submission = (event: SubmitEvent<HTMLFormElement>) => {
   event.preventDefault();
 };
