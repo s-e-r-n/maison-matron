@@ -22,6 +22,7 @@ import {
   CallToAction,
   CallToActionDetail,
   CallToActionDetails,
+  CallToActions,
 } from "./_components/call_to_action";
 import { CenteredSection } from "./_components/centered_section";
 import { Field } from "./_components/field";
@@ -44,7 +45,12 @@ import { WideVisualSection } from "./_components/wide_visual_section";
 const Refection = () => (
   <main>
     <Hero>
-      <CallToAction href="#booking">Votre expertise offerte</CallToAction>
+      <CallToActions>
+        <CallToAction href="#booking">Votre expertise offerte</CallToAction>
+        <CallToAction href="tel:+41215394675" tone="secondary">
+          +41 21 539 46 75
+        </CallToAction>
+      </CallToActions>
       <CallToActionDetails>
         <CallToActionDetail>Visite chez vous</CallToActionDetail>
         <CallToActionDetail>Examen de votre mobilier</CallToActionDetail>
@@ -76,9 +82,14 @@ const Refection = () => (
           }
           action={
             <>
-              <CallToAction href="#booking">
-                Votre expertise offerte
-              </CallToAction>
+              <CallToActions>
+                <CallToAction href="#booking">
+                  Votre expertise offerte
+                </CallToAction>
+                <CallToAction href="tel:+41215394675" tone="secondary">
+                  +41 21 539 46 75
+                </CallToAction>
+              </CallToActions>
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
@@ -120,9 +131,14 @@ const Refection = () => (
           }
           action={
             <>
-              <CallToAction href="#booking">
-                Votre expertise offerte
-              </CallToAction>
+              <CallToActions>
+                <CallToAction href="#booking">
+                  Votre expertise offerte
+                </CallToAction>
+                <CallToAction href="tel:+41215394675" tone="secondary">
+                  +41 21 539 46 75
+                </CallToAction>
+              </CallToActions>
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
@@ -164,9 +180,14 @@ const Refection = () => (
           }
           action={
             <>
-              <CallToAction href="#booking">
-                Votre expertise offerte
-              </CallToAction>
+              <CallToActions>
+                <CallToAction href="#booking">
+                  Votre expertise offerte
+                </CallToAction>
+                <CallToAction href="tel:+41215394675" tone="secondary">
+                  +41 21 539 46 75
+                </CallToAction>
+              </CallToActions>
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
@@ -247,9 +268,14 @@ const Refection = () => (
           }
           action={
             <>
-              <CallToAction href="#booking">
-                Votre expertise offerte
-              </CallToAction>
+              <CallToActions>
+                <CallToAction href="#booking">
+                  Votre expertise offerte
+                </CallToAction>
+                <CallToAction href="tel:+41215394675" tone="secondary">
+                  +41 21 539 46 75
+                </CallToAction>
+              </CallToActions>
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
@@ -298,9 +324,14 @@ const Refection = () => (
           }
           action={
             <>
-              <CallToAction href="#booking">
-                Votre expertise offerte
-              </CallToAction>
+              <CallToActions>
+                <CallToAction href="#booking">
+                  Votre expertise offerte
+                </CallToAction>
+                <CallToAction href="tel:+41215394675" tone="secondary">
+                  +41 21 539 46 75
+                </CallToAction>
+              </CallToActions>
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
@@ -350,9 +381,14 @@ const Refection = () => (
           }
           action={
             <>
-              <CallToAction href="#booking">
-                Votre expertise offerte
-              </CallToAction>
+              <CallToActions>
+                <CallToAction href="#booking">
+                  Votre expertise offerte
+                </CallToAction>
+                <CallToAction href="tel:+41215394675" tone="secondary">
+                  +41 21 539 46 75
+                </CallToAction>
+              </CallToActions>
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
@@ -403,9 +439,14 @@ const Refection = () => (
           }
           action={
             <>
-              <CallToAction href="#booking">
-                Votre expertise offerte
-              </CallToAction>
+              <CallToActions>
+                <CallToAction href="#booking">
+                  Votre expertise offerte
+                </CallToAction>
+                <CallToAction href="tel:+41215394675" tone="secondary">
+                  +41 21 539 46 75
+                </CallToAction>
+              </CallToActions>
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
