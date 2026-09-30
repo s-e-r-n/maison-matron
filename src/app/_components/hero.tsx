@@ -52,7 +52,7 @@ export const Hero = ({ children }: hero_props) => (
           <SectionSubtitle>+20'000 pièces</SectionSubtitle>
           <SectionSubtitle>+5'000 clients</SectionSubtitle>
         </div>
-        <div className="mb-8 border border-paper/50 p-4 lg:mb-12 lg:box-content lg:max-w-[400px]">
+        <div className="mb-8 border border-paper/50 p-4 backdrop-blur-xs lg:mb-12 lg:box-content lg:max-w-[400px]">
           <Quote>
             « Des conseils avisés, une superbe sélection de tissus et un
             savoir-faire minutieux. » - Anne-Claude
