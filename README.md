@@ -30,7 +30,7 @@ GHL and mail have no `misconfigured` code: a missing value is refused by the ser
 
 ## 3. Build the form
 
-A field is `<Field name="…" label="…" />`. Its `name` is a key of the dictionary, the only names the modules read. The key sets the input, the keyboard and the autofill, the page sets the rest. The `label` wraps the control, `className` lands on the label.
+A field is `<Field name="…" label="…" />`. Its `name` is a key of the dictionary, the only names the modules read. The key sets the input, the keyboard and the autofill, the page sets the rest. The label stands before the control, `className` lands on the `div` around both.
 
 | `name`           | Renders  | Meta | GHL           | Mail copy   |
 | ---------------- | -------- | ---- | ------------- | ----------- |
@@ -41,27 +41,19 @@ A field is `<Field name="…" label="…" />`. Its `name` is a key of the dictio
 | `organization`   | text     | -    | `companyName` | Entreprise  |
 | `postal-code`    | text     | `zp` | `postalCode`  | Code postal |
 | `address-level2` | text     | `ct` | `city`        | Localité    |
-| `freetext`       | textarea | -    | custom field  | Message     |
+| `freetext`       | text     | -    | custom field  | Message     |
 
 Several inputs may share `freetext`, their values arrive joined by a blank line. An input with any other `name` reaches no module. A new key is one line in `src/lib/form_contract/dictionary.ts` and one row in the table of each module that wants it.
 
-The fields go inside `LeadForm`, the one client component: it calls the action, disables the fields while it runs and shows `failure` when the confirmation mail could not leave.
+The fields go inside the page's `LeadForm`, the one client component: today it holds the submission, and plugged it calls the page's action.
 
 ```tsx
 import { Field } from "./_components/field";
 import { LeadForm } from "./_components/lead_form";
 
-<LeadForm
-  className="flex flex-col gap-3"
-  failure={<p role="alert">L'envoi a échoué, réessayez.</p>}
->
-  <Field
-    name="given-name"
-    label="Prénom"
-    required
-    className="flex flex-col gap-1"
-  />
-  <Field name="email" label="E-mail" required className="flex flex-col gap-1" />
+<LeadForm className="flex flex-col gap-3">
+  <Field name="given-name" label="Prénom" className="flex flex-col gap-1" />
+  <Field name="email" label="E-mail" className="flex flex-col gap-1" />
   <Field name="freetext" label="Message" className="flex flex-col gap-1" />
   <button type="submit">Envoyer</button>
 </LeadForm>;
@@ -133,7 +125,8 @@ src/lib/form_contract/   the dictionary and the loop every module reads the form
 src/lib/meta_capi/       capture.ts is the entry, user_data_keys.ts holds its table
 src/lib/ghl/             deliver.ts is the entry, form_table.ts holds its table, payloads.ts the two bodies
 src/lib/mail/            send.ts is the entry, form_table.ts holds its table, messages.ts the two mails
-src/components/          logo_rows.tsx, page_view.tsx, the only files both pages share
+src/components/          logo_rows.tsx, page_view.tsx, shared by both pages with src/lib/utils.ts
+src/app/global-not-found.tsx   the 404 of the site, with its own stylesheet
 src/app/(home)/          the page served at /: layout.tsx, globals.css, page.tsx, actions.ts, confirmation/page.tsx, _components/ with field.tsx, lead_form.tsx and its sections, _lib/submission.ts
 src/app/refection/       the page served at /refection: the same files, its own copies
 public/home/             the visuals, the video, the brand files, the fabric logos and the textures of /

@@ -13,8 +13,7 @@
       "!.next",
       "!dist",
       "!build",
-      "!public/home/fabric-logos",
-      "!public/refection/fabric-logos"
+      "!public/*/fabric-logos"
     ]
   },
   "formatter": {

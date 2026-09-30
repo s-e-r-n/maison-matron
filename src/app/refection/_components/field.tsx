@@ -1,5 +1,4 @@
 import { useId } from "react";
-import type { dictionary_key } from "@/lib/form_contract/dictionary";
 
 type input_attributes = {
   type: "email" | "tel" | "text";
@@ -8,7 +7,17 @@ type input_attributes = {
   autoCapitalize?: "words" | "characters" | "sentences";
 };
 
-const attributes = {
+type field_name =
+  | "given-name"
+  | "family-name"
+  | "email"
+  | "tel"
+  | "organization"
+  | "postal-code"
+  | "address-level2"
+  | "freetext";
+
+const attributes: Record<field_name, input_attributes> = {
   "given-name": {
     type: "text",
     autoComplete: "given-name",
@@ -37,10 +46,10 @@ const attributes = {
     autoCapitalize: "words",
   },
   freetext: { type: "text", autoComplete: "off", autoCapitalize: "sentences" },
-} satisfies Partial<Record<dictionary_key, input_attributes>>;
+};
 
 type field_props = {
-  name: keyof typeof attributes;
+  name: field_name;
   label: string;
   className?: string;
 };

@@ -41,7 +41,7 @@ export const LeadSheet = ({ id, title, send, children }: lead_sheet_props) => (
               type="submit"
               className="mx-auto block border border-secondary p-[2px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
             >
-              <span className="flex h-[46px] w-[176px] items-center justify-center bg-secondary px-8 py-[13px] font-display text-[17px] leading-[19px] whitespace-nowrap text-white italic">
+              <span className="flex min-h-[46px] min-w-[176px] items-center justify-center bg-secondary px-4 py-[13px] text-center font-display text-[17px] leading-[19px] text-white italic">
                 {send}
               </span>
             </button>
