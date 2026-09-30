@@ -45,14 +45,14 @@ export const Hero = ({ children }: hero_props) => (
         />
       </div>
       <div className="copy-inset flex flex-col items-start">
-        <h1 className="mb-4 font-display text-[26px] leading-[1.06] italic lg:text-[36px]">
-          <span className="lg:block">Maison Matron,</span> artisans tapissiers
-          et ébénistes depuis 4 générations
+        <h1 className="mb-4 font-display text-[36px] leading-[1.06] italic lg:text-[50px]">
+          Artisans tapissiers et ébénistes depuis 4 générations
         </h1>
         <div className="mb-4">
-          <SectionSubtitle>20'000 pièces, pour 5'000 clients.</SectionSubtitle>
+          <SectionSubtitle>+20'000 pièces</SectionSubtitle>
+          <SectionSubtitle>+5'000 clients</SectionSubtitle>
         </div>
-        <div className="mb-8 lg:mb-12 lg:max-w-[400px]">
+        <div className="mb-8 border border-paper/50 p-4 lg:mb-12 lg:box-content lg:max-w-[400px]">
           <Quote>
             « Des conseils avisés, une superbe sélection de tissus et un
             savoir-faire minutieux. » - Anne-Claude

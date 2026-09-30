@@ -129,6 +129,7 @@ for (const viewport of viewports) {
               if (!parent) return true;
               const flush =
                 parent.getBoundingClientRect().left +
+                parent.clientLeft +
                 Number.parseFloat(getComputedStyle(parent).paddingLeft);
               return (
                 !["left", "start"].includes(
