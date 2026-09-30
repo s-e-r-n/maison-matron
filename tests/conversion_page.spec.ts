@@ -291,16 +291,16 @@ test("the privileges section reads its subtitle, its list of privileges bulleted
 }) => {
   await page.goto("/");
   const block = sectionOf(page, titles[7] ?? "");
-  await expect(block.locator("h2, p, li")).toHaveText([
+  await expect(block.locator("h2, p, p + ul > li")).toHaveText([
     "4 saisons, 4 privilèges",
     "Chaque saison, profitez d'une offre exclusive.",
-    "Révisions offertes",
-    "Entretien des bois",
-    "Réductions voisinage",
-    "Réductions sur les tissus de saison",
     "Offres spéciales sur des tissus uniques",
+    "Réductions sur les tissus de saison",
+    "Réductions voisinage",
+    "Entretien des bois",
+    "Révisions offertes",
   ]);
-  await expect(block.locator("ul")).toHaveCSS("list-style-type", '"❊ "');
+  await expect(block.locator("p + ul")).toHaveCSS("list-style-type", '"❊ "');
   await expect(block.getByRole("link")).toHaveText("Votre expertise offerte");
 });
 
@@ -346,7 +346,7 @@ for (const width of [375, 1280]) {
     await page.goto("/");
     const block = sectionOf(page, titles[7] ?? "");
     const lefts = await block
-      .locator("li")
+      .locator("p + ul > li")
       .evaluateAll((items) =>
         items.map((item) => Math.round(item.getBoundingClientRect().left)),
       );
@@ -360,7 +360,7 @@ for (const width of [375, 1280]) {
       });
     expect(Math.abs((lefts[0] ?? 0) - subtitleStart)).toBeLessThanOrEqual(1);
     if (width >= 768) {
-      const pair = await block.locator("ul").locator("..").boundingBox();
+      const pair = await block.locator("p + ul").locator("..").boundingBox();
       const title = await block.getByRole("heading").boundingBox();
       expect((pair?.x ?? 0) + (pair?.width ?? 0) / 2).toBeCloseTo(
         (title?.x ?? 0) + (title?.width ?? 0) / 2,
