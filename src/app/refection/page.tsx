@@ -13,10 +13,8 @@ import pierre_frey_logo from "../../../public/refection/fabric-logos/pierre-frey
 import ralph_lauren_logo from "../../../public/refection/fabric-logos/ralph-lauren.svg";
 import five_chairs from "../../../public/refection/visuals/5-chaises.jpg";
 import archival_photo from "../../../public/refection/visuals/archival-photo-man-leading-horse.jpg";
-import secretary from "../../../public/refection/visuals/armoire.jpg";
 import sideboard from "../../../public/refection/visuals/buffet.jpg";
 import lion_sofa from "../../../public/refection/visuals/canape-lions.jpg";
-import blue_chair from "../../../public/refection/visuals/chaise-bleue.jpg";
 import white_chairs from "../../../public/refection/visuals/chaises-blanches.jpg";
 import upholstery_tool from "../../../public/refection/visuals/outil.jpg";
 import red_silk_velvet from "../../../public/refection/visuals/red-silk-velvet.jpg";
@@ -65,10 +63,12 @@ const Refection = () => (
     <Watermarked>
       <div className="page-width flex flex-col gap-24 py-12 lg:gap-32 lg:py-16 [&_:is(p,li):not(.font-display)]:text-gray-600">
         <CenteredSection>
-          <SectionTitle>Vous cherchez la pièce à votre image, or…</SectionTitle>
-          <p>La marque décide jusqu'où va votre « sur-mesure ».</p>
-          <p>L'unique est éclipsé par les collections à la mode.</p>
-          <p>Le choix des tissus vous est limité.</p>
+          <SectionTitle>
+            Vous possédez du mobilier à forte valeur sentimentale, or…
+          </SectionTitle>
+          <p>Vous ne savez pas à qui le confier pour le refaire.</p>
+          <p>Vous avez peur du travail bâclé.</p>
+          <p>Vous ne voulez surtout pas jeter.</p>
         </CenteredSection>
 
         <SectionSeparator />
@@ -356,8 +356,8 @@ const Refection = () => (
             Lorsque les artisans ont terminé, nous fixons avec vous le jour et
             l'heure de restitution.
           </p>
-          <p>Enfin, nous vous dévoilons chaque ouvrage :</p>
-          <SectionSubtitle>unique et à votre image.</SectionSubtitle>
+          <p>Enfin, nous vous dévoilons le résultat :</p>
+          <SectionSubtitle>Unique et prêt à revivre.</SectionSubtitle>
         </WideVisualSection>
 
         <SectionSeparator />
@@ -416,60 +416,6 @@ const Refection = () => (
               <li>Révisions offertes</li>
             </ul>
           </div>
-        </WideVisualSection>
-
-        <SectionSeparator />
-
-        <WideVisualSection
-          visual={
-            <div className="grid gap-4 md:grid-cols-2">
-              <figure>
-                <Image
-                  src={blue_chair}
-                  alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <Caption>Réalisation Maison Matron</Caption>
-              </figure>
-              <figure>
-                <Image
-                  src={secretary}
-                  alt="Secrétaire à abattant en bois veiné, un tiroir au-dessus de l'abattant et trois tiroirs en dessous, sur fond blanc."
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <Caption>Réalisation Maison Matron</Caption>
-              </figure>
-            </div>
-          }
-          action={
-            <>
-              <CallToActions>
-                <CallToAction href="#booking">
-                  Votre expertise offerte
-                </CallToAction>
-                <CallToAction href="tel:+41215394675" tone="secondary">
-                  +41 21 539 46 75
-                </CallToAction>
-              </CallToActions>
-              <CallToActionDetails>
-                <CallToActionDetail>Visite chez vous</CallToActionDetail>
-                <CallToActionDetail>
-                  Examen de votre mobilier
-                </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
-              </CallToActionDetails>
-            </>
-          }
-        >
-          <SectionTitle>
-            Vous travaillez avec un décorateur d'intérieur ?
-          </SectionTitle>
-          <SectionSubtitle>C'est parfait.</SectionSubtitle>
-          <p>Nos métiers d'art fonctionnent en symbiose.</p>
-          <p>
-            Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.
-          </p>
-          <p>Nous échangeons directement, vous gardez un seul interlocuteur.</p>
         </WideVisualSection>
 
         <SectionSeparator />
