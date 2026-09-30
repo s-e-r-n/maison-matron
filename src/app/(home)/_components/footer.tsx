@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../../../../public/brand/maison-matron-logo-complete.svg";
+import logo from "../../../../public/home/brand/maison-matron-logo-complete.svg";
 
 export const Footer = () => (
   <footer className="page-width flex flex-col gap-4 py-12 md:items-center lg:py-16">

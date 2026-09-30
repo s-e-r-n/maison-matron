@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import watermark from "../../../../public/brand/maison-matron-watermark.svg";
+import watermark from "../../../../public/home/brand/maison-matron-watermark.svg";
 
 type watermarked_props = { children: ReactNode };
 

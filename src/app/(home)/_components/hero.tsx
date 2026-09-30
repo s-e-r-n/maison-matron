@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import logo from "../../../../public/brand/maison-matron-logo-complete.svg";
+import logo from "../../../../public/home/brand/maison-matron-logo-complete.svg";
 import styles from "./hero.module.css";
 import { Quote, SectionSubtitle } from "./typography";
 
@@ -10,7 +10,7 @@ type hero_props = { children: ReactNode };
 export const Hero = ({ children }: hero_props) => (
   <section className="relative overflow-hidden bg-ink text-paper">
     <video
-      src="/video/maison-matron-hero.mp4"
+      src="/home/video/maison-matron-hero.mp4"
       autoPlay
       muted
       loop

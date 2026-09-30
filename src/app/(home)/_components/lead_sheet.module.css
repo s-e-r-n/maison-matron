@@ -7,7 +7,7 @@
 .paper {
   background-image:
     linear-gradient(rgb(255 253 248 / 0.5), rgb(255 253 248 / 0.5)),
-    url("../../../../public/textures/paper-faint-fibre.jpg");
+    url("../../../../public/home/textures/paper-faint-fibre.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
