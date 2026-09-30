@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { LogoRow, LogoRows, MobileRowBreak } from "@/components/logo_rows";
+import { landing_metadata } from "@/lib/landing_metadata";
+import { structured_data_json } from "@/lib/structured_data";
 import casal_logo from "../../../public/refection/fabric-logos/casal.svg";
 import christian_lacroix_logo from "../../../public/refection/fabric-logos/christian-lacroix.png";
 import dedar_logo from "../../../public/refection/fabric-logos/dedar.svg";
@@ -41,6 +43,8 @@ import {
 } from "./_components/typography";
 import { Watermarked } from "./_components/watermarked";
 import { WideVisualSection } from "./_components/wide_visual_section";
+
+export const metadata = landing_metadata;
 
 const Refection = () => (
   <main>
@@ -596,6 +600,7 @@ const Refection = () => (
       </div>
       <Footer />
     </Watermarked>
+    <script type="application/ld+json">{structured_data_json}</script>
   </main>
 );
 
