@@ -52,7 +52,7 @@ export const LeadSheet = ({
           <div className="pt-10 md:pt-[106px]">
             <button
               type="submit"
-              className="mx-auto block border border-secondary p-[2px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+              className="mx-auto block cursor-pointer border border-secondary p-[2px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
             >
               <span className="flex min-h-[46px] min-w-[176px] items-center justify-center bg-secondary px-4 py-[13px] text-center font-display text-[17px] leading-[19px] text-white italic">
                 {send}
