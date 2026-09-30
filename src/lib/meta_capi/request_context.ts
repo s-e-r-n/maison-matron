@@ -34,7 +34,7 @@ const ip_schema = z.union([z.ipv4(), z.ipv6()]);
 const page_url_schema = z.url({ protocol: /^https?$/ });
 const country_schema = z.string().regex(/^[a-z]{2}$/);
 
-const client_ip = (request_headers: header_reader) => {
+export const client_ip = (request_headers: header_reader) => {
   const [first = ""] = (request_headers.get("x-forwarded-for") ?? "").split(
     ",",
   );

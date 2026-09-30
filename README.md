@@ -24,6 +24,7 @@ cp .env.example .env
 | Meta   | `META_CAPI_ENABLED` | `META_CAPI_DATASET_ID`, `META_CAPI_ACCESS_TOKEN`, `META_CAPI_GRAPH_VERSION` (`v25.0`), `META_CAPI_PHONE_COUNTRY` (optional, ISO 3166-1 alpha-2 of the site)       |
 | GHL    | `GHL_ENABLED`       | `GHL_API_TOKEN`, `GHL_LOCATION_ID`, `GHL_PIPELINE_ID`, `GHL_PIPELINE_STAGE_ID` (optional), `GHL_FREETEXT_FIELD_ID` (optional, the custom field for the free text) |
 | Mail   | `MAIL_ENABLED`      | `SMTP_HOST`, `SMTP_PORT` (`465`, or `587` for STARTTLS), `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM`, `MAIL_INBOX` (the domain mailbox, receives the copy)          |
+| Limit  | `NODE_ENV`          | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`: 20 submissions per IP per 24 hours, counted in Upstash Redis in production only; `RATE_LIMIT_ALLOWED_IPS`, exact IPs never counted, comma-separated; missing or failing, the submission goes through |
 | e2e    | -                   | `E2E_LEAD_EMAIL`, the address the real submission test mails                                                                                                      |
 
 GHL and mail have no `misconfigured` code: a missing value is refused by the service and logged. Configure and test a module before production.
