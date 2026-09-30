@@ -50,6 +50,7 @@ const structured_data = {
         streetAddress: "Route de Gilly 15",
         postalCode: "1183",
         addressLocality: "Bursins",
+        addressRegion: "VD",
         addressCountry: "CH",
       },
       geo: {
@@ -57,6 +58,27 @@ const structured_data = {
         latitude: 46.453539,
         longitude: 6.29284,
       },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ],
+          opens: "09:00",
+          closes: "17:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Sunday",
+          opens: "00:00",
+          closes: "00:00",
+        },
+      ],
       hasMap:
         "https://www.google.com/maps/search/?api=1&query=Maison%20Matron%2C%20Route%20de%20Gilly%2015%2C%201183%20Bursins",
       hasOfferCatalog: [
