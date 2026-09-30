@@ -8,7 +8,7 @@ type input_attributes = {
   autoCapitalize?: "words" | "characters" | "sentences";
 };
 
-const attributes: Record<dictionary_key, input_attributes> = {
+const attributes = {
   "given-name": {
     type: "text",
     autoComplete: "given-name",
@@ -37,10 +37,10 @@ const attributes: Record<dictionary_key, input_attributes> = {
     autoCapitalize: "words",
   },
   freetext: { type: "text", autoComplete: "off", autoCapitalize: "sentences" },
-};
+} satisfies Partial<Record<dictionary_key, input_attributes>>;
 
 type field_props = {
-  name: dictionary_key;
+  name: keyof typeof attributes;
   label: string;
   className?: string;
 };
