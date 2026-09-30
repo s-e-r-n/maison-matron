@@ -29,6 +29,7 @@ import pierre_frey_logo from "../../public/fabric-logos/pierre-frey.svg";
 import ralph_lauren_logo from "../../public/fabric-logos/ralph-lauren.svg";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
+import secretary from "../../public/visuals/armoire.jpg";
 import sideboard from "../../public/visuals/buffet.jpg";
 import lion_sofa from "../../public/visuals/canape-lions.jpg";
 import blue_chair from "../../public/visuals/chaise-bleue.jpg";
@@ -300,16 +301,26 @@ const Home = () => (
 
         <SectionSeparator />
 
-        <SideVisualSection
+        <WideVisualSection
           visual={
-            <figure>
-              <Image
-                src={blue_chair}
-                alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
-              <Caption>Réalisation Maison Matron</Caption>
-            </figure>
+            <div className="grid gap-4 md:grid-cols-2">
+              <figure>
+                <Image
+                  src={blue_chair}
+                  alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+                <Caption>Réalisation Maison Matron</Caption>
+              </figure>
+              <figure>
+                <Image
+                  src={secretary}
+                  alt="Secrétaire à abattant en bois veiné, un tiroir au-dessus de l'abattant et trois tiroirs en dessous, sur fond blanc."
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                />
+                <Caption>Réalisation Maison Matron</Caption>
+              </figure>
+            </div>
           }
           action={
             <CallToAction href="#booking">Votre expertise offerte</CallToAction>
@@ -324,7 +335,7 @@ const Home = () => (
             Il nous transmet sa vision, nous apportons nos 100 ans d'artisanat.
           </p>
           <p>Nous échangeons directement, vous gardez un seul interlocuteur.</p>
-        </SideVisualSection>
+        </WideVisualSection>
 
         <SectionSeparator />
 
