@@ -8,8 +8,10 @@ import {
   sender_name_of,
 } from "./form_table";
 
+type mail_sender = string | { name: string; address: string };
+
 export type mail_message = {
-  from: string;
+  from: mail_sender;
   to: string;
   replyTo: string;
   subject: string;
@@ -25,18 +27,24 @@ export const confirmation_message = (
   fields: lead_fields,
   config: mail_config,
 ): mail_message => ({
-  from: config.from,
+  from: { name: "Maison Matron", address: config.from },
   to: fields.email,
   replyTo: config.inbox,
-  subject: "Votre demande est bien reçue",
+  subject: "Votre expertise offerte",
   text: [
     greeting(fields.given_name),
     "",
-    "Nous avons bien reçu votre demande et nous revenons vers vous rapidement.",
+    "Votre demande d’expertise offerte est confirmée.",
     "",
-    "Vous pouvez répondre directement à ce message pour la compléter.",
+    "Nous vous appelons rapidement (du lundi au vendredi entre 9 h et 17 h).",
     "",
-    "À très vite,",
+    "Si vous souhaitez discuter tout de suite, composez le +41 21 539 46 75.",
+    "",
+    "Chaleureuses salutations,",
+    "",
+    "Maison Matron",
+    "+41 21 539 46 75",
+    "Route de Gilly 15, 1183 Bursins",
   ].join("\n"),
 });
 
