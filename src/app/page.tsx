@@ -1,23 +1,23 @@
 import Image from "next/image";
 import { LogoRow, LogoRows } from "@/components/logo_rows";
-import casal_logo from "../../../public/home/fabric-logos/casal.svg";
-import christian_lacroix_logo from "../../../public/home/fabric-logos/christian-lacroix.png";
-import dedar_logo from "../../../public/home/fabric-logos/dedar.svg";
-import edmond_petit_logo from "../../../public/home/fabric-logos/edmond-petit.png";
-import hermes_logo from "../../../public/home/fabric-logos/hermes.svg";
-import lelievre_logo from "../../../public/home/fabric-logos/lelievre-paris.svg";
-import nobilis_logo from "../../../public/home/fabric-logos/nobilis.svg";
-import pierre_frey_logo from "../../../public/home/fabric-logos/pierre-frey.svg";
-import ralph_lauren_logo from "../../../public/home/fabric-logos/ralph-lauren.svg";
-import five_chairs from "../../../public/home/visuals/5-chaises.jpg";
-import archival_photo from "../../../public/home/visuals/archival-photo-man-leading-horse.jpg";
-import secretary from "../../../public/home/visuals/armoire.jpg";
-import sideboard from "../../../public/home/visuals/buffet.jpg";
-import lion_sofa from "../../../public/home/visuals/canape-lions.jpg";
-import blue_chair from "../../../public/home/visuals/chaise-bleue.jpg";
-import white_chairs from "../../../public/home/visuals/chaises-blanches.jpg";
-import upholstery_tool from "../../../public/home/visuals/outil.jpg";
-import red_silk_velvet from "../../../public/home/visuals/red-silk-velvet.jpg";
+import casal_logo from "../../public/home/fabric-logos/casal.svg";
+import christian_lacroix_logo from "../../public/home/fabric-logos/christian-lacroix.png";
+import dedar_logo from "../../public/home/fabric-logos/dedar.svg";
+import edmond_petit_logo from "../../public/home/fabric-logos/edmond-petit.png";
+import hermes_logo from "../../public/home/fabric-logos/hermes.svg";
+import lelievre_logo from "../../public/home/fabric-logos/lelievre-paris.svg";
+import nobilis_logo from "../../public/home/fabric-logos/nobilis.svg";
+import pierre_frey_logo from "../../public/home/fabric-logos/pierre-frey.svg";
+import ralph_lauren_logo from "../../public/home/fabric-logos/ralph-lauren.svg";
+import five_chairs from "../../public/home/visuals/5-chaises.jpg";
+import archival_photo from "../../public/home/visuals/archival-photo-man-leading-horse.jpg";
+import secretary from "../../public/home/visuals/armoire.jpg";
+import sideboard from "../../public/home/visuals/buffet.jpg";
+import lion_sofa from "../../public/home/visuals/canape-lions.jpg";
+import blue_chair from "../../public/home/visuals/chaise-bleue.jpg";
+import white_chairs from "../../public/home/visuals/chaises-blanches.jpg";
+import upholstery_tool from "../../public/home/visuals/outil.jpg";
+import red_silk_velvet from "../../public/home/visuals/red-silk-velvet.jpg";
 import {
   CallToAction,
   CallToActionDetail,
