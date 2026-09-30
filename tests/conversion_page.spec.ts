@@ -1,7 +1,7 @@
 import { expect, type Page, test } from "@playwright/test";
 
 const titles = [
-  "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations",
+  "Artisans tapissiers et ébénistes depuis 4 générations",
   "Vous cherchez la pièce à votre image, or…",
   "Maison Matron, artisan depuis 4 générations",
   "Le vrai sur-mesure",
