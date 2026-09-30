@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { hold_submission } from "@/lib/submission";
+import { hold_submission } from "../_lib/submission";
 
 type lead_form_props = {
   children: ReactNode;

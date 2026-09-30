@@ -1,9 +1,9 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { Quote, SectionSubtitle } from "@/components/typography";
 import { cn } from "@/lib/utils";
-import logo from "../../public/brand/maison-matron-logo-complete.svg";
+import logo from "../../../../public/brand/maison-matron-logo-complete.svg";
 import styles from "./hero.module.css";
+import { Quote, SectionSubtitle } from "./typography";
 
 type hero_props = { children: ReactNode };
 

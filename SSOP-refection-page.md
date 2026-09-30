@@ -55,3 +55,6 @@ Sort:
 | What the visitor typed in a form | The browser, in the form's fields | The page's `hold_submission`, when it stops being held | The visitor |
 
 ## Amendments
+- The folder of `/` is the route group `src/app/(home)/`, so `/` and `/confirmation` keep their addresses while every file of the page leaves the root of `src/app/`; each page's `layout.tsx` is a root layout, and `src/app/` keeps only the tab icons.
+- The imports inside a page's folder are relative, `./_components/hero`, `../_lib/submission`, so the two folders differ in four lines only: the confirmation path of `actions.ts`, `LayoutProps<"/refection">` in `layout.tsx`, and the name `Refection` of the page component.
+- `next dev` had left `.next/dev/types/validator.ts` pointing at the moved files; it is deleted before `npm run typecheck` and the next `next dev` writes it again.

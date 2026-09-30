@@ -1,6 +1,6 @@
 import Image from "next/image";
-import secondary_icon from "../../public/brand/secondary-icon.svg";
-import terciary_icon from "../../public/brand/terciary-icon.svg";
+import secondary_icon from "../../../../public/brand/secondary-icon.svg";
+import terciary_icon from "../../../../public/brand/terciary-icon.svg";
 
 export const SectionSeparator = () => (
   <div

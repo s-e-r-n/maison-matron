@@ -1,45 +1,45 @@
 import Image from "next/image";
+import { CenteredSection } from "@/components/centered_section";
+import { LogoRow, LogoRows } from "@/components/logo_rows";
+import { ReviewsSection } from "@/components/reviews_section";
+import { SideVisualSection } from "@/components/side_visual_section";
+import { WideVisualSection } from "@/components/wide_visual_section";
+import casal_logo from "../../../public/fabric-logos/casal.svg";
+import christian_lacroix_logo from "../../../public/fabric-logos/christian-lacroix.png";
+import dedar_logo from "../../../public/fabric-logos/dedar.svg";
+import edmond_petit_logo from "../../../public/fabric-logos/edmond-petit.png";
+import hermes_logo from "../../../public/fabric-logos/hermes.svg";
+import lelievre_logo from "../../../public/fabric-logos/lelievre-paris.svg";
+import nobilis_logo from "../../../public/fabric-logos/nobilis.svg";
+import pierre_frey_logo from "../../../public/fabric-logos/pierre-frey.svg";
+import ralph_lauren_logo from "../../../public/fabric-logos/ralph-lauren.svg";
+import five_chairs from "../../../public/visuals/5-chaises.jpg";
+import archival_photo from "../../../public/visuals/archival-photo-man-leading-horse.jpg";
+import secretary from "../../../public/visuals/armoire.jpg";
+import sideboard from "../../../public/visuals/buffet.jpg";
+import lion_sofa from "../../../public/visuals/canape-lions.jpg";
+import blue_chair from "../../../public/visuals/chaise-bleue.jpg";
+import white_chairs from "../../../public/visuals/chaises-blanches.jpg";
+import upholstery_tool from "../../../public/visuals/outil.jpg";
+import red_silk_velvet from "../../../public/visuals/red-silk-velvet.jpg";
 import {
   CallToAction,
   CallToActionDetail,
   CallToActionDetails,
-} from "@/components/call_to_action";
-import { CenteredSection } from "@/components/centered_section";
-import { Field } from "@/components/field";
-import { Footer } from "@/components/footer";
-import { Hero } from "@/components/hero";
-import { LeadSheet } from "@/components/lead_sheet";
-import { LogoRow, LogoRows } from "@/components/logo_rows";
-import { ReviewsSection } from "@/components/reviews_section";
-import { SectionSeparator } from "@/components/section_separator";
-import { SideVisualSection } from "@/components/side_visual_section";
+} from "./_components/call_to_action";
+import { Field } from "./_components/field";
+import { Footer } from "./_components/footer";
+import { Hero } from "./_components/hero";
+import { LeadSheet } from "./_components/lead_sheet";
+import { SectionSeparator } from "./_components/section_separator";
 import {
   Caption,
   Quote,
   Reviewer,
   SectionSubtitle,
   SectionTitle,
-} from "@/components/typography";
-import { Watermarked } from "@/components/watermarked";
-import { WideVisualSection } from "@/components/wide_visual_section";
-import casal_logo from "../../public/fabric-logos/casal.svg";
-import christian_lacroix_logo from "../../public/fabric-logos/christian-lacroix.png";
-import dedar_logo from "../../public/fabric-logos/dedar.svg";
-import edmond_petit_logo from "../../public/fabric-logos/edmond-petit.png";
-import hermes_logo from "../../public/fabric-logos/hermes.svg";
-import lelievre_logo from "../../public/fabric-logos/lelievre-paris.svg";
-import nobilis_logo from "../../public/fabric-logos/nobilis.svg";
-import pierre_frey_logo from "../../public/fabric-logos/pierre-frey.svg";
-import ralph_lauren_logo from "../../public/fabric-logos/ralph-lauren.svg";
-import five_chairs from "../../public/visuals/5-chaises.jpg";
-import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
-import secretary from "../../public/visuals/armoire.jpg";
-import sideboard from "../../public/visuals/buffet.jpg";
-import lion_sofa from "../../public/visuals/canape-lions.jpg";
-import blue_chair from "../../public/visuals/chaise-bleue.jpg";
-import white_chairs from "../../public/visuals/chaises-blanches.jpg";
-import upholstery_tool from "../../public/visuals/outil.jpg";
-import red_silk_velvet from "../../public/visuals/red-silk-velvet.jpg";
+} from "./_components/typography";
+import { Watermarked } from "./_components/watermarked";
 
 const Home = () => (
   <main>
