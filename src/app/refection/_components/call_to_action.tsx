@@ -34,14 +34,14 @@ type details_props = { children: ReactNode };
 
 export const CallToActionDetails = ({ children }: details_props) => (
   <div className="mt-3 text-[13px] max-md:mx-auto max-md:w-fit">
-    <ul className="inline-block list-inside list-['❊_'] text-left align-top md:inline-flex md:gap-x-1">
+    <ul className="inline-flex list-inside list-['❊_'] flex-wrap gap-x-1 text-left align-top max-md:justify-center">
       {children}
     </ul>
   </div>
 );
 
 export const CallToActionDetail = ({ children }: details_props) => (
-  <li className="marker:text-gray-500 md:first:list-none">
+  <li className="marker:text-gray-500 first:list-none">
     <small className="text-[1em] text-gray-500">{children}</small>
   </li>
 );
