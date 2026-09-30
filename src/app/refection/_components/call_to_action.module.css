@@ -1,0 +1,23 @@
+.row {
+  --gap: 8px;
+  gap: var(--gap);
+}
+
+@media (width >= 48rem) {
+  .row {
+    --gap: 40px;
+  }
+}
+
+.face {
+  --frames: 12px;
+  --slack: 4px;
+  --room: calc(100cqi - var(--frames) - var(--slack) - var(--gap));
+  --labels: 14.525em;
+  --inline: clamp(0.4em, (var(--room) - var(--labels)) / 4, 2.4em);
+  min-width: calc(6em + 2 * var(--inline));
+  min-height: 2.9em;
+  padding: 0.9em var(--inline);
+  font-size: min(20px, var(--room) / (14.525 + 4 * 0.4));
+  line-height: 1.1;
+}

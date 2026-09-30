@@ -1,34 +1,61 @@
 import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+import styles from "./call_to_action.module.css";
 
-type face_props = { children: ReactNode };
+type tone = "principal" | "secondary";
 
-const Face = ({ children }: face_props) => (
-  <span className="flex min-h-[58px] min-w-[216px] items-center justify-center bg-principal px-12 py-[18px] text-center font-display text-[20px] leading-[22px] text-white italic">
+type face_props = { children: ReactNode; tone: tone };
+
+const Face = ({ children, tone }: face_props) => (
+  <span
+    className={cn(
+      "flex items-center justify-center text-center font-display text-white italic",
+      styles.face,
+      tone === "principal" ? "bg-principal" : "bg-secondary",
+    )}
+  >
     {children}
   </span>
 );
 
+const frame = (tone: tone) =>
+  cn(
+    "inline-block max-w-full border p-[2px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current",
+    tone === "principal" ? "border-principal" : "border-secondary",
+  );
+
 type call_to_action_props = {
   children: ReactNode;
-  href?: `#${string}`;
+  href?: `#${string}` | `tel:${string}`;
+  tone?: tone;
 };
 
-export const CallToAction = ({ children, href }: call_to_action_props) =>
+export const CallToAction = ({
+  children,
+  href,
+  tone = "principal",
+}: call_to_action_props) =>
   href ? (
-    <a
-      href={href}
-      className="inline-block max-w-full border border-principal p-[2px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current max-md:mx-auto max-md:block max-md:w-fit"
-    >
-      <Face>{children}</Face>
+    <a href={href} className={frame(tone)}>
+      <Face tone={tone}>{children}</Face>
     </a>
   ) : (
-    <button
-      type="submit"
-      className="inline-block max-w-full border border-principal p-[2px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
-    >
-      <Face>{children}</Face>
+    <button type="submit" className={frame(tone)}>
+      <Face tone={tone}>{children}</Face>
     </button>
   );
+
+type call_to_actions_props = { children: ReactNode };
+
+export const CallToActions = ({ children }: call_to_actions_props) => (
+  <div className="@container w-full">
+    <div
+      className={cn("flex max-md:justify-center md:inline-flex", styles.row)}
+    >
+      {children}
+    </div>
+  </div>
+);
 
 type details_props = { children: ReactNode };
 
