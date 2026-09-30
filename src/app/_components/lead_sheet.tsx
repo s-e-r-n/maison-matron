@@ -22,9 +22,14 @@ export const LeadSheet = ({ id, title, send, children }: lead_sheet_props) => (
       )}
     >
       <LeadForm
+        failure={
+          <p role="alert" className="px-[9.5cqi] pb-[6cqi] text-center">
+            L'envoi a échoué, réessayez dans un instant.
+          </p>
+        }
         className={cn(
           styles.paper,
-          "@container mx-auto flex aspect-[210/297] min-h-svh w-full bg-sheet text-sheet-ink lg:aspect-auto lg:h-(--sheet-height) lg:min-h-0 lg:w-(--sheet-width) lg:max-w-full",
+          "@container mx-auto flex flex-col aspect-[210/297] min-h-svh w-full bg-sheet text-sheet-ink lg:aspect-auto lg:h-(--sheet-height) lg:min-h-0 lg:w-(--sheet-width) lg:max-w-full",
         )}
       >
         <div className="flex min-h-0 min-w-0 flex-1 flex-col justify-center px-[9.5cqi] py-[6cqi]">

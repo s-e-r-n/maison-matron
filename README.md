@@ -45,13 +45,16 @@ A field is `<Field name="…" label="…" />`. Its `name` is a key of the dictio
 
 Several inputs may share `freetext`, their values arrive joined by a blank line. An input with any other `name` reaches no module. A new key is one line in `src/lib/form_contract/dictionary.ts` and one row in the table of each module that wants it.
 
-The fields go inside the page's `LeadForm`, the one client component: today it holds the submission, and plugged it calls the page's action.
+The fields go inside the page's `LeadForm`, the one client component: it calls the page's action, and renders `failure` when the submission fails.
 
 ```tsx
 import { Field } from "./_components/field";
 import { LeadForm } from "./_components/lead_form";
 
-<LeadForm className="flex flex-col gap-3">
+<LeadForm
+  className="flex flex-col gap-3"
+  failure={<p role="alert">L'envoi a échoué, réessayez dans un instant.</p>}
+>
   <Field name="given-name" label="Prénom" className="flex flex-col gap-1" />
   <Field name="email" label="E-mail" className="flex flex-col gap-1" />
   <Field name="freetext" label="Message" className="flex flex-col gap-1" />
@@ -127,7 +130,7 @@ src/lib/ghl/             deliver.ts is the entry, form_table.ts holds its table,
 src/lib/mail/            send.ts is the entry, form_table.ts holds its table, messages.ts the two mails
 src/components/          logo_rows.tsx, page_view.tsx, shared by both pages with src/lib/utils.ts
 src/app/global-not-found.tsx   the 404 of the site, with its own stylesheet
-src/app/(home)/          the page served at /: layout.tsx, globals.css, page.tsx, actions.ts, confirmation/page.tsx, _components/ with field.tsx, lead_form.tsx and its sections, _lib/submission.ts
+src/app/(home)/          the page served at /: layout.tsx, globals.css, page.tsx, actions.ts, confirmation/page.tsx, _components/ with field.tsx, lead_form.tsx and its sections
 src/app/refection/       the page served at /refection: the same files, its own copies
 public/home/             the visuals, the video, the brand files, the fabric logos and the textures of /
 public/refection/        the same, the own copies of /refection
