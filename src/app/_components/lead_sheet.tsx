@@ -7,12 +7,19 @@ import styles from "./lead_sheet.module.css";
 
 type lead_sheet_props = {
   id: string;
+  form_id: string;
   title: ReactNode;
   send: string;
   children: ReactNode;
 };
 
-export const LeadSheet = ({ id, title, send, children }: lead_sheet_props) => (
+export const LeadSheet = ({
+  id,
+  form_id,
+  title,
+  send,
+  children,
+}: lead_sheet_props) => (
   <section id={id} className="flex flex-col gap-12 lg:gap-16 lg:pt-4">
     <div className="copy-inset md:text-center">{title}</div>
     <div
@@ -22,6 +29,7 @@ export const LeadSheet = ({ id, title, send, children }: lead_sheet_props) => (
       )}
     >
       <LeadForm
+        form_id={form_id}
         failure={
           <p role="alert" className="px-[9.5cqi] pb-[6cqi] text-center">
             L'envoi a échoué, réessayez dans un instant.
