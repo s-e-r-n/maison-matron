@@ -3,7 +3,7 @@ import { site_origin } from "@/lib/site_origin";
 
 const title = "Expertise offerte | Tapissier Ébéniste Depuis 4 Générations";
 const description =
-  "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations";
+  "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations. L'atelier vient à vous, c'est offert. Visite chez vous ❊ Examen de votre mobilier ❊ Devis";
 
 export const landing_metadata: Metadata = {
   metadataBase: site_origin,
@@ -12,14 +12,16 @@ export const landing_metadata: Metadata = {
   applicationName: "Maison Matron",
   openGraph: {
     type: "website",
+    locale: "fr_CH",
     siteName: "Maison Matron",
     title,
     description,
     images: {
-      url: "/home/visuals/5-chaises.jpg",
-      width: 2700,
-      height: 1800,
-      alt: "Une petite chaise laquée blanc au dossier enroulé et quatre chaises traîneau en bois, garnies d'un même tissu bleu à motif de cercles, sur fond blanc.",
+      url: "/opengraph-canape-lions.jpg",
+      width: 2400,
+      height: 1260,
+      type: "image/jpeg",
+      alt: "Canapé en bois aux accoudoirs sculptés de têtes de lion, garni d'un tissu orangé à rayures ivoire, sur fond blanc.",
     },
   },
   twitter: { card: "summary_large_image" },

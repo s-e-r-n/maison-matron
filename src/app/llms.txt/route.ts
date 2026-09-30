@@ -6,6 +6,20 @@ const llms_txt = `# Maison Matron
 
 > Maison Matron, artisans tapissiers et ébénistes depuis 4 générations
 
+Comment contacter l'atelier ?
+
+- En remplissant le formulaire : [Je réserve ma visite](${at_origin("/#booking")})
+  - Votre prénom
+  - Votre nom de famille
+  - Votre email
+  - Votre numéro de téléphone
+  - Votre code postal
+  - Votre projet, en quelques mots
+- En appelant : [+41 21 539 46 75](tel:+41215394675)
+- [Route de Gilly 15, 1183 Bursins](https://www.google.com/maps/search/?api=1&query=Maison%20Matron%2C%20Route%20de%20Gilly%2015%2C%201183%20Bursins)
+
+---
+
 - Artisans tapissiers et ébénistes depuis 4 générations
   - +20'000 pièces
   - +5'000 clients
@@ -78,24 +92,12 @@ const llms_txt = `# Maison Matron
   - « Bon contact et bonne expertise. Mon fauteuil a maintenant un tissu magnifique ! Il commence sa seconde vie ! Merci. Je recommande cet artisan. » - Aline
   - « Superbe travail ! Merci. » - Anne
 - L'atelier vient à vous, c'est offert.
-  - Votre prénom
-  - Votre nom de famille
-  - Votre email
-  - Votre numéro de téléphone
-  - Votre code postal
-  - Votre projet, en quelques mots
   - Je réserve ma visite
-- Maison Matron, 1921
-  - Route de Gilly 15
-  - 1183 Bursins
 
 ## Votre expertise offerte
 
 - [Maison Matron](${at_origin("/")}): Maison Matron, artisans tapissiers et ébénistes depuis 4 générations
 - [Maison Matron](${at_origin("/refection")}): Maison Matron, artisans tapissiers et ébénistes depuis 4 générations
-- [Je réserve ma visite](${at_origin("/#booking")}): L'atelier vient à vous, c'est offert.
-- [+41 21 539 46 75](tel:+41215394675)
-- [Route de Gilly 15, 1183 Bursins](https://www.google.com/maps/search/?api=1&query=Maison%20Matron%2C%20Route%20de%20Gilly%2015%2C%201183%20Bursins)
 `;
 
 export const GET = () =>
