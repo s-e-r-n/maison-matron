@@ -30,7 +30,7 @@ GHL and mail have no `misconfigured` code: a missing value is refused by the ser
 
 ## 3. Build the form
 
-A field is `<Field name="…" label="…" />`. Its `name` is a key of the dictionary, the only names the modules read. The key sets the input, the keyboard and the autofill, the page sets the rest. The `label` wraps the control, `className` lands on the label.
+A field is `<Field name="…" label="…" />`. Its `name` is a key of the dictionary, the only names the modules read. The key sets the input, the keyboard and the autofill, the page sets the rest. The label stands before the control, `className` lands on the `div` around both.
 
 | `name`           | Renders  | Meta | GHL           | Mail copy   |
 | ---------------- | -------- | ---- | ------------- | ----------- |
@@ -41,37 +41,29 @@ A field is `<Field name="…" label="…" />`. Its `name` is a key of the dictio
 | `organization`   | text     | -    | `companyName` | Entreprise  |
 | `postal-code`    | text     | `zp` | `postalCode`  | Code postal |
 | `address-level2` | text     | `ct` | `city`        | Localité    |
-| `freetext`       | textarea | -    | custom field  | Message     |
+| `freetext`       | text     | -    | custom field  | Message     |
 
 Several inputs may share `freetext`, their values arrive joined by a blank line. An input with any other `name` reaches no module. A new key is one line in `src/lib/form_contract/dictionary.ts` and one row in the table of each module that wants it.
 
-The fields go inside `LeadForm`, the one client component: it calls the action, disables the fields while it runs and shows `failure` when the confirmation mail could not leave.
+The fields go inside the page's `LeadForm`, the one client component: today it holds the submission, and plugged it calls the page's action.
 
 ```tsx
-import { Field } from "@/components/field";
-import { LeadForm } from "@/components/lead_form";
+import { Field } from "./_components/field";
+import { LeadForm } from "./_components/lead_form";
 
-<LeadForm
-  className="flex flex-col gap-3"
-  failure={<p role="alert">L'envoi a échoué, réessayez.</p>}
->
-  <Field
-    name="given-name"
-    label="Prénom"
-    required
-    className="flex flex-col gap-1"
-  />
-  <Field name="email" label="E-mail" required className="flex flex-col gap-1" />
+<LeadForm className="flex flex-col gap-3">
+  <Field name="given-name" label="Prénom" className="flex flex-col gap-1" />
+  <Field name="email" label="E-mail" className="flex flex-col gap-1" />
   <Field name="freetext" label="Message" className="flex flex-col gap-1" />
   <button type="submit">Envoyer</button>
 </LeadForm>;
 ```
 
-`src/app/page.tsx` carries a form with every key, `src/app/confirmation/page.tsx` is where a success lands. A confirmation route is always named `/confirmation`.
+Each page carries its own form, `src/app/(home)/page.tsx` for `/` and `src/app/refection/page.tsx` for `/refection`, and its own confirmation page, `src/app/(home)/confirmation/page.tsx` and `src/app/refection/confirmation/page.tsx`, where a success lands. A confirmation route is named `/confirmation` under the page's own path: `/confirmation` and `/refection/confirmation`.
 
 ## 4. Plug the services
 
-`src/app/actions.ts` is the only place a form meets a module: one call per service.
+Each page's `actions.ts`, `src/app/(home)/actions.ts` for `/` and `src/app/refection/actions.ts` for `/refection`, is the only place its form meets a module: one call per service. The copy of `/refection` redirects to `/refection/confirmation`.
 
 ```ts
 "use server";
@@ -100,7 +92,7 @@ export const submit_lead = async (
 
 Only the confirmation mail decides the visitor's fate: sent means `/confirmation`, anything else means `{ status: "failed" }` and the form stays. A switched-off mail module is a failure like any other. The copy to the inbox is the safety net: what GHL missed is entered by hand from it.
 
-Unplug a service: delete its call. Remove it: delete its call, its folder under `src/lib/`, its variables. Nothing else knows it exists. The Meta events are `Lead`, `CompleteRegistration`, `Schedule`, `PageView`, in `src/lib/meta_capi/event_dictionary.ts`; a site with a single conversion sends `Lead`. `PageView` is already wired in `src/app/layout.tsx`, one per full page load.
+Unplug a service: delete its call. Remove it: delete its call, its folder under `src/lib/`, its variables. Nothing else knows it exists. The Meta events are `Lead`, `CompleteRegistration`, `Schedule`, `PageView`, in `src/lib/meta_capi/event_dictionary.ts`; a site with a single conversion sends `Lead`. `PageView`, in `src/components/page_view.tsx`, is mounted by neither root layout today, `src/app/(home)/layout.tsx` nor `src/app/refection/layout.tsx`; mounted, it sends one per full page load.
 
 ## 5. Read a result
 
@@ -133,8 +125,12 @@ src/lib/form_contract/   the dictionary and the loop every module reads the form
 src/lib/meta_capi/       capture.ts is the entry, user_data_keys.ts holds its table
 src/lib/ghl/             deliver.ts is the entry, form_table.ts holds its table, payloads.ts the two bodies
 src/lib/mail/            send.ts is the entry, form_table.ts holds its table, messages.ts the two mails
-src/components/          field.tsx, lead_form.tsx, page_view.tsx
-src/app/                 page.tsx, actions.ts, confirmation/page.tsx, layout.tsx
+src/components/          logo_rows.tsx, page_view.tsx, shared by both pages with src/lib/utils.ts
+src/app/global-not-found.tsx   the 404 of the site, with its own stylesheet
+src/app/(home)/          the page served at /: layout.tsx, globals.css, page.tsx, actions.ts, confirmation/page.tsx, _components/ with field.tsx, lead_form.tsx and its sections, _lib/submission.ts
+src/app/refection/       the page served at /refection: the same files, its own copies
+public/home/             the visuals, the video, the brand files, the fabric logos and the textures of /
+public/refection/        the same, the own copies of /refection
 src/proxy.ts             mints the Meta identity cookies on every request
 tests/                   Playwright
 ```

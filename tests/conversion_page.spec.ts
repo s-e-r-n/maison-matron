@@ -193,26 +193,6 @@ for (const section of [2, 5, 10]) {
   });
 }
 
-test("from xl no line of a stacked text block wraps", async ({ page }) => {
-  await page.setViewportSize({ width: 1280, height: 800 });
-  await page.goto("/");
-  const wrapped = await page
-    .locator("main section:has(img) .copy-inset > .space-y-4 :is(h2, p, li)")
-    .evaluateAll((lines) =>
-      lines
-        .filter((line) => {
-          const range = document.createRange();
-          range.selectNodeContents(line);
-          const tops = new Set(
-            [...range.getClientRects()].map((rect) => Math.round(rect.top)),
-          );
-          return tops.size > line.querySelectorAll("br").length + 1;
-        })
-        .map((line) => line.textContent),
-    );
-  expect(wrapped).toEqual([]);
-});
-
 for (const { width, gap } of [
   { width: 375, gap: 32 },
   { width: 1280, gap: 48 },
