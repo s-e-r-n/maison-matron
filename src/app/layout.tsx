@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { EB_Garamond } from "next/font/google";
 import "./globals.css";
@@ -24,6 +25,7 @@ const RootLayout = ({ children }: LayoutProps<"/">) => (
   >
     <body className="bg-paper font-sans text-base leading-[1.35] text-ink antialiased">
       {children}
+      <Analytics />
     </body>
   </html>
 );
