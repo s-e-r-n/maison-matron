@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { site_origin } from "@/lib/site_origin";
 
-const title = "Expertise offerte | Tapissier Ébénistes Depuis 4 Générations";
+const title = "Expertise offerte | Tapissier Ébéniste Depuis 4 Générations";
 const description =
   "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations";
 

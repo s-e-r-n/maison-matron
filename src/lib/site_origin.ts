@@ -1,1 +1,1 @@
-export const site_origin = new URL("https://maison-matron.ch");
+export const site_origin = new URL("https://www.maison-matron.ch");
