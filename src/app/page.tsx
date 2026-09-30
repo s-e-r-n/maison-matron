@@ -581,6 +581,7 @@ const Home = () => (
 
         <LeadSheet
           id="booking"
+          form_id="luxe"
           title={
             <SectionTitle>L'atelier vient à vous, c'est offert.</SectionTitle>
           }
@@ -588,8 +589,8 @@ const Home = () => (
         >
           <Field name="given-name" label="Votre prénom" />
           <Field name="family-name" label="Votre nom de famille" />
-          <Field name="email" label="Votre email" />
           <Field name="tel" label="Votre numéro de téléphone" />
+          <Field name="email" label="Votre email" />
           <Field name="postal-code" label="Votre code postal" />
           <Field
             name="freetext"

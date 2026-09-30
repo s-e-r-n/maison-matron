@@ -6,6 +6,7 @@ import { submit_lead } from "../actions";
 type submission_state = { status: "idle" } | { status: "failed" };
 
 type lead_form_props = {
+  form_id: string;
   children: ReactNode;
   failure: ReactNode;
   className?: string;
@@ -13,15 +14,20 @@ type lead_form_props = {
 
 const initial_state: submission_state = { status: "idle" };
 
-const submit = (
-  _state: submission_state,
-  form_data: FormData,
-): Promise<submission_state> => submit_lead(form_data);
-
-export const LeadForm = ({ children, failure, className }: lead_form_props) => {
+export const LeadForm = ({
+  form_id,
+  children,
+  failure,
+  className,
+}: lead_form_props) => {
+  const submit_lead_of_form = submit_lead.bind(null, form_id);
+  const submit = (
+    _state: submission_state,
+    form_data: FormData,
+  ): Promise<submission_state> => submit_lead_of_form(form_data);
   const [state, action, pending] = useActionState(submit, initial_state);
   return (
-    <form action={action} className={className}>
+    <form id={form_id} action={action} className={className}>
       <fieldset disabled={pending} className="contents">
         {children}
       </fieldset>
