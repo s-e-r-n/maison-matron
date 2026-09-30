@@ -8,7 +8,7 @@ export const Footer = () => (
       alt="Maison Matron, 1921"
       className="block h-auto w-full max-w-full md:w-[200px]"
     />
-    <address className="copy-inset text-gray-600 not-italic md:text-center">
+    <address className="copy-inset text-center text-gray-600 not-italic">
       <a
         href="https://www.google.com/maps/search/?api=1&query=Maison%20Matron%2C%20Route%20de%20Gilly%2015%2C%201183%20Bursins"
         target="_blank"
