@@ -49,7 +49,7 @@ Several inputs may share `freetext`, their values arrive joined by a blank line.
 
 WhatsApp reads no table: every named input fills the next variable of the template, in the order of the page, and `form_id` fills the last one. The client's template is written in that order, with one variable per input plus one for the id, from 1 to 46 variables. A form and a template that disagree are refused by Meta with code `132000` and logged.
 
-The fields go inside the page's `LeadForm`, the one client component: it calls the page's action, and renders `failure` when the submission fails. `form_id` is required: it names the form, lands on the `id` of the `<form>` and is bound to the page's `submit_lead` as its first argument, so the WhatsApp message says which page the lead came from, `luxe` for `/` and `refection` for `/refection`.
+The fields go inside the page's `LeadForm`, the one client component: it calls the page's action, and renders `failure` when the submission fails. On submit it checks the lead against the page's `_lib/lead.ts`, the one Zod schema of its six fields, all required and `email` a valid email: a wrong lead never leaves, and each `Field` shows its error under its input. `form_id` is required: it names the form, lands on the `id` of the `<form>` and is bound to the page's `submit_lead` as its first argument, so the WhatsApp message says which page the lead came from, `luxe` for `/` and `refection` for `/refection`.
 
 ```tsx
 import { Field } from "./_components/field";
@@ -82,11 +82,13 @@ import { send_confirmation } from "@/lib/mail/send";
 import { capture } from "@/lib/meta_capi/capture";
 import { lead_submission_allowed } from "@/lib/rate_limit/submission_limit";
 import { dispatch_to_whatsapp } from "@/lib/whatsapp_dispatch/dispatch";
+import { valid_lead } from "./_lib/lead";
 
 export const submit_lead = async (
   form_id: string,
   form_data: FormData,
 ): Promise<{ status: "failed" }> => {
+  if (!valid_lead(form_data)) return { status: "failed" };
   if (!(await lead_submission_allowed())) return { status: "failed" };
   const dispatch = dispatch_to_whatsapp(form_data, form_id);
   await capture("Lead", form_data);

@@ -6,11 +6,13 @@ import { send_confirmation } from "@/lib/mail/send";
 import { capture } from "@/lib/meta_capi/capture";
 import { lead_submission_allowed } from "@/lib/rate_limit/submission_limit";
 import { dispatch_to_whatsapp } from "@/lib/whatsapp_dispatch/dispatch";
+import { valid_lead } from "./_lib/lead";
 
 export const submit_lead = async (
   form_id: string,
   form_data: FormData,
 ): Promise<{ status: "failed" }> => {
+  if (!valid_lead(form_data)) return { status: "failed" };
   if (!(await lead_submission_allowed())) return { status: "failed" };
   const dispatch = dispatch_to_whatsapp(form_data, form_id);
   await capture("Lead", form_data);

@@ -1,4 +1,8 @@
-import { useId } from "react";
+"use client";
+
+import { use, useId } from "react";
+import { cn } from "@/lib/utils";
+import { LeadErrors } from "./lead_form";
 
 type input_attributes = {
   type: "email" | "tel" | "text";
@@ -56,8 +60,11 @@ type field_props = {
 
 export const Field = ({ name, label, className }: field_props) => {
   const id = useId();
+  const error_id = `${id}-error`;
+  const errors: Partial<Record<field_name, string>> = use(LeadErrors);
+  const error = errors[name];
   return (
-    <div className={className}>
+    <div className={cn("relative", className)}>
       <label
         htmlFor={id}
         className="mb-[2px] block font-display text-base leading-none text-sheet-ink italic"
@@ -68,9 +75,19 @@ export const Field = ({ name, label, className }: field_props) => {
         id={id}
         name={name}
         spellCheck={false}
+        aria-invalid={error !== undefined}
+        aria-describedby={error === undefined ? undefined : error_id}
         className="block w-full appearance-none rounded-none border-0 border-b border-sheet-rule bg-transparent p-0 pb-1 font-sans text-base leading-none text-sheet-ink focus:outline-none focus-visible:border-ink"
         {...attributes[name]}
       />
+      {error !== undefined && (
+        <p
+          id={error_id}
+          className="absolute top-full left-0 mt-1 font-sans text-[13px] leading-4 text-[#b3402a]"
+        >
+          {error}
+        </p>
+      )}
     </div>
   );
 };
