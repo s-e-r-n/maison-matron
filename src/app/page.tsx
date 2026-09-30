@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { CallToAction } from "@/components/call_to_action";
+import {
+  CallToAction,
+  CallToActionDetail,
+  CallToActionDetails,
+} from "@/components/call_to_action";
 import { CenteredSection } from "@/components/centered_section";
 import { Field } from "@/components/field";
 import { Footer } from "@/components/footer";
@@ -41,6 +45,11 @@ const Home = () => (
   <main>
     <Hero>
       <CallToAction href="#booking">Votre expertise offerte</CallToAction>
+      <CallToActionDetails>
+        <CallToActionDetail>Visite chez vous</CallToActionDetail>
+        <CallToActionDetail>Examen de votre mobilier</CallToActionDetail>
+        <CallToActionDetail>Devis</CallToActionDetail>
+      </CallToActionDetails>
     </Hero>
 
     <Watermarked>
@@ -64,7 +73,18 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
+            <>
+              <CallToAction href="#booking">
+                Votre expertise offerte
+              </CallToAction>
+              <CallToActionDetails>
+                <CallToActionDetail>Visite chez vous</CallToActionDetail>
+                <CallToActionDetail>
+                  Examen de votre mobilier
+                </CallToActionDetail>
+                <CallToActionDetail>Devis</CallToActionDetail>
+              </CallToActionDetails>
+            </>
           }
         >
           <SectionTitle>
@@ -97,7 +117,18 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
+            <>
+              <CallToAction href="#booking">
+                Votre expertise offerte
+              </CallToAction>
+              <CallToActionDetails>
+                <CallToActionDetail>Visite chez vous</CallToActionDetail>
+                <CallToActionDetail>
+                  Examen de votre mobilier
+                </CallToActionDetail>
+                <CallToActionDetail>Devis</CallToActionDetail>
+              </CallToActionDetails>
+            </>
           }
         >
           <SectionTitle>Le vrai sur-mesure</SectionTitle>
@@ -130,7 +161,18 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
+            <>
+              <CallToAction href="#booking">
+                Votre expertise offerte
+              </CallToAction>
+              <CallToActionDetails>
+                <CallToActionDetail>Visite chez vous</CallToActionDetail>
+                <CallToActionDetail>
+                  Examen de votre mobilier
+                </CallToActionDetail>
+                <CallToActionDetail>Devis</CallToActionDetail>
+              </CallToActionDetails>
+            </>
           }
         >
           <SectionTitle>Profitez de milliers de tissus</SectionTitle>
@@ -200,7 +242,18 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
+            <>
+              <CallToAction href="#booking">
+                Votre expertise offerte
+              </CallToAction>
+              <CallToActionDetails>
+                <CallToActionDetail>Visite chez vous</CallToActionDetail>
+                <CallToActionDetail>
+                  Examen de votre mobilier
+                </CallToActionDetail>
+                <CallToActionDetail>Devis</CallToActionDetail>
+              </CallToActionDetails>
+            </>
           }
         >
           <SectionTitle>L'atelier vient à vous, et c'est offert</SectionTitle>
@@ -240,7 +293,18 @@ const Home = () => (
             </figure>
           }
           action={
-            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
+            <>
+              <CallToAction href="#booking">
+                Votre expertise offerte
+              </CallToAction>
+              <CallToActionDetails>
+                <CallToActionDetail>Visite chez vous</CallToActionDetail>
+                <CallToActionDetail>
+                  Examen de votre mobilier
+                </CallToActionDetail>
+                <CallToActionDetail>Devis</CallToActionDetail>
+              </CallToActionDetails>
+            </>
           }
         >
           <SectionTitle>Le processus &amp; la restitution</SectionTitle>
@@ -281,7 +345,18 @@ const Home = () => (
             </div>
           }
           action={
-            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
+            <>
+              <CallToAction href="#booking">
+                Votre expertise offerte
+              </CallToAction>
+              <CallToActionDetails>
+                <CallToActionDetail>Visite chez vous</CallToActionDetail>
+                <CallToActionDetail>
+                  Examen de votre mobilier
+                </CallToActionDetail>
+                <CallToActionDetail>Devis</CallToActionDetail>
+              </CallToActionDetails>
+            </>
           }
         >
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
@@ -323,7 +398,18 @@ const Home = () => (
             </div>
           }
           action={
-            <CallToAction href="#booking">Votre expertise offerte</CallToAction>
+            <>
+              <CallToAction href="#booking">
+                Votre expertise offerte
+              </CallToAction>
+              <CallToActionDetails>
+                <CallToActionDetail>Visite chez vous</CallToActionDetail>
+                <CallToActionDetail>
+                  Examen de votre mobilier
+                </CallToActionDetail>
+                <CallToActionDetail>Devis</CallToActionDetail>
+              </CallToActionDetails>
+            </>
           }
         >
           <SectionTitle>
