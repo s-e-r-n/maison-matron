@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LogoRow, LogoRows } from "@/components/logo_rows";
+import { LogoRow, LogoRows, MobileRowBreak } from "@/components/logo_rows";
 import casal_logo from "../../../public/refection/fabric-logos/casal.svg";
 import christian_lacroix_logo from "../../../public/refection/fabric-logos/christian-lacroix.png";
 import dedar_logo from "../../../public/refection/fabric-logos/dedar.svg";
@@ -202,6 +202,7 @@ const Refection = () => (
                 alt="Dedar"
                 className="brightness-0 invert-[10.6%]"
               />
+              <MobileRowBreak />
               <Image
                 src={lelievre_logo}
                 alt="Lelièvre"
@@ -219,6 +220,7 @@ const Refection = () => (
                 alt="Edmond Petit"
                 className="brightness-0 invert-[10.6%]"
               />
+              <MobileRowBreak />
               <Image src={pierre_frey_logo} alt="Pierre Frey" />
               <Image
                 src={casal_logo}
