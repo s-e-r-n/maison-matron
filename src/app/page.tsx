@@ -61,6 +61,8 @@ const Home = () => (
           <p>Le choix des tissus vous est limité.</p>
         </CenteredSection>
 
+        <SectionSeparator />
+
         <SideVisualSection
           visual={
             <figure>
