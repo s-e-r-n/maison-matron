@@ -9,7 +9,7 @@ gh repo create <name> --template s-e-r-n/scaffold-nextjs-meta --private --clone
 cd <name> && npm pkg set name=<name> && npm run bootstrap
 ```
 
-`bootstrap` installs the dependencies and Chromium, creates `.env` from the example when absent, then runs `verify`: types, lint, no comments, unit tests, end-to-end tests, build. Green means the tree works.
+`bootstrap` installs the dependencies, creates `.env` from the example when absent, then runs `verify`: types, lint, no comments, unit tests, build. Green means the tree works.
 
 ## 2. Configure
 
@@ -26,7 +26,6 @@ cp .env.example .env
 | Mail   | `MAIL_ENABLED`      | `SMTP_HOST`, `SMTP_PORT` (`465`, or `587` for STARTTLS), `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM`, `MAIL_INBOX` (the domain mailbox, receives the copy)          |
 | WhatsApp | `WHATSAPP_ENABLED` | `WHATSAPP_BUSINESS_TOKEN`, `WHATSAPP_MODEL` (the template name), `WHATSAPP_DISPATCH_NUMBER_1`, `WHATSAPP_DISPATCH_NUMBER_2` (optional), each number sent as written, `41766359652` |
 | Limit  | `NODE_ENV`          | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`: 20 submissions per IP per 24 hours, counted in Upstash Redis in production only; `RATE_LIMIT_ALLOWED_IPS`, exact IPs never counted, comma-separated; missing or failing, the submission goes through |
-| e2e    | -                   | `E2E_LEAD_EMAIL`, the address the real submission test mails                                                                                                      |
 
 GHL and mail have no `misconfigured` code: a missing value is refused by the service and logged. Meta and WhatsApp log `misconfigured` on every submission. Configure and test a module before production.
 
@@ -132,12 +131,9 @@ A failure of the deferred work is logged with `console.warn`, prefixed by the mo
 | Command          | What it does                                                                                   |
 | ---------------- | ---------------------------------------------------------------------------------------------- |
 | `npm test`       | Vitest, `.env` loaded, one test per decision, network mocked                                   |
-| `npm run e2e`    | Playwright, boots the dev server, checks the cookies, the rendered form and the failure notice |
-| `npm run verify` | typecheck, lint, comments, test, e2e, build, in order                                          |
+| `npm run verify` | typecheck, lint, comments, test, build, in order                                               |
 
-The real submission, once, with a human: `E2E_LEAD_EMAIL` and the switches at `true` in `.env`, the `freetext` custom field created in GHL, then `npm run e2e` fills every field and lands on `/confirmation`. Check the contact and the opportunity in GHL, the two mails in the inbox. With `META_CAPI_ENABLED=true`, `npm test` also posts one `PageView` to the dataset.
-
-Outside production, the guard in `src/lib/whatsapp_dispatch/cloud_api.ts` lets a message leave only with `WHATSAPP_LIVE_TEST=1` and `41766359652` as recipient, the only number a test may ever reach: `verify`, `e2e` and `next dev` on a client's `.env` send nothing. The one live test, a paid send, runs on the command line, with `WHATSAPP_BUSINESS_TOKEN` in `.env`, and sends the template `maisonmatron` once:
+Outside production, the guard in `src/lib/whatsapp_dispatch/cloud_api.ts` lets a message leave only with `WHATSAPP_LIVE_TEST=1` and `41766359652` as recipient, the only number a test may ever reach: `verify` and `next dev` on a client's `.env` send nothing. The one live test, a paid send, runs on the command line, with `WHATSAPP_BUSINESS_TOKEN` in `.env`, and sends the template `maisonmatron` once:
 
 ```sh
 WHATSAPP_LIVE_TEST=1 npx vitest run src/lib/whatsapp_dispatch/tests/cloud_api.live.test.ts
@@ -158,7 +154,6 @@ src/app/refection/       the page served at /refection: the same files, its own 
 public/home/             the visuals, the video, the brand files, the fabric logos and the textures of /
 public/refection/        the same, the own copies of /refection
 src/proxy.ts             mints the Meta identity cookies on every request
-tests/                   Playwright
 ```
 
 In each module: `kill_switch.ts` reads the switch, `config.ts` the variables, every file imports `server-only`, the tests sit in `tests/`. The mail texts live in `src/lib/mail/messages.ts`, in French, to adjust per site.
@@ -178,7 +173,7 @@ Form values are normalised then hashed with SHA-256 (`em`, `ph`, `fn`, `ln`, `ct
 
 ## 9. Stack
 
-Next 16 App Router, React Compiler, Tailwind 4 with `cn()` from `@/lib/utils`, Biome with the house rules as errors, Cache Components, typed routes, Vitest, Playwright, Nodemailer 10, zod. `src/instrumentation.ts` reports every server error with its route. Framework docs of the installed version: `node_modules/next/dist/docs/`, see `AGENTS.md`.
+Next 16 App Router, React Compiler, Tailwind 4 with `cn()` from `@/lib/utils`, Biome with the house rules as errors, Cache Components, typed routes, Vitest, Nodemailer 10, zod. `src/instrumentation.ts` reports every server error with its route. Framework docs of the installed version: `node_modules/next/dist/docs/`, see `AGENTS.md`.
 
 | Command                  | What it does                                            |
 | ------------------------ | ------------------------------------------------------- |
