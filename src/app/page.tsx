@@ -289,11 +289,11 @@ const Home = () => (
               Chaque saison, profitez d'une offre exclusive.
             </SectionSubtitle>
             <ul className="list-inside list-['❊_'] space-y-4 text-left">
-              <li>Révisions offertes</li>
-              <li>Entretien des bois</li>
-              <li>Réductions voisinage</li>
-              <li>Réductions sur les tissus de saison</li>
               <li>Offres spéciales sur des tissus uniques</li>
+              <li>Réductions sur les tissus de saison</li>
+              <li>Réductions voisinage</li>
+              <li>Entretien des bois</li>
+              <li>Révisions offertes</li>
             </ul>
           </div>
         </WideVisualSection>
