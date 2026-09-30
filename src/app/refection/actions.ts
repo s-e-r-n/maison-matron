@@ -12,5 +12,5 @@ export const submit_lead = async (
   deliver_to_ghl(form_data);
   const confirmation = await send_confirmation(form_data);
   if (!confirmation.ok) return { status: "failed" };
-  redirect("/refection/confirmation");
+  redirect("/confirmation");
 };
