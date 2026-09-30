@@ -52,13 +52,17 @@ export const Hero = ({ children }: hero_props) => (
           <SectionSubtitle>+20'000 pièces</SectionSubtitle>
           <SectionSubtitle>+5'000 clients</SectionSubtitle>
         </div>
-        <div className="mb-8 border border-paper/50 p-4 backdrop-blur-xs lg:mb-12 lg:box-content lg:max-w-[400px]">
-          <Quote>
-            « Des conseils avisés, une superbe sélection de tissus et un
-            savoir-faire minutieux. » - Anne-Claude
-          </Quote>
+        <div className="w-full md:w-fit md:*:@container-normal">
+          <div className="mb-8 border border-paper/50 p-[2px] md:contain-inline-size lg:mb-12">
+            <div className="border border-paper/50 p-4 backdrop-blur-xs">
+              <Quote>
+                « Des conseils avisés, une superbe sélection de tissus et un
+                savoir-faire minutieux. » - Anne-Claude
+              </Quote>
+            </div>
+          </div>
+          {children}
         </div>
-        {children}
       </div>
     </div>
   </section>
