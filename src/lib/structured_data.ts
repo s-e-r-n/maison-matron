@@ -1,6 +1,5 @@
-import { site_origin } from "@/lib/site_origin";
-
-const at_origin = (path: string) => new URL(path, site_origin).href;
+import { opengraph_image_path } from "@/lib/landing_metadata";
+import { at_origin } from "@/lib/site_origin";
 
 const home = at_origin("/");
 const business_id = `${home}#business`;
@@ -24,7 +23,7 @@ const structured_data = {
       "@id": `${home}#website`,
       url: home,
       name: "Maison Matron",
-      inLanguage: "fr",
+      inLanguage: "fr-CH",
       publisher: { "@id": business_id },
     },
     {
@@ -36,6 +35,7 @@ const structured_data = {
       url: home,
       logo: at_origin("/apple-icon.png"),
       image: [
+        at_origin(opengraph_image_path),
         at_origin("/home/visuals/5-chaises.jpg"),
         at_origin("/home/visuals/canape-lions.jpg"),
         at_origin("/home/visuals/chaises-blanches.jpg"),
