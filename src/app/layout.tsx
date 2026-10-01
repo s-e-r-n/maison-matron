@@ -14,7 +14,10 @@ const ebGaramond = EB_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: site_origin,
-  title: { default: "Maison Matron", template: "%s · Maison Matron" },
+  title: {
+    default: "Maison Matron, artisan tapissier & ébéniste depuis 4 générations",
+    template: "%s · Maison Matron",
+  },
   description:
     "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations",
 };

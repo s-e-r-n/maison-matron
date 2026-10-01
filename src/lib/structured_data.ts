@@ -30,6 +30,9 @@ const structured_data = {
       "@type": "LocalBusiness",
       "@id": business_id,
       name: "Maison Matron",
+      alternateName: "Atelier Tapissier Matron",
+      slogan:
+        "Maison Matron, artisan tapissier & ébéniste depuis 4 générations",
       description:
         "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations",
       url: home,
@@ -44,6 +47,7 @@ const structured_data = {
         at_origin("/home/visuals/armoire.jpg"),
       ],
       telephone: "+41 21 539 46 75",
+      email: "info@maison-matron.ch",
       foundingDate: "1921",
       address: {
         "@type": "PostalAddress",
@@ -79,6 +83,7 @@ const structured_data = {
           closes: "00:00",
         },
       ],
+      areaServed: { "@type": "AdministrativeArea", name: "Suisse romande" },
       hasMap:
         "https://www.google.com/maps/search/?api=1&query=Maison%20Matron%2C%20Route%20de%20Gilly%2015%2C%201183%20Bursins",
       hasOfferCatalog: [
@@ -103,6 +108,7 @@ const structured_data = {
           ],
         },
       ],
+      sameAs: ["https://www.instagram.com/maisonmatron/"],
       review: [
         review(
           "Anne-Claude",

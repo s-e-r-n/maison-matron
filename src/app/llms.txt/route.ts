@@ -14,15 +14,18 @@ Comment contacter l'atelier ?
   - Votre code postal
   - Votre projet, en quelques mots
 - En appelant : [+41 21 539 46 75](tel:+41215394675)
+- En écrivant : [info@maison-matron.ch](mailto:info@maison-matron.ch)
+- Instagram : https://www.instagram.com/maisonmatron/
 - [Route de Gilly 15, 1183 Bursins](https://www.google.com/maps/search/?api=1&query=Maison%20Matron%2C%20Route%20de%20Gilly%2015%2C%201183%20Bursins)
 
 ## L'atelier
 
-- Nom : Maison Matron
+- Nom : Maison Matron, aussi connu sous le nom d'Atelier Tapissier Matron
 - Métiers : tapissiers, ébénistes et courtepointières
 - Fondé en : 1921, artisan depuis 4 générations
 - Chaises : le dernier chaisier de Suisse, chaque chaise assemblée à l'ancienne, dans des bois locaux, de Suisse, depuis 1908
 - Lieu : Route de Gilly 15, 1183 Bursins, Vaud (VD), Suisse
+- Zone desservie : toute la Suisse romande
 - Téléphone : +41 21 539 46 75
 - Horaires : du lundi au samedi, de 9 h à 17 h, fermé le dimanche
 - Chiffres : +20'000 pièces, +5'000 clients
