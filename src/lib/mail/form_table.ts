@@ -28,16 +28,14 @@ export const mail_table: Record<mail_field, dictionary_key> = {
   message: "freetext",
 };
 
-export const copy_labels: Record<mail_field, string> = {
-  given_name: "Prénom",
-  family_name: "Nom",
-  email: "E-mail",
-  tel: "Téléphone",
-  organization: "Entreprise",
-  postal_code: "Code postal",
-  locality: "Localité",
-  message: "Message",
-};
+export const copy_lines: ReadonlyArray<{ field: mail_field; label: string }> = [
+  { field: "given_name", label: "Prénom" },
+  { field: "family_name", label: "Nom" },
+  { field: "tel", label: "Téléphone" },
+  { field: "email", label: "Email" },
+  { field: "postal_code", label: "Code postal" },
+  { field: "message", label: "Besoin" },
+];
 
 const fallback_sender = "un visiteur";
 

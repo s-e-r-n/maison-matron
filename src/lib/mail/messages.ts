@@ -1,12 +1,6 @@
 import "server-only";
 import type { mail_config } from "./config";
-import {
-  copy_labels,
-  type mail_field,
-  mail_field_schema,
-  type mail_fields,
-  sender_name_of,
-} from "./form_table";
+import { copy_lines, type mail_fields } from "./form_table";
 
 type mail_sender = string | { name: string; address: string };
 
@@ -48,18 +42,21 @@ export const confirmation_message = (
   ].join("\n"),
 });
 
-const copy_line = (field: mail_field, fields: mail_fields) =>
-  `${copy_labels[field]} : ${fields[field] ?? ""}`;
-
 export const copy_message = (
   fields: mail_fields,
+  form_id: string,
   config: mail_config,
 ): mail_message => ({
   from: config.from,
   to: config.inbox,
   replyTo: fields.email ?? config.inbox,
-  subject: `Nouvelle demande de ${sender_name_of(fields)}`,
-  text: mail_field_schema.options
-    .map((field) => copy_line(field, fields))
-    .join("\n"),
+  subject: "Nouvelle demande",
+  text: [
+    ...copy_lines.map(
+      ({ field, label }) => `${label} : ${fields[field] ?? ""}`,
+    ),
+    `Page : ${form_id}`,
+    "Ne pas répondre à ce message",
+    "Campagne Maison Matron",
+  ].join("\n\n"),
 });
