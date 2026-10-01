@@ -17,7 +17,7 @@ export const submit_lead = async (
   const dispatch = dispatch_to_whatsapp(form_data, form_id);
   await capture("Lead", form_data);
   deliver_to_ghl(form_data);
-  const confirmation = await send_confirmation(form_data);
+  const confirmation = await send_confirmation(form_data, form_id);
   await dispatch;
   if (!confirmation.ok) return { status: "failed" };
   redirect("/confirmation");
