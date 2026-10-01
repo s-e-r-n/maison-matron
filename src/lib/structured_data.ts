@@ -101,6 +101,46 @@ const structured_data = {
             service_offer("Révisions offertes"),
           ],
         },
+        {
+          "@type": "OfferCatalog",
+          name: "Services",
+          itemListElement: [
+            {
+              "@type": "OfferCatalog",
+              name: "Tapissier décorateur",
+              itemListElement: [
+                service_offer("Meubles"),
+                service_offer("Réparations générales"),
+                service_offer("Restauration"),
+                service_offer("Tapisserie d'ameublement"),
+                service_offer("Réfection de fauteuils anciens"),
+                service_offer("Réfection de canapés"),
+                service_offer("Retapissage de chaises"),
+                service_offer("Conseil et choix de tissus à domicile"),
+              ],
+            },
+            {
+              "@type": "OfferCatalog",
+              name: "Artisanat",
+              itemListElement: [
+                service_offer("Mobilier sur mesure, pièce unique"),
+                service_offer("Expertise de mobilier à domicile (offert)"),
+                service_offer("Transport et livraison de vos pièces (offert)"),
+                service_offer("Collaboration avec décorateurs d'intérieur"),
+              ],
+            },
+            {
+              "@type": "OfferCatalog",
+              name: "Atelier de menuiserie",
+              itemListElement: [
+                service_offer("Chaises sur mesure en bois suisse"),
+                service_offer("Restauration de meubles anciens"),
+                service_offer("Finitions et entretien des bois"),
+                service_offer("Ébénisterie d'art"),
+              ],
+            },
+          ],
+        },
       ],
       sameAs: ["https://www.instagram.com/maisonmatron/"],
     },
