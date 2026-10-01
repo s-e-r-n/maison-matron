@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;;;;
+FN:Maison Matron
+ORG:Maison Matron
+X-ABShowAs:COMPANY
+TEL;TYPE=CELL,VOICE:+41762203548
+EMAIL;TYPE=WORK:info@maison-matron.ch
+URL:https://www.maison-matron.ch
+END:VCARD

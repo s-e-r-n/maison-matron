@@ -41,6 +41,14 @@ const Confirmation = () => (
           <span className="whitespace-nowrap">+41 76 220 35 48</span> sous
           "Maison Matron" dans vos contacts.
         </p>
+        <a
+          href="/maison-matron.vcf"
+          className="inline-block max-w-full self-start border border-secondary p-[2px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+        >
+          <span className="flex min-h-[46px] items-center justify-center bg-secondary px-6 py-[13px] text-center font-display text-[17px] leading-[19px] text-white italic">
+            Ajouter aux contacts
+          </span>
+        </a>
       </div>
       <p className="mt-8 font-display text-[20px] leading-[1.3] italic">
         Chaleureuses salutations,
