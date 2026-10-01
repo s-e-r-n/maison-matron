@@ -1,18 +1,25 @@
 import Image from "next/image";
-import red_sofa from "../../../public/visuals/canape-rouge.jpg";
+import { cn } from "@/lib/utils";
+import red_sofa from "../../../public/visuals/canape-rouge-2.jpg";
+import styles from "./page.module.css";
 
 const Confirmation = () => (
   <main className="relative flex min-h-svh items-center justify-center px-[35px] py-12 md:px-8">
     <Image
-      src={red_sofa}
+      src={red_sofa.src}
       alt=""
       fill
       sizes="100vw"
       className="hidden object-cover md:block"
     />
-    <div className="relative w-full max-w-[640px] bg-paper md:p-12 lg:p-16">
-      <h1 className="mb-8 font-display text-[30px] leading-[1.1] italic lg:text-[36px]">
-        Dernières étapes pour confirmer votre formulaire :
+    <div
+      className={cn(
+        styles.paper,
+        "relative w-full max-w-[640px] bg-paper md:bg-sheet md:p-12 lg:p-16",
+      )}
+    >
+      <h1 className="mb-8 font-display text-[24px] leading-[1.15] italic lg:text-[28px]">
+        Dernières étapes pour confirmer votre formulaire&nbsp;:
       </h1>
       <div className="flex flex-col gap-4 text-[17px] leading-[1.45]">
         <p>
@@ -32,7 +39,7 @@ const Confirmation = () => (
           "Maison Matron" dans vos contacts.
         </p>
       </div>
-      <p className="mt-8 text-[17px] leading-[1.45]">
+      <p className="mt-8 font-display text-[20px] leading-[1.3] italic">
         Chaleureuses salutations,
         <br />- MM
       </p>
