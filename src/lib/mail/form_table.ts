@@ -36,10 +36,3 @@ export const copy_lines: ReadonlyArray<{ field: mail_field; label: string }> = [
   { field: "postal_code", label: "Code postal" },
   { field: "message", label: "Besoin" },
 ];
-
-const fallback_sender = "un visiteur";
-
-export const sender_name_of = (fields: mail_fields) =>
-  [fields.given_name, fields.family_name].filter(Boolean).join(" ") ||
-  fields.email ||
-  fallback_sender;
