@@ -29,6 +29,8 @@ const Confirmation = () => (
           1. Suivez-nous sur{" "}
           <a
             href="https://www.instagram.com/maisonmatron/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-blue-700 underline underline-offset-2 hover:text-blue-900"
           >
             Instagram
