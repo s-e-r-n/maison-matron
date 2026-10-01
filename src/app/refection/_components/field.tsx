@@ -83,7 +83,7 @@ export const Field = ({ name, label, className }: field_props) => {
       {error !== undefined && (
         <p
           id={error_id}
-          className="absolute top-full left-0 mt-1 font-sans text-[13px] leading-4 text-[#b3402a]"
+          className="absolute top-full left-0 mt-1 font-sans text-[13px] leading-4 text-red-400"
         >
           {error}
         </p>
