@@ -42,7 +42,7 @@ import {
 import { Watermarked } from "./_components/watermarked";
 import { WideVisualSection } from "./_components/wide_visual_section";
 
-export const metadata = landing_metadata;
+export const metadata = landing_metadata("/refection");
 
 const Refection = () => (
   <main>

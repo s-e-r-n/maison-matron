@@ -1,10 +1,8 @@
-import { site_origin } from "@/lib/site_origin";
-
-const at_origin = (path: string) => new URL(path, site_origin).href;
+import { at_origin } from "@/lib/site_origin";
 
 const llms_txt = `# Maison Matron
 
-> Maison Matron, artisans tapissiers et ébénistes depuis 4 générations
+> Maison Matron, artisans tapissiers et ébénistes depuis 4 générations, à Bursins, dans le canton de Vaud, en Suisse. Fondé en 1921, l'atelier réunit tapissiers, ébénistes et courtepointières. Ses clients profitent aussi du dernier chaisier de Suisse : depuis 1908, chaque chaise y est assemblée à l'ancienne, dans des bois locaux, de Suisse. Plus de 20'000 pièces pour plus de 5'000 clients. L'atelier vient à vous, c'est offert : visite chez vous, examen de votre mobilier, devis.
 
 Comment contacter l'atelier ?
 
@@ -18,7 +16,25 @@ Comment contacter l'atelier ?
 - En appelant : [+41 21 539 46 75](tel:+41215394675)
 - [Route de Gilly 15, 1183 Bursins](https://www.google.com/maps/search/?api=1&query=Maison%20Matron%2C%20Route%20de%20Gilly%2015%2C%201183%20Bursins)
 
----
+## L'atelier
+
+- Nom : Maison Matron
+- Métiers : tapissiers, ébénistes et courtepointières
+- Fondé en : 1921, artisan depuis 4 générations
+- Chaises : le dernier chaisier de Suisse, chaque chaise assemblée à l'ancienne, dans des bois locaux, de Suisse, depuis 1908
+- Lieu : Route de Gilly 15, 1183 Bursins, Vaud (VD), Suisse
+- Téléphone : +41 21 539 46 75
+- Horaires : du lundi au samedi, de 9 h à 17 h, fermé le dimanche
+- Chiffres : +20'000 pièces, +5'000 clients
+- Offre : l'expertise offerte, visite chez vous, examen de votre mobilier et devis
+- Tissus : Hermès, Christian Lacroix, Ralph Lauren, Dedar, Lelièvre, Nobilis, Edmond Petit, Pierre Frey, Casal, et tant d'autres
+
+## Pages
+
+- [Accueil](${at_origin("/")}) : pour qui cherche la pièce à son image. Le vrai sur-mesure, des milliers de tissus et l'expertise offerte chez vous.
+- [Réfection](${at_origin("/refection")}) : pour qui possède du mobilier à forte valeur sentimentale et cherche à qui le confier pour le refaire. La même page, à trois différences près, listées sous « Sommaire de /refection ».
+
+## Sommaire de la page d'accueil
 
 - Artisans tapissiers et ébénistes depuis 4 générations
   - +20'000 pièces
@@ -94,10 +110,16 @@ Comment contacter l'atelier ?
 - L'atelier vient à vous, c'est offert.
   - Je réserve ma visite
 
-## Votre expertise offerte
+## Sommaire de /refection
 
-- [Maison Matron](${at_origin("/")}): Maison Matron, artisans tapissiers et ébénistes depuis 4 générations
-- [Maison Matron](${at_origin("/refection")}): Maison Matron, artisans tapissiers et ébénistes depuis 4 générations
+Le sommaire de la page d'accueil, à trois différences près :
+
+- Vous possédez du mobilier à forte valeur sentimentale, or…, à la place de « Vous cherchez la pièce à votre image, or… »
+  - Vous ne savez pas à qui le confier pour le refaire.
+  - Vous avez peur du travail bâclé.
+  - Vous ne voulez surtout pas jeter.
+- Le processus & la restitution s'achève sur « Enfin, nous vous dévoilons le résultat : Unique et prêt à revivre. »
+- La section « Vous travaillez avec un décorateur d'intérieur ? » n'y figure pas.
 `;
 
 export const GET = () =>

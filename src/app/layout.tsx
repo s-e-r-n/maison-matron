@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/next";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { EB_Garamond } from "next/font/google";
+import { site_origin } from "@/lib/site_origin";
 import "./globals.css";
 
 const ebGaramond = EB_Garamond({
@@ -12,14 +13,19 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Maison Matron",
+  metadataBase: site_origin,
+  title: { default: "Maison Matron", template: "%s · Maison Matron" },
   description:
     "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations",
 };
 
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
+
 const RootLayout = ({ children }: LayoutProps<"/">) => (
   <html
-    lang="fr"
+    lang="fr-CH"
     data-scroll-behavior="smooth"
     className={`${ebGaramond.variable} scroll-smooth`}
   >
