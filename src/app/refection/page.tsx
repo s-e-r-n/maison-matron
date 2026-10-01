@@ -2,22 +2,22 @@ import Image from "next/image";
 import { LogoRow, LogoRows, MobileRowBreak } from "@/components/logo_rows";
 import { landing_metadata } from "@/lib/landing_metadata";
 import { structured_data_json } from "@/lib/structured_data";
-import casal_logo from "../../../public/refection/fabric-logos/casal.svg";
-import christian_lacroix_logo from "../../../public/refection/fabric-logos/christian-lacroix.png";
-import dedar_logo from "../../../public/refection/fabric-logos/dedar.svg";
-import edmond_petit_logo from "../../../public/refection/fabric-logos/edmond-petit.png";
-import hermes_logo from "../../../public/refection/fabric-logos/hermes.svg";
-import lelievre_logo from "../../../public/refection/fabric-logos/lelievre-paris.svg";
-import nobilis_logo from "../../../public/refection/fabric-logos/nobilis.svg";
-import pierre_frey_logo from "../../../public/refection/fabric-logos/pierre-frey.svg";
-import ralph_lauren_logo from "../../../public/refection/fabric-logos/ralph-lauren.svg";
-import five_chairs from "../../../public/refection/visuals/5-chaises.jpg";
-import archival_photo from "../../../public/refection/visuals/archival-photo-man-leading-horse.jpg";
-import sideboard from "../../../public/refection/visuals/buffet.jpg";
-import lion_sofa from "../../../public/refection/visuals/canape-lions.jpg";
-import white_chairs from "../../../public/refection/visuals/chaises-blanches.jpg";
-import upholstery_tool from "../../../public/refection/visuals/outil.jpg";
-import red_silk_velvet from "../../../public/refection/visuals/red-silk-velvet.jpg";
+import casal_logo from "../../../public/fabric-logos/casal.svg";
+import christian_lacroix_logo from "../../../public/fabric-logos/christian-lacroix.png";
+import dedar_logo from "../../../public/fabric-logos/dedar.svg";
+import edmond_petit_logo from "../../../public/fabric-logos/edmond-petit.png";
+import hermes_logo from "../../../public/fabric-logos/hermes.svg";
+import lelievre_logo from "../../../public/fabric-logos/lelievre-paris.svg";
+import nobilis_logo from "../../../public/fabric-logos/nobilis.svg";
+import pierre_frey_logo from "../../../public/fabric-logos/pierre-frey.svg";
+import ralph_lauren_logo from "../../../public/fabric-logos/ralph-lauren.svg";
+import five_chairs from "../../../public/visuals/5-chaises.jpg";
+import archival_photo from "../../../public/visuals/archival-photo-man-leading-horse.jpg";
+import sideboard from "../../../public/visuals/buffet.jpg";
+import lion_sofa from "../../../public/visuals/canape-lions.jpg";
+import white_chairs from "../../../public/visuals/chaises-blanches.jpg";
+import upholstery_tool from "../../../public/visuals/outil.jpg";
+import red_silk_velvet from "../../../public/visuals/red-silk-velvet.jpg";
 import {
   CallToAction,
   CallToActionDetail,

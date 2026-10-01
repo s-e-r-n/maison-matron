@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import logo from "../../../../public/refection/brand/maison-matron-logo-complete.svg";
+import logo from "../../../../public/brand/maison-matron-logo-complete.svg";
 import { LeadForm } from "./lead_form";
 import styles from "./lead_sheet.module.css";
 
