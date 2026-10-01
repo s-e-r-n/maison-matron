@@ -151,8 +151,7 @@ src/components/          logo_rows.tsx, page_view.tsx, shared by both pages with
 src/app/global-not-found.tsx   the 404 of the site, with its own stylesheet
 src/app/(home)/          the page served at /: layout.tsx, globals.css, page.tsx, actions.ts, confirmation/page.tsx, _components/ with field.tsx, lead_form.tsx and its sections
 src/app/refection/       the page served at /refection: the same files, its own copies
-public/home/             the visuals, the video, the brand files, the fabric logos and the textures of /
-public/refection/        the same, the own copies of /refection
+public/                  brand/, fabric-logos/, textures/, video/ and visuals/, one file per asset, shared by / and /refection
 src/proxy.ts             mints the Meta identity cookies on every request
 ```
 
