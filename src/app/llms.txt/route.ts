@@ -32,6 +32,28 @@ Comment contacter l'atelier ?
 - Offre : l'expertise offerte, visite chez vous, examen de votre mobilier et devis
 - Tissus : Hermès, Christian Lacroix, Ralph Lauren, Dedar, Lelièvre, Nobilis, Edmond Petit, Pierre Frey, Casal, et tant d'autres
 
+## Services
+
+- Tapissier décorateur (catégorie principale)
+  - Meubles
+  - Réparations générales
+  - Restauration
+  - Tapisserie d'ameublement
+  - Réfection de fauteuils anciens
+  - Réfection de canapés
+  - Retapissage de chaises
+  - Conseil et choix de tissus à domicile
+- Artisanat (catégorie supplémentaire)
+  - Mobilier sur mesure, pièce unique
+  - Expertise de mobilier à domicile (offert)
+  - Transport et livraison de vos pièces (offert)
+  - Collaboration avec décorateurs d'intérieur
+- Atelier de menuiserie (catégorie supplémentaire)
+  - Chaises sur mesure en bois suisse
+  - Restauration de meubles anciens
+  - Finitions et entretien des bois
+  - Ébénisterie d'art
+
 ## Pages
 
 - [Accueil](${at_origin("/")}) : pour qui cherche la pièce à son image. Le vrai sur-mesure, des milliers de tissus et l'expertise offerte chez vous.
