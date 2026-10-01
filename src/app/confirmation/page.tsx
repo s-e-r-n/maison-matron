@@ -4,18 +4,21 @@ import red_sofa from "../../../public/visuals/canape-rouge-2.jpg";
 import styles from "./page.module.css";
 
 const Confirmation = () => (
-  <main className="relative flex min-h-svh items-center justify-center px-[35px] py-12 md:px-8">
-    <Image
-      src={red_sofa.src}
-      alt=""
-      fill
-      sizes="100vw"
-      className="hidden object-cover md:block"
-    />
+  <main className="relative flex min-h-svh flex-col md:items-center md:justify-center md:px-8 md:py-12">
+    <div className="relative h-[40svh] shrink-0 md:absolute md:inset-0 md:h-auto">
+      <Image
+        src={red_sofa.src}
+        alt=""
+        fill
+        loading="eager"
+        sizes="(min-width: 48rem) 100vw, (orientation: portrait) 60vh, 100vw"
+        className="object-cover"
+      />
+    </div>
     <div
       className={cn(
         styles.paper,
-        "relative w-full max-w-[640px] bg-paper md:bg-sheet md:p-12 lg:p-16",
+        "relative w-full flex-1 bg-sheet px-[35px] py-10 md:max-w-[640px] md:flex-none md:p-12 lg:p-16",
       )}
     >
       <h1 className="mb-8 font-display text-[24px] leading-[1.15] italic lg:text-[28px]">
