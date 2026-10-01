@@ -81,12 +81,12 @@ export const Field = ({ name, label, className }: field_props) => {
         {...attributes[name]}
       />
       {error !== undefined && (
-        <p
+        <span
           id={error_id}
-          className="absolute top-full left-0 mt-1 font-sans text-[13px] leading-4 text-red-400"
+          className="absolute top-full left-0 mt-1 block font-sans text-[13px] leading-4 text-red-400"
         >
           {error}
-        </p>
+        </span>
       )}
     </div>
   );
