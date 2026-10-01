@@ -1,6 +1,8 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { EB_Garamond } from "next/font/google";
+import { Suspense } from "react";
+import { PageView } from "@/components/page_view";
 import { site_origin } from "@/lib/site_origin";
 import "./globals.css";
 
@@ -34,6 +36,9 @@ const RootLayout = ({ children }: LayoutProps<"/">) => (
   >
     <body className="bg-paper font-sans text-base leading-[1.35] text-ink antialiased">
       {children}
+      <Suspense fallback={null}>
+        <PageView />
+      </Suspense>
       <Analytics />
     </body>
   </html>
