@@ -19,5 +19,8 @@ export const Footer = () => (
         1183 Bursins
       </a>
     </address>
+    <a href="/mlcp" className="copy-inset text-center text-xs text-gray-500">
+      Mentions légales et confidentialité
+    </a>
   </footer>
 );
