@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import logo from "../../../../public/brand/maison-matron-logo-complete.svg";
+import paper from "../../../../public/textures/paper-faint-fibre.jpg";
 import { LeadForm } from "./lead_form";
 import styles from "./lead_sheet.module.css";
 
@@ -35,11 +36,16 @@ export const LeadSheet = ({
             L'envoi a échoué, réessayez dans un instant.
           </p>
         }
-        className={cn(
-          styles.paper,
-          "@container mx-auto flex flex-col aspect-[210/297] min-h-svh w-full bg-sheet text-sheet-ink lg:aspect-auto lg:h-(--sheet-height) lg:min-h-0 lg:w-(--sheet-width) lg:max-w-full",
-        )}
+        className="@container relative isolate mx-auto flex flex-col aspect-[210/297] min-h-svh w-full bg-sheet text-sheet-ink lg:aspect-auto lg:h-(--sheet-height) lg:min-h-0 lg:w-(--sheet-width) lg:max-w-full"
       >
+        <Image
+          src={paper}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 1200px, 100vw"
+          className="-z-20 object-cover"
+        />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-sheet/50" />
         <div className="flex min-h-0 min-w-0 flex-1 flex-col justify-center px-[9.5cqi] py-[6cqi]">
           <Image
             src={logo}

@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   typedRoutes: true,
   experimental: { typedEnv: true },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    qualities: [90],
+  },
   headers: async () => [
     {
       source: "/maison-matron.vcf",
