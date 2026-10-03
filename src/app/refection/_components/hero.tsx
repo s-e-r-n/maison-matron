@@ -11,6 +11,7 @@ export const Hero = ({ children }: hero_props) => (
   <section className="relative overflow-hidden bg-ink text-paper">
     <video
       src="/video/maison-matron-hero.mp4"
+      poster="/video/maison-matron-hero-poster.avif"
       autoPlay
       muted
       loop
