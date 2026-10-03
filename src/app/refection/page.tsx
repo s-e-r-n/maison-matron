@@ -179,7 +179,7 @@ const Refection = () => (
                 alt="Velours de soie rouge, coupé et bouclé, tissé de plumes de paon et de fleurs."
                 sizes="(min-width: 1024px) 50vw, 100vw"
               />
-              <Caption>Velours de soie ciselé</Caption>
+              <Caption>Velours de Gênes</Caption>
             </figure>
           }
           action={
