@@ -49,8 +49,10 @@ const plain_text = (first_name) =>
     "+41 21 539 46 75",
     "Route de Gilly 15, 1183 Bursins",
     "",
-    "Suivez-nous sur instagram.com/maisonmatron",
-    "maison-matron.ch",
+    "Suivez-nous sur Instagram",
+    "https://www.instagram.com/maisonmatron/",
+    "Visitez notre page internet",
+    "https://www.maison-matron.ch",
   ].join("\n");
 
 const exit_with = (reason) => {
