@@ -1,0 +1,24 @@
+Bienvenue chez Maison Matron.
+
+Bonjour {{prénom}},
+
+Votre demande d’expertise offerte est confirmée.
+
+Nous vous appellerons très vite.
+
+Si vous souhaitez que l’on vous réponde plus précisément, vous pouvez joindre une photo de votre meuble en réponse à cet email.
+
+Si vous préférez discuter tout de suite :
+
++41 21 539 46 75
+
+Chaleureuses salutations,
+
+Maison Matron
++41 21 539 46 75
+Route de Gilly 15, 1183 Bursins
+
+Suivez-nous sur Instagram
+https://www.instagram.com/maisonmatron/
+Visitez notre page internet
+https://www.maison-matron.ch

@@ -2,7 +2,7 @@ import "server-only";
 
 export type mail_failure = {
   ok: false;
-  code: "refused" | "unreachable" | "disabled";
+  code: "refused" | "unreachable" | "disabled" | "unreadable";
   message: string;
 };
 

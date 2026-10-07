@@ -2,6 +2,7 @@ import "server-only";
 import { after } from "next/server";
 import { form_fields_of } from "@/lib/form_contract/form_fields";
 import { type mail_config, read_config } from "./config";
+import { read_confirmation_body } from "./confirmation_body";
 import { type mail_fields, mail_table } from "./form_table";
 import type { mail_result } from "./mail_result";
 import { confirmation_message, copy_message } from "./messages";
@@ -38,8 +39,13 @@ export const send_confirmation = async (
       message: "the submission carries no email",
     };
   }
+  const body = await read_confirmation_body(fields.given_name);
+  if (!body.ok) {
+    console.error(`mail: confirmation ${body.code}: ${body.message}`);
+    return body;
+  }
   const result = await send_message(
-    confirmation_message({ ...fields, email }, config.config),
+    confirmation_message({ ...fields, email }, body, config.config),
     config.config,
   );
   if (!result.ok) {

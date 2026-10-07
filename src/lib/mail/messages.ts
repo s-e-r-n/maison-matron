@@ -1,5 +1,6 @@
 import "server-only";
 import type { mail_config } from "./config";
+import type { confirmation_body } from "./confirmation_body";
 import { copy_lines, type mail_fields } from "./form_table";
 
 type mail_sender = string | { name: string; address: string };
@@ -10,36 +11,22 @@ export type mail_message = {
   replyTo: string;
   subject: string;
   text: string;
+  html?: string;
 };
 
 export type lead_fields = mail_fields & { email: string };
 
-const greeting = (given_name: string | undefined) =>
-  given_name ? `Bonjour ${given_name},` : "Bonjour,";
-
 export const confirmation_message = (
   fields: lead_fields,
+  body: confirmation_body,
   config: mail_config,
 ): mail_message => ({
   from: { name: "Maison Matron", address: config.from },
   to: fields.email,
   replyTo: config.inbox,
   subject: "Votre expertise offerte",
-  text: [
-    greeting(fields.given_name),
-    "",
-    "Votre demande d’expertise offerte est confirmée.",
-    "",
-    "Nous vous appelons rapidement (du lundi au vendredi entre 9 h et 17 h).",
-    "",
-    "Si vous souhaitez discuter tout de suite, composez le +41 21 539 46 75.",
-    "",
-    "Chaleureuses salutations,",
-    "",
-    "Maison Matron",
-    "+41 21 539 46 75",
-    "Route de Gilly 15, 1183 Bursins",
-  ].join("\n"),
+  text: body.text,
+  html: body.html,
 });
 
 export const copy_message = (
