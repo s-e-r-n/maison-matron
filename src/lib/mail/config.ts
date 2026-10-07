@@ -47,3 +47,18 @@ export const parse_config = (
 };
 
 export const read_config = () => parse_config(process.env);
+
+const flag_schema = z.enum(["true", "false"]);
+
+export const html_enabled = (
+  env: Record<string, string | undefined> = process.env,
+) => {
+  const raw = env.MAIL_HTML_ENABLED;
+  if (raw === undefined || raw === "") return false;
+  const parsed = flag_schema.safeParse(raw);
+  if (parsed.success) return parsed.data === "true";
+  console.warn(
+    'mail: MAIL_HTML_ENABLED must be "true" or "false", the html stays off',
+  );
+  return false;
+};
