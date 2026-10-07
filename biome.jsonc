@@ -79,5 +79,18 @@
         "organizeImports": "on"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["mail/**"],
+      // `!important` is ONLY accepted in email template, do NOT USE anywhere else in the codebase
+      "linter": {
+        "rules": {
+          "complexity": {
+            "noImportantStyles": "off"
+          }
+        }
+      }
+    }
+  ]
 }
