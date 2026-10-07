@@ -1,14 +1,10 @@
 import "server-only";
 import { after } from "next/server";
 import { form_fields_of } from "@/lib/form_contract/form_fields";
-import { html_enabled, type mail_config, read_config } from "./config";
+import { type mail_config, read_config } from "./config";
 import { type mail_fields, mail_table } from "./form_table";
 import type { mail_result } from "./mail_result";
-import {
-  confirmation_message,
-  copy_message,
-  html_confirmation_message,
-} from "./messages";
+import { confirmation_message, copy_message } from "./messages";
 import { send_message } from "./smtp";
 
 const copy_after_response = (
@@ -42,11 +38,10 @@ export const send_confirmation = async (
       message: "the submission carries no email",
     };
   }
-  const lead = { ...fields, email };
-  const message = html_enabled()
-    ? await html_confirmation_message(lead, config.config)
-    : confirmation_message(lead, config.config);
-  const result = await send_message(message, config.config);
+  const result = await send_message(
+    confirmation_message({ ...fields, email }, config.config),
+    config.config,
+  );
   if (!result.ok) {
     console.warn(`mail: confirmation ${result.code}: ${result.message}`);
   }
