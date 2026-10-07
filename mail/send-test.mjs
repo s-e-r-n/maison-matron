@@ -27,34 +27,6 @@ const html_entities = {
 const escaped_html = (value) =>
   value.replace(/[&<>"']/g, (character) => html_entities[character]);
 
-const plain_text = (first_name) =>
-  [
-    "Bienvenue chez Maison Matron.",
-    "",
-    `Bonjour ${first_name},`,
-    "",
-    "Votre demande d’expertise offerte est confirmée.",
-    "",
-    "Nous vous appellerons très vite.",
-    "",
-    "Si vous souhaitez que l’on vous réponde plus précisément, vous pouvez joindre une photo de votre meuble en réponse à cet email.",
-    "",
-    "Si vous préférez discuter tout de suite :",
-    "",
-    "+41 21 539 46 75",
-    "",
-    "Chaleureuses salutations,",
-    "",
-    "Maison Matron",
-    "+41 21 539 46 75",
-    "Route de Gilly 15, 1183 Bursins",
-    "",
-    "Suivez-nous sur Instagram",
-    "https://www.instagram.com/maisonmatron/",
-    "Visitez notre page internet",
-    "https://www.maison-matron.ch",
-  ].join("\n");
-
 const exit_with = (reason) => {
   process.stderr.write(`${reason}\n`);
   process.exit(1);
@@ -73,10 +45,12 @@ if (!Number.isInteger(port) || port <= 0) {
   exit_with("SMTP_PORT must be a positive integer");
 }
 
-const template = await readFile(
-  new URL("confirmation-email.html", import.meta.url),
-  "utf8",
-);
+const template = (file_name) =>
+  readFile(new URL(file_name, import.meta.url), "utf8");
+
+const html_template = await template("confirmation-email.html");
+
+const text_template = await template("confirmation-email.txt");
 
 const transport = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -90,8 +64,10 @@ try {
     from: { name: "Maison Matron", address: process.env.SMTP_FROM },
     to: recipient,
     subject: "Votre expertise offerte",
-    html: template.replaceAll(given_name_token, () => escaped_html(first_name)),
-    text: plain_text(first_name),
+    html: html_template.replaceAll(given_name_token, () =>
+      escaped_html(first_name),
+    ),
+    text: text_template.replaceAll(given_name_token, () => first_name),
   });
   process.stdout.write(
     `response: ${sent.response}\nmessage id: ${sent.messageId}\n`,
