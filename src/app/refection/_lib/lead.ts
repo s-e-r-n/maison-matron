@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { phone_number } from "@/lib/form_contract/phone_number";
 
 const required = "Ce champ est obligatoire.";
 
@@ -7,7 +8,7 @@ const filled = z.string({ error: required }).trim().min(1, { error: required });
 const lead_schema = z.object({
   "given-name": filled,
   "family-name": filled,
-  tel: filled,
+  tel: phone_number,
   email: filled.pipe(
     z.email({ error: "Cette adresse email n'est pas valide." }),
   ),
