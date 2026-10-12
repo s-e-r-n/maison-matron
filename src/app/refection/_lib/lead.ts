@@ -10,7 +10,7 @@ const lead_schema = z.object({
   "family-name": filled,
   tel: phone_number,
   email: filled.pipe(
-    z.email({ error: "Cette adresse email n'est pas valide." }),
+    z.email({ error: "Email invalide. Exemple : prenom.nom@gmail.com" }),
   ),
   "postal-code": filled,
   freetext: filled,

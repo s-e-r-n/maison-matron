@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const required = "Ce champ est obligatoire.";
 
-const invalid_phone_number = "Ce numéro de téléphone n'est pas valide.";
+const invalid_phone_number = "Numéro invalide. Exemple : 079 123 45 67";
 
 const separators = /[\s./()-]/g;
 
