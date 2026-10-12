@@ -1,3 +1,11 @@
+## 0. Kill switches
+
+Each module has one switch: `MAIL_ENABLED`, `META_CAPI_ENABLED`, `GHL_ENABLED` and `WHATSAPP_ENABLED`. A switch accepts `true` or `false`. Absent or empty means enabled. Any other value keeps the module off and logs a warning.
+
+Locally, the switches are read from `.env` and `.env.local`. Git ignores both (`.env*` in `.gitignore`), so a push never carries them. Keep all four at `false`. For a deliberate local test, set one to `true`, run the test, then set it back to `false` right after.
+
+In production, the switches are read from the Vercel project's variables, not from a file.
+
 # scaffold-nextjs-meta
 
 A Next.js 16 scaffold with four server modules, Meta Conversions API, GoHighLevel, Nodemailer and WhatsApp Cloud API, for a conversion page. This README is the manual of the agent that builds and maintains a project from it: a consultant never sees this repository, only the agent does. One form submission leaves the server four times: hashed to Meta (Conversions API), in clear to GoHighLevel (a contact, then an opportunity), by mail (a confirmation to the lead, a copy of the whole form to the domain's inbox), and by WhatsApp (one template message per configured number, every field in its variables). One module per service, one public function each, one kill switch each. No pixel, no client code in the modules.
@@ -33,16 +41,16 @@ GHL and mail have no `misconfigured` code: a missing value is refused by the ser
 
 A field is `<Field name="…" label="…" />`. Its `name` is a key of the dictionary, the only names the modules read. The key sets the input, the keyboard and the autofill, the page sets the rest. The label stands before the control, `className` lands on the `div` around both.
 
-| `name`           | Renders  | Meta | GHL           | Mail copy   |
-| ---------------- | -------- | ---- | ------------- | ----------- |
-| `given-name`     | text     | `fn` | `firstName`   | Prénom      |
-| `family-name`    | text     | `ln` | `lastName`    | Nom         |
-| `email`          | email    | `em` | `email`       | E-mail      |
-| `tel`            | tel      | `ph` | `phone`       | Téléphone   |
-| `organization`   | text     | -    | `companyName` | Entreprise  |
-| `postal-code`    | text     | `zp` | `postalCode`  | Code postal |
-| `address-level2` | text     | `ct` | `city`        | Localité    |
-| `freetext`       | text     | -    | custom field  | Message     |
+| `name`           | Renders | Meta | GHL           | Mail copy   |
+| ---------------- | ------- | ---- | ------------- | ----------- |
+| `given-name`     | text    | `fn` | `firstName`   | Prénom      |
+| `family-name`    | text    | `ln` | `lastName`    | Nom         |
+| `email`          | email   | `em` | `email`       | E-mail      |
+| `tel`            | tel     | `ph` | `phone`       | Téléphone   |
+| `organization`   | text    | -    | `companyName` | Entreprise  |
+| `postal-code`    | text    | `zp` | `postalCode`  | Code postal |
+| `address-level2` | text    | `ct` | `city`        | Localité    |
+| `freetext`       | text    | -    | custom field  | Message     |
 
 Several inputs may share `freetext`, their values arrive joined by a blank line. An input with any other `name` reaches no module but WhatsApp. A new key is one line in `src/lib/form_contract/dictionary.ts` and one row in the table of each module that wants it.
 
