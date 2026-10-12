@@ -1,4 +1,4 @@
-import { phone_number } from "./phone-number.mjs";
+import { phone_number } from "../src/lib/form_contract/phone_number.ts";
 
 const accept_list = [
   "079 123 45 67",
