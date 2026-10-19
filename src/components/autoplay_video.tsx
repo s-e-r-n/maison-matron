@@ -28,7 +28,7 @@ export const AutoplayVideo = ({ src, poster, label }: autoplay_video_props) => {
         poster={poster.src}
         width={poster.width}
         height={poster.height}
-        autoPlay
+        preload="none"
         muted
         loop
         playsInline

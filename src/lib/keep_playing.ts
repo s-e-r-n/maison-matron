@@ -73,13 +73,23 @@ export const keep_playing = (
     attempt();
   };
 
-  video.addEventListener("playing", unblock);
-  for (const event of retry_events) video.addEventListener(event, retry);
-  document.addEventListener("visibilitychange", resume);
-  window.addEventListener("pageshow", resume);
-  attempt();
+  const start = () => {
+    video.addEventListener("playing", unblock);
+    for (const event of retry_events) video.addEventListener(event, retry);
+    document.addEventListener("visibilitychange", resume);
+    window.addEventListener("pageshow", resume);
+    attempt();
+  };
+
+  const viewport = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    viewport.disconnect();
+    start();
+  });
+  viewport.observe(video);
 
   return () => {
+    viewport.disconnect();
     video.removeEventListener("playing", unblock);
     for (const event of retry_events) video.removeEventListener(event, retry);
     document.removeEventListener("visibilitychange", resume);
