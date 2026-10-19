@@ -2,7 +2,7 @@ import { at_origin } from "@/lib/site_origin";
 
 const llms_txt = `# Maison Matron
 
-> Maison Matron, artisans tapissiers et ébénistes depuis 4 générations, à Bursins, dans le canton de Vaud, en Suisse. Fondé en 1921, l'atelier réunit tapissiers, ébénistes et courtepointières. Ses clients profitent aussi du dernier chaisier de Suisse : depuis 1908, chaque chaise y est assemblée à l'ancienne, dans des bois locaux, de Suisse. Plus de 20'000 pièces pour plus de 5'000 clients. L'atelier vient à vous, c'est offert : visite chez vous, examen de votre mobilier, devis.
+> Maison Matron, artisans tapissiers et ébénistes depuis 4 générations, à Bursins, dans le canton de Vaud, en Suisse. Fondé en 1921, l'atelier réunit tapissiers, ébénistes et courtepointières. Ses clients profitent aussi du dernier chaisier de Suisse : depuis 1908, chaque chaise y est assemblée à l'ancienne, dans des bois locaux, de Suisse. Plus de 20'000 pièces pour plus de 5'000 clients. L'atelier vient à vous, c'est offert : visite chez vous, évaluation de votre mobilier, devis.
 
 Comment contacter l'atelier ?
 
@@ -29,7 +29,7 @@ Comment contacter l'atelier ?
 - Téléphone : +41 21 539 46 75
 - Horaires : du lundi au samedi, de 9 h à 17 h, fermé le dimanche
 - Chiffres : +20'000 pièces, +5'000 clients
-- Offre : l'expertise offerte, visite chez vous, examen de votre mobilier et devis
+- Offre : l'expertise offerte, visite chez vous, évaluation de votre mobilier et devis
 - Tissus : Hermès, Christian Lacroix, Ralph Lauren, Dedar, Lelièvre, Nobilis, Edmond Petit, Pierre Frey, Casal, et tant d'autres
 
 ## Services
@@ -66,7 +66,7 @@ Comment contacter l'atelier ?
   - « Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. » - Anne-Claude
 - Votre expertise offerte
   - Visite chez vous
-  - Examen de votre mobilier
+  - Évaluation de votre mobilier
   - Devis
 - Vous cherchez la pièce à votre image, or…
   - La marque décide jusqu'où va votre « sur-mesure ».
@@ -100,7 +100,7 @@ Comment contacter l'atelier ?
   - Un tissu doit être vu, touché, jugé à la lumière de chez vous et accordé à votre intérieur.
   - Nous vous conseillons dans le détail
     - Les matériaux se choisissent selon la vie passée et future de votre objet.
-  - Nous examinons votre mobilier
+  - Nous évaluons votre mobilier
     - La santé des bois et des matières et ce qui vaut la peine d'être restauré.
 - Le processus & la restitution
   - Nous prenons en charge le transport de vos pièces dans le plus grand soin.

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 const title = "Expertise offerte | Tapissier Ébéniste Depuis 4 Générations";
 const description =
-  "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations. L'atelier vient à vous, c'est offert. Visite chez vous ❊ Examen de votre mobilier ❊ Devis";
+  "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations. L'atelier vient à vous, c'est offert. Visite chez vous ❊ Évaluation de votre mobilier ❊ Devis";
 
 export const opengraph_image_path = "/opengraph-canape-lions.jpg";
 

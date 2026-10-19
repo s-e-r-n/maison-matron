@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LogoRow, LogoRows, MobileRowBreak } from "@/components/logo_rows";
+import { AutoplayVideo } from "@/components/autoplay_video";
 import { landing_metadata } from "@/lib/landing_metadata";
 import { structured_data_json } from "@/lib/structured_data";
 import casal_logo from "../../public/fabric-logos/casal.svg";
@@ -13,13 +13,11 @@ import pierre_frey_logo from "../../public/fabric-logos/pierre-frey.svg";
 import ralph_lauren_logo from "../../public/fabric-logos/ralph-lauren.svg";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
-import secretary from "../../public/visuals/armoire.jpg";
-import sideboard from "../../public/visuals/buffet.jpg";
-import lion_sofa from "../../public/visuals/canape-lions.jpg";
-import blue_chair from "../../public/visuals/chaise-bleue.jpg";
-import white_chairs from "../../public/visuals/chaises-blanches.jpg";
-import upholstery_tool from "../../public/visuals/outil.jpg";
-import red_silk_velvet from "../../public/visuals/red-silk-velvet.jpg";
+import club_armchair from "../../public/visuals/club-armchair.jpg";
+import louis_philippe_sofa from "../../public/visuals/louis-philippe.jpg";
+import reel_poster from "../../public/visuals/maison-matron-reel-poster.jpg";
+import genoa_velvet from "../../public/visuals/velours-gene.jpg";
+import voltaire_poster from "../../public/visuals/voltaire-orbital-macro-poster.jpg";
 import {
   CallToAction,
   CallToActionDetail,
@@ -31,6 +29,7 @@ import { Field } from "./_components/field";
 import { Footer } from "./_components/footer";
 import { Hero } from "./_components/hero";
 import { LeadSheet } from "./_components/lead_sheet";
+import { LogoGrid } from "./_components/logo_grid";
 import { ReviewsSection } from "./_components/reviews_section";
 import { SectionSeparator } from "./_components/section_separator";
 import { SideVisualSection } from "./_components/side_visual_section";
@@ -57,7 +56,7 @@ const Home = () => (
       </CallToActions>
       <CallToActionDetails>
         <CallToActionDetail>Visite chez vous</CallToActionDetail>
-        <CallToActionDetail>Examen de votre mobilier</CallToActionDetail>
+        <CallToActionDetail>Évaluation de votre mobilier</CallToActionDetail>
         <CallToActionDetail>Devis</CallToActionDetail>
       </CallToActionDetails>
     </Hero>
@@ -65,10 +64,9 @@ const Home = () => (
     <Watermarked>
       <div className="page-width flex flex-col gap-24 py-12 lg:gap-32 lg:py-16 [&_:is(p,li):not(.font-display)]:text-gray-600">
         <CenteredSection>
-          <SectionTitle>Vous cherchez la pièce à votre image, or…</SectionTitle>
-          <p>La marque décide jusqu'où va votre « sur-mesure ».</p>
-          <p>L'unique est éclipsé par les collections à la mode.</p>
-          <p>Le choix des tissus vous est limité.</p>
+          <SectionTitle>
+            Nous transformons vos meubles en pièces uniques au monde.
+          </SectionTitle>
         </CenteredSection>
 
         <SectionSeparator />
@@ -97,7 +95,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -146,27 +144,23 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
         >
-          <SectionTitle>Le vrai sur-mesure</SectionTitle>
+          <SectionTitle>De meuble à pièce de collection</SectionTitle>
           <p>
-            Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs
-            et motifs préférés.
+            Nos vastes collections de tissus et notre savoir-faire d'ébéniste
+            transforment vos meubles.
           </p>
-          <p>Choisissez des finitions bois magnifiques.</p>
           <SectionSubtitle>
-            Profitez du dernier chaisier de Suisse
+            Deux savoir-faire centenaires valorisent vos pièces
           </SectionSubtitle>
-          <p>
-            Depuis 1908, chaque chaise est assemblée à l'ancienne, dans des bois
-            locaux, de Suisse.
-          </p>
-          <p>Profitez de deux savoir-faire centenaires pour vos pièces.</p>
+          <p>Nous travaillons avec le dernier chaisier de Suisse (1908) :</p>
+          <p>Il assemble chaque chaise à l'ancienne, dans des bois locaux.</p>
         </WideVisualSection>
 
         <SectionSeparator />
@@ -174,10 +168,10 @@ const Home = () => (
         <SideVisualSection
           visual={
             <figure>
-              <Image
-                src={red_silk_velvet}
-                alt="Velours de soie rouge, coupé et bouclé, tissé de plumes de paon et de fleurs."
-                sizes="(min-width: 1024px) 50vw, 100vw"
+              <AutoplayVideo
+                src="/visuals/maison-matron-reel.mp4"
+                poster={reel_poster}
+                label="Des chaises en bois garnies d'un tissu bleu, puis un velours rouge à motifs floraux, sous le logo Maison Matron 1921 ; une femme en tailleur blanc assise dans un fauteuil club, avec la phrase « La Haute Couture, pour vos meubles. » ; le logo Maison Matron sur fond noir."
               />
               <Caption>Velours de Gênes</Caption>
             </figure>
@@ -195,7 +189,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -205,55 +199,53 @@ const Home = () => (
           <SectionTitle>Profitez de milliers de tissus</SectionTitle>
           <p>Nos collections voyagent avec nous jusqu'à chez vous.</p>
           <p>Ce que vous voulez, nous l'avons.</p>
-          <LogoRows>
-            <LogoRow>
-              <Image
-                src={hermes_logo}
-                alt="Hermès"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <Image
-                src={christian_lacroix_logo}
-                alt="Christian Lacroix"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <Image
-                src={ralph_lauren_logo}
-                alt="Ralph Lauren"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <Image
-                src={dedar_logo}
-                alt="Dedar"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <MobileRowBreak />
-              <Image
-                src={lelievre_logo}
-                alt="Lelièvre"
-                className="brightness-0 invert-[10.6%]"
-              />
-            </LogoRow>
-            <LogoRow>
-              <Image
-                src={nobilis_logo}
-                alt="Nobilis"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <Image
-                src={edmond_petit_logo}
-                alt="Edmond Petit"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <MobileRowBreak />
-              <Image src={pierre_frey_logo} alt="Pierre Frey" />
-              <Image
-                src={casal_logo}
-                alt="Casal"
-                className="brightness-0 invert-[10.6%]"
-              />
-            </LogoRow>
-          </LogoRows>
+          <LogoGrid>
+            <Image
+              src={hermes_logo}
+              alt="Hermès"
+              className="w-[54%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={christian_lacroix_logo}
+              alt="Christian Lacroix"
+              className="w-[69%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={ralph_lauren_logo}
+              alt="Ralph Lauren"
+              className="w-[85%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={dedar_logo}
+              alt="Dedar"
+              className="w-[38%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={lelievre_logo}
+              alt="Lelièvre"
+              className="w-[41%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={nobilis_logo}
+              alt="Nobilis"
+              className="w-[47%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={edmond_petit_logo}
+              alt="Edmond Petit"
+              className="w-[68%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={pierre_frey_logo}
+              alt="Pierre Frey"
+              className="w-[23%]"
+            />
+            <Image
+              src={casal_logo}
+              alt="Casal"
+              className="w-[29%] brightness-0 invert-[10.6%]"
+            />
+          </LogoGrid>
           <p className="italic">Et tant d'autres…</p>
         </SideVisualSection>
 
@@ -263,11 +255,11 @@ const Home = () => (
           visual={
             <figure>
               <Image
-                src={upholstery_tool}
-                alt="Un tire-sangle en bois posé sur un rouleau de sangle de jute, sur fond de toile."
+                src={genoa_velvet}
+                alt="Gros plan d'un velours de Gênes à motif floral : roses et boutons rose corail, feuillage vert sombre en relief, sur fond blanc."
                 sizes="100vw"
               />
-              <Caption>Le tire-sangle du tapissier</Caption>
+              <Caption>Velours de Gênes</Caption>
             </figure>
           }
           action={
@@ -283,7 +275,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -306,7 +298,7 @@ const Home = () => (
             Les matériaux se choisissent selon la vie passée et future de votre
             objet.
           </p>
-          <SectionSubtitle>Nous examinons votre mobilier</SectionSubtitle>
+          <SectionSubtitle>Nous évaluons votre mobilier</SectionSubtitle>
           <p>
             La santé des bois et des matières et ce qui vaut la peine d'être
             restauré.
@@ -319,8 +311,8 @@ const Home = () => (
           visual={
             <figure>
               <Image
-                src={lion_sofa}
-                alt="Canapé en bois aux accoudoirs sculptés de têtes de lion, garni d'un tissu orangé à rayures ivoire, sur fond blanc."
+                src={louis_philippe_sofa}
+                alt="Canapé Louis-Philippe en bois sculpté, dossier couronné d'une palmette et accoudoirs en volute, garni d'un tissu ivoire à rayures bordeaux et petits bouquets de fleurs, sur fond blanc."
                 sizes="100vw"
               />
               <Caption>Réalisation Maison Matron</Caption>
@@ -339,7 +331,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -362,26 +354,16 @@ const Home = () => (
 
         <SectionSeparator />
 
-        <WideVisualSection
+        <SideVisualSection
           visual={
-            <div className="grid gap-4 md:grid-cols-2">
-              <figure>
-                <Image
-                  src={white_chairs}
-                  alt="Deux fauteuils médaillon en bois teinté, garnis d'un tissu gris clair à motif géométrique blanc, sur fond blanc."
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <Caption>Réalisation Maison Matron</Caption>
-              </figure>
-              <figure>
-                <Image
-                  src={sideboard}
-                  alt="Buffet bas en bois veiné, trois tiroirs et deux portes, sur fond blanc."
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <Caption>Réalisation Maison Matron</Caption>
-              </figure>
-            </div>
+            <figure>
+              <AutoplayVideo
+                src="/visuals/voltaire-orbital-macro.mp4"
+                poster={voltaire_poster}
+                label="Un fauteuil Voltaire en bois clair, garni d'un tissu gris à feuillage de velours jaune d'or, puis un gros plan de ce tissu."
+              />
+              <Caption>Réalisation Maison Matron</Caption>
+            </figure>
           }
           action={
             <>
@@ -396,7 +378,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -404,42 +386,30 @@ const Home = () => (
           }
         >
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
-          <div className="space-y-4 md:mx-auto md:w-fit">
-            <SectionSubtitle>
-              Chaque saison, profitez d'une offre exclusive.
-            </SectionSubtitle>
-            <ul className="list-inside list-['❊_'] space-y-4 text-left">
-              <li>Offres spéciales sur des tissus uniques</li>
-              <li>Réductions sur les tissus de saison</li>
-              <li>Réductions voisinage</li>
-              <li>Entretien des bois</li>
-              <li>Révisions offertes</li>
-            </ul>
-          </div>
-        </WideVisualSection>
+          <SectionSubtitle>
+            Chaque saison, profitez d'une offre exclusive.
+          </SectionSubtitle>
+          <ul className="list-inside list-['❊_'] space-y-4">
+            <li>Offres spéciales sur des tissus uniques</li>
+            <li>Réductions sur les tissus de saison</li>
+            <li>Réductions voisinage</li>
+            <li>Entretien des bois</li>
+            <li>Révisions offertes</li>
+          </ul>
+        </SideVisualSection>
 
         <SectionSeparator />
 
         <WideVisualSection
           visual={
-            <div className="grid gap-4 md:grid-cols-2">
-              <figure>
-                <Image
-                  src={blue_chair}
-                  alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <Caption>Réalisation Maison Matron</Caption>
-              </figure>
-              <figure>
-                <Image
-                  src={secretary}
-                  alt="Secrétaire à abattant en bois veiné, un tiroir au-dessus de l'abattant et trois tiroirs en dessous, sur fond blanc."
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <Caption>Réalisation Maison Matron</Caption>
-              </figure>
-            </div>
+            <figure>
+              <Image
+                src={club_armchair}
+                alt="Une femme en tailleur blanc et bottines noires, assise jambes croisées dans un fauteuil club blanc aux accotoirs de bois sombre bordés de clous, sur fond blanc."
+                sizes="100vw"
+              />
+              <Caption>Réalisation Maison Matron</Caption>
+            </figure>
           }
           action={
             <>
@@ -454,7 +424,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>

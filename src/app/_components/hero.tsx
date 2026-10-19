@@ -47,8 +47,11 @@ export const Hero = ({ children }: hero_props) => (
       </div>
       <div className="copy-inset flex flex-col items-start">
         <h1 className="mb-4 font-display text-[36px] leading-[1.06] italic lg:text-[50px]">
-          Artisans tapissiers et ébénistes depuis 4 générations
+          La Haute Couture, pour vos meubles
         </h1>
+        <p className="mb-4 text-[17px] leading-[1.45]">
+          Artisan tapissier et ébéniste depuis 4 générations
+        </p>
         <div className="mb-4">
           <SectionSubtitle>+20'000 pièces</SectionSubtitle>
           <SectionSubtitle>+5'000 clients</SectionSubtitle>

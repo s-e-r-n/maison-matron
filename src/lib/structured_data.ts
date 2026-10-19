@@ -86,7 +86,7 @@ const structured_data = {
           name: "Votre expertise offerte",
           itemListElement: [
             service_offer("Visite chez vous"),
-            service_offer("Examen de votre mobilier"),
+            service_offer("Évaluation de votre mobilier"),
             service_offer("Devis"),
           ],
         },
