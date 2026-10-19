@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-const title = "Expertise offerte | Tapissier Ébéniste Depuis 4 Générations";
+const title = "Maison Matron | La Haute Couture, pour vos meubles";
 const description =
-  "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations. L'atelier vient à vous, c'est offert. Visite chez vous ❊ Évaluation de votre mobilier ❊ Devis";
+  "Nous transformons vos meubles en pièces uniques au monde. L'atelier vient à vous, c'est offert. Visite chez vous ❊ Évaluation de votre mobilier";
 
 export const opengraph_image_path = "/opengraph-canape-lions.jpg";
 
