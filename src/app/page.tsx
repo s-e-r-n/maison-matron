@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AutoplayVideo } from "@/components/autoplay_video";
 import { LogoRow, LogoRows, MobileRowBreak } from "@/components/logo_rows";
 import { landing_metadata } from "@/lib/landing_metadata";
 import { structured_data_json } from "@/lib/structured_data";
@@ -18,7 +19,7 @@ import sideboard from "../../public/visuals/buffet.jpg";
 import lion_sofa from "../../public/visuals/canape-lions.jpg";
 import blue_chair from "../../public/visuals/chaise-bleue.jpg";
 import white_chairs from "../../public/visuals/chaises-blanches.jpg";
-import red_silk_velvet from "../../public/visuals/red-silk-velvet.jpg";
+import reel_poster from "../../public/visuals/maison-matron-reel-poster.jpg";
 import genoa_velvet from "../../public/visuals/velours-gene.jpg";
 import {
   CallToAction,
@@ -174,10 +175,10 @@ const Home = () => (
         <SideVisualSection
           visual={
             <figure>
-              <Image
-                src={red_silk_velvet}
-                alt="Velours de soie rouge, coupé et bouclé, tissé de plumes de paon et de fleurs."
-                sizes="(min-width: 1024px) 50vw, 100vw"
+              <AutoplayVideo
+                src="/visuals/maison-matron-reel.mp4"
+                poster={reel_poster}
+                label="Des chaises en bois garnies d'un tissu bleu, puis un velours rouge à motifs floraux, sous le logo Maison Matron 1921 ; une femme en tailleur blanc assise dans un fauteuil club, avec la phrase « La Haute Couture, pour vos meubles. » ; le logo Maison Matron sur fond noir."
               />
               <Caption>Velours de Gênes</Caption>
             </figure>
