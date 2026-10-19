@@ -77,6 +77,7 @@ const Home = () => (
                 src={archival_photo}
                 alt="Photographie d'archive en noir et blanc : un homme en gilet et chemise aux manches retroussées tient un cheval par la longe, devant une bâtisse."
                 sizes="(min-width: 1024px) 50vw, 100vw"
+                preload
               />
               <Caption>Photo d'archive</Caption>
             </figure>
