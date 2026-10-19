@@ -15,9 +15,9 @@ import ralph_lauren_logo from "../../public/fabric-logos/ralph-lauren.svg";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
 import sideboard from "../../public/visuals/buffet.jpg";
-import lion_sofa from "../../public/visuals/canape-lions.jpg";
 import white_chairs from "../../public/visuals/chaises-blanches.jpg";
 import club_armchair from "../../public/visuals/club-armchair.jpg";
+import louis_philippe_sofa from "../../public/visuals/louis-philippe.jpg";
 import reel_poster from "../../public/visuals/maison-matron-reel-poster.jpg";
 import genoa_velvet from "../../public/visuals/velours-gene.jpg";
 import {
@@ -319,8 +319,8 @@ const Home = () => (
           visual={
             <figure>
               <Image
-                src={lion_sofa}
-                alt="Canapé en bois aux accoudoirs sculptés de têtes de lion, garni d'un tissu orangé à rayures ivoire, sur fond blanc."
+                src={louis_philippe_sofa}
+                alt="Canapé Louis-Philippe en bois sculpté, dossier couronné d'une palmette et accoudoirs en volute, garni d'un tissu ivoire à rayures bordeaux et petits bouquets de fleurs, sur fond blanc."
                 sizes="100vw"
               />
               <Caption>Réalisation Maison Matron</Caption>
