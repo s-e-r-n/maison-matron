@@ -57,7 +57,6 @@ const Home = () => (
       <CallToActionDetails>
         <CallToActionDetail>Visite chez vous</CallToActionDetail>
         <CallToActionDetail>Évaluation de votre mobilier</CallToActionDetail>
-        <CallToActionDetail>Devis</CallToActionDetail>
       </CallToActionDetails>
     </Hero>
 
@@ -78,6 +77,7 @@ const Home = () => (
                 src={archival_photo}
                 alt="Photographie d'archive en noir et blanc : un homme en gilet et chemise aux manches retroussées tient un cheval par la longe, devant une bâtisse."
                 sizes="(min-width: 1024px) 50vw, 100vw"
+                preload
               />
               <Caption>Photo d'archive</Caption>
             </figure>
@@ -97,7 +97,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -128,7 +127,6 @@ const Home = () => (
                 alt="Une petite chaise laquée blanc au dossier enroulé et quatre chaises traîneau en bois, garnies d'un même tissu bleu à motif de cercles, sur fond blanc."
                 sizes="100vw"
               />
-              <Caption>Réalisation Maison Matron</Caption>
             </figure>
           }
           action={
@@ -146,7 +144,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -173,7 +170,6 @@ const Home = () => (
                 poster={reel_poster}
                 label="Des chaises en bois garnies d'un tissu bleu, puis un velours rouge à motifs floraux, sous le logo Maison Matron 1921 ; une femme en tailleur blanc assise dans un fauteuil club, avec la phrase « La Haute Couture, pour vos meubles. » ; le logo Maison Matron sur fond noir."
               />
-              <Caption>Velours de Gênes</Caption>
             </figure>
           }
           action={
@@ -191,7 +187,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -259,7 +254,6 @@ const Home = () => (
                 alt="Gros plan d'un velours de Gênes à motif floral : roses et boutons rose corail, feuillage vert sombre en relief, sur fond blanc."
                 sizes="100vw"
               />
-              <Caption>Velours de Gênes</Caption>
             </figure>
           }
           action={
@@ -277,7 +271,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -315,7 +308,6 @@ const Home = () => (
                 alt="Canapé Louis-Philippe en bois sculpté, dossier couronné d'une palmette et accoudoirs en volute, garni d'un tissu ivoire à rayures bordeaux et petits bouquets de fleurs, sur fond blanc."
                 sizes="100vw"
               />
-              <Caption>Réalisation Maison Matron</Caption>
             </figure>
           }
           action={
@@ -333,7 +325,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -343,7 +334,9 @@ const Home = () => (
             Nous prenons en charge le transport de vos pièces dans le plus grand
             soin.
           </p>
-          <p>Nous vous tenons informé durant tout le processus de réfection.</p>
+          <p>
+            Nous vous tenons informé durant tout le processus de transformation.
+          </p>
           <p>
             Lorsque les artisans ont terminé, nous fixons avec vous le jour et
             l'heure de restitution.
@@ -362,7 +355,6 @@ const Home = () => (
                 poster={voltaire_poster}
                 label="Un fauteuil Voltaire en bois clair, garni d'un tissu gris à feuillage de velours jaune d'or, puis un gros plan de ce tissu."
               />
-              <Caption>Réalisation Maison Matron</Caption>
             </figure>
           }
           action={
@@ -380,22 +372,15 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
         >
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
           <SectionSubtitle>
-            Chaque saison, profitez d'une offre exclusive.
+            Chaque saison, nous pensons une offre à la mesure de notre
+            clientèle. La prochaine vous attend.
           </SectionSubtitle>
-          <ul className="list-inside list-['❊_'] space-y-4">
-            <li>Offres spéciales sur des tissus uniques</li>
-            <li>Réductions sur les tissus de saison</li>
-            <li>Réductions voisinage</li>
-            <li>Entretien des bois</li>
-            <li>Révisions offertes</li>
-          </ul>
         </SideVisualSection>
 
         <SectionSeparator />
@@ -408,7 +393,6 @@ const Home = () => (
                 alt="Une femme en tailleur blanc et bottines noires, assise jambes croisées dans un fauteuil club blanc aux accotoirs de bois sombre bordés de clous, sur fond blanc."
                 sizes="100vw"
               />
-              <Caption>Réalisation Maison Matron</Caption>
             </figure>
           }
           action={
@@ -426,7 +410,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }

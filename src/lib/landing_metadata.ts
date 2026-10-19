@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 
-const title = "Expertise offerte | Tapissier Ébéniste Depuis 4 Générations";
+const title = "Maison Matron | La Haute Couture, pour vos meubles";
 const description =
-  "Maison Matron, artisans tapissiers et ébénistes depuis 4 générations. L'atelier vient à vous, c'est offert. Visite chez vous ❊ Évaluation de votre mobilier ❊ Devis";
+  "Nous transformons vos meubles en pièces uniques au monde. L'atelier vient à vous, c'est offert. Visite chez vous ❊ Évaluation de votre mobilier";
 
-export const opengraph_image_path = "/opengraph-canape-lions.jpg";
+export const opengraph_image_path = "/opengraph-velours-gene.jpg";
 
 const opengraph_image = {
   url: opengraph_image_path,
-  width: 2400,
-  height: 1260,
+  width: 1200,
+  height: 630,
   type: "image/jpeg",
-  alt: "Canapé en bois aux accoudoirs sculptés de têtes de lion, garni d'un tissu orangé à rayures ivoire, sur fond blanc.",
+  alt: "Gros plan d'un velours de Gênes à motif floral : roses et boutons rose corail, feuillage vert sombre en relief, sur fond blanc.",
 };
 
 export const landing_metadata = (pathname: "/"): Metadata => ({

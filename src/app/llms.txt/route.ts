@@ -2,7 +2,7 @@ import { at_origin } from "@/lib/site_origin";
 
 const llms_txt = `# Maison Matron
 
-> Maison Matron, artisans tapissiers et ébénistes depuis 4 générations, à Bursins, dans le canton de Vaud, en Suisse. Fondé en 1921, l'atelier réunit tapissiers, ébénistes et courtepointières. Ses clients profitent aussi du dernier chaisier de Suisse : depuis 1908, chaque chaise y est assemblée à l'ancienne, dans des bois locaux, de Suisse. Plus de 20'000 pièces pour plus de 5'000 clients. L'atelier vient à vous, c'est offert : visite chez vous, évaluation de votre mobilier, devis.
+> Maison Matron, artisans tapissiers et ébénistes depuis 4 générations, à Bursins, dans le canton de Vaud, en Suisse. Fondé en 1921, l'atelier réunit tapissiers, ébénistes et courtepointières. Ses clients profitent aussi du dernier chaisier de Suisse : depuis 1908, chaque chaise y est assemblée à l'ancienne, dans des bois locaux, de Suisse. Plus de 20'000 pièces pour plus de 5'000 clients. L'atelier vient à vous, c'est offert : visite chez vous, évaluation de votre mobilier.
 
 Comment contacter l'atelier ?
 
@@ -29,7 +29,7 @@ Comment contacter l'atelier ?
 - Téléphone : +41 21 539 46 75
 - Horaires : du lundi au samedi, de 9 h à 17 h, fermé le dimanche
 - Chiffres : +20'000 pièces, +5'000 clients
-- Offre : l'expertise offerte, visite chez vous, évaluation de votre mobilier et devis
+- Offre : l'expertise offerte, visite chez vous, évaluation de votre mobilier
 - Tissus : Hermès, Christian Lacroix, Ralph Lauren, Dedar, Lelièvre, Nobilis, Edmond Petit, Pierre Frey, Casal, et tant d'autres
 
 ## Services
@@ -56,32 +56,28 @@ Comment contacter l'atelier ?
 
 ## Pages
 
-- [Accueil](${at_origin("/")}) : pour qui cherche la pièce à son image. Le vrai sur-mesure, des milliers de tissus et l'expertise offerte chez vous.
+- [Accueil](${at_origin("/")}) : La Haute Couture, pour vos meubles. De meuble à pièce de collection, des milliers de tissus et l'expertise offerte chez vous.
 
 ## Sommaire de la page d'accueil
 
-- Artisans tapissiers et ébénistes depuis 4 générations
+- La Haute Couture, pour vos meubles
+  - Artisan tapissier et ébéniste depuis 4 générations
   - +20'000 pièces
   - +5'000 clients
   - « Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. » - Anne-Claude
 - Votre expertise offerte
   - Visite chez vous
   - Évaluation de votre mobilier
-  - Devis
-- Vous cherchez la pièce à votre image, or…
-  - La marque décide jusqu'où va votre « sur-mesure ».
-  - L'unique est éclipsé par les collections à la mode.
-  - Le choix des tissus vous est limité.
+- Nous transformons vos meubles en pièces uniques au monde.
 - Maison Matron, artisan depuis 4 générations
   - Depuis plus d'un siècle, notre savoir-faire façonne des objets, travaillés à la main et habillés des plus beaux tissus.
   - Nos tapissiers, ébénistes et courtepointières sont unis par une unique valeur :
   - Ennoblir chaque pièce qui nous est confiée.
-- Le vrai sur-mesure
-  - Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs et motifs préférés.
-  - Choisissez des finitions bois magnifiques.
-  - Profitez du dernier chaisier de Suisse
-  - Depuis 1908, chaque chaise est assemblée à l'ancienne, dans des bois locaux, de Suisse.
-  - Profitez de deux savoir-faire centenaires pour vos pièces.
+- De meuble à pièce de collection
+  - Nos vastes collections de tissus et notre savoir-faire d'ébéniste transforment vos meubles.
+  - Deux savoir-faire centenaires valorisent vos pièces
+    - Nous travaillons avec le dernier chaisier de Suisse (1908) :
+    - Il assemble chaque chaise à l'ancienne, dans des bois locaux.
 - Profitez de milliers de tissus
   - Nos collections voyagent avec nous jusqu'à chez vous.
   - Ce que vous voulez, nous l'avons.
@@ -104,17 +100,12 @@ Comment contacter l'atelier ?
     - La santé des bois et des matières et ce qui vaut la peine d'être restauré.
 - Le processus & la restitution
   - Nous prenons en charge le transport de vos pièces dans le plus grand soin.
-  - Nous vous tenons informé durant tout le processus de réfection.
+  - Nous vous tenons informé durant tout le processus de transformation.
   - Lorsque les artisans ont terminé, nous fixons avec vous le jour et l'heure de restitution.
   - Enfin, nous vous dévoilons chaque ouvrage :
   - unique et à votre image.
 - 4 saisons, 4 privilèges
-  - Chaque saison, profitez d'une offre exclusive.
-    - Offres spéciales sur des tissus uniques
-    - Réductions sur les tissus de saison
-    - Réductions voisinage
-    - Entretien des bois
-    - Révisions offertes
+  - Chaque saison, nous pensons une offre à la mesure de notre clientèle. La prochaine vous attend.
 - Vous travaillez avec un décorateur d'intérieur ?
   - C'est parfait.
   - Nos métiers d'art fonctionnent en symbiose.

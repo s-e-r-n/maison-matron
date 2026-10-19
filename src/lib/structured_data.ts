@@ -33,12 +33,14 @@ const structured_data = {
       logo: at_origin("/apple-icon.png"),
       image: [
         at_origin(opengraph_image_path),
+        at_origin("/video/maison-matron-hero-poster.avif"),
+        at_origin("/visuals/archival-photo-man-leading-horse.jpg"),
         at_origin("/visuals/5-chaises.jpg"),
-        at_origin("/visuals/canape-lions.jpg"),
-        at_origin("/visuals/chaises-blanches.jpg"),
-        at_origin("/visuals/buffet.jpg"),
-        at_origin("/visuals/chaise-bleue.jpg"),
-        at_origin("/visuals/armoire.jpg"),
+        at_origin("/visuals/maison-matron-reel-poster.jpg"),
+        at_origin("/visuals/velours-gene.jpg"),
+        at_origin("/visuals/louis-philippe.jpg"),
+        at_origin("/visuals/voltaire-orbital-macro-poster.jpg"),
+        at_origin("/visuals/club-armchair.jpg"),
       ],
       telephone: "+41 21 539 46 75",
       email: "info@maison-matron.ch",
@@ -87,18 +89,6 @@ const structured_data = {
           itemListElement: [
             service_offer("Visite chez vous"),
             service_offer("Évaluation de votre mobilier"),
-            service_offer("Devis"),
-          ],
-        },
-        {
-          "@type": "OfferCatalog",
-          name: "4 saisons, 4 privilèges",
-          itemListElement: [
-            service_offer("Offres spéciales sur des tissus uniques"),
-            service_offer("Réductions sur les tissus de saison"),
-            service_offer("Réductions voisinage"),
-            service_offer("Entretien des bois"),
-            service_offer("Révisions offertes"),
           ],
         },
         {
