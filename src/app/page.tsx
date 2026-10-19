@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { AutoplayVideo } from "@/components/autoplay_video";
-import { LogoRow, LogoRows, MobileRowBreak } from "@/components/logo_rows";
 import { landing_metadata } from "@/lib/landing_metadata";
 import { structured_data_json } from "@/lib/structured_data";
 import casal_logo from "../../public/fabric-logos/casal.svg";
@@ -31,6 +30,7 @@ import { Field } from "./_components/field";
 import { Footer } from "./_components/footer";
 import { Hero } from "./_components/hero";
 import { LeadSheet } from "./_components/lead_sheet";
+import { LogoGrid } from "./_components/logo_grid";
 import { ReviewsSection } from "./_components/reviews_section";
 import { SectionSeparator } from "./_components/section_separator";
 import { SideVisualSection } from "./_components/side_visual_section";
@@ -205,55 +205,53 @@ const Home = () => (
           <SectionTitle>Profitez de milliers de tissus</SectionTitle>
           <p>Nos collections voyagent avec nous jusqu'à chez vous.</p>
           <p>Ce que vous voulez, nous l'avons.</p>
-          <LogoRows>
-            <LogoRow>
-              <Image
-                src={hermes_logo}
-                alt="Hermès"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <Image
-                src={christian_lacroix_logo}
-                alt="Christian Lacroix"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <Image
-                src={ralph_lauren_logo}
-                alt="Ralph Lauren"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <Image
-                src={dedar_logo}
-                alt="Dedar"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <MobileRowBreak />
-              <Image
-                src={lelievre_logo}
-                alt="Lelièvre"
-                className="brightness-0 invert-[10.6%]"
-              />
-            </LogoRow>
-            <LogoRow>
-              <Image
-                src={nobilis_logo}
-                alt="Nobilis"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <Image
-                src={edmond_petit_logo}
-                alt="Edmond Petit"
-                className="brightness-0 invert-[10.6%]"
-              />
-              <MobileRowBreak />
-              <Image src={pierre_frey_logo} alt="Pierre Frey" />
-              <Image
-                src={casal_logo}
-                alt="Casal"
-                className="brightness-0 invert-[10.6%]"
-              />
-            </LogoRow>
-          </LogoRows>
+          <LogoGrid>
+            <Image
+              src={hermes_logo}
+              alt="Hermès"
+              className="w-[54%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={christian_lacroix_logo}
+              alt="Christian Lacroix"
+              className="w-[69%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={ralph_lauren_logo}
+              alt="Ralph Lauren"
+              className="w-[85%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={dedar_logo}
+              alt="Dedar"
+              className="w-[38%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={lelievre_logo}
+              alt="Lelièvre"
+              className="w-[41%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={nobilis_logo}
+              alt="Nobilis"
+              className="w-[47%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={edmond_petit_logo}
+              alt="Edmond Petit"
+              className="w-[68%] brightness-0 invert-[10.6%]"
+            />
+            <Image
+              src={pierre_frey_logo}
+              alt="Pierre Frey"
+              className="w-[23%]"
+            />
+            <Image
+              src={casal_logo}
+              alt="Casal"
+              className="w-[29%] brightness-0 invert-[10.6%]"
+            />
+          </LogoGrid>
           <p className="italic">Et tant d'autres…</p>
         </SideVisualSection>
 
