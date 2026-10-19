@@ -2,7 +2,7 @@ import { at_origin } from "@/lib/site_origin";
 
 const llms_txt = `# Maison Matron
 
-> Maison Matron, artisans tapissiers et ébénistes depuis 4 générations, à Bursins, dans le canton de Vaud, en Suisse. Fondé en 1921, l'atelier réunit tapissiers, ébénistes et courtepointières. Ses clients profitent aussi du dernier chaisier de Suisse : depuis 1908, chaque chaise y est assemblée à l'ancienne, dans des bois locaux, de Suisse. Plus de 20'000 pièces pour plus de 5'000 clients. L'atelier vient à vous, c'est offert : visite chez vous, évaluation de votre mobilier, devis.
+> Maison Matron, artisans tapissiers et ébénistes depuis 4 générations, à Bursins, dans le canton de Vaud, en Suisse. Fondé en 1921, l'atelier réunit tapissiers, ébénistes et courtepointières. Ses clients profitent aussi du dernier chaisier de Suisse : depuis 1908, chaque chaise y est assemblée à l'ancienne, dans des bois locaux, de Suisse. Plus de 20'000 pièces pour plus de 5'000 clients. L'atelier vient à vous, c'est offert : visite chez vous, évaluation de votre mobilier.
 
 Comment contacter l'atelier ?
 
@@ -29,7 +29,7 @@ Comment contacter l'atelier ?
 - Téléphone : +41 21 539 46 75
 - Horaires : du lundi au samedi, de 9 h à 17 h, fermé le dimanche
 - Chiffres : +20'000 pièces, +5'000 clients
-- Offre : l'expertise offerte, visite chez vous, évaluation de votre mobilier et devis
+- Offre : l'expertise offerte, visite chez vous, évaluation de votre mobilier
 - Tissus : Hermès, Christian Lacroix, Ralph Lauren, Dedar, Lelièvre, Nobilis, Edmond Petit, Pierre Frey, Casal, et tant d'autres
 
 ## Services
@@ -67,7 +67,6 @@ Comment contacter l'atelier ?
 - Votre expertise offerte
   - Visite chez vous
   - Évaluation de votre mobilier
-  - Devis
 - Vous cherchez la pièce à votre image, or…
   - La marque décide jusqu'où va votre « sur-mesure ».
   - L'unique est éclipsé par les collections à la mode.

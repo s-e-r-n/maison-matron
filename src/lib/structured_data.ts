@@ -87,7 +87,6 @@ const structured_data = {
           itemListElement: [
             service_offer("Visite chez vous"),
             service_offer("Évaluation de votre mobilier"),
-            service_offer("Devis"),
           ],
         },
         {

@@ -57,7 +57,6 @@ const Home = () => (
       <CallToActionDetails>
         <CallToActionDetail>Visite chez vous</CallToActionDetail>
         <CallToActionDetail>Évaluation de votre mobilier</CallToActionDetail>
-        <CallToActionDetail>Devis</CallToActionDetail>
       </CallToActionDetails>
     </Hero>
 
@@ -97,7 +96,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -145,7 +143,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -189,7 +186,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -274,7 +270,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -329,7 +324,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -377,7 +371,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
@@ -422,7 +415,6 @@ const Home = () => (
                 <CallToActionDetail>
                   Évaluation de votre mobilier
                 </CallToActionDetail>
-                <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
             </>
           }
