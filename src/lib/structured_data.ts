@@ -91,17 +91,6 @@ const structured_data = {
         },
         {
           "@type": "OfferCatalog",
-          name: "4 saisons, 4 privilèges",
-          itemListElement: [
-            service_offer("Offres spéciales sur des tissus uniques"),
-            service_offer("Réductions sur les tissus de saison"),
-            service_offer("Réductions voisinage"),
-            service_offer("Entretien des bois"),
-            service_offer("Révisions offertes"),
-          ],
-        },
-        {
-          "@type": "OfferCatalog",
           name: "Services",
           itemListElement: [
             {

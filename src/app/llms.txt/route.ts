@@ -108,12 +108,7 @@ Comment contacter l'atelier ?
   - Enfin, nous vous dévoilons chaque ouvrage :
   - unique et à votre image.
 - 4 saisons, 4 privilèges
-  - Chaque saison, profitez d'une offre exclusive.
-    - Offres spéciales sur des tissus uniques
-    - Réductions sur les tissus de saison
-    - Réductions voisinage
-    - Entretien des bois
-    - Révisions offertes
+  - Chaque saison, nous pensons une offre à la mesure de notre clientèle. La prochaine vous attend.
 - Vous travaillez avec un décorateur d'intérieur ?
   - C'est parfait.
   - Nos métiers d'art fonctionnent en symbiose.

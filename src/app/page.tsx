@@ -377,15 +377,9 @@ const Home = () => (
         >
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
           <SectionSubtitle>
-            Chaque saison, profitez d'une offre exclusive.
+            Chaque saison, nous pensons une offre à la mesure de notre
+            clientèle. La prochaine vous attend.
           </SectionSubtitle>
-          <ul className="list-inside list-['❊_'] space-y-4">
-            <li>Offres spéciales sur des tissus uniques</li>
-            <li>Réductions sur les tissus de saison</li>
-            <li>Réductions voisinage</li>
-            <li>Entretien des bois</li>
-            <li>Révisions offertes</li>
-          </ul>
         </SideVisualSection>
 
         <SectionSeparator />
