@@ -13,12 +13,14 @@ const nextConfig: NextConfig = {
   experimental: { typedEnv: true },
   outputFileTracingIncludes: {
     "/": confirmation_templates,
-    "/refection": confirmation_templates,
   },
   images: {
     formats: ["image/avif", "image/webp"],
     qualities: [90],
   },
+  redirects: async () => [
+    { source: "/refection", destination: "/", permanent: true },
+  ],
   headers: async () => [
     {
       source: "/maison-matron.vcf",
