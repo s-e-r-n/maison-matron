@@ -18,8 +18,8 @@ import sideboard from "../../public/visuals/buffet.jpg";
 import lion_sofa from "../../public/visuals/canape-lions.jpg";
 import blue_chair from "../../public/visuals/chaise-bleue.jpg";
 import white_chairs from "../../public/visuals/chaises-blanches.jpg";
-import upholstery_tool from "../../public/visuals/outil.jpg";
 import red_silk_velvet from "../../public/visuals/red-silk-velvet.jpg";
+import genoa_velvet from "../../public/visuals/velours-gene.jpg";
 import {
   CallToAction,
   CallToActionDetail,
@@ -263,11 +263,11 @@ const Home = () => (
           visual={
             <figure>
               <Image
-                src={upholstery_tool}
-                alt="Un tire-sangle en bois posé sur un rouleau de sangle de jute, sur fond de toile."
+                src={genoa_velvet}
+                alt="Gros plan d'un velours de Gênes à motif floral : roses et boutons rose corail, feuillage vert sombre en relief, sur fond blanc."
                 sizes="100vw"
               />
-              <Caption>Le tire-sangle du tapissier</Caption>
+              <Caption>Velours de Gênes</Caption>
             </figure>
           }
           action={
