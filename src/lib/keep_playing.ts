@@ -36,6 +36,7 @@ export const keep_playing = (
   on_blocked_change: (blocked: boolean) => void,
 ) => {
   let retries_left = retry_budget;
+  let wanted = false;
 
   const block = () => {
     waiting.set(video, resume);
@@ -57,7 +58,7 @@ export const keep_playing = (
   };
 
   const attempt = () => {
-    if (is_hidden()) return;
+    if (!wanted || is_hidden()) return;
     prepare(video);
     video.play().catch(refuse);
   };
@@ -73,28 +74,28 @@ export const keep_playing = (
     attempt();
   };
 
-  const start = () => {
-    video.addEventListener("playing", unblock);
-    for (const event of retry_events) video.addEventListener(event, retry);
-    document.addEventListener("visibilitychange", resume);
-    window.addEventListener("pageshow", resume);
-    attempt();
-  };
+  video.addEventListener("playing", unblock);
+  for (const event of retry_events) video.addEventListener(event, retry);
+  document.addEventListener("visibilitychange", resume);
+  window.addEventListener("pageshow", resume);
 
-  const viewport = new IntersectionObserver((entries) => {
-    if (!entries.some((entry) => entry.isIntersecting)) return;
-    viewport.disconnect();
-    start();
-  });
-  viewport.observe(video);
-
-  return () => {
-    viewport.disconnect();
-    video.removeEventListener("playing", unblock);
-    for (const event of retry_events) video.removeEventListener(event, retry);
-    document.removeEventListener("visibilitychange", resume);
-    window.removeEventListener("pageshow", resume);
-    waiting.delete(video);
-    if (waiting.size === 0) disarm();
+  return {
+    play: () => {
+      wanted = true;
+      resume();
+    },
+    pause: () => {
+      if (!wanted) return;
+      wanted = false;
+      video.pause();
+    },
+    release: () => {
+      video.removeEventListener("playing", unblock);
+      for (const event of retry_events) video.removeEventListener(event, retry);
+      document.removeEventListener("visibilitychange", resume);
+      window.removeEventListener("pageshow", resume);
+      waiting.delete(video);
+      if (waiting.size === 0) disarm();
+    },
   };
 };

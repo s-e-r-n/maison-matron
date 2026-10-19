@@ -2,23 +2,33 @@
 
 import type { StaticImageData } from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { keep_playing } from "@/lib/keep_playing";
+import { play_in_view, type play_in_view_settings } from "@/lib/play_in_view";
 
-type autoplay_video_props = {
+type autoplay_video_props = play_in_view_settings & {
   src: string;
   poster: StaticImageData;
   label: string;
 };
 
-export const AutoplayVideo = ({ src, poster, label }: autoplay_video_props) => {
+export const AutoplayVideo = ({
+  src,
+  poster,
+  label,
+  start_margin,
+  pause_off_screen,
+}: autoplay_video_props) => {
   const video = useRef<HTMLVideoElement>(null);
   const [blocked, set_blocked] = useState(false);
 
   useEffect(() => {
     const element = video.current;
     if (!element) return;
-    return keep_playing(element, set_blocked);
-  }, []);
+    return play_in_view(
+      element,
+      { start_margin, pause_off_screen },
+      set_blocked,
+    );
+  }, [start_margin, pause_off_screen]);
 
   return (
     <div className="relative">
