@@ -151,20 +151,16 @@ const Home = () => (
             </>
           }
         >
-          <SectionTitle>Le vrai sur-mesure</SectionTitle>
+          <SectionTitle>De meuble à pièce de collection</SectionTitle>
           <p>
-            Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs
-            et motifs préférés.
+            Nos vastes collections de tissus et notre savoir-faire d'ébéniste
+            transforment votre meuble.
           </p>
-          <p>Choisissez des finitions bois magnifiques.</p>
           <SectionSubtitle>
-            Profitez du dernier chaisier de Suisse
+            Deux savoir-faire centenaires valorisent vos pièces
           </SectionSubtitle>
-          <p>
-            Depuis 1908, chaque chaise est assemblée à l'ancienne, dans des bois
-            locaux, de Suisse.
-          </p>
-          <p>Profitez de deux savoir-faire centenaires pour vos pièces.</p>
+          <p>Nous travaillons avec le dernier chaisier de Suisse (1908) :</p>
+          <p>Il assemble chaque chaise à l'ancienne, dans des bois locaux.</p>
         </WideVisualSection>
 
         <SectionSeparator />
