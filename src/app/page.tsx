@@ -56,7 +56,7 @@ const Home = () => (
       </CallToActions>
       <CallToActionDetails>
         <CallToActionDetail>Visite chez vous</CallToActionDetail>
-        <CallToActionDetail>Examen de votre mobilier</CallToActionDetail>
+        <CallToActionDetail>Évaluation de votre mobilier</CallToActionDetail>
         <CallToActionDetail>Devis</CallToActionDetail>
       </CallToActionDetails>
     </Hero>
@@ -95,7 +95,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -144,7 +144,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -154,7 +154,7 @@ const Home = () => (
           <SectionTitle>De meuble à pièce de collection</SectionTitle>
           <p>
             Nos vastes collections de tissus et notre savoir-faire d'ébéniste
-            transforment votre meuble.
+            transforment vos meubles.
           </p>
           <SectionSubtitle>
             Deux savoir-faire centenaires valorisent vos pièces
@@ -189,7 +189,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -275,7 +275,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -298,7 +298,7 @@ const Home = () => (
             Les matériaux se choisissent selon la vie passée et future de votre
             objet.
           </p>
-          <SectionSubtitle>Nous examinons votre mobilier</SectionSubtitle>
+          <SectionSubtitle>Nous évaluons votre mobilier</SectionSubtitle>
           <p>
             La santé des bois et des matières et ce qui vaut la peine d'être
             restauré.
@@ -331,7 +331,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -378,7 +378,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
@@ -424,7 +424,7 @@ const Home = () => (
               <CallToActionDetails>
                 <CallToActionDetail>Visite chez vous</CallToActionDetail>
                 <CallToActionDetail>
-                  Examen de votre mobilier
+                  Évaluation de votre mobilier
                 </CallToActionDetail>
                 <CallToActionDetail>Devis</CallToActionDetail>
               </CallToActionDetails>
