@@ -56,31 +56,28 @@ Comment contacter l'atelier ?
 
 ## Pages
 
-- [Accueil](${at_origin("/")}) : pour qui cherche la pièce à son image. Le vrai sur-mesure, des milliers de tissus et l'expertise offerte chez vous.
+- [Accueil](${at_origin("/")}) : La Haute Couture, pour vos meubles. De meuble à pièce de collection, des milliers de tissus et l'expertise offerte chez vous.
 
 ## Sommaire de la page d'accueil
 
-- Artisans tapissiers et ébénistes depuis 4 générations
+- La Haute Couture, pour vos meubles
+  - Artisan tapissier et ébéniste depuis 4 générations
   - +20'000 pièces
   - +5'000 clients
   - « Des conseils avisés, une superbe sélection de tissus et un savoir-faire minutieux. » - Anne-Claude
 - Votre expertise offerte
   - Visite chez vous
   - Évaluation de votre mobilier
-- Vous cherchez la pièce à votre image, or…
-  - La marque décide jusqu'où va votre « sur-mesure ».
-  - L'unique est éclipsé par les collections à la mode.
-  - Le choix des tissus vous est limité.
+- Nous transformons vos meubles en pièces uniques au monde.
 - Maison Matron, artisan depuis 4 générations
   - Depuis plus d'un siècle, notre savoir-faire façonne des objets, travaillés à la main et habillés des plus beaux tissus.
   - Nos tapissiers, ébénistes et courtepointières sont unis par une unique valeur :
   - Ennoblir chaque pièce qui nous est confiée.
-- Le vrai sur-mesure
-  - Velours de Gênes, lin, coton : sélectionnez vos matières, couleurs et motifs préférés.
-  - Choisissez des finitions bois magnifiques.
-  - Profitez du dernier chaisier de Suisse
-  - Depuis 1908, chaque chaise est assemblée à l'ancienne, dans des bois locaux, de Suisse.
-  - Profitez de deux savoir-faire centenaires pour vos pièces.
+- De meuble à pièce de collection
+  - Nos vastes collections de tissus et notre savoir-faire d'ébéniste transforment vos meubles.
+  - Deux savoir-faire centenaires valorisent vos pièces
+    - Nous travaillons avec le dernier chaisier de Suisse (1908) :
+    - Il assemble chaque chaise à l'ancienne, dans des bois locaux.
 - Profitez de milliers de tissus
   - Nos collections voyagent avec nous jusqu'à chez vous.
   - Ce que vous voulez, nous l'avons.
