@@ -65,7 +65,7 @@ const Home = () => (
       <div className="page-width flex flex-col gap-24 py-12 lg:gap-32 lg:py-16 [&_:is(p,li):not(.font-display)]:text-gray-600">
         <CenteredSection>
           <SectionTitle>
-            Nous transformons vos meubles en pièces uniques au monde
+            Nous transformons vos meubles en pièces uniques au monde.
           </SectionTitle>
         </CenteredSection>
 
