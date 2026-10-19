@@ -13,9 +13,8 @@ import pierre_frey_logo from "../../public/fabric-logos/pierre-frey.svg";
 import ralph_lauren_logo from "../../public/fabric-logos/ralph-lauren.svg";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
-import sideboard from "../../public/visuals/buffet.jpg";
-import white_chairs from "../../public/visuals/chaises-blanches.jpg";
 import club_armchair from "../../public/visuals/club-armchair.jpg";
+import french_chair from "../../public/visuals/french-chair.jpg";
 import louis_philippe_sofa from "../../public/visuals/louis-philippe.jpg";
 import reel_poster from "../../public/visuals/maison-matron-reel-poster.jpg";
 import genoa_velvet from "../../public/visuals/velours-gene.jpg";
@@ -360,26 +359,17 @@ const Home = () => (
 
         <SectionSeparator />
 
-        <WideVisualSection
+        <SideVisualSection
+          visual_side="right"
           visual={
-            <div className="grid gap-4 md:grid-cols-2">
-              <figure>
-                <Image
-                  src={white_chairs}
-                  alt="Deux fauteuils médaillon en bois teinté, garnis d'un tissu gris clair à motif géométrique blanc, sur fond blanc."
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <Caption>Réalisation Maison Matron</Caption>
-              </figure>
-              <figure>
-                <Image
-                  src={sideboard}
-                  alt="Buffet bas en bois veiné, trois tiroirs et deux portes, sur fond blanc."
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <Caption>Réalisation Maison Matron</Caption>
-              </figure>
-            </div>
+            <figure>
+              <Image
+                src={french_chair}
+                alt="Chaise de style Louis XV en bois sculpté, dossier et assise garnis d'un velours blanc à roses corail et feuillage vert, bordés de clous dorés, sur fond blanc."
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+              <Caption>Réalisation Maison Matron</Caption>
+            </figure>
           }
           action={
             <>
@@ -402,19 +392,17 @@ const Home = () => (
           }
         >
           <SectionTitle>4 saisons, 4 privilèges</SectionTitle>
-          <div className="space-y-4 md:mx-auto md:w-fit">
-            <SectionSubtitle>
-              Chaque saison, profitez d'une offre exclusive.
-            </SectionSubtitle>
-            <ul className="list-inside list-['❊_'] space-y-4 text-left">
-              <li>Offres spéciales sur des tissus uniques</li>
-              <li>Réductions sur les tissus de saison</li>
-              <li>Réductions voisinage</li>
-              <li>Entretien des bois</li>
-              <li>Révisions offertes</li>
-            </ul>
-          </div>
-        </WideVisualSection>
+          <SectionSubtitle>
+            Chaque saison, profitez d'une offre exclusive.
+          </SectionSubtitle>
+          <ul className="list-inside list-['❊_'] space-y-4">
+            <li>Offres spéciales sur des tissus uniques</li>
+            <li>Réductions sur les tissus de saison</li>
+            <li>Réductions voisinage</li>
+            <li>Entretien des bois</li>
+            <li>Révisions offertes</li>
+          </ul>
+        </SideVisualSection>
 
         <SectionSeparator />
 
