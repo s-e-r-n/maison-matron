@@ -14,10 +14,10 @@ import ralph_lauren_logo from "../../public/fabric-logos/ralph-lauren.svg";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
 import club_armchair from "../../public/visuals/club-armchair.jpg";
-import french_chair from "../../public/visuals/french-chair.jpg";
 import louis_philippe_sofa from "../../public/visuals/louis-philippe.jpg";
 import reel_poster from "../../public/visuals/maison-matron-reel-poster.jpg";
 import genoa_velvet from "../../public/visuals/velours-gene.jpg";
+import voltaire_poster from "../../public/visuals/voltaire-orbital-macro-poster.jpg";
 import {
   CallToAction,
   CallToActionDetail,
@@ -359,13 +359,12 @@ const Home = () => (
         <SectionSeparator />
 
         <SideVisualSection
-          visual_side="right"
           visual={
             <figure>
-              <Image
-                src={french_chair}
-                alt="Chaise de style Louis XV en bois sculpté, dossier et assise garnis d'un velours blanc à roses corail et feuillage vert, bordés de clous dorés, sur fond blanc."
-                sizes="(min-width: 1024px) 50vw, 100vw"
+              <AutoplayVideo
+                src="/visuals/voltaire-orbital-macro.mp4"
+                poster={voltaire_poster}
+                label="Un fauteuil Voltaire en bois clair, garni d'un tissu gris à feuillage de velours jaune d'or, puis un gros plan de ce tissu."
               />
               <Caption>Réalisation Maison Matron</Caption>
             </figure>
