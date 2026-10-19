@@ -57,7 +57,6 @@ Comment contacter l'atelier ?
 ## Pages
 
 - [Accueil](${at_origin("/")}) : pour qui cherche la pièce à son image. Le vrai sur-mesure, des milliers de tissus et l'expertise offerte chez vous.
-- [Réfection](${at_origin("/refection")}) : pour qui possède du mobilier à forte valeur sentimentale et cherche à qui le confier pour le refaire. La même page, à trois différences près, listées sous « Sommaire de /refection ».
 
 ## Sommaire de la page d'accueil
 
@@ -134,17 +133,6 @@ Comment contacter l'atelier ?
   - « Superbe travail ! Merci. » - Anne
 - L'atelier vient à vous, c'est offert.
   - Je réserve ma visite
-
-## Sommaire de /refection
-
-Le sommaire de la page d'accueil, à trois différences près :
-
-- Vous possédez du mobilier à forte valeur sentimentale, or…, à la place de « Vous cherchez la pièce à votre image, or… »
-  - Vous ne savez pas à qui le confier pour le refaire.
-  - Vous avez peur du travail bâclé.
-  - Vous ne voulez surtout pas jeter.
-- Le processus & la restitution s'achève sur « Enfin, nous vous dévoilons le résultat : Unique et prêt à revivre. »
-- La section « Vous travaillez avec un décorateur d'intérieur ? » n'y figure pas.
 `;
 
 export const GET = () =>

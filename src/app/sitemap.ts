@@ -11,13 +11,6 @@ const sitemap = (): MetadataRoute.Sitemap => [
     images: [at_origin(opengraph_image_path)],
   },
   {
-    url: at_origin("/refection"),
-    lastModified: new Date("2026-10-01"),
-    changeFrequency: "monthly",
-    priority: 1,
-    images: [at_origin(opengraph_image_path)],
-  },
-  {
     url: at_origin("/llms.txt"),
     lastModified: new Date("2026-10-01"),
     changeFrequency: "monthly",

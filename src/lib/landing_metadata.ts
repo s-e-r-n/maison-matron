@@ -14,7 +14,7 @@ const opengraph_image = {
   alt: "Canapé en bois aux accoudoirs sculptés de têtes de lion, garni d'un tissu orangé à rayures ivoire, sur fond blanc.",
 };
 
-export const landing_metadata = (pathname: "/" | "/refection"): Metadata => ({
+export const landing_metadata = (pathname: "/"): Metadata => ({
   title: { absolute: title },
   description,
   applicationName: "Maison Matron",

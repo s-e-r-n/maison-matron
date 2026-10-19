@@ -56,7 +56,7 @@ Several inputs may share `freetext`, their values arrive joined by a blank line.
 
 WhatsApp reads no table: every named input fills the next variable of the template, in the order of the page, and `form_id` fills the last one. The client's template is written in that order, with one variable per input plus one for the id, from 1 to 46 variables. A form and a template that disagree are refused by Meta with code `132000` and logged.
 
-The fields go inside the page's `LeadForm`, the one client component: it calls the page's action, and renders `failure` when the submission fails. On submit it checks the lead against the page's `_lib/lead.ts`, the one Zod schema of its six fields, all required and `email` a valid email: a wrong lead never leaves, and each `Field` shows its error under its input. `form_id` is required: it names the form, lands on the `id` of the `<form>` and is bound to the page's `submit_lead` as its first argument, so the WhatsApp message says which page the lead came from, `luxe` for `/` and `refection` for `/refection`.
+The fields go inside the page's `LeadForm`, the one client component: it calls the page's action, and renders `failure` when the submission fails. On submit it checks the lead against the page's `_lib/lead.ts`, the one Zod schema of its six fields, all required and `email` a valid email: a wrong lead never leaves, and each `Field` shows its error under its input. `form_id` is required: it names the form, lands on the `id` of the `<form>` and is bound to the page's `submit_lead` as its first argument, so the WhatsApp message says which page the lead came from, `luxe` for `/`.
 
 ```tsx
 import { Field } from "./_components/field";
@@ -74,11 +74,11 @@ import { LeadForm } from "./_components/lead_form";
 </LeadForm>;
 ```
 
-Each page carries its own form, `src/app/(home)/page.tsx` for `/` and `src/app/refection/page.tsx` for `/refection`, and its own confirmation page, `src/app/(home)/confirmation/page.tsx` and `src/app/refection/confirmation/page.tsx`, where a success lands. A confirmation route is named `/confirmation` under the page's own path: `/confirmation` and `/refection/confirmation`.
+Each page carries its own form, `src/app/page.tsx` for `/`, and its own confirmation page, `src/app/confirmation/page.tsx`, where a success lands. A confirmation route is named `/confirmation` under the page's own path: `/confirmation` for `/`.
 
 ## 4. Plug the services
 
-Each page's `actions.ts`, `src/app/(home)/actions.ts` for `/` and `src/app/refection/actions.ts` for `/refection`, is the only place its form meets a module: one call per service. The copy of `/refection` redirects to `/refection/confirmation`.
+Each page's `actions.ts`, `src/app/actions.ts` for `/`, is the only place its form meets a module: one call per service.
 
 ```ts
 "use server";
@@ -117,7 +117,7 @@ export const submit_lead = async (
 
 Only the confirmation mail decides the visitor's fate: sent means `/confirmation`, anything else means `{ status: "failed" }` and the form stays. WhatsApp never changes it: its sends leave right after the rate limit, run beside Meta and the mail, and are awaited so that no send depends on `after()` or on the host keeping the function alive; the visitor waits at most the 10 s timeout beyond the mail. A switched-off mail module is a failure like any other. The copy to the inbox is the safety net: what GHL missed is entered by hand from it.
 
-Unplug a service: delete its call. Remove it: delete its call, its folder under `src/lib/`, its variables. Nothing else knows it exists. The Meta events are `Lead`, `CompleteRegistration`, `Schedule`, `PageView`, in `src/lib/meta_capi/event_dictionary.ts`; a site with a single conversion sends `Lead`. `PageView`, in `src/components/page_view.tsx`, is mounted by neither root layout today, `src/app/(home)/layout.tsx` nor `src/app/refection/layout.tsx`; mounted, it sends one per full page load.
+Unplug a service: delete its call. Remove it: delete its call, its folder under `src/lib/`, its variables. Nothing else knows it exists. The Meta events are `Lead`, `CompleteRegistration`, `Schedule`, `PageView`, in `src/lib/meta_capi/event_dictionary.ts`; a site with a single conversion sends `Lead`. `PageView`, in `src/components/page_view.tsx`, is mounted by the root layout, `src/app/layout.tsx`, and sends one per full page load.
 
 ## 5. Read a result
 
@@ -155,11 +155,10 @@ src/lib/meta_capi/       capture.ts is the entry, user_data_keys.ts holds its ta
 src/lib/ghl/             deliver.ts is the entry, form_table.ts holds its table, payloads.ts the two bodies
 src/lib/mail/            send.ts is the entry, form_table.ts holds its table, messages.ts the two mails
 src/lib/whatsapp_dispatch/ dispatch.ts is the entry, cloud_api.ts the call, the body and the guard outside production
-src/components/          logo_rows.tsx, page_view.tsx, shared by both pages with src/lib/utils.ts
+src/components/          logo_rows.tsx, page_view.tsx
 src/app/global-not-found.tsx   the 404 of the site, with its own stylesheet
-src/app/(home)/          the page served at /: layout.tsx, globals.css, page.tsx, actions.ts, confirmation/page.tsx, _components/ with field.tsx, lead_form.tsx and its sections
-src/app/refection/       the page served at /refection: the same files, its own copies
-public/                  brand/, fabric-logos/, textures/, video/ and visuals/, one file per asset, shared by / and /refection
+src/app/                 the page served at /: layout.tsx, globals.css, page.tsx, actions.ts, confirmation/page.tsx, _components/ with field.tsx, lead_form.tsx and its sections
+public/                  brand/, fabric-logos/, textures/, video/ and visuals/, one file per asset
 src/proxy.ts             mints the Meta identity cookies on every request
 ```
 
