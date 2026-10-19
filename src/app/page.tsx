@@ -14,11 +14,10 @@ import pierre_frey_logo from "../../public/fabric-logos/pierre-frey.svg";
 import ralph_lauren_logo from "../../public/fabric-logos/ralph-lauren.svg";
 import five_chairs from "../../public/visuals/5-chaises.jpg";
 import archival_photo from "../../public/visuals/archival-photo-man-leading-horse.jpg";
-import secretary from "../../public/visuals/armoire.jpg";
 import sideboard from "../../public/visuals/buffet.jpg";
 import lion_sofa from "../../public/visuals/canape-lions.jpg";
-import blue_chair from "../../public/visuals/chaise-bleue.jpg";
 import white_chairs from "../../public/visuals/chaises-blanches.jpg";
+import club_armchair from "../../public/visuals/club-armchair.jpg";
 import reel_poster from "../../public/visuals/maison-matron-reel-poster.jpg";
 import genoa_velvet from "../../public/visuals/velours-gene.jpg";
 import {
@@ -423,24 +422,14 @@ const Home = () => (
 
         <WideVisualSection
           visual={
-            <div className="grid gap-4 md:grid-cols-2">
-              <figure>
-                <Image
-                  src={blue_chair}
-                  alt="Fauteuil à haut dossier en bois sombre, garni d'un tissu bleu chiné, avec son coussin de tête, sur fond blanc."
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <Caption>Réalisation Maison Matron</Caption>
-              </figure>
-              <figure>
-                <Image
-                  src={secretary}
-                  alt="Secrétaire à abattant en bois veiné, un tiroir au-dessus de l'abattant et trois tiroirs en dessous, sur fond blanc."
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                />
-                <Caption>Réalisation Maison Matron</Caption>
-              </figure>
-            </div>
+            <figure>
+              <Image
+                src={club_armchair}
+                alt="Une femme en tailleur blanc et bottines noires, assise jambes croisées dans un fauteuil club blanc aux accotoirs de bois sombre bordés de clous, sur fond blanc."
+                sizes="100vw"
+              />
+              <Caption>Réalisation Maison Matron</Caption>
+            </figure>
           }
           action={
             <>
