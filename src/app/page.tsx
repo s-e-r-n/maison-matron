@@ -128,7 +128,6 @@ const Home = () => (
                 alt="Une petite chaise laquée blanc au dossier enroulé et quatre chaises traîneau en bois, garnies d'un même tissu bleu à motif de cercles, sur fond blanc."
                 sizes="100vw"
               />
-              <Caption>Réalisation Maison Matron</Caption>
             </figure>
           }
           action={
@@ -173,7 +172,6 @@ const Home = () => (
                 poster={reel_poster}
                 label="Des chaises en bois garnies d'un tissu bleu, puis un velours rouge à motifs floraux, sous le logo Maison Matron 1921 ; une femme en tailleur blanc assise dans un fauteuil club, avec la phrase « La Haute Couture, pour vos meubles. » ; le logo Maison Matron sur fond noir."
               />
-              <Caption>Velours de Gênes</Caption>
             </figure>
           }
           action={
@@ -259,7 +257,6 @@ const Home = () => (
                 alt="Gros plan d'un velours de Gênes à motif floral : roses et boutons rose corail, feuillage vert sombre en relief, sur fond blanc."
                 sizes="100vw"
               />
-              <Caption>Velours de Gênes</Caption>
             </figure>
           }
           action={
@@ -315,7 +312,6 @@ const Home = () => (
                 alt="Canapé Louis-Philippe en bois sculpté, dossier couronné d'une palmette et accoudoirs en volute, garni d'un tissu ivoire à rayures bordeaux et petits bouquets de fleurs, sur fond blanc."
                 sizes="100vw"
               />
-              <Caption>Réalisation Maison Matron</Caption>
             </figure>
           }
           action={
@@ -362,7 +358,6 @@ const Home = () => (
                 poster={voltaire_poster}
                 label="Un fauteuil Voltaire en bois clair, garni d'un tissu gris à feuillage de velours jaune d'or, puis un gros plan de ce tissu."
               />
-              <Caption>Réalisation Maison Matron</Caption>
             </figure>
           }
           action={
@@ -408,7 +403,6 @@ const Home = () => (
                 alt="Une femme en tailleur blanc et bottines noires, assise jambes croisées dans un fauteuil club blanc aux accotoirs de bois sombre bordés de clous, sur fond blanc."
                 sizes="100vw"
               />
-              <Caption>Réalisation Maison Matron</Caption>
             </figure>
           }
           action={
