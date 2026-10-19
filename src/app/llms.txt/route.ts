@@ -104,7 +104,7 @@ Comment contacter l'atelier ?
     - La santé des bois et des matières et ce qui vaut la peine d'être restauré.
 - Le processus & la restitution
   - Nous prenons en charge le transport de vos pièces dans le plus grand soin.
-  - Nous vous tenons informé durant tout le processus de réfection.
+  - Nous vous tenons informé durant tout le processus de transformation.
   - Lorsque les artisans ont terminé, nous fixons avec vous le jour et l'heure de restitution.
   - Enfin, nous vous dévoilons chaque ouvrage :
   - unique et à votre image.

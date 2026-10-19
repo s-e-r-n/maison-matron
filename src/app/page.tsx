@@ -339,7 +339,9 @@ const Home = () => (
             Nous prenons en charge le transport de vos pièces dans le plus grand
             soin.
           </p>
-          <p>Nous vous tenons informé durant tout le processus de réfection.</p>
+          <p>
+            Nous vous tenons informé durant tout le processus de transformation.
+          </p>
           <p>
             Lorsque les artisans ont terminé, nous fixons avec vous le jour et
             l'heure de restitution.
