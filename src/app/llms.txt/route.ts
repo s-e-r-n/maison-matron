@@ -68,7 +68,10 @@ Comment contacter l'atelier ?
 - Votre expertise offerte
   - Visite chez vous
   - Évaluation de votre mobilier
-- Nous transformons vos meubles en pièces uniques au monde.
+- Vous cherchez la pièce à votre image, or…
+  - La marque décide jusqu'où va votre « sur-mesure ».
+  - L'unique est éclipsé par les collections à la mode.
+  - Le choix des tissus vous est limité.
 - Maison Matron, artisan depuis 4 générations
   - Depuis plus d'un siècle, notre savoir-faire façonne des objets, travaillés à la main et habillés des plus beaux tissus.
   - Nos tapissiers, ébénistes et courtepointières sont unis par une unique valeur :
