@@ -2,16 +2,18 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import styles from "./call_to_action.module.css";
 
-type tone = "principal" | "secondary";
+type tone = "principal" | "secondary" | "paper";
 
 type face_props = { children: ReactNode; tone: tone };
 
 const Face = ({ children, tone }: face_props) => (
   <span
     className={cn(
-      "flex items-center justify-center text-center font-display text-white italic",
+      "flex items-center justify-center text-center font-display italic",
       styles.face,
-      tone === "principal" ? "bg-principal" : "bg-secondary",
+      tone === "principal" && "bg-principal text-white",
+      tone === "secondary" && "bg-secondary text-white",
+      tone === "paper" && "bg-paper text-secondary",
     )}
   >
     {children}
@@ -21,7 +23,9 @@ const Face = ({ children, tone }: face_props) => (
 const frame = (tone: tone) =>
   cn(
     "inline-block max-w-full border p-[2px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current",
-    tone === "principal" ? "border-principal" : "border-secondary",
+    tone === "principal" && "border-principal",
+    tone === "secondary" && "border-secondary",
+    tone === "paper" && "border-paper",
   );
 
 type call_to_action_props = {
@@ -57,18 +61,28 @@ export const CallToActions = ({ children }: call_to_actions_props) => (
   </div>
 );
 
-type details_props = { children: ReactNode };
+type details_props = { children: ReactNode; tone?: "gray" | "paper" };
 
-export const CallToActionDetails = ({ children }: details_props) => (
+export const CallToActionDetails = ({
+  children,
+  tone = "gray",
+}: details_props) => (
   <div className="mt-3 text-[13px] max-md:mx-auto max-md:w-fit">
-    <ul className="inline-flex list-inside list-['❊_'] flex-wrap gap-x-1 text-left align-top max-md:justify-center">
+    <ul
+      data-tone={tone}
+      className="group inline-flex list-inside list-['❊_'] flex-wrap gap-x-1 text-left align-top max-md:justify-center"
+    >
       {children}
     </ul>
   </div>
 );
 
-export const CallToActionDetail = ({ children }: details_props) => (
-  <li className="marker:text-gray-500 first:list-none">
-    <small className="text-[1em] text-gray-500">{children}</small>
+type detail_props = { children: ReactNode };
+
+export const CallToActionDetail = ({ children }: detail_props) => (
+  <li className="marker:text-gray-500 first:list-none group-data-[tone=paper]:marker:text-paper/80">
+    <small className="text-[1em] text-gray-500 group-data-[tone=paper]:text-paper/80">
+      {children}
+    </small>
   </li>
 );
