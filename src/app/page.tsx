@@ -50,11 +50,11 @@ const Home = () => (
     <Hero>
       <CallToActions>
         <CallToAction href="#booking">Votre expertise offerte</CallToAction>
-        <CallToAction href="tel:+41215394675" tone="secondary">
+        <CallToAction href="tel:+41215394675" tone="paper">
           +41 21 539 46 75
         </CallToAction>
       </CallToActions>
-      <CallToActionDetails>
+      <CallToActionDetails tone="paper">
         <CallToActionDetail>Visite chez vous</CallToActionDetail>
         <CallToActionDetail>Évaluation de votre mobilier</CallToActionDetail>
       </CallToActionDetails>
