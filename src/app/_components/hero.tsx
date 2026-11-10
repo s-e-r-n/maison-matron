@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import logo from "../../../public/brand/maison-matron-logo-complete.svg";
+import { Frame } from "./frame";
 import styles from "./hero.module.css";
 import { Quote, SectionSubtitle } from "./typography";
 
@@ -54,9 +55,11 @@ export const Hero = ({ children }: hero_props) => (
         />
       </div>
       <div className="copy-inset flex flex-col items-start">
-        <p className="mb-2 font-display text-[17px] leading-[1.45] italic">
-          Artisan tapissier et ébéniste depuis 4 générations
-        </p>
+        <Frame className="mb-4 w-full md:w-fit">
+          <p className="text-[17px] leading-[1.45]">
+            Artisan tapissier et ébéniste depuis 4 générations
+          </p>
+        </Frame>
         <h1 className="mb-4 font-display text-[36px] leading-[1.06] italic lg:text-[50px]">
           Transformez vos meubles en pièce unique
         </h1>
@@ -68,14 +71,12 @@ export const Hero = ({ children }: hero_props) => (
           <SectionSubtitle>+5'000 clients</SectionSubtitle>
         </div>
         <div className="w-full md:w-fit md:*:@container-normal">
-          <div className="mb-4 border border-paper/50 p-[2px] md:contain-inline-size">
-            <div className="border border-paper/50 p-4 backdrop-blur-xs">
-              <Quote>
-                « Des conseils avisés, une superbe sélection de tissus et un
-                savoir-faire minutieux. » - Anne-Claude
-              </Quote>
-            </div>
-          </div>
+          <Frame className="mb-4 md:contain-inline-size">
+            <Quote>
+              « Des conseils avisés, une superbe sélection de tissus et un
+              savoir-faire minutieux. » - Anne-Claude
+            </Quote>
+          </Frame>
           {children}
         </div>
       </div>
