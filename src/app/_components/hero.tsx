@@ -54,11 +54,14 @@ export const Hero = ({ children }: hero_props) => (
         />
       </div>
       <div className="copy-inset flex flex-col items-start">
+        <p className="mb-2 font-display text-[17px] leading-[1.45] italic">
+          Artisan tapissier et ébéniste depuis 4 générations
+        </p>
         <h1 className="mb-4 font-display text-[36px] leading-[1.06] italic lg:text-[50px]">
           Transformez vos meubles en pièce unique
         </h1>
         <p className="mb-4 text-[17px] leading-[1.45]">
-          Artisan tapissier et ébéniste depuis 4 générations
+          Profitez d'une collection de tissus d'exception
         </p>
         <div className="mb-4">
           <SectionSubtitle>+20'000 pièces</SectionSubtitle>
