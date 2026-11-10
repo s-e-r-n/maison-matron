@@ -37,17 +37,25 @@ export const Hero = ({ children }: hero_props) => (
       <div />
     </div>
     <div className="page-width relative flex min-h-svh flex-col justify-between gap-12 pt-5 pb-12 lg:gap-16 lg:py-[min(6%,86px)]">
-      <div className="flex justify-center">
+      <div className="relative flex justify-center px-12">
         <Image
           src={logo}
           alt="Maison Matron, 1921"
           preload
           className="block h-auto w-[286px] max-w-full brightness-0 invert"
         />
+        <Image
+          src="/ch.svg"
+          alt=""
+          width={512}
+          height={512}
+          preload
+          className="absolute top-1/2 right-0 size-10 -translate-y-1/2 md:size-24"
+        />
       </div>
       <div className="copy-inset flex flex-col items-start">
         <h1 className="mb-4 font-display text-[36px] leading-[1.06] italic lg:text-[50px]">
-          La Haute Couture, pour vos meubles
+          Transformez vos meubles en pièce unique
         </h1>
         <p className="mb-4 text-[17px] leading-[1.45]">
           Artisan tapissier et ébéniste depuis 4 générations
