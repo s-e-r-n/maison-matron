@@ -37,8 +37,8 @@ export const Hero = ({ children }: hero_props) => (
       <div />
       <div />
     </div>
-    <div className="page-width relative flex min-h-svh flex-col justify-between gap-12 pt-5 pb-12 lg:gap-16 lg:py-[min(6%,86px)]">
-      <div className="relative flex justify-center px-12">
+    <div className="page-width relative flex min-h-svh flex-col justify-between gap-12 pt-5 pb-12 lg:gap-16 lg:pb-[min(6%,86px)]">
+      <div className="grid grid-cols-[min(286px,100%)] justify-center px-12">
         <Image
           src={logo}
           alt="Maison Matron, 1921"
@@ -51,7 +51,7 @@ export const Hero = ({ children }: hero_props) => (
           width={512}
           height={512}
           preload
-          className="absolute top-1/2 right-0 size-10 -translate-y-1/2 md:size-24"
+          className="mt-[calc(100%*5.37/123.95)] ml-[calc(100%*53.12/123.95)] h-auto w-[calc(100%*12.31/123.95)]"
         />
       </div>
       <div className="copy-inset flex flex-col items-start">
